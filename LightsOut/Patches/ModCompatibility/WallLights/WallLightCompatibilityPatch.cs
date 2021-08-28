@@ -4,17 +4,20 @@
 // patching if it is present
 //************************************************
 
+using System.Collections.Generic;
+
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
     public class WallLightCompatibilityPatch : IModCompatibilityPatch
     {
-        public WallLightCompatibilityPatch() : base()
-        {
-            new PatchIsInRoomForWallLights();
-        }
-
         protected override string TypeNameToPatch { get => "WallLight"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
+
+        protected override IEnumerable<PatchInfo> GetPatches()
+        {
+            new PatchIsInRoomForWallLights();
+            return base.GetPatches();
+        }
     }
 }

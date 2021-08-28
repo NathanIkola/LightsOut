@@ -66,6 +66,8 @@
     <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\RimFridge\PatchGetLightResources.cs" />
+    <Compile Include="Patches\ModCompatibility\RimFridge\RimFridgeCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />

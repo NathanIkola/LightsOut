@@ -12,6 +12,7 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.Androids;
+using LightsOut.Patches.ModCompatibility.RimFridge;
 
 namespace LightsOut.Utility
 {
@@ -211,7 +212,8 @@ namespace LightsOut.Utility
         public static List<IModCompatibilityPatch> CompatibilityPatches { get; } = new List<IModCompatibilityPatch>()
         {
             new WallLightCompatibilityPatch(),
-            new AndroidsCompatibilityPatch()
+            new AndroidsCompatibilityPatch(),
+            new RimFridgeCompatibilityPatch()
         };
     }
 }

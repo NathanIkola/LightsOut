@@ -62,10 +62,9 @@ namespace LightsOut.Patches.ModCompatibility
             else
                 Log.Message($"LightsOut patching {typesToPatch.Count} mods for \"{TypeNameToPatch}\"");
 
-            IEnumerable<PatchInfo> patches = GetPatches();
             foreach (Type type in typesToPatch)
             {
-                foreach (PatchInfo patch in patches)
+                foreach (PatchInfo patch in GetPatches())
                 {
                     switch (patch.patchType)
                     {

@@ -4,19 +4,22 @@
 // patching if it is present
 //************************************************
 
+using System.Collections.Generic;
+
 namespace LightsOut.Patches.ModCompatibility.Androids
 {
     public class AndroidsCompatibilityPatch : IModCompatibilityPatch
     {
-        public AndroidsCompatibilityPatch() : base()
+        protected override string TypeNameToPatch { get => "Building_AndroidPrinter"; }
+        protected override bool TargetsMultipleTypes { get => false; }
+        protected override bool TypeNameIsExact { get => true; }
+
+        protected override IEnumerable<PatchInfo> GetPatches()
         {
             new PatchDisablePowerDraw();
             new PatchIsTable();
             new PatchInspectMessage();
+            return base.GetPatches();
         }
-
-        protected override string TypeNameToPatch { get => "Building_AndroidPrinter"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
     }
 }
