@@ -149,6 +149,8 @@ namespace LightsOut.Utility
         //****************************************
         public static Room GetRoom(Building building)
         {
+            if (!building.Map.regionAndRoomUpdater.Enabled)
+                return null;
             return building.GetRoom();
         }
 

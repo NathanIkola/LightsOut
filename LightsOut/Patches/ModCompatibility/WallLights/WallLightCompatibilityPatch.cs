@@ -5,6 +5,7 @@
 //************************************************
 
 using System.Collections.Generic;
+using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
