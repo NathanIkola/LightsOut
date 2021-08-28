@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56E0947A-8AD5-4CA8-8B9F-33912862E414}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LightsOut</RootNamespace>
+    <AssemblyName>LightsOut</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="HugsLib">
+      <HintPath>..\..\HugsLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boilerplate\HarmonyPatches.cs" />
+    <Compile Include="Boilerplate\ModSettings.cs" />
+    <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
+    <Compile Include="Patches\Legacy\GenericLightPatch.cs" />
+    <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
+    <Compile Include="Patches\Lights\DisableLightGlowPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\Androids\PatchInspectMessage.cs" />
+    <Compile Include="Patches\ModCompatibility\Androids\PatchIsTable.cs" />
+    <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
+    <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
+    <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
+    <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
+    <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
+    <Compile Include="Patches\Power\DisablePowerDrawPatch.cs" />
+    <Compile Include="Patches\Legacy\RemoveCryptoSleepSicknessPatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ModResources.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)..\..\..\About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\About" /E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Defs" /E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Languages" /E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Patches" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Patches" /E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Sounds" /E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures" /E/H/C/I
+echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
+echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
+  </PropertyGroup>
+</Project>
