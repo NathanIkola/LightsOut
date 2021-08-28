@@ -83,6 +83,10 @@ namespace LightsOut.Utility
         {
             if (thing is null || IsTable(thing)) return null;
 
+            // use our light whitelist to cull out anything that
+            // doesn't claim to be a light
+            if (!LightNamesMustInclude.Any(x => thing.GetType().Name.IndexOf(x, StringComparison.OrdinalIgnoreCase) != -1)) return null;
+
             foreach(ThingComp comp in thing.AllComps)
             {
                 if (LightCompBlacklist.Any(x => x.IsAssignableFrom(comp.GetType())))
@@ -210,12 +214,18 @@ namespace LightsOut.Utility
             
         };
 
-        // patches to apply
+        // whitelist for things that can be lights
+        public static List<string> LightNamesMustInclude { get; } = new List<string>()
+        {
+            "light",
+            "lamp"
+        };
+
+        // compatibility patches to apply
         public static List<IModCompatibilityPatch> CompatibilityPatches { get; } = new List<IModCompatibilityPatch>()
         {
             new WallLightCompatibilityPatch(),
-            new AndroidsCompatibilityPatch(),
-            new RimFridgeCompatibilityPatch()
+            new AndroidsCompatibilityPatch()
         };
     }
 }

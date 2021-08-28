@@ -66,8 +66,8 @@
     <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\RimFridge\PatchGetLightResources.cs" />
-    <Compile Include="Patches\ModCompatibility\RimFridge\RimFridgeCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\PatchGetLightResources.cs" />
+    <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\RimFridgeCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
@@ -80,12 +80,12 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)..\..\..\About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\About" /E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Defs" /E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Languages" /E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Patches" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Patches" /E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Sounds" /E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures" /E/H/C/I
+    <PostBuildEvent>xcopy "$(ProjectDir)..\..\..\About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\About"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Defs"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Languages"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Patches" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Patches"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Sounds"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures"  /Y/E/H/C/I
 echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
 echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
   </PropertyGroup>
