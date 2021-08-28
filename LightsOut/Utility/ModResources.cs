@@ -85,7 +85,16 @@ namespace LightsOut.Utility
 
             // use our light whitelist to cull out anything that
             // doesn't claim to be a light
-            if (!LightNamesMustInclude.Any(x => thing.GetType().Name.IndexOf(x, StringComparison.OrdinalIgnoreCase) != -1)) return null;
+            bool isLight = false;
+            foreach(string term in LightNamesMustInclude)
+            {
+                if(thing.def.defName.ToLower().Contains(term))
+                {
+                    isLight = true;
+                    break;
+                }
+            }
+            if (!isLight) return null;
 
             foreach(ThingComp comp in thing.AllComps)
             {
