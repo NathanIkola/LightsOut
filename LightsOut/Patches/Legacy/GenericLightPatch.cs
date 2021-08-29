@@ -25,10 +25,16 @@ namespace LightsOut.Patches
             Assembly mscorlib = Assembly.GetAssembly(typeof(int));
 
             // get all types that contain "glower" and come from outside rimworld
-            List<Type> types = (from asm in AppDomain.CurrentDomain.GetAssemblies() where asm != rimworld && asm != lightsOut && asm != mscorlib
-                                from type in asm.GetTypes()
-                                where type.IsClass && type.Name.ToLower().Contains("glower")
-                                select type).ToList();
+            List<Type> types = new List<Type>();
+            try
+            {
+                types = (from asm in AppDomain.CurrentDomain.GetAssemblies()
+                         where asm != rimworld && asm != lightsOut && asm != mscorlib
+                         from type in asm.GetTypes()
+                         where type.IsClass && type.Name.ToLower().Contains("glower")
+                         select type).ToList();
+            }
+            catch (ReflectionTypeLoadException) { }
 
             foreach(Type type in types)
             {

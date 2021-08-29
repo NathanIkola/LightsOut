@@ -90,20 +90,36 @@ namespace LightsOut.Patches.ModCompatibility
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             List<Type> typesToPatch = new List<Type>();
 
-            // search for the type
-            if (!TypeNameIsExact)
-                typesToPatch = (from asm in assemblies
-                                where asm != mscorlib
-                                from type in asm.GetTypes()
-                                where type.Name.Contains(TypeNameToPatch)
-                                select type).ToList();
-            // otherwise get only exact types
-            else
-                typesToPatch = (from asm in assemblies
-                                where asm != mscorlib
-                                from type in asm.GetTypes()
-                                where type.Name.Equals(TypeNameToPatch)
-                                select type).ToList();
+            foreach (Assembly asm in assemblies)
+            {
+                if (asm == mscorlib) continue;
+
+                Type[] types = null;
+                try
+                {
+                    types = asm.GetTypes();
+                }
+                catch (ReflectionTypeLoadException) { }
+
+
+                foreach (Type type in types)
+                {
+                    if (!TypeNameIsExact)
+                    {
+                        if (type.Name.Contains(TypeNameToPatch))
+                        {
+                            typesToPatch.Add(type);
+                        }
+                    }
+                    else
+                    {
+                        if (type.Name.Equals(TypeNameToPatch))
+                        {
+                            typesToPatch.Add(type);
+                        }
+                    }
+                }
+            }
 
             return typesToPatch;
         }

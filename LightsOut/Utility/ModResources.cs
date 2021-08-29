@@ -8,11 +8,9 @@ using System.Linq;
 using RimWorld;
 using Verse;
 using System.Reflection;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.Androids;
-using LightsOut.Patches.ModCompatibility.RimFridge;
 
 namespace LightsOut.Utility
 {
