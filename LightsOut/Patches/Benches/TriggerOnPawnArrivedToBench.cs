@@ -80,7 +80,6 @@ namespace LightsOut.Patches.Benches
             driver.AddFinishAction(() =>
             {
                 ModResources.DisableTable(table);
-                //ModResources.SetConsumesPower(powerTrader, false);
             });
         }
     }

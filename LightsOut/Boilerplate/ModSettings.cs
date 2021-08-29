@@ -24,6 +24,12 @@ namespace LightsOut.Boilerplate
         //****************************************
         public static float StandbyPowerDrawRate { get; set; } = 0f;
 
+        //****************************************
+        // Control whether or not pawns shut off
+        // the lights when they go to bed
+        //****************************************
+        public static bool NightLights { get; set; } = false;
+
         public override string ModIdentifier
         {
             get { return "LightsOut"; }
@@ -39,18 +45,26 @@ namespace LightsOut.Boilerplate
             bool lightsOut = Settings.GetHandle<bool>(
                 "EverythingButLightsOut",
                 "Turn off lights in empty rooms?",
-                "If you turn this off, this mod becomes \"LightsOn\".",
+                "If you turn this off, this mod becomes \"LightsOn\". On by default.",
                 true);
+
+            bool nightLights = Settings.GetHandle<bool>(
+                "NightLights",
+                "Keep the lights on when your pawns go to bed?",
+                "Enable this if your pawns are scared of the dark. Off by default.",
+                false);
 
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
                 "Standby power draw (%)",
-                "Percentage of normal power to draw when in standby.",
+                "Percentage of normal power to draw when in standby. 0% by default.",
                 0);
 
             if (standbyPower > 100)
                 StandbyPowerDrawRate = 1f;
             else StandbyPowerDrawRate = standbyPower / 100f;
+
+            NightLights = nightLights;
 
             DoFlickLightsChange(lightsOut);
             FlickLights = lightsOut;
@@ -87,7 +101,9 @@ namespace LightsOut.Boilerplate
                 foreach (var light in affectedLights)
                 {
                     ThingComp glower = light?.Value;
-                    Room room = ModResources.GetRoom(glower.parent as Building);
+                    Room room = ModResources.GetRoom(glower?.parent as Building);
+
+                    if (room == null) return;
 
                     if (ModResources.RoomIsEmpty(room, null))
                         ModResources.DisableLight(light);

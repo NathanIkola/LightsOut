@@ -157,7 +157,7 @@ namespace LightsOut.Utility
         // Check if a light has a comp on the
         // disallowed list
         //****************************************
-        public static KeyValuePair<CompPowerTrader, ThingComp>? GetLightResources(Building thing)
+        public static LightObject? GetLightResources(Building thing)
         {
             if (thing is null || IsTable(thing)) return null;
 
@@ -169,7 +169,7 @@ namespace LightsOut.Utility
 
             if (glower is null || powerTrader is null || powerTrader.powerOutputInt > 0)
                 return null;
-            return new KeyValuePair<CompPowerTrader, ThingComp>(powerTrader, glower);
+            return new LightObject(powerTrader, glower);
         }
 
         //****************************************
@@ -200,8 +200,45 @@ namespace LightsOut.Utility
                 if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                {
                     return false;
+                }
             return true;
+        }
+
+        //****************************************
+        // Detect if all pawns in a room are
+        // currently sleeping except the one
+        // passed in
+        //****************************************
+        public static bool AllPawnsSleeping(Room room, Pawn pawn)
+        {
+            if (room is null || room.PsychologicallyOutdoors) return false;
+
+            foreach(Thing thing in room.ContainedAndAdjacentThings)
+                if(thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                    // what if two pawns were both leaving the room at the same time haha... unless?
+                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                {
+                    if (otherPawn.Awake()) return false;
+                }
+            return true;
+        }
+
+        //****************************************
+        // Get the list of pawns in the room
+        //****************************************
+        public static List<Pawn> GetPawnsInRoom(Room room)
+        {
+            List<Pawn> pawns = new List<Pawn>();
+            if (room is null || room.PsychologicallyOutdoors) return pawns;
+
+            // just get all of the humans in the room
+            foreach (Thing thing in room.ContainedAndAdjacentThings)
+                if (thing is Pawn pawn && pawn.RaceProps.Humanlike)
+                    pawns.Add(pawn);
+
+            return pawns;
         }
 
         //****************************************

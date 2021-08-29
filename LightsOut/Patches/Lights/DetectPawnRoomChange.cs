@@ -36,14 +36,15 @@ namespace LightsOut.Patches.Lights
                 if(ModResources.RoomIsEmpty(__state, __instance))
                     DisableAllLights(__state);
 
-                EnableAllLights(newRoom);
+                if(ModResources.RoomIsEmpty(newRoom, __instance))
+                    EnableAllLights(newRoom);
             }
         }
 
         //****************************************
         // Disable all lights in a room
         //****************************************
-        private static void DisableAllLights(Room room)
+        public static void DisableAllLights(Room room)
         {
             if (room is null) return;
 
@@ -63,7 +64,7 @@ namespace LightsOut.Patches.Lights
         //****************************************
         // Enable all lights in a room
         //****************************************
-        private static void EnableAllLights(Room room)
+        public static void EnableAllLights(Room room)
         {
             if (room is null) return;
 
