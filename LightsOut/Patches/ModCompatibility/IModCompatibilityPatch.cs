@@ -7,7 +7,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Verse;
 using HarmonyLib;
 using System.Reflection;
@@ -94,13 +93,12 @@ namespace LightsOut.Patches.ModCompatibility
             {
                 if (asm == mscorlib) continue;
 
-                Type[] types = null;
+                Type[] types = new Type[] { };
                 try
                 {
                     types = asm.GetTypes();
                 }
-                catch (ReflectionTypeLoadException) { }
-
+                catch (ReflectionTypeLoadException) { continue; }
 
                 foreach (Type type in types)
                 {

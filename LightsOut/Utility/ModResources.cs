@@ -74,6 +74,35 @@ namespace LightsOut.Utility
         }
 
         //****************************************
+        // Checks if a building can even be a
+        // light in the first place
+        //****************************************
+        public static bool CanBeLight(Building thing)
+        {
+            // make sure that this is not on the blacklist
+            foreach (ThingComp comp in thing.AllComps)
+                if (LightCompBlacklist.Any(badComp => badComp.IsAssignableFrom(comp.GetType())))
+                    return false;
+
+            // make sure it has one of the light kewords in its def name
+            string defName = thing.def.defName.ToLower();
+            foreach (string keyword in LightNamesMustInclude)
+                if (defName.Contains(keyword))
+                    return true;
+
+            return false;
+        }
+
+        //****************************************
+        // Get the glower (if present) from a
+        // building, or return null if not present
+        //****************************************
+        public static ThingComp GetGlower(Building thing)
+        {
+            return thing.AllComps.First(x => CompGlowers.Contains(x.GetType())); ;
+        }
+
+        //****************************************
         // Check if a light has a comp on the
         // disallowed list
         //****************************************
@@ -81,32 +110,11 @@ namespace LightsOut.Utility
         {
             if (thing is null || IsTable(thing)) return null;
 
-            // use our light whitelist to cull out anything that
-            // doesn't claim to be a light
-            bool isLight = false;
-            foreach(string term in LightNamesMustInclude)
-            {
-                if(thing.def.defName.ToLower().Contains(term))
-                {
-                    isLight = true;
-                    break;
-                }
-            }
-            if (!isLight) return null;
-
-            foreach(ThingComp comp in thing.AllComps)
-            {
-                if (LightCompBlacklist.Any(x => x.IsAssignableFrom(comp.GetType())))
-                    return null;
-            }
+            // use our light whitelist to cull out anything that doesn't claim to be a light
+            if (!CanBeLight(thing)) return null;
 
             CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
-            ThingComp glower = thing.TryGetComp<CompGlower>();
-
-            if (glower is null)
-                foreach (ThingComp comp in thing.AllComps)
-                    if (comp.GetType().ToString().ToLower().Contains("glower"))
-                        glower = comp;
+            ThingComp glower = GetGlower(thing);
 
             if (glower is null || powerTrader is null || powerTrader.powerOutputInt > 0)
                 return null;
@@ -234,5 +242,7 @@ namespace LightsOut.Utility
             new WallLightCompatibilityPatch(),
             new AndroidsCompatibilityPatch()
         };
+
+        public static List<Type> CompGlowers { get; } = new List<Type>() { typeof(CompGlower) };
     }
 }

@@ -11,13 +11,13 @@ using HarmonyLib;
 using System.Reflection;
 using LightsOut.Boilerplate;
 using LightsOut.Patches.Lights;
+using LightsOut.Utility;
 
 namespace LightsOut.Patches
 {
     [StaticConstructorOnStartup]
     public static class GenericLightPatch
     {
-
         static GenericLightPatch()
         {
             Assembly rimworld = Assembly.GetAssembly(typeof(Pawn));
@@ -46,6 +46,8 @@ namespace LightsOut.Patches
                         var original = type.GetProperty("shouldBeLitNow", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
                         if (original != null)
                         {
+                            // this looks to be a CompGlower-like thing, so keep track of that
+                            ModResources.CompGlowers.Add(type);
                             var postfix = typeof(DisableLightGlowPatch).GetMethod("Postfix", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
                             if (postfix != null)
                             {

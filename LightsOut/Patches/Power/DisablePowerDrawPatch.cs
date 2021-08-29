@@ -6,6 +6,8 @@
 using RimWorld;
 using HarmonyLib;
 using LightsOut.Utility;
+using Verse;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {
@@ -16,7 +18,12 @@ namespace LightsOut.Patches.Power
         public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
             if (__instance.PowerOn && ModResources.CanConsumePower(__instance) == false)
-                __result = 0f;
+            {
+                if (ModResources.IsTable(__instance.parent as Building))
+                    __result *= ModSettings.StandbyPowerDrawRate;
+                else
+                    __result = 0f;
+            }
         }
     }
 }

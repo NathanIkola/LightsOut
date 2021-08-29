@@ -18,6 +18,12 @@ namespace LightsOut.Boilerplate
         //****************************************
         public static bool FlickLights { get; set; } = true;
 
+        //****************************************
+        // Latent power draw of things when
+        // they are flicked off
+        //****************************************
+        public static float StandbyPowerDrawRate { get; set; } = 0f;
+
         public override string ModIdentifier
         {
             get { return "LightsOut"; }
@@ -35,6 +41,16 @@ namespace LightsOut.Boilerplate
                 "Turn off lights in empty rooms?",
                 "If you turn this off, this mod becomes \"LightsOn\".",
                 true);
+
+            uint standbyPower = Settings.GetHandle<uint>(
+                "LatentPowerDrawRate",
+                "Standby power draw (%)",
+                "Percentage of normal power to draw when in standby.",
+                0);
+
+            if (standbyPower > 100)
+                StandbyPowerDrawRate = 1f;
+            else StandbyPowerDrawRate = standbyPower / 100f;
 
             DoFlickLightsChange(lightsOut);
             FlickLights = lightsOut;
