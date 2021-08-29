@@ -79,29 +79,20 @@ namespace LightsOut.Boilerplate
             {
                 foreach (var light in affectedLights)
                 {
-                    CompPowerTrader powerTrader = light?.Key;
-                    ThingComp glower = light?.Value;
-                    ModResources.SetConsumesPower(powerTrader, true);
-                    ModResources.SetCanGlow(glower, true);
+                    ModResources.EnableLight(light);
                 }
             }
             else
             {
                 foreach (var light in affectedLights)
                 {
-                    CompPowerTrader powerTrader = light?.Key;
                     ThingComp glower = light?.Value;
+                    Room room = ModResources.GetRoom(glower.parent as Building);
 
-                    if (ModResources.RoomIsEmpty(ModResources.GetRoom(glower.parent as Building), null))
-                    {
-                        ModResources.SetConsumesPower(powerTrader, false);
-                        ModResources.SetCanGlow(glower, false);
-                    }
+                    if (ModResources.RoomIsEmpty(room, null))
+                        ModResources.DisableLight(light);
                     else
-                    {
-                        ModResources.SetConsumesPower(powerTrader, true);
-                        ModResources.SetCanGlow(glower, true);
-                    }
+                        ModResources.EnableLight(light);
                 }
             }
         }

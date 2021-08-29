@@ -11,11 +11,62 @@ using System.Reflection;
 using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.Androids;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Utility
 {
+    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
+
     public static class ModResources
     {
+        //****************************************
+        // Does the hard work of disabling
+        // a worktable
+        //****************************************
+        public static void DisableTable(Building table)
+        {
+            SetConsumesPower(table.PowerComp as CompPowerTrader, false);
+            ThingComp glower = GetGlower(table);
+            if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
+                SetCanGlow(glower, false);
+        }
+
+        //****************************************
+        // Does the hard work of enabling
+        // a worktable
+        //****************************************
+        public static void EnableTable(Building table)
+        {
+            SetConsumesPower(table.PowerComp as CompPowerTrader, true);
+            ThingComp glower = GetGlower(table);
+            if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
+                SetCanGlow(glower, true);
+        }
+
+        //****************************************
+        // Does the hard work of enabling a light
+        //****************************************
+        public static void EnableLight(LightObject? light)
+        {
+            CompPowerTrader powerTrader = light?.Key;
+            ThingComp glower = light?.Value;
+
+            SetConsumesPower(powerTrader, true);
+            SetCanGlow(glower, true);
+        }
+
+        //****************************************
+        // Does the hard work of disabling a light
+        //****************************************
+        public static void DisableLight(LightObject? light)
+        {
+            CompPowerTrader powerTrader = light?.Key;
+            ThingComp glower = light?.Value;
+
+            SetConsumesPower(powerTrader, false);
+            SetCanGlow(glower, false);
+        }
+
         //****************************************
         // Add a CompPower to the power-consumable
         // dictionary

@@ -12,6 +12,8 @@ using LightsOut.Utility;
 
 namespace LightsOut.Patches.Lights
 {
+    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
+
     [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch("Tick")]
     public class DetectPawnRoomChange
@@ -49,16 +51,11 @@ namespace LightsOut.Patches.Lights
             {
                 if (t is Building thing)
                 {
-                    KeyValuePair<CompPowerTrader, ThingComp>? light;
-                    if ((light = ModResources.GetLightResources(thing)) is null) continue;
+                    LightObject? light = ModResources.GetLightResources(thing);
 
-                    if (!ModResources.IsInRoom(thing, room)) continue;
+                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
 
-                    CompPowerTrader powerTrader = light?.Key;
-                    ThingComp glower = light?.Value;
-
-                    ModResources.SetConsumesPower(powerTrader, false);
-                    ModResources.SetCanGlow(glower, false);
+                    ModResources.DisableLight(light);
                 }
             }
         }
@@ -74,16 +71,11 @@ namespace LightsOut.Patches.Lights
             {
                 if (t is Building thing)
                 {
-                    KeyValuePair<CompPowerTrader, ThingComp>? light;
-                    if ((light = ModResources.GetLightResources(thing)) is null) continue;
+                    LightObject? light = ModResources.GetLightResources(thing);
 
-                    if (!ModResources.IsInRoom(thing, room)) continue;
+                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
 
-                    CompPowerTrader powerTrader = light?.Key;
-                    ThingComp glower = light?.Value;
-
-                    ModResources.SetConsumesPower(powerTrader, true);
-                    ModResources.SetCanGlow(glower, true);
+                    ModResources.EnableLight(light);
                 }
             }
         }

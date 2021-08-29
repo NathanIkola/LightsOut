@@ -19,22 +19,13 @@ namespace LightsOut.Patches.Power
         {
             KeyValuePair<CompPowerTrader, ThingComp>? light;
             if (ModResources.IsTable(__instance))
-                ModResources.SetConsumesPower(__instance.PowerComp as CompPowerTrader, false);
-            else if((light = ModResources.GetLightResources(__instance)) != null)
+                ModResources.DisableTable(__instance);
+            else if ((light = ModResources.GetLightResources(__instance)) != null)
             {
-                CompPowerTrader powerTrader = light?.Key;
-                ThingComp glower = light?.Value;
-
                 if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null))
-                {
-                    ModResources.SetConsumesPower(powerTrader, false);
-                    ModResources.SetCanGlow(glower, false);
-                }
+                    ModResources.DisableLight(light);
                 else
-                {
-                    ModResources.SetConsumesPower(powerTrader, true);
-                    ModResources.SetCanGlow(glower, true);
-                }
+                    ModResources.EnableLight(light);
             }
         }
     }

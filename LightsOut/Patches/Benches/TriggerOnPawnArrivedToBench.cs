@@ -44,7 +44,7 @@ namespace LightsOut.Patches.Benches
                 if (powerTrader is null) return;
 
                 if (pawn.Position == table.InteractionCell)
-                    ActivateBench(billDriver, powerTrader);
+                    ActivateBench(billDriver, table);
             }
         }
 
@@ -64,21 +64,23 @@ namespace LightsOut.Patches.Benches
 
             // the pawn needs to be in the correct place
             if(pawn.Position == bench.InteractionCell)
-                ActivateBench(researchDriver, powerTrader);
+                ActivateBench(researchDriver, bench);
         }
 
         //****************************************
         // Actually activate the power switching
         // on the bench/table
         //****************************************
-        private static void ActivateBench(JobDriver driver, CompPowerTrader powerTrader)
+        private static void ActivateBench(JobDriver driver, Building table)
         {
             // activate the bench
-            ModResources.SetConsumesPower(powerTrader, true);
+            ModResources.EnableTable(table);
+            //ModResources.SetConsumesPower(powerTrader, true);
             // set the bench to turn off after the job is complete
             driver.AddFinishAction(() =>
             {
-                ModResources.SetConsumesPower(powerTrader, false);
+                ModResources.DisableTable(table);
+                //ModResources.SetConsumesPower(powerTrader, false);
             });
         }
     }
