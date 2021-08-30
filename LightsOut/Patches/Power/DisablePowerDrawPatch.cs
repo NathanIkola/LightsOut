@@ -19,7 +19,8 @@ namespace LightsOut.Patches.Power
         {
             if (__instance.PowerOn && ModResources.CanConsumePower(__instance) == false)
             {
-                if (ModResources.IsTable(__instance.parent as Building))
+                if (ModResources.IsTable(__instance.parent as Building)
+                    || ModResources.IsCharged(__instance.parent))
                     __result *= ModSettings.StandbyPowerDrawRate;
                 else
                     __result = 0f;

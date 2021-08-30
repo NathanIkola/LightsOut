@@ -28,6 +28,16 @@ namespace LightsOut.Patches.Power
                 else
                     ModResources.EnableLight(light);
             }
+            // rechargeables should probably be enabled by default
+            else if (ModResources.IsRechargeable(__instance))
+            {
+                CompRechargeable rechargeable = __instance.GetComp<CompRechargeable>();
+                if (rechargeable.Charged)
+                    ModResources.DisableTable(__instance);
+                else
+                    ModResources.EnableTable(__instance);
+
+            }
         }
     }
 }

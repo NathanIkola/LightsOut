@@ -93,7 +93,19 @@ namespace LightsOut.Utility
         public static bool? CanConsumePower(CompPower powerComp)
         {
             if (powerComp == null) return false;
+            if (IsCharged(powerComp.parent)) return false;
             return BuildingStatus.TryGetValue(powerComp.parent, null);
+        }
+
+        //****************************************
+        // Check if a power consumer is a 
+        // rechargeable building
+        //****************************************
+        public static bool IsCharged(ThingWithComps thing)
+        {
+            CompRechargeable rechargeable = thing.GetComp<CompRechargeable>();
+            if (rechargeable is null) return false;
+            return rechargeable.Charged;
         }
 
         //****************************************
@@ -150,7 +162,11 @@ namespace LightsOut.Utility
         //****************************************
         public static ThingComp GetGlower(Building thing)
         {
-            return thing.AllComps.First(x => CompGlowers.Contains(x.GetType())); ;
+            try
+            {
+                return thing.AllComps.First(x => CompGlowers.Contains(x.GetType()));
+            }
+            catch (Exception) { return null; }
         }
 
         //****************************************
@@ -185,7 +201,17 @@ namespace LightsOut.Utility
                 if (TableCompBlacklist.Any(x => x.IsAssignableFrom(comp.GetType())))
                     return false;
             }
-            return ((thing is Building_WorkTable || thing is Building_ResearchBench) && thing.PowerComp != null);
+
+            return ((thing is Building_WorkTable 
+                || thing is Building_ResearchBench) && thing.PowerComp != null);
+        }
+
+        //****************************************
+        // Get whether something is rechargeable
+        //****************************************
+        public static bool IsRechargeable(Building thing)
+        {
+            return thing.GetComp<CompRechargeable>() != null;
         }
 
         //****************************************
