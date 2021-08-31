@@ -225,7 +225,8 @@ namespace LightsOut.Utility
             foreach (Thing thing in room.ContainedAndAdjacentThings)
                 if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
-                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
                 {
                     return false;
                 }

@@ -36,7 +36,6 @@ namespace LightsOut.Patches.Power
                     ModResources.DisableTable(__instance);
                 else
                     ModResources.EnableTable(__instance);
-
             }
         }
     }
