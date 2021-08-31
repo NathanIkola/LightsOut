@@ -226,6 +226,7 @@ namespace LightsOut.Utility
                 if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    // what if a pawn is entering while another pawn is leaving haha... unless??
                     && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
                 {
                     return false;
@@ -332,7 +333,6 @@ namespace LightsOut.Utility
             // ignore generators
             typeof(CompPowerPlant),
             // ignore grow lights
-            typeof(CompHeatPusher),
             typeof(CompSchedule)
         };
 
@@ -348,7 +348,8 @@ namespace LightsOut.Utility
         public static List<string> LightNamesMustInclude { get; } = new List<string>()
         {
             "light",
-            "lamp"
+            "lamp",
+            "illuminated"
         };
 
         // compatibility patches to apply
