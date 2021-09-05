@@ -17,8 +17,6 @@ namespace LightsOut.Patches.Lights
         public static void Postfix(ThingComp __instance, ref bool __result)
         {
             Building parent = __instance.parent as Building;
-            if (!ModSettings.FlickLights && !ModResources.IsTable(parent))
-                return;
 
             if(ModResources.CanGlow(__instance) == false)
                 __result = false;

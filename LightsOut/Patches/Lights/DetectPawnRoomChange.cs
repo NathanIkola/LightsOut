@@ -9,6 +9,7 @@ using RimWorld;
 using Verse;
 using HarmonyLib;
 using LightsOut.Utility;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {
@@ -46,7 +47,7 @@ namespace LightsOut.Patches.Lights
         //****************************************
         public static void DisableAllLights(Room room)
         {
-            if (room is null) return;
+            if (room is null || !ModSettings.FlickLights) return;
 
             foreach(Thing t in room.ContainedAndAdjacentThings)
             {

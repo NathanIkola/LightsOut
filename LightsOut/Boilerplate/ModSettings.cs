@@ -28,7 +28,7 @@ namespace LightsOut.Boilerplate
         // Control whether or not pawns shut off
         // the lights when they go to bed
         //****************************************
-        public static bool NightLights { get; set; } = false;
+        public static bool NightLights { get; set; } = true;
 
         public override string ModIdentifier
         {
@@ -48,11 +48,13 @@ namespace LightsOut.Boilerplate
                 "If you turn this off, this mod becomes \"LightsOn\". On by default.",
                 true);
 
+            // this is too buggy to ship yet
+            /*
             bool nightLights = Settings.GetHandle<bool>(
                 "NightLights",
                 "Keep the lights on when your pawns go to bed?",
                 "Enable this if your pawns are scared of the dark. Off by default.",
-                false);
+                false);*/
 
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
@@ -64,7 +66,7 @@ namespace LightsOut.Boilerplate
                 StandbyPowerDrawRate = 1f;
             else StandbyPowerDrawRate = standbyPower / 100f;
 
-            NightLights = nightLights;
+            //NightLights = nightLights;
 
             DoFlickLightsChange(lightsOut);
             FlickLights = lightsOut;

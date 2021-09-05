@@ -8,6 +8,7 @@ using RimWorld;
 using Verse;
 using HarmonyLib;
 using LightsOut.Utility;
+using LightsOut.ThingComps;
 
 namespace LightsOut.Patches.Power
 {
@@ -17,9 +18,14 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(Building __instance)
         {
+            if (!(__instance.TryGetComp<KeepOnComp>() is null)) 
+                return;
+
             KeyValuePair<CompPowerTrader, ThingComp>? light;
             if (ModResources.IsTable(__instance))
+            {
                 ModResources.DisableTable(__instance);
+            }
             else if ((light = ModResources.GetLightResources(__instance)) != null)
             {
                 if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null)
@@ -27,6 +33,7 @@ namespace LightsOut.Patches.Power
                     ModResources.DisableLight(light);
                 else
                     ModResources.EnableLight(light);
+                //__instance.AllComps.Add(new KeepOnComp(__instance));
             }
             // rechargeables should probably be enabled by default
             else if (ModResources.IsRechargeable(__instance))

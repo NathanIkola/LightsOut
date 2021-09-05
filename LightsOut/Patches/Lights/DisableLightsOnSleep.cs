@@ -5,6 +5,7 @@
 using HarmonyLib;
 using LightsOut.Utility;
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -12,11 +13,12 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {
+    /*
     [HarmonyPatch(typeof(JobDriver))]
     [HarmonyPatch("Notify_PatherArrived")]
     public class DisableLightsOnSleep
     {
-        public static void Postfix(JobDriver __instance)
+        public static void Prefix(JobDriver __instance)
         {
             Pawn pawn = __instance.GetActor();
 
@@ -28,7 +30,7 @@ namespace LightsOut.Patches.Lights
             
             // if any pawns are in the room but NOT laying down, exit
             foreach(Pawn otherPawn in pawnsInThisRoom)
-                if (otherPawn != pawn && otherPawn.Awake()) return;
+                if (otherPawn != pawn && !otherPawn.Sleeping()) return;
 
             // disable all of the lights in the room
             DetectPawnRoomChange.DisableAllLights(room);
@@ -38,6 +40,30 @@ namespace LightsOut.Patches.Lights
             {
                 DetectPawnRoomChange.EnableAllLights(room);
             });
+        }
+    }*/
+    
+    //[HarmonyPatch(typeof(JobDriver_LayDown))]
+    //[HarmonyPatch("LayDownToil")]
+    public class DisableLightsOnSleep
+    {
+        public static void Postfix(JobDriver_LayDown __instance, ref Toil __result)
+        {
+            if (ModSettings.NightLights) return;
+
+            if(__instance.CanSleep)
+            {
+                Room room = __instance.pawn.GetRoom();
+                __result.AddPreInitAction(() =>
+                {
+                    DetectPawnRoomChange.DisableAllLights(room);
+                });
+
+                __instance.AddFinishAction(() =>
+                {
+                    DetectPawnRoomChange.EnableAllLights(room);
+                });
+            }
         }
     }
 }

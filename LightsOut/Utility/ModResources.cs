@@ -12,6 +12,8 @@ using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.Androids;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using Verse.AI;
+using LightsOut.ThingComps;
 
 namespace LightsOut.Utility
 {
@@ -51,8 +53,8 @@ namespace LightsOut.Utility
             CompPowerTrader powerTrader = light?.Key;
             ThingComp glower = light?.Value;
 
-            SetConsumesPower(powerTrader, true);
             SetCanGlow(glower, true);
+            SetConsumesPower(powerTrader, true);
         }
 
         //****************************************
@@ -60,11 +62,16 @@ namespace LightsOut.Utility
         //****************************************
         public static void DisableLight(LightObject? light)
         {
+            if (!ModSettings.FlickLights) return;
+
             CompPowerTrader powerTrader = light?.Key;
             ThingComp glower = light?.Value;
 
-            SetConsumesPower(powerTrader, false);
+            // acknowledge the keep on setting
+            if (glower.parent.TryGetComp<KeepOnComp>()?.KeepOn == true) return;
+
             SetCanGlow(glower, false);
+            SetConsumesPower(powerTrader, false);
         }
 
         //****************************************
@@ -119,7 +126,9 @@ namespace LightsOut.Utility
             bool? previous = CanGlow(glower);
             BuildingStatus[glower.parent] = canGlow;
 
-            UpdateGlower(glower);
+            // only update if the state has changed
+            if(previous is null || canGlow is null || previous != canGlow)
+                UpdateGlower(glower);
 
             return previous;
         }
@@ -154,6 +163,14 @@ namespace LightsOut.Utility
                     return true;
 
             return false;
+        }
+
+        //****************************************
+        // Detect if a pawn is ACTUALLY asleep
+        //****************************************
+        public static bool Sleeping(this Pawn pawn)
+        {
+            return (pawn.CurJob.GetCachedDriver(pawn) is JobDriver_LayDownResting);
         }
 
         //****************************************
@@ -248,7 +265,7 @@ namespace LightsOut.Utility
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
                 {
-                    if (otherPawn.Awake()) return false;
+                    if (!otherPawn.Sleeping()) return false;
                 }
             return true;
         }
@@ -333,6 +350,7 @@ namespace LightsOut.Utility
             // ignore generators
             typeof(CompPowerPlant),
             // ignore grow lights
+            typeof(CompHeatPusher),
             typeof(CompSchedule)
         };
 
