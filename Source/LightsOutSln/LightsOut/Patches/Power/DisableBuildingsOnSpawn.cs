@@ -18,9 +18,6 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(Building __instance)
         {
-            if (!(__instance.TryGetComp<KeepOnComp>() is null)) 
-                return;
-
             KeyValuePair<CompPowerTrader, ThingComp>? light;
             if (ModResources.IsTable(__instance))
             {
@@ -33,7 +30,6 @@ namespace LightsOut.Patches.Power
                     ModResources.DisableLight(light);
                 else
                     ModResources.EnableLight(light);
-                //__instance.AllComps.Add(new KeepOnComp(__instance));
             }
             // rechargeables should probably be enabled by default
             else if (ModResources.IsRechargeable(__instance))
