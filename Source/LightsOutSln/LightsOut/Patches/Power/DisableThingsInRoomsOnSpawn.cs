@@ -9,6 +9,7 @@ using RimWorld;
 using Verse;
 using HarmonyLib;
 using LightsOut.Utility;
+using System;
 
 namespace LightsOut.Patches.Power
 {
@@ -24,19 +25,32 @@ namespace LightsOut.Patches.Power
             if (room is null) return;
 
             if (!ModResources.RoomIsEmpty(room, null)) return;
-
-            foreach(Thing thing in room.ContainedAndAdjacentThings)
+            
+            bool done = false;
+            uint attempts = 0;
+            while(!done)
             {
-                if(thing is Building building && ModResources.CanBeLight(building))
+                try
                 {
-                    CompPowerTrader powerTrader = building.PowerComp as CompPowerTrader;
-                    ThingComp glower = ModResources.GetGlower(building);
-                    if (powerTrader is null || glower is null) continue;
+                    foreach (Thing thing in room.ContainedAndAdjacentThings)
+                    {
+                        if (thing is Building building && ModResources.CanBeLight(building))
+                        {
+                            CompPowerTrader powerTrader = building.PowerComp as CompPowerTrader;
+                            ThingComp glower = ModResources.GetGlower(building);
+                            if (powerTrader is null || glower is null) continue;
 
-                    LightObject light = new LightObject(powerTrader, glower);
-                    ModResources.DisableLight(light);
+                            LightObject light = new LightObject(powerTrader, glower);
+                            ModResources.DisableLight(light);
+                        }
+                    }
+                    done = true;
                 }
+                // this is thrown if another thread changes the room.ContainedAndAdjacentThings collection
+                catch (InvalidOperationException) { ++attempts; }
             }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](FloodAndSetRooms): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }
 }

@@ -10,6 +10,7 @@ using Verse;
 using HarmonyLib;
 using LightsOut.Utility;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using System;
 
 namespace LightsOut.Patches.Lights
 {
@@ -49,17 +50,29 @@ namespace LightsOut.Patches.Lights
         {
             if (room is null || !ModSettings.FlickLights) return;
 
-            foreach(Thing t in room.ContainedAndAdjacentThings)
+            bool done = false;
+            uint attempts = 0;
+            while(!done)
             {
-                if (t is Building thing)
+                try
                 {
-                    LightObject? light = ModResources.GetLightResources(thing);
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
+                        {
+                            LightObject? light = ModResources.GetLightResources(thing);
 
-                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
 
-                    ModResources.DisableLight(light);
+                            ModResources.DisableLight(light);
+                        }
+                    }
+                    done = true;
                 }
+                catch(InvalidOperationException) { ++attempts; }
             }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
 
         //****************************************
@@ -69,17 +82,29 @@ namespace LightsOut.Patches.Lights
         {
             if (room is null) return;
 
-            foreach(Thing t in room.ContainedAndAdjacentThings)
+            bool done = false;
+            uint attempts = 0;
+            while (!done)
             {
-                if (t is Building thing)
+                try
                 {
-                    LightObject? light = ModResources.GetLightResources(thing);
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
+                        {
+                            LightObject? light = ModResources.GetLightResources(thing);
 
-                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
 
-                    ModResources.EnableLight(light);
+                            ModResources.EnableLight(light);
+                        }
+                    }
+                    done = true;
                 }
+                catch (InvalidOperationException) { ++attempts; }
             }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }
 }

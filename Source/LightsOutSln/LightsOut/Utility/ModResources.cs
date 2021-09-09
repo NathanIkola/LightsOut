@@ -239,15 +239,30 @@ namespace LightsOut.Utility
         {
             if (room is null || room.PsychologicallyOutdoors) return false;
 
-            foreach (Thing thing in room.ContainedAndAdjacentThings)
-                if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
-                    // what if two pawns were both leaving the room at the same time haha... unless?
-                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
-                    // what if a pawn is entering while another pawn is leaving haha... unless??
-                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+            bool done = false;
+            uint attempts = 0;
+            while(!done)
+            {
+                try
                 {
-                    return false;
+                    foreach (Thing thing in room.ContainedAndAdjacentThings)
+                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                            // what if two pawns were both leaving the room at the same time haha... unless?
+                            && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                            // what if a pawn is entering while another pawn is leaving haha... unless??
+                            && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                        {
+                            if (attempts > 0)
+                                Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
+                            return false;
+                        }
+                    done = true;
                 }
+                catch(InvalidOperationException) { ++attempts; }
+            }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
+            
             return true;
         }
 
@@ -260,13 +275,26 @@ namespace LightsOut.Utility
         {
             if (room is null || room.PsychologicallyOutdoors) return false;
 
-            foreach(Thing thing in room.ContainedAndAdjacentThings)
-                if(thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
-                    // what if two pawns were both leaving the room at the same time haha... unless?
-                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+            bool done = false;
+            uint attempts = 0;
+            while(!done)
+            {
+                try
                 {
-                    if (!otherPawn.Sleeping()) return false;
+                    foreach (Thing thing in room.ContainedAndAdjacentThings)
+                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                            // what if two pawns were both leaving the room at the same time haha... unless?
+                            && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                        {
+                            if (!otherPawn.Sleeping()) return false;
+                        }
+                    done = true;
                 }
+                catch(InvalidOperationException) { ++attempts; }
+            }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+            
             return true;
         }
 
@@ -279,9 +307,21 @@ namespace LightsOut.Utility
             if (room is null || room.PsychologicallyOutdoors) return pawns;
 
             // just get all of the humans in the room
-            foreach (Thing thing in room.ContainedAndAdjacentThings)
-                if (thing is Pawn pawn && pawn.RaceProps.Humanlike)
-                    pawns.Add(pawn);
+            bool done = false;
+            uint attempts = 0;
+            while(!done)
+            {
+                try
+                {
+                    foreach (Thing thing in room.ContainedAndAdjacentThings)
+                        if (thing is Pawn pawn && pawn.RaceProps.Humanlike)
+                            pawns.Add(pawn);
+                    done = true;
+                }
+                catch(InvalidOperationException) { ++attempts; }
+            }
+            if (attempts > 0)
+                Log.Warning($"[LightsOut](GetPawnsInRoom): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             return pawns;
         }

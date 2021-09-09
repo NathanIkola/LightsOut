@@ -75,7 +75,7 @@ namespace LightsOut.ThingComps
             else
             {
                 // if it isn't possible, STOP ASKING US
-                parent.AllComps.Remove(this);
+                //parent.AllComps.Remove(this);
             }
             yield break;
         }
