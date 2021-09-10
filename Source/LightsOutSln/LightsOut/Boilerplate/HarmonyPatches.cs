@@ -10,11 +10,11 @@ using Verse;
 namespace LightsOut.Boilerplate
 {
     [StaticConstructorOnStartup]
-    static class HarmonyPatches
+    public static class HarmonyPatches
     {
         static HarmonyPatches()
         {
-            Harmony.PatchAll();
+            //Harmony.PatchAll();
         }
 
         public static Harmony Harmony { get; } = new Harmony("LightsOut");

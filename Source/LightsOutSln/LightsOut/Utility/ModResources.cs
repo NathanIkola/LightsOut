@@ -391,7 +391,8 @@ namespace LightsOut.Utility
             typeof(CompPowerPlant),
             // ignore grow lights
             typeof(CompHeatPusher),
-            typeof(CompSchedule)
+            typeof(CompSchedule),
+            typeof(CompTempControl),
         };
 
         // list of ThingComp types that differentiate things that
