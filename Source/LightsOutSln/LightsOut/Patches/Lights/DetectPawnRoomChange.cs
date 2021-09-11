@@ -71,7 +71,7 @@ namespace LightsOut.Patches.Lights
                 }
                 catch(InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
 
@@ -103,7 +103,7 @@ namespace LightsOut.Patches.Lights
                 }
                 catch (InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }

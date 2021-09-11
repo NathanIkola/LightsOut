@@ -55,7 +55,7 @@ namespace LightsOut.Patches.Power
                 }
                 catch (InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }

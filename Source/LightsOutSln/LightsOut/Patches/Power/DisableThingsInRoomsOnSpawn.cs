@@ -49,7 +49,7 @@ namespace LightsOut.Patches.Power
                 // this is thrown if another thread changes the room.ContainedAndAdjacentThings collection
                 catch (InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](FloodAndSetRooms): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }

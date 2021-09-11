@@ -252,7 +252,7 @@ namespace LightsOut.Utility
                             // what if a pawn is entering while another pawn is leaving haha... unless??
                             && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
                         {
-                            if (attempts > 0)
+                            if (attempts > 1)
                                 Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
                             return false;
                         }
@@ -260,7 +260,7 @@ namespace LightsOut.Utility
                 }
                 catch(InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
             
             return true;
@@ -292,7 +292,7 @@ namespace LightsOut.Utility
                 }
                 catch(InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
             
             return true;
@@ -320,7 +320,7 @@ namespace LightsOut.Utility
                 }
                 catch(InvalidOperationException) { ++attempts; }
             }
-            if (attempts > 0)
+            if (attempts > 1)
                 Log.Warning($"[LightsOut](GetPawnsInRoom): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             return pawns;
