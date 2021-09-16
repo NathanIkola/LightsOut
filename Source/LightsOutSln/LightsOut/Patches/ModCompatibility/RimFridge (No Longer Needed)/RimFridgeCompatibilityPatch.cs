@@ -1,8 +1,10 @@
-﻿using System;
+﻿//************************************************
+// Conditionally patch the RimFridge to not turn
+// off as a light (which I think is no longer
+// actually necessary)
+//************************************************
+
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LightsOut.Patches.ModCompatibility.RimFridge
 {

@@ -219,8 +219,8 @@ namespace LightsOut.Utility
                     return false;
             }
 
-            return ((thing is Building_WorkTable 
-                || thing is Building_ResearchBench) && thing.PowerComp != null);
+            return ((thing is Building_WorkTable || thing is Building_ResearchBench) 
+                && thing.PowerComp != null);
         }
 
         //****************************************
@@ -400,7 +400,7 @@ namespace LightsOut.Utility
         // can be changed at runtime!
         public static List<Type> TableCompBlacklist { get; } = new List<Type>()
         {
-            
+
         };
 
         // whitelist for things that can be lights

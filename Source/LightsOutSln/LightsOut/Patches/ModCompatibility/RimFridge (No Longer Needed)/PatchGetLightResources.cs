@@ -1,10 +1,10 @@
-﻿using LightsOut.Utility;
-using RimWorld;
-using System;
+﻿//************************************************
+// Stop the code from capturing RimFridge as
+// a light
+//************************************************
+
+using LightsOut.Utility;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.RimFridge

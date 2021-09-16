@@ -81,6 +81,7 @@
     <Compile Include="Patches\ModCompatibility\Androids\PatchIsTable.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\Furnace\FurnaceIsNotAWorkTable.cs" />
     <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\PatchGetLightResources.cs" />
     <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\RimFridgeCompatibilityPatch.cs" />
