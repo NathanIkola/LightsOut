@@ -34,15 +34,6 @@ namespace LightsOut.Patches.Power
                 // return so that we don't remove the KeepOnComp from this
                 return;
             }
-            // rechargeables should probably be enabled by default
-            else if (ModResources.IsRechargeable(__instance))
-            {
-                CompRechargeable rechargeable = __instance.GetComp<CompRechargeable>();
-                if (rechargeable.Charged)
-                    ModResources.DisableTable(__instance);
-                else
-                    ModResources.EnableTable(__instance);
-            }
 
             bool removed = false;
             uint attempts = 0;
