@@ -17,13 +17,24 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
-            if (__instance.PowerOn && ModResources.CanConsumePower(__instance) == false)
+            if(__instance.PowerOn)
             {
-                if (ModResources.IsTable(__instance.parent as Building)
-                    || ModResources.IsCharged(__instance.parent))
-                    __result *= ModSettings.StandbyPowerDrawRate;
-                else
-                    __result = 0f;
+                bool? canConsumePower = ModResources.CanConsumePower(__instance);
+                if (canConsumePower is null) 
+                    return;
+                if (canConsumePower == false)
+                {
+                    if (ModResources.IsTable(__instance.parent as Building)
+                        || ModResources.IsCharged(__instance.parent))
+                        __result *= ModSettings.StandbyPowerDrawRate;
+                    else
+                        __result = 0f;
+                }
+                else if(canConsumePower == true)
+                {
+                    if (ModResources.IsTable(__instance.parent as Building))
+                        __result *= ModSettings.ActivePowerDrawRate;
+                }
             }
         }
     }

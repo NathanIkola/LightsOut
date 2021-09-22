@@ -2,8 +2,10 @@
 // Take care of the mod settings
 //************************************************
 
+using System;
 using System.Collections.Generic;
 using HugsLib;
+using HugsLib.Settings;
 using LightsOut.Utility;
 using RimWorld;
 using Verse;
@@ -23,6 +25,11 @@ namespace LightsOut.Boilerplate
         // they are flicked off
         //****************************************
         public static float StandbyPowerDrawRate { get; set; } = 0f;
+
+        //****************************************
+        // Power draw of things when in use
+        //****************************************
+        public static float ActivePowerDrawRate { get; set; } = 0f;
 
         //****************************************
         // Control whether or not pawns shut off
@@ -60,11 +67,18 @@ namespace LightsOut.Boilerplate
                 "LatentPowerDrawRate",
                 "Standby power draw (%)",
                 "Percentage of normal power to draw when in standby. 0% by default.",
-                0);
+                0,
+                Validators.IntRangeValidator(0, 100));
 
-            if (standbyPower > 100)
-                StandbyPowerDrawRate = 1f;
-            else StandbyPowerDrawRate = standbyPower / 100f;
+            uint activePower = Settings.GetHandle<uint>(
+                "ActivePowerDrawRate",
+                "Power draw when in use (%)",
+                "Percentage of normal power to draw when in use. 100% by default.",
+                100,
+                Validators.IntRangeValidator(100, int.MaxValue));
+
+            StandbyPowerDrawRate = standbyPower / 100f;
+            ActivePowerDrawRate = activePower / 100f;
 
             //NightLights = nightLights;
 
