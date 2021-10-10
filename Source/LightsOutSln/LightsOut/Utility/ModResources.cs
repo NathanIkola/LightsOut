@@ -170,7 +170,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool Sleeping(this Pawn pawn)
         {
-            return (pawn.CurJob.GetCachedDriver(pawn) is JobDriver_LayDownResting);
+            return (pawn?.CurJob?.GetCachedDriver(pawn) is JobDriver_LayDownResting);
         }
 
         //****************************************

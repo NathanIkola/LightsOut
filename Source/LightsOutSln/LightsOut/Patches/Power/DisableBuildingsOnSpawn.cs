@@ -26,8 +26,7 @@ namespace LightsOut.Patches.Power
             }
             else if ((light = ModResources.GetLightResources(__instance)) != null)
             {
-                if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null)
-                    || ModResources.AllPawnsSleeping(ModResources.GetRoom(__instance), null))
+                if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null))
                     ModResources.DisableLight(light);
                 else
                     ModResources.EnableLight(light);
