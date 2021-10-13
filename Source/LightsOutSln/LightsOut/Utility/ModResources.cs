@@ -68,7 +68,15 @@ namespace LightsOut.Utility
             ThingComp glower = light?.Value;
 
             // acknowledge the keep on setting
-            if (glower.parent.TryGetComp<KeepOnComp>()?.KeepOn == true) return;
+            KeepOnComp comp = null;
+            if (KeepOnComps.ContainsKey(glower.parent))
+                comp = KeepOnComps[glower.parent];
+            else
+            {
+                comp = glower.parent.TryGetComp<KeepOnComp>();
+                KeepOnComps.Add(glower.parent, comp);
+            }
+            if (comp?.KeepOn == true) return;
 
             SetCanGlow(glower, false);
             SetConsumesPower(powerTrader, false);
@@ -110,7 +118,15 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsCharged(ThingWithComps thing)
         {
-            CompRechargeable rechargeable = thing.GetComp<CompRechargeable>();
+            CompRechargeable rechargeable = null;
+            if (CompRechargeables.ContainsKey(thing))
+                rechargeable = CompRechargeables[thing];
+            else
+            {
+                rechargeable = thing.GetComp<CompRechargeable>();
+                CompRechargeables.Add(thing, rechargeable);
+            }
+
             if (rechargeable is null) return false;
             return rechargeable.Charged;
         }
@@ -151,17 +167,27 @@ namespace LightsOut.Utility
         //****************************************
         public static bool CanBeLight(Building thing)
         {
+            if (MemoizedCanBeLight.ContainsKey(thing))
+                return MemoizedCanBeLight[thing];
+
             // make sure that this is not on the blacklist
             foreach (ThingComp comp in thing.AllComps)
                 if (LightCompBlacklist.Any(badComp => badComp.IsAssignableFrom(comp.GetType())))
+                {
+                    MemoizedCanBeLight.Add(thing, false);
                     return false;
+                }
 
             // make sure it has one of the light kewords in its def name
             string defName = thing.def.defName.ToLower();
             foreach (string keyword in LightNamesMustInclude)
                 if (defName.Contains(keyword))
+                {
+                    MemoizedCanBeLight.Add(thing, true);
                     return true;
+                }
 
+            MemoizedCanBeLight.Add(thing, false);
             return false;
         }
 
@@ -179,9 +205,14 @@ namespace LightsOut.Utility
         //****************************************
         public static ThingComp GetGlower(Building thing)
         {
+            if (Glowers.ContainsKey(thing))
+                return Glowers[thing];
+
             try
             {
-                return thing.AllComps.First(x => CompGlowers.Contains(x.GetType()));
+                ThingComp glower = thing.AllComps.First(x => CompGlowers.Contains(x.GetType()));
+                Glowers.Add(thing, glower);
+                return glower;
             }
             catch (Exception) { return null; }
         }
@@ -192,17 +223,34 @@ namespace LightsOut.Utility
         //****************************************
         public static LightObject? GetLightResources(Building thing)
         {
-            if (thing is null || IsTable(thing)) return null;
+            if (LightObjects.ContainsKey(thing))
+                return LightObjects[thing];
+
+            if (thing is null || IsTable(thing))
+            {
+                LightObjects.Add(thing, null);
+                return null;
+            }
 
             // use our light whitelist to cull out anything that doesn't claim to be a light
-            if (!CanBeLight(thing)) return null;
+            if (!CanBeLight(thing))
+            {
+                LightObjects.Add(thing, null);
+                return null;
+            }
 
             CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
             ThingComp glower = GetGlower(thing);
 
             if (glower is null || powerTrader is null || powerTrader.powerOutputInt > 0)
+            {
+                LightObjects.Add(thing, null);
                 return null;
-            return new LightObject(powerTrader, glower);
+            }
+
+            LightObject? light = new LightObject(powerTrader, glower);
+            LightObjects.Add(thing, light);
+            return light;
         }
 
         //****************************************
@@ -211,16 +259,28 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsTable(Building thing)
         {
-            if (thing is null) return false;
+            if (MemoizedIsTable.ContainsKey(thing))
+                return MemoizedIsTable[thing];
+
+            if (thing is null)
+            {
+                MemoizedIsTable.Add(thing, false);
+                return false;
+            }
 
             foreach(ThingComp comp in thing.AllComps)
             {
                 if (TableCompBlacklist.Any(x => x.IsAssignableFrom(comp.GetType())))
+                {
+                    MemoizedIsTable.Add(thing, false);
                     return false;
+                }
             }
 
-            return ((thing is Building_WorkTable || thing is Building_ResearchBench) 
+            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench) 
                 && thing.PowerComp != null);
+            MemoizedIsTable.Add(thing, isTable);
+            return isTable;
         }
 
         //****************************************
@@ -228,7 +288,12 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsRechargeable(Building thing)
         {
-            return thing.GetComp<CompRechargeable>() != null;
+            if (CompRechargeables.ContainsKey(thing))
+                return CompRechargeables[thing] != null;
+
+            CompRechargeable rechargeable = thing.GetComp<CompRechargeable>();
+            CompRechargeables.Add(thing, rechargeable);
+            return rechargeable != null;
         }
 
         //****************************************
@@ -379,6 +444,14 @@ namespace LightsOut.Utility
 
         // keep track of all disabled Things
         public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
+
+        // finally, time to start memoizing things
+        private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();
+        private static Dictionary<Building, bool> MemoizedCanBeLight { get; } = new Dictionary<Building, bool>();
+        private static Dictionary<ThingWithComps, CompRechargeable> CompRechargeables { get; } = new Dictionary<ThingWithComps, CompRechargeable>();
+        private static Dictionary<ThingWithComps, KeepOnComp> KeepOnComps { get; } = new Dictionary<ThingWithComps, KeepOnComp>();
+        private static Dictionary<Building, ThingComp> Glowers { get; } = new Dictionary<Building, ThingComp>();
+        private static Dictionary<Building, LightObject?> LightObjects { get; } = new Dictionary<Building, LightObject?>();
 
         // list of ThingComp types that differentiates things that
         // look like lights from things that are actually lights
