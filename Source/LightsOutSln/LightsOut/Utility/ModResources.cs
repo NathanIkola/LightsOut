@@ -302,7 +302,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool RoomIsEmpty(Room room, Pawn pawn)
         {
-            if (room is null || room.PsychologicallyOutdoors) return false;
+            if (room is null || room.OutdoorsForWork || room.IsDoorway) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -364,34 +364,6 @@ namespace LightsOut.Utility
         }
 
         //****************************************
-        // Get the list of pawns in the room
-        //****************************************
-        public static List<Pawn> GetPawnsInRoom(Room room)
-        {
-            List<Pawn> pawns = new List<Pawn>();
-            if (room is null || room.PsychologicallyOutdoors) return pawns;
-
-            // just get all of the humans in the room
-            bool done = false;
-            uint attempts = 0;
-            while(!done)
-            {
-                try
-                {
-                    foreach (Thing thing in room.ContainedAndAdjacentThings)
-                        if (thing is Pawn pawn && pawn.RaceProps.Humanlike)
-                            pawns.Add(pawn);
-                    done = true;
-                }
-                catch(InvalidOperationException) { ++attempts; }
-            }
-            if (attempts > 1)
-                Log.Warning($"[LightsOut](GetPawnsInRoom): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
-
-            return pawns;
-        }
-
-        //****************************************
         // Check if a building is in a room
         //****************************************
         public static bool IsInRoom(Building building, Room room)
@@ -406,7 +378,7 @@ namespace LightsOut.Utility
         //****************************************
         public static Room GetRoom(Building building)
         {
-            if (!building.Map.regionAndRoomUpdater.Enabled)
+            if (!(bool)(building?.Map?.regionAndRoomUpdater?.Enabled))
                 return null;
             return building.GetRoom();
         }

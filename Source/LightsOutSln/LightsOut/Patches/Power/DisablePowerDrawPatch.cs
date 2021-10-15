@@ -20,7 +20,7 @@ namespace LightsOut.Patches.Power
             if(__instance.PowerOn)
             {
                 bool? canConsumePower = ModResources.CanConsumePower(__instance);
-                if (canConsumePower is null) 
+                if (canConsumePower is null)
                     return;
                 if (canConsumePower == false)
                 {
