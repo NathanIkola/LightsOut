@@ -10,6 +10,7 @@ using HarmonyLib;
 using LightsOut.Utility;
 using LightsOut.ThingComps;
 using System;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {
@@ -26,7 +27,9 @@ namespace LightsOut.Patches.Power
             }
             else if ((light = ModResources.GetLightResources(__instance)) != null)
             {
-                if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null))
+                Room room = ModResources.GetRoom(__instance);
+                if (ModResources.RoomIsEmpty(ModResources.GetRoom(__instance), null) 
+                    || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(room, null)))
                     ModResources.DisableLight(light);
                 else
                     ModResources.EnableLight(light);

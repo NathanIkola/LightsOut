@@ -28,83 +28,21 @@ namespace LightsOut.Patches.Lights
         public static void Postfix(Pawn __instance, Room __state)
         {
             // animals PLEASE don't turn on my lights
-            if (!__instance.RaceProps.Humanlike) return;
+            if (!__instance.RaceProps.Humanlike || !ModSettings.FlickLights) return;
 
             Room newRoom = __instance.GetRoom();
 
-            // if there was a room change and the room is larger than 1 cell
+            // if there was a room change
             if(newRoom != __state)
             {
-                if(ModResources.RoomIsEmpty(__state, __instance))
-                    DisableAllLights(__state);
+                if(ModResources.RoomIsEmpty(__state, __instance)
+                    || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(__state, __instance)))
+                    ModResources.DisableAllLights(__state);
 
-                if(ModResources.RoomIsEmpty(newRoom, __instance))
-                    EnableAllLights(newRoom);
+                if(ModResources.RoomIsEmpty(newRoom, __instance)
+                    || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(newRoom, __instance)))
+                    ModResources.EnableAllLights(newRoom);
             }
-        }
-
-        //****************************************
-        // Disable all lights in a room
-        //****************************************
-        public static void DisableAllLights(Room room)
-        {
-            if (room is null || !ModSettings.FlickLights) return;
-
-            bool done = false;
-            uint attempts = 0;
-            while(!done)
-            {
-                try
-                {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
-
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            ModResources.DisableLight(light);
-                        }
-                    }
-                    done = true;
-                }
-                catch(InvalidOperationException) { ++attempts; }
-            }
-            if (attempts > 1)
-                Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
-        }
-
-        //****************************************
-        // Enable all lights in a room
-        //****************************************
-        public static void EnableAllLights(Room room)
-        {
-            if (room is null) return;
-
-            bool done = false;
-            uint attempts = 0;
-            while (!done)
-            {
-                try
-                {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
-
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            ModResources.EnableLight(light);
-                        }
-                    }
-                    done = true;
-                }
-                catch (InvalidOperationException) { ++attempts; }
-            }
-            if (attempts > 1)
-                Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }
 }

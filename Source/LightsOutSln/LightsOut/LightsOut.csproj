@@ -74,9 +74,9 @@
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\Legacy\GenericLightPatch.cs" />
     <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
+    <Compile Include="Patches\Lights\DisableLightGlowOnSleep.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowPatch.cs" />
-    <Compile Include="Patches\Lights\DisableLightsOnSleep.cs" />
-    <Compile Include="Patches\Lights\EnableLightsOnWake.cs" />
+    <Compile Include="Patches\Lights\FixBuildingsOnPawnSpawn.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\PatchInspectMessage.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\PatchIsTable.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />

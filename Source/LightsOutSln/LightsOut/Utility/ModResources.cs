@@ -83,6 +83,70 @@ namespace LightsOut.Utility
         }
 
         //****************************************
+        // Disable all lights in a room
+        //****************************************
+        public static void DisableAllLights(Room room)
+        {
+            if (room is null || !ModSettings.FlickLights) return;
+
+            bool done = false;
+            uint attempts = 0;
+            while (!done)
+            {
+                try
+                {
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
+                        {
+                            LightObject? light = ModResources.GetLightResources(thing);
+
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                            ModResources.DisableLight(light);
+                        }
+                    }
+                    done = true;
+                }
+                catch (InvalidOperationException) { ++attempts; }
+            }
+            if (attempts > 1)
+                Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+        }
+
+        //****************************************
+        // Enable all lights in a room
+        //****************************************
+        public static void EnableAllLights(Room room)
+        {
+            if (room is null) return;
+
+            bool done = false;
+            uint attempts = 0;
+            while (!done)
+            {
+                try
+                {
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
+                        {
+                            LightObject? light = ModResources.GetLightResources(thing);
+
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                            ModResources.EnableLight(light);
+                        }
+                    }
+                    done = true;
+                }
+                catch (InvalidOperationException) { ++attempts; }
+            }
+            if (attempts > 1)
+                Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+        }
+
+        //****************************************
         // Add a CompPower to the power-consumable
         // dictionary
         //
@@ -338,7 +402,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool AllPawnsSleeping(Room room, Pawn pawn)
         {
-            if (room is null || room.PsychologicallyOutdoors) return false;
+            if (room is null || room.OutdoorsForWork || room.IsDoorway) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -347,11 +411,10 @@ namespace LightsOut.Utility
                 try
                 {
                     foreach (Thing thing in room.ContainedAndAdjacentThings)
-                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
-                            // what if two pawns were both leaving the room at the same time haha... unless?
-                            && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn)
                         {
-                            if (!otherPawn.Sleeping()) return false;
+                            if (otherPawn.jobs?.curDriver?.asleep == false)
+                                return false;
                         }
                     done = true;
                 }
