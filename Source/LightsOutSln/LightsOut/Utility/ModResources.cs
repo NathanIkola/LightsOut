@@ -50,6 +50,12 @@ namespace LightsOut.Utility
         //****************************************
         public static void EnableLight(LightObject? light)
         {
+            // imagine if I'd spent like half an hour
+            // troubleshooting why I was getting a nullex
+            // here after already solving it in the disable
+            // function haha... :(
+            if (light is null) return;
+
             CompPowerTrader powerTrader = light?.Key;
             ThingComp glower = light?.Value;
 
@@ -62,10 +68,13 @@ namespace LightsOut.Utility
         //****************************************
         public static void DisableLight(LightObject? light)
         {
-            if (!ModSettings.FlickLights) return;
+            if (light is null || !ModSettings.FlickLights) return;
 
             CompPowerTrader powerTrader = light?.Key;
             ThingComp glower = light?.Value;
+
+            if (GetRoom((glower.parent as Building)).OutdoorsForWork)
+                return;
 
             // acknowledge the keep on setting
             KeepOnComp comp = null;
@@ -87,7 +96,7 @@ namespace LightsOut.Utility
         //****************************************
         public static void DisableAllLights(Room room)
         {
-            if (room is null || !ModSettings.FlickLights) return;
+            if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights) return;
 
             bool done = false;
             uint attempts = 0;
@@ -95,17 +104,10 @@ namespace LightsOut.Utility
             {
                 try
                 {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
+                    foreach(var kv in LightObjects)
+                        if (!(kv.Value is null) && GetRoom(kv.Key) == room)
+                            DisableLight(kv.Value.Value);
 
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            ModResources.DisableLight(light);
-                        }
-                    }
                     done = true;
                 }
                 catch (InvalidOperationException) { ++attempts; }
@@ -127,17 +129,10 @@ namespace LightsOut.Utility
             {
                 try
                 {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
+                    foreach (var kv in LightObjects)
+                        if (!(kv.Value is null) && GetRoom(kv.Key) == room)
+                            EnableLight(kv.Value);
 
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            ModResources.EnableLight(light);
-                        }
-                    }
                     done = true;
                 }
                 catch (InvalidOperationException) { ++attempts; }

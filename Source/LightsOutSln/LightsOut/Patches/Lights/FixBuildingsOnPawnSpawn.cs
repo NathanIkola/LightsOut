@@ -45,11 +45,18 @@ namespace LightsOut.Patches.Lights
             {
                 toil.AddPreTickAction(() => 
                 {
-                    if(!(bool)ModResources.CanConsumePower(building.PowerComp))
-                        ModResources.EnableTable(building); 
+                    if (!(building.PowerComp is null)
+                        && ModResources.CanConsumePower(building.PowerComp) == false)
+                    {
+                        ModResources.EnableTable(building);
+                    }
                 });
 
-                toil.AddFinishAction(() => { ModResources.DisableTable(building); });
+                toil.AddFinishAction(() => 
+                { 
+                    if (!(building.PowerComp is null))
+                        ModResources.DisableTable(building); 
+                });
             }
             else if(driver.asleep && !ModSettings.NightLights)
             {
@@ -72,7 +79,11 @@ namespace LightsOut.Patches.Lights
                         {
                             ModResources.DisableAllLights(room);
                         }
-                        toil.AddFinishAction(() => { ModResources.EnableAllLights(room); });
+
+                        // this call to pawn.GetRoom() is strictly required in case the
+                        // regions get dirtied before they wake up so that it gets the
+                        // room they actually wake up in not the one they went to sleep in
+                        toil.AddFinishAction(() => { ModResources.EnableAllLights(pawn.GetRoom()); });
                     }
                 });
             }

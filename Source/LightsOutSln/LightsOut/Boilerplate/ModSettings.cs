@@ -117,7 +117,7 @@ namespace LightsOut.Boilerplate
                     ThingComp glower = light?.Value;
                     Room room = ModResources.GetRoom(glower?.parent as Building);
 
-                    if (room == null) return;
+                    if (room == null || room.OutdoorsForWork) return;
 
                     if (ModResources.RoomIsEmpty(room, null))
                         ModResources.DisableLight(light);

@@ -42,7 +42,7 @@ namespace LightsOut.ThingComps
                     Room room = ModResources.GetRoom(thing);
 
                     ModResources.DisableLight(obj);
-                    if (value || !ModResources.RoomIsEmpty(room, null))
+                    if (value || room.OutdoorsForWork || !ModResources.RoomIsEmpty(room, null))
                         ModResources.EnableLight(obj);
                 }
                 catch(Exception e)
