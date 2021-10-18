@@ -40,7 +40,7 @@ namespace LightsOut.Patches.Lights
 
             // turn the power on the bench back on if the pawn is using it
             if (driver is JobDriver_DoBill doBill
-                && doBill.BillGiver is Building building
+                && doBill.job.GetTarget(TargetIndex.A).Thing is Building building
                 && ModResources.IsTable(building))
             {
                 toil.AddPreTickAction(() => 
