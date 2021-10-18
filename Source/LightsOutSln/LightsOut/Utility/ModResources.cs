@@ -104,13 +104,39 @@ namespace LightsOut.Utility
             {
                 try
                 {
-                    foreach(var kv in LightObjects)
+                    foreach (var kv in LightObjects)
                         if (!(kv.Value is null) && GetRoom(kv.Key) == room)
-                            DisableLight(kv.Value.Value);
+                        {
+                            try
+                            {
+                                DisableLight(kv.Value);
+                            }
+                            catch(InvalidOperationException e)
+                            {
+                                // still take into consideration the attempts counter for modified collections
+                                if (e.Message.ToLower().Contains("modified"))
+                                    throw;
+                            }
+                            catch(Exception e)
+                            {
+                                Log.Warning($"(LightsOut)[DisableAllLights]: {e.Message}");
+                            }
+                        }
 
                     done = true;
                 }
-                catch (InvalidOperationException) { ++attempts; }
+                catch (InvalidOperationException e) 
+                {
+                    if (e.Message.ToLower().Contains("modified"))
+                    {
+                        if (++attempts > 100) done = true;
+                    }
+                    else
+                    {
+                        Log.Warning($"[LightsOut](DisableAllLights): InvalidOperationException: {e.Message}");
+                        done = true;
+                    }
+                }
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
@@ -131,11 +157,37 @@ namespace LightsOut.Utility
                 {
                     foreach (var kv in LightObjects)
                         if (!(kv.Value is null) && GetRoom(kv.Key) == room)
-                            EnableLight(kv.Value);
+                        {
+                            try
+                            {
+                                EnableLight(kv.Value);
+                            }
+                            catch (InvalidOperationException e)
+                            {
+                                // still take into consideration the attempts counter for modified collections
+                                if (e.Message.ToLower().Contains("modified"))
+                                    throw;
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Warning($"(LightsOut)[EnableAllLights]: {e.Message}");
+                            }
+                        }
 
                     done = true;
                 }
-                catch (InvalidOperationException) { ++attempts; }
+                catch (InvalidOperationException e) 
+                {
+                    if (e.Message.ToLower().Contains("modified"))
+                    {
+                        if (++attempts > 100) done = true;
+                    }
+                    else
+                    {
+                        Log.Warning($"[LightsOut](EnableAllLights): InvalidOperationException: {e.Message}");
+                        done = true;
+                    }
+                }
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
@@ -382,7 +434,18 @@ namespace LightsOut.Utility
                         }
                     done = true;
                 }
-                catch(InvalidOperationException) { ++attempts; }
+                catch(InvalidOperationException e)
+                {
+                    if (e.Message.ToLower().Contains("modified"))
+                    {
+                        if (++attempts > 100) done = true;
+                    }
+                    else
+                    {
+                        Log.Warning($"[LightsOut](RoomIsEmpty): InvalidOperationException: {e.Message}");
+                        done = true;
+                    }
+                }
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
@@ -413,7 +476,18 @@ namespace LightsOut.Utility
                         }
                     done = true;
                 }
-                catch(InvalidOperationException) { ++attempts; }
+                catch (InvalidOperationException e)
+                {
+                    if (e.Message.ToLower().Contains("modified"))
+                    {
+                        if (++attempts > 100) done = true;
+                    }
+                    else
+                    {
+                        Log.Warning($"[LightsOut](AllPawnsSleeping): InvalidOperationException: {e.Message}");
+                        done = true;
+                    }
+                }
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");

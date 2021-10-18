@@ -42,7 +42,18 @@ namespace LightsOut.Patches.Power
                     __instance.AllComps.RemoveAll(x => x is KeepOnComp);
                     removed = true;
                 }
-                catch (InvalidOperationException) { ++attempts; }
+                catch (InvalidOperationException e)
+                {
+                    if (e.Message.ToLower().Contains("modified"))
+                    {
+                        if (++attempts > 100) removed = true;
+                    }
+                    else
+                    {
+                        Log.Warning($"[LightsOut](SpawnSetup): InvalidOperationException: {e.Message}");
+                        removed = true;
+                    }
+                }
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
