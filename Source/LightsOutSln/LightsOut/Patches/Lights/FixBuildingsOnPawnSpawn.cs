@@ -74,8 +74,7 @@ namespace LightsOut.Patches.Lights
                         if (room.OutdoorsForWork)
                             return;
 
-                        if (ModResources.RoomIsEmpty(room, pawn)
-                        || (ModResources.AllPawnsSleeping(room, pawn)))
+                        if (ModResources.ShouldTurnOffAllLights(room, pawn))
                         {
                             ModResources.DisableAllLights(room);
                         }

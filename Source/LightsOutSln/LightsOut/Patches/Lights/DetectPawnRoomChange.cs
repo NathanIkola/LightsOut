@@ -35,12 +35,10 @@ namespace LightsOut.Patches.Lights
             // if there was a room change
             if(newRoom != __state)
             {
-                if(ModResources.RoomIsEmpty(__state, __instance)
-                    || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(__state, __instance)))
+                if (ModResources.ShouldTurnOffAllLights(__state, __instance))
                     ModResources.DisableAllLights(__state);
 
-                if(ModResources.RoomIsEmpty(newRoom, __instance)
-                    || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(newRoom, __instance)))
+                if (ModResources.ShouldTurnOffAllLights(newRoom, __instance))
                     ModResources.EnableAllLights(newRoom);
             }
         }

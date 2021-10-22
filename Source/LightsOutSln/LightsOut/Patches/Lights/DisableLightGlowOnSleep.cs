@@ -27,7 +27,7 @@ namespace LightsOut.Patches.Lights
                     Pawn pawn = __result.actor;
                     Room room = pawn?.GetRoom();
 
-                    if (!(room is null) && ModResources.AllPawnsSleeping(room, pawn) 
+                    if (!(room is null) && ModResources.ShouldTurnOffAllLights(room, pawn)
                         && pawn.jobs.curDriver.asleep)
                         ModResources.DisableAllLights(room);
 

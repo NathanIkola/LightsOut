@@ -100,21 +100,12 @@ namespace LightsOut.Utility
 
             bool done = false;
             uint attempts = 0;
+            Thing[] things = null;
             while (!done)
             {
                 try
                 {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
-
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            DisableLight(light);
-                        }
-                    }
+                    things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
                 catch (InvalidOperationException e) 
@@ -132,6 +123,19 @@ namespace LightsOut.Utility
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+
+            // now actually go through the collection
+            foreach (Thing t in things)
+            {
+                if (t is Building thing)
+                {
+                    LightObject? light = ModResources.GetLightResources(thing);
+
+                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                    DisableLight(light);
+                }
+            }
         }
 
         //****************************************
@@ -143,21 +147,12 @@ namespace LightsOut.Utility
 
             bool done = false;
             uint attempts = 0;
+            Thing[] things = null;
             while (!done)
             {
                 try
                 {
-                    foreach (Thing t in room.ContainedAndAdjacentThings)
-                    {
-                        if (t is Building thing)
-                        {
-                            LightObject? light = ModResources.GetLightResources(thing);
-
-                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
-
-                            EnableLight(light);
-                        }
-                    }
+                    things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
                 catch (InvalidOperationException e) 
@@ -175,6 +170,19 @@ namespace LightsOut.Utility
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+
+            // now actually go through the collection
+            foreach (Thing t in things)
+            {
+                if (t is Building thing)
+                {
+                    LightObject? light = ModResources.GetLightResources(thing);
+
+                    if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                    EnableLight(light);
+                }
+            }
         }
 
         //****************************************
@@ -401,21 +409,12 @@ namespace LightsOut.Utility
 
             bool done = false;
             uint attempts = 0;
+            Thing[] things = null;
             while(!done)
             {
                 try
                 {
-                    foreach (Thing thing in room.ContainedAndAdjacentThings)
-                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
-                            // what if two pawns were both leaving the room at the same time haha... unless?
-                            && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
-                            // what if a pawn is entering while another pawn is leaving haha... unless??
-                            && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
-                        {
-                            if (attempts > 1)
-                                Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
-                            return false;
-                        }
+                    things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
                 catch(InvalidOperationException e)
@@ -433,7 +432,18 @@ namespace LightsOut.Utility
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
-            
+
+            // now actually go through the collection
+            foreach (Thing thing in things)
+                if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                    // what if two pawns were both leaving the room at the same time haha... unless?
+                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    // what if a pawn is entering while another pawn is leaving haha... unless??
+                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                {
+                    return false;
+                }
+
             return true;
         }
 
@@ -448,16 +458,12 @@ namespace LightsOut.Utility
 
             bool done = false;
             uint attempts = 0;
+            Thing[] things = null;
             while(!done)
             {
                 try
                 {
-                    foreach (Thing thing in room.ContainedAndAdjacentThings)
-                        if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn)
-                        {
-                            if (otherPawn.jobs?.curDriver?.asleep == false)
-                                return false;
-                        }
+                    things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
                 catch (InvalidOperationException e)
@@ -475,8 +481,41 @@ namespace LightsOut.Utility
             }
             if (attempts > 1)
                 Log.Warning($"[LightsOut](AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
-            
+
+            // now actually go through the collection
+            foreach (Thing thing in things)
+                if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                    // what if two pawns were both leaving the room at the same time haha... unless?
+                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    // what if a pawn is entering while another pawn is leaving haha... unless??
+                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                {
+                    if (otherPawn.jobs?.curDriver?.asleep != true)
+                        return false;
+                }
+
             return true;
+        }
+
+        //****************************************
+        // We only need to check a room once
+        // but we currently do it twice, which
+        // is really sad, so stop it
+        //****************************************
+        public static bool ShouldTurnOffAllLights(Room room, Pawn pawn)
+        {
+            // never turn off the lights if we aren't supposed to
+            if (!ModSettings.FlickLights) 
+                return false;
+
+            // if pawns are allowed to turn off the lights at night
+            // then only check if all pawns are asleep (which intrinsically
+            // also checks for pawn presence)
+            if (!ModSettings.NightLights)
+                return AllPawnsSleeping(room, pawn);
+
+            // otherwise only check for pawns in the room
+            return RoomIsEmpty(room, pawn);
         }
 
         //****************************************

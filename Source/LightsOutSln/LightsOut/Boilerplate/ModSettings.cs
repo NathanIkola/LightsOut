@@ -119,7 +119,7 @@ namespace LightsOut.Boilerplate
 
                     if (room == null || room.OutdoorsForWork) return;
 
-                    if (ModResources.RoomIsEmpty(room, null))
+                    if (ModResources.ShouldTurnOffAllLights(room, null))
                         ModResources.DisableLight(light);
                     else
                         ModResources.EnableLight(light);
