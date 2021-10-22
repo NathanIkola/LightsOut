@@ -20,7 +20,7 @@ namespace LightsOut.Patches.Lights
     {
         public static void Postfix(Toil __result, bool canSleep)
         {
-            if (!ModSettings.NightLights && canSleep)
+            if (!ModSettings.NightLights && ModSettings.FlickLights && canSleep)
             {
                 __result.AddPreInitAction(() =>
                 {
@@ -33,10 +33,6 @@ namespace LightsOut.Patches.Lights
 
                     __result.AddFinishAction(() => 
                     {
-                        // imagine forgetting this and making it so that
-                        // the lights never went out the second time a pawn
-                        // went to sleep haha... :(
-                        Sleepers.Remove(pawn);
                         ModResources.EnableAllLights(pawn.GetRoom()); 
                     });
                 });
@@ -46,38 +42,28 @@ namespace LightsOut.Patches.Lights
                 __result.tickAction = () =>
                 {
                     Pawn pawn = __result.actor;
-                    bool? asleep = null;
-                    if (!Sleepers.ContainsKey(pawn))
-                    {
-                        asleep = pawn.jobs.curDriver?.asleep;
-                    }
+                    // cache the sleeping status of the pawn
+                    bool? asleep = pawn.jobs.curDriver?.asleep;
                     
                     tickAction();
 
-                    if(!Sleepers.ContainsKey(pawn))
+                    // check if their status has changed
+                    if(asleep != pawn.jobs.curDriver?.asleep)
                     {
-                        Sleepers.Add(pawn, true);
-                        
-                        if (asleep != pawn.jobs.curDriver?.asleep)
+                        // if the pawn was previously asleep
+                        if(asleep == true)
                         {
-                            // if the pawn is waking up
-                            if (asleep == true)
-                            {
-                                // turn the lights back on
-                                ModResources.EnableAllLights(pawn.GetRoom());
-                            }
-                            // otherwise the pawn is going to bed
-                            else if (asleep == false)
-                            {
-                                // turn the lights off
-                                ModResources.DisableAllLights(pawn.GetRoom());
-                            }
+                            // turn the lights back on
+                            ModResources.EnableAllLights(pawn.GetRoom());
+                        }
+                        else if (asleep == false)
+                        {
+                            // turn the lights off
+                            ModResources.DisableAllLights(pawn.GetRoom());
                         }
                     }
                 };
             }
         }
-
-        private static Dictionary<Pawn, bool> Sleepers = new Dictionary<Pawn, bool>();
     }
 }

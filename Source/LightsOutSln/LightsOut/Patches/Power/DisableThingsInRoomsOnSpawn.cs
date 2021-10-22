@@ -23,10 +23,14 @@ namespace LightsOut.Patches.Power
             Room room = __1;
             if (room is null) return;
 
-            if (ModResources.RoomIsEmpty(room, null)
-                || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(room, null)))
+            if (ModSettings.FlickLights && (ModResources.RoomIsEmpty(room, null)
+                || (!ModSettings.NightLights && ModResources.AllPawnsSleeping(room, null))))
             {
                 ModResources.DisableAllLights(room);
+            }
+            else
+            {
+                ModResources.EnableAllLights(room);
             }
         }
     }

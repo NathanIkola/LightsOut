@@ -104,25 +104,17 @@ namespace LightsOut.Utility
             {
                 try
                 {
-                    foreach (var kv in LightObjects)
-                        if (!(kv.Value is null) && GetRoom(kv.Key) == room)
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
                         {
-                            try
-                            {
-                                DisableLight(kv.Value);
-                            }
-                            catch(InvalidOperationException e)
-                            {
-                                // still take into consideration the attempts counter for modified collections
-                                if (e.Message.ToLower().Contains("modified"))
-                                    throw;
-                            }
-                            catch(Exception e)
-                            {
-                                Log.Warning($"(LightsOut)[DisableAllLights]: {e.Message}");
-                            }
-                        }
+                            LightObject? light = ModResources.GetLightResources(thing);
 
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                            DisableLight(light);
+                        }
+                    }
                     done = true;
                 }
                 catch (InvalidOperationException e) 
@@ -155,25 +147,17 @@ namespace LightsOut.Utility
             {
                 try
                 {
-                    foreach (var kv in LightObjects)
-                        if (!(kv.Value is null) && GetRoom(kv.Key) == room)
+                    foreach (Thing t in room.ContainedAndAdjacentThings)
+                    {
+                        if (t is Building thing)
                         {
-                            try
-                            {
-                                EnableLight(kv.Value);
-                            }
-                            catch (InvalidOperationException e)
-                            {
-                                // still take into consideration the attempts counter for modified collections
-                                if (e.Message.ToLower().Contains("modified"))
-                                    throw;
-                            }
-                            catch (Exception e)
-                            {
-                                Log.Warning($"(LightsOut)[EnableAllLights]: {e.Message}");
-                            }
-                        }
+                            LightObject? light = ModResources.GetLightResources(thing);
 
+                            if (light is null || !ModResources.IsInRoom(thing, room)) continue;
+
+                            EnableLight(light);
+                        }
+                    }
                     done = true;
                 }
                 catch (InvalidOperationException e) 
