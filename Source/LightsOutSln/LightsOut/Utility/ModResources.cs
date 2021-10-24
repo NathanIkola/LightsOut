@@ -96,7 +96,8 @@ namespace LightsOut.Utility
         //****************************************
         public static void DisableAllLights(Room room)
         {
-            if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights) return;
+            if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
+                || !room.Map.regionAndRoomUpdater.Enabled) return;
 
             bool done = false;
             uint attempts = 0;
@@ -143,7 +144,7 @@ namespace LightsOut.Utility
         //****************************************
         public static void EnableAllLights(Room room)
         {
-            if (room is null) return;
+            if (room is null || !room.Map.regionAndRoomUpdater.Enabled) return;
 
             bool done = false;
             uint attempts = 0;
@@ -405,7 +406,8 @@ namespace LightsOut.Utility
         //****************************************
         public static bool RoomIsEmpty(Room room, Pawn pawn)
         {
-            if (room is null || room.OutdoorsForWork || room.IsDoorway) return false;
+            if (room is null || room.OutdoorsForWork || room.IsDoorway
+                || !room.Map.regionAndRoomUpdater.Enabled) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -454,7 +456,8 @@ namespace LightsOut.Utility
         //****************************************
         public static bool AllPawnsSleeping(Room room, Pawn pawn)
         {
-            if (room is null || room.OutdoorsForWork || room.IsDoorway) return false;
+            if (room is null || room.OutdoorsForWork || room.IsDoorway
+                || !room.Map.regionAndRoomUpdater.Enabled) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -523,7 +526,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsInRoom(Building building, Room room)
         {
-            if (building is null || room is null) return false;
+            if (building is null || room is null || !room.Map.regionAndRoomUpdater.Enabled) return false;
             return GetRoom(building)?.ID == room.ID;
         }
 
