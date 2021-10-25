@@ -97,7 +97,7 @@ namespace LightsOut.Utility
         public static void DisableAllLights(Room room)
         {
             if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
-                || !(bool)room.Map?.regionAndRoomUpdater?.Enabled) return;
+                || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
 
             bool done = false;
             uint attempts = 0;
@@ -144,7 +144,7 @@ namespace LightsOut.Utility
         //****************************************
         public static void EnableAllLights(Room room)
         {
-            if (room is null || !(bool)room.Map?.regionAndRoomUpdater?.Enabled) return;
+            if (room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
 
             bool done = false;
             uint attempts = 0;
@@ -407,7 +407,7 @@ namespace LightsOut.Utility
         public static bool RoomIsEmpty(Room room, Pawn pawn)
         {
             if (room is null || room.OutdoorsForWork || room.IsDoorway
-                || !(bool)room.Map?.regionAndRoomUpdater?.Enabled) return false;
+                || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -457,7 +457,7 @@ namespace LightsOut.Utility
         public static bool AllPawnsSleeping(Room room, Pawn pawn)
         {
             if (room is null || room.OutdoorsForWork || room.IsDoorway
-                || !(bool)room.Map?.regionAndRoomUpdater?.Enabled) return false;
+                || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
 
             bool done = false;
             uint attempts = 0;
@@ -526,7 +526,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsInRoom(Building building, Room room)
         {
-            if (building is null || room is null || !(bool)room.Map?.regionAndRoomUpdater?.Enabled) return false;
+            if (building is null || room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
             return GetRoom(building)?.ID == room.ID;
         }
 
@@ -536,7 +536,7 @@ namespace LightsOut.Utility
         //****************************************
         public static Room GetRoom(Building building)
         {
-            if (!(bool)(building?.Map?.regionAndRoomUpdater?.Enabled))
+            if (!(building.Map?.regionAndRoomUpdater?.Enabled ?? false))
                 return null;
             return building.GetRoom();
         }
