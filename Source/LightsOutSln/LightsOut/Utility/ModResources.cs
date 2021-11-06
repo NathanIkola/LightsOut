@@ -211,7 +211,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? CanConsumePower(CompPower powerComp)
         {
-            if (powerComp == null) return false;
+            if (powerComp == null) return null;
             if (IsCharged(powerComp.parent)) return false;
             return BuildingStatus.TryGetValue(powerComp.parent, null);
         }
@@ -274,13 +274,11 @@ namespace LightsOut.Utility
             if (MemoizedCanBeLight.ContainsKey(thing))
                 return MemoizedCanBeLight[thing];
 
-            // make sure that this is not on the blacklist
-            foreach (ThingComp comp in thing.AllComps)
-                if (LightCompBlacklist.Any(badComp => badComp.IsAssignableFrom(comp.GetType())))
-                {
-                    MemoizedCanBeLight.Add(thing, false);
-                    return false;
-                }
+            if(HasBlacklistedLightComp(thing))
+            {
+                MemoizedCanBeLight.Add(thing, false);
+                return false;
+            }
 
             // make sure it has one of the light kewords in its def name
             string defName = thing.def.defName.ToLower();
@@ -372,13 +370,10 @@ namespace LightsOut.Utility
                 return false;
             }
 
-            foreach(ThingComp comp in thing.AllComps)
+            if(HasBlacklistedTableComp(thing))
             {
-                if (TableCompBlacklist.Any(x => x.IsAssignableFrom(comp.GetType())))
-                {
-                    MemoizedIsTable.Add(thing, false);
-                    return false;
-                }
+                MemoizedIsTable.Add(thing, false);
+                return false;
             }
 
             bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench) 
@@ -598,13 +593,41 @@ namespace LightsOut.Utility
             typeof(CompTempControl),
         };
 
-        // list of ThingComp types that differentiate things that
-        // look like benches from things that are actually benches
-        // can be changed at runtime!
-        public static List<Type> TableCompBlacklist { get; } = new List<Type>()
+        //****************************************
+        // Detects blacklisted comps on lights
+        //
+        // Used to be a list, but that has much
+        // worse performance implications
+        //****************************************
+        public static bool HasBlacklistedLightComp(ThingWithComps thing)
+        {
+            // if all of the blacklisted comps are null
+            if (
+                thing.TryGetComp<CompPowerPlant>() is null
+                && thing.TryGetComp<CompHeatPusher>() is null
+                && thing.TryGetComp<CompSchedule>() is null
+                && thing.TryGetComp<CompTempControl>() is null
+                && thing.TryGetComp<CompShipLandingBeacon>() is null
+                )
+            { 
+                // then this did not have a blacklisted comp
+                return false;
+            }
+            // otherwise it did have a blacklisted comp
+            else return true;
+        }
+
+        //****************************************
+        // Detects blacklisted comps on tables
+        //
+        // Used to be a list, but that has much
+        // worse performance implications
+        //****************************************
+        public static bool HasBlacklistedTableComp(ThingWithComps thing)
         {
 
-        };
+            return false;
+        }
 
         // whitelist for things that can be lights
         public static List<string> LightNamesMustInclude { get; } = new List<string>()

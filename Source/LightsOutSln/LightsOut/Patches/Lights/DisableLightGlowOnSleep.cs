@@ -33,7 +33,7 @@ namespace LightsOut.Patches.Lights
 
                     __result.AddFinishAction(() => 
                     {
-                        ModResources.EnableAllLights(pawn.GetRoom()); 
+                        ModResources.EnableAllLights(pawn.GetRoom());
                     });
                 });
 

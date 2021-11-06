@@ -28,12 +28,21 @@ namespace LightsOut.Patches.ModCompatibility
             return new List<PatchInfo>() { disablePowerPatch };
         }
 
+        private static MethodInfo m_pawnCrafterStatus = null;
+
+        private static Dictionary<CompPowerTrader, bool> MemoizedIsPrinter { get; } = new Dictionary<CompPowerTrader, bool>();
+
         private static bool PostfixPatch(CompPowerTrader __0)
         {
-            if (__0.parent.GetType().Name == "Building_AndroidPrinter")
+            if (!MemoizedIsPrinter.ContainsKey(__0))
+                MemoizedIsPrinter.Add(__0, __0.parent.GetType().Name == "Building_AndroidPrinter");
+
+            if (MemoizedIsPrinter[__0])
             {
-                MethodInfo pawnCrafterStatus = GetMethod(__0.parent.GetType(), "PawnCrafterStatus");
-                int status = (int)pawnCrafterStatus.Invoke(__0.parent, null);
+                if(m_pawnCrafterStatus is null)
+                    m_pawnCrafterStatus = GetMethod(__0.parent.GetType(), "PawnCrafterStatus");
+
+                int status = (int)m_pawnCrafterStatus.Invoke(__0.parent, null);
                 
                 // status of 2 is "Printing"
                 if (status == 2) return false;

@@ -20,15 +20,16 @@ namespace LightsOut.Patches.Power
             if(__instance.PowerOn)
             {
                 bool? canConsumePower = ModResources.CanConsumePower(__instance);
+
                 if (canConsumePower is null)
                     return;
+
                 if (canConsumePower == false)
                 {
-                    if (ModResources.IsTable(__instance.parent as Building)
-                        || ModResources.IsCharged(__instance.parent))
-                        __result *= ModSettings.StandbyPowerDrawRate;
-                    else
+                    if (ModResources.CanBeLight(__instance.parent as Building))
                         __result = 0f;
+                    else
+                        __result *= ModSettings.StandbyPowerDrawRate;
                 }
                 else if(canConsumePower == true)
                 {
