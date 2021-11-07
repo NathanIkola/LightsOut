@@ -195,6 +195,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? SetConsumesPower(CompPower powerComp, bool? consumesPower)
         {
+            /*
             CompProperties_Power props = powerComp.Props;
             CompPowerTrader trader = powerComp as CompPowerTrader;
             float power = -props.basePowerConsumption;
@@ -211,7 +212,7 @@ namespace LightsOut.Utility
                 else
                     power *= ModSettings.StandbyPowerDrawRate;
             }
-            trader.powerOutputInt = power;
+            trader.powerOutputInt = power;*/
 
             bool? previous = CanConsumePower(powerComp);
             BuildingStatus[powerComp.parent] = consumesPower;
