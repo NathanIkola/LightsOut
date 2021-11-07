@@ -26,7 +26,6 @@ namespace LightsOut.Patches.Power
             }
             else if ((light = ModResources.GetLightResources(__instance)) != null)
             {
-                Room room = ModResources.GetRoom(__instance);
                 ModResources.EnableLight(light);
 
                 // return so that we don't remove the KeepOnComp from this

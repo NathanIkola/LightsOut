@@ -4,6 +4,7 @@
 //************************************************
 
 using LightsOut.Patches.Power;
+using LightsOut.Utility;
 using RimWorld;
 using System.Collections.Generic;
 using System.Reflection;
@@ -14,15 +15,15 @@ namespace LightsOut.Patches.ModCompatibility
 {
     public class PatchDisablePowerDraw : IModCompatibilityPatch
     {
-        protected override string TypeNameToPatch { get => "DisablePowerDrawPatch"; }
+        protected override string TypeNameToPatch { get => "CompPowerTrader"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {
             PatchInfo disablePowerPatch = new PatchInfo();
-            disablePowerPatch.method = typeof(DisablePowerDrawPatch).GetMethod("Postfix", BindingFlags);
-            disablePowerPatch.patch = this.GetType().GetMethod("PostfixPatch", BindingFlags);
+            disablePowerPatch.method = typeof(DisableBasePowerDrawOnSet).GetMethod("Postfix", BindingFlags);
+            disablePowerPatch.patch = this.GetType().GetMethod("PrefixPatch", BindingFlags);
             disablePowerPatch.patchType = PatchType.Prefix;
 
             return new List<PatchInfo>() { disablePowerPatch };
@@ -32,21 +33,21 @@ namespace LightsOut.Patches.ModCompatibility
 
         private static Dictionary<CompPowerTrader, bool> MemoizedIsPrinter { get; } = new Dictionary<CompPowerTrader, bool>();
 
-        private static bool PostfixPatch(CompPowerTrader __0)
+        private static bool PrefixPatch(CompPowerTrader __0)
         {
             if (!MemoizedIsPrinter.ContainsKey(__0))
                 MemoizedIsPrinter.Add(__0, __0.parent.GetType().Name == "Building_AndroidPrinter");
 
-            if (MemoizedIsPrinter[__0])
-            {
-                if(m_pawnCrafterStatus is null)
-                    m_pawnCrafterStatus = GetMethod(__0.parent.GetType(), "PawnCrafterStatus");
+            if (!MemoizedIsPrinter[__0]) return true;
 
-                int status = (int)m_pawnCrafterStatus.Invoke(__0.parent, null);
-                
-                // status of 2 is "Printing"
-                if (status == 2) return false;
-            }
+            if (m_pawnCrafterStatus is null)
+                m_pawnCrafterStatus = GetMethod(__0.parent.GetType(), "PawnCrafterStatus");
+
+            int status = (int)m_pawnCrafterStatus.Invoke(__0.parent, null);
+
+            // status of 2 is "Printing"
+            if (status == 2)
+                return false;
             return true;
         }
     }

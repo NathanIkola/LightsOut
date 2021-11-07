@@ -109,7 +109,7 @@ namespace LightsOut.Utility
                     things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
-                catch (InvalidOperationException e) 
+                catch (InvalidOperationException e)
                 {
                     if (e.Message.ToLower().Contains("modified"))
                     {
@@ -156,7 +156,7 @@ namespace LightsOut.Utility
                     things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
-                catch (InvalidOperationException e) 
+                catch (InvalidOperationException e)
                 {
                     if (e.Message.ToLower().Contains("modified"))
                     {
@@ -195,6 +195,24 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? SetConsumesPower(CompPower powerComp, bool? consumesPower)
         {
+            CompProperties_Power props = powerComp.Props;
+            CompPowerTrader trader = powerComp as CompPowerTrader;
+            float power = -props.basePowerConsumption;
+
+            // do actual trickery with the power drawing
+            if (consumesPower == true && !CanBeLight(trader.parent as Building))
+            {
+                power *= ModSettings.ActivePowerDrawRate;
+            }
+            else if (consumesPower == false)
+            {
+                if (CanBeLight(powerComp.parent as Building))
+                    power = 0f;
+                else
+                    power *= ModSettings.StandbyPowerDrawRate;
+            }
+            trader.powerOutputInt = power;
+
             bool? previous = CanConsumePower(powerComp);
             BuildingStatus[powerComp.parent] = consumesPower;
 
@@ -247,7 +265,7 @@ namespace LightsOut.Utility
             BuildingStatus[glower.parent] = canGlow;
 
             // only update if the state has changed
-            if(previous is null || canGlow is null || previous != canGlow)
+            if (previous is null || canGlow is null || previous != canGlow)
                 UpdateGlower(glower);
 
             return previous;
@@ -274,7 +292,7 @@ namespace LightsOut.Utility
             if (MemoizedCanBeLight.ContainsKey(thing))
                 return MemoizedCanBeLight[thing];
 
-            if(HasBlacklistedLightComp(thing))
+            if (HasBlacklistedLightComp(thing))
             {
                 MemoizedCanBeLight.Add(thing, false);
                 return false;
@@ -370,13 +388,13 @@ namespace LightsOut.Utility
                 return false;
             }
 
-            if(HasBlacklistedTableComp(thing))
+            if (HasBlacklistedTableComp(thing))
             {
                 MemoizedIsTable.Add(thing, false);
                 return false;
             }
 
-            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench) 
+            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench)
                 && thing.PowerComp != null);
             MemoizedIsTable.Add(thing, isTable);
             return isTable;
@@ -407,14 +425,14 @@ namespace LightsOut.Utility
             bool done = false;
             uint attempts = 0;
             Thing[] things = null;
-            while(!done)
+            while (!done)
             {
                 try
                 {
                     things = room.ContainedAndAdjacentThings.ToArray();
                     done = true;
                 }
-                catch(InvalidOperationException e)
+                catch (InvalidOperationException e)
                 {
                     if (e.Message.ToLower().Contains("modified"))
                     {
@@ -457,7 +475,7 @@ namespace LightsOut.Utility
             bool done = false;
             uint attempts = 0;
             Thing[] things = null;
-            while(!done)
+            while (!done)
             {
                 try
                 {
@@ -503,7 +521,7 @@ namespace LightsOut.Utility
         public static bool ShouldTurnOffAllLights(Room room, Pawn pawn)
         {
             // never turn off the lights if we aren't supposed to
-            if (!ModSettings.FlickLights) 
+            if (!ModSettings.FlickLights)
                 return false;
 
             // if pawns are allowed to turn off the lights at night
@@ -554,7 +572,7 @@ namespace LightsOut.Utility
         {
             ThingWithComps thing = glower.parent;
             MethodInfo updateLit = glower.GetType().GetMethod("UpdateLit", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-            if(updateLit != null)
+            if (updateLit != null)
             {
                 try
                 {
@@ -569,6 +587,8 @@ namespace LightsOut.Utility
 
         // keep track of all disabled Things
         public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
+        // questionable attempt at caching power drawing to speed up ticks
+        public static Dictionary<ThingComp, float> PowerDrawCache { get; } = new Dictionary<ThingComp, float>();
 
         // finally, time to start memoizing things
         private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();

@@ -11,12 +11,13 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {
-    [HarmonyPatch(typeof(CompPowerTrader))]
-    [HarmonyPatch("PowerOutput", MethodType.Getter)]
+    //[HarmonyPatch(typeof(CompPowerTrader))]
+    //[HarmonyPatch("PowerOutput", MethodType.Getter)]
     public class DisablePowerDrawPatch
     {
         public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
+            /*
             if(__instance.PowerOn)
             {
                 bool? canConsumePower = ModResources.CanConsumePower(__instance);
@@ -37,6 +38,7 @@ namespace LightsOut.Patches.Power
                         __result *= ModSettings.ActivePowerDrawRate;
                 }
             }
+            */
         }
     }
 }
