@@ -31,9 +31,9 @@ namespace LightsOut.Patches.Power
                 else if (canConsumePower == false)
                 {
                     if(ModResources.CanBeLight(__instance.parent as Building))
-                        __instance.powerOutputInt *= ModSettings.StandbyPowerDrawRate;
-                    else
                         __instance.powerOutputInt = 0f;
+                    else
+                        __instance.powerOutputInt *= ModSettings.StandbyPowerDrawRate;
                 }
             }
         }
