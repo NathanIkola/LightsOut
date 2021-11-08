@@ -72,7 +72,7 @@
     <Compile Include="Boilerplate\ModSettings.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
-    <None Include="Patches\Legacy\GenericLightPatch.cs" />
+    <Compile Include="Patches\Legacy\GenericLightPatch.cs" />
     <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowOnSleep.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowPatch.cs" />
