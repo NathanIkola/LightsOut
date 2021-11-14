@@ -198,6 +198,10 @@ namespace LightsOut.Utility
             bool? previous = CanConsumePower(powerComp);
             BuildingStatus[powerComp.parent] = consumesPower;
 
+            // make sure to reset the power status
+            if (!(consumesPower is null) && powerComp is CompPowerTrader trader)
+                trader.PowerOutput = -trader.Props.basePowerConsumption;
+
             return previous;
         }
 

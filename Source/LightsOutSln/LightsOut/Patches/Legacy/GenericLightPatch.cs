@@ -20,9 +20,9 @@ namespace LightsOut.Patches
     {
         static GenericLightPatch()
         {
-            Assembly rimworld = Assembly.GetAssembly(typeof(Pawn));
+            Assembly rimworld  = Assembly.GetAssembly(typeof(Pawn));
             Assembly lightsOut = Assembly.GetExecutingAssembly();
-            Assembly mscorlib = Assembly.GetAssembly(typeof(int));
+            Assembly mscorlib  = Assembly.GetAssembly(typeof(int));
 
             // get all types that contain "glower" and come from outside rimworld
             List<Type> types = new List<Type>();
