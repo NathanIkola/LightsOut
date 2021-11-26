@@ -14,7 +14,7 @@ namespace LightsOut.Patches.ModCompatibility.VEWallLights
         protected override string TypeNameToPatch { get => "WallLight"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Wall Lights Mod"; }
+        protected override string PatchName { get => "VE Wall Lights Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {
