@@ -17,7 +17,7 @@ namespace LightsOut.Patches.Power
         {
             if (___compPowerCached is null) return;
             
-            float powerDraw = ___compPowerCached.Props.basePowerConsumption;
+            float powerDraw = -___compPowerCached.Props.basePowerConsumption;
             if(powerDraw > 0)
             {
                 if (__instance.Charged) 
