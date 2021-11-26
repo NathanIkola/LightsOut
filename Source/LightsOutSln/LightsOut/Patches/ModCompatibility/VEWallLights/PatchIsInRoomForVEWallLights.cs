@@ -8,7 +8,7 @@ using LightsOut.Utility;
 using System.Collections.Generic;
 using Verse;
 
-namespace LightsOut.Patches.ModCompatibility.WallLights
+namespace LightsOut.Patches.ModCompatibility.VEWallLights
 {
     public class PatchIsInRoomForVEWallLights : IModCompatibilityPatch
     {

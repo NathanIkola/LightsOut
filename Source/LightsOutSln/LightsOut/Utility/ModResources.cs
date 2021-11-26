@@ -14,6 +14,7 @@ using LightsOut.Patches.ModCompatibility.Androids;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
 using Verse.AI;
 using LightsOut.ThingComps;
+using LightsOut.Patches.ModCompatibility.VEWallLights;
 
 namespace LightsOut.Utility
 {
