@@ -44,13 +44,17 @@ namespace LightsOut.Patches
                     if (type.IsSubclassOf(typeof(ThingComp)))
                     {
                         var original = type.GetProperty("shouldBeLitNow", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                        if (original != null)
+                        if (original is null)
+                            original = type.GetProperty("ShouldBeLitNow", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
+                        if (!(original is null))
                         {
                             // this looks to be a CompGlower-like thing, so keep track of that
                             ModResources.CompGlowers.Add(type);
                             var postfix = typeof(DisableLightGlowPatch).GetMethod("Postfix", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
                             if (postfix != null)
                             {
+                                Log.Message($"[LightsOut] patching \"{type.Namespace} - {type.Name}\" to count as a glower");
                                 HarmonyPatches.Harmony.Patch(original.GetMethod, null, new HarmonyMethod(postfix));
                             }
                         }

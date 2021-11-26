@@ -57,9 +57,9 @@ namespace LightsOut.Patches.ModCompatibility
 
             if (typesToPatch.Count == 0) return;
             else if (typesToPatch.Count == 1)
-                Log.Message($"LightsOut patching 1 mod for \"{TypeNameToPatch}\"");
+                Log.Message($"[LightsOut] patching 1 mod for \"{PatchName} Patch - {TypeNameToPatch}\"");
             else
-                Log.Message($"LightsOut patching {typesToPatch.Count} mods for \"{TypeNameToPatch}\"");
+                Log.Message($"[LightsOut] patching {typesToPatch.Count} mods for \"{PatchName} Patch - {TypeNameToPatch}\"");
 
             foreach (Type type in typesToPatch)
             {
@@ -74,7 +74,7 @@ namespace LightsOut.Patches.ModCompatibility
                             HarmonyPatches.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
                             break;
                         default:
-                            Log.Warning($"Invalid PatchType encountered in patch for type {TypeNameToPatch}: {patch.patchType}");
+                            Log.Warning($"Invalid PatchType encountered in patch \"{PatchName}\" for type {TypeNameToPatch}: {patch.patchType}");
                             break;
                     }
                 }
@@ -159,5 +159,7 @@ namespace LightsOut.Patches.ModCompatibility
         protected abstract bool TargetsMultipleTypes { get; }
         // specify that you know the exact name you want to patch
         protected abstract bool TypeNameIsExact { get; }
+        // give info about the actual patch we are doing
+        protected abstract string PatchName { get; }
     }
 }

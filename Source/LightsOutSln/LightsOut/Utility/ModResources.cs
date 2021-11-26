@@ -567,7 +567,10 @@ namespace LightsOut.Utility
                     else if (updateLit.GetParameters().Length == 0)
                         updateLit.Invoke(glower, null);
                 }
-                catch (Exception) { }
+                catch (Exception e) 
+                {
+                    Log.Warning($"[LightsOut] Having trouble updating a generic glower: {glower.GetType()}: {e}");
+                }
             }
         }
 
@@ -647,7 +650,8 @@ namespace LightsOut.Utility
         public static List<IModCompatibilityPatch> CompatibilityPatches { get; } = new List<IModCompatibilityPatch>()
         {
             new WallLightCompatibilityPatch(),
-            new AndroidsCompatibilityPatch()
+            new AndroidsCompatibilityPatch(),
+            new VEWallLightCompatibilityPatch()
         };
 
         public static List<Type> CompGlowers { get; } = new List<Type>() { typeof(CompGlower) };

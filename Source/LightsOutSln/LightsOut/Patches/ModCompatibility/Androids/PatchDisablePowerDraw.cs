@@ -18,6 +18,7 @@ namespace LightsOut.Patches.ModCompatibility
         protected override string TypeNameToPatch { get => "CompPowerTrader"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
+        protected override string PatchName { get => "Androids Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {

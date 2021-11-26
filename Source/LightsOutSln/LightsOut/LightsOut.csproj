@@ -86,6 +86,8 @@
     <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\PatchGetLightResources.cs" />
     <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\RimFridgeCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\VEWallLights\PatchIsInRoomForVEWallLights.cs" />
+    <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />

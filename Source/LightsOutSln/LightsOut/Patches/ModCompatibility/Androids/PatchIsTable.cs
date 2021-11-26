@@ -15,6 +15,7 @@ namespace LightsOut.Patches.ModCompatibility.Androids
         protected override string TypeNameToPatch { get => "ModResources"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
+        protected override string PatchName { get => "Androids Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {

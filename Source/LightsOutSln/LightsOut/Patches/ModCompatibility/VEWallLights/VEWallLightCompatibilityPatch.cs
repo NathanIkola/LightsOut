@@ -5,21 +5,20 @@
 //************************************************
 
 using System.Collections.Generic;
+using Verse;
 
-namespace LightsOut.Patches.ModCompatibility.Androids
+namespace LightsOut.Patches.ModCompatibility.WallLights
 {
-    public class AndroidsCompatibilityPatch : IModCompatibilityPatch
+    public class VEWallLightCompatibilityPatch : IModCompatibilityPatch
     {
-        protected override string TypeNameToPatch { get => "Building_AndroidPrinter"; }
+        protected override string TypeNameToPatch { get => "WallLight"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Androids Mod"; }
+        protected override string PatchName { get => "Wall Lights Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {
-            new PatchDisablePowerDraw();
-            new PatchIsTable();
-            new PatchInspectMessage();
+            new PatchIsInRoomForVEWallLights();
             return base.GetPatches();
         }
     }

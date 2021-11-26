@@ -19,6 +19,7 @@ namespace LightsOut.Patches.ModCompatibility.Androids
         protected override string TypeNameToPatch => "AddStandbyInspectMessagePatch";
         protected override bool TargetsMultipleTypes => false;
         protected override bool TypeNameIsExact => true;
+        protected override string PatchName { get => "Androids Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {

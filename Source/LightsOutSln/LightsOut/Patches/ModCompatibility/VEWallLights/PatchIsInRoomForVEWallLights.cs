@@ -10,18 +10,18 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
-    public class PatchIsInRoomForWallLights : IModCompatibilityPatch
+    public class PatchIsInRoomForVEWallLights : IModCompatibilityPatch
     {
         protected override string TypeNameToPatch { get => "ModResources"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Wall Lights Mod"; }
+        protected override string PatchName { get => "VE Wall Lights Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {
             PatchInfo getRoomPatch = new PatchInfo();
             getRoomPatch.method = typeof(ModResources).GetMethod("GetRoom", BindingFlags);
-            getRoomPatch.patch = typeof(PatchIsInRoomForWallLights).GetMethod("GetRoomPatch", BindingFlags);
+            getRoomPatch.patch = GetType().GetMethod("GetRoomPatch", BindingFlags);
             getRoomPatch.patchType = PatchType.Postfix;
 
             return new List<PatchInfo>() { getRoomPatch };
@@ -30,7 +30,7 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
         private static void GetRoomPatch(Building __0, ref Room __result)
         {
             if (__0 is null) return;
-            if (__0.GetType().Name == "WallLight")
+            if (__0.def.defName.StartsWith("VFEA_WallLamp"))
                 __result = RegionAndRoomQuery.RoomAt(__0.Position + __0.Rotation.FacingCell, __0.Map);
         }
     }

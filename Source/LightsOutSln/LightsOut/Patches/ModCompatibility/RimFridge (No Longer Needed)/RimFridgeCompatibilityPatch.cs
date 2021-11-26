@@ -13,6 +13,7 @@ namespace LightsOut.Patches.ModCompatibility.RimFridge
         protected override string TypeNameToPatch { get => "RimFridge_Building"; }
         protected override bool TargetsMultipleTypes { get => false; }
         protected override bool TypeNameIsExact { get => true; }
+        protected override string PatchName { get => "RimFridge Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {

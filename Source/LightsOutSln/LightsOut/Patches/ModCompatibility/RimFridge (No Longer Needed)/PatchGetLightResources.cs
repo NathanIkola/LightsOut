@@ -14,6 +14,7 @@ namespace LightsOut.Patches.ModCompatibility.RimFridge
         protected override string TypeNameToPatch => "ModResources";
         protected override bool TargetsMultipleTypes => false;
         protected override bool TypeNameIsExact => true;
+        protected override string PatchName { get => "RimFridge Mod"; }
 
         protected override IEnumerable<PatchInfo> GetPatches()
         {
