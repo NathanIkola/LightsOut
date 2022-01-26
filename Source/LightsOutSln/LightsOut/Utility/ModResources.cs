@@ -28,6 +28,7 @@ namespace LightsOut.Utility
         //****************************************
         public static void DisableTable(Building table)
         {
+            if (table is null) return;
             SetConsumesPower(table.PowerComp as CompPowerTrader, false);
             ThingComp glower = GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
@@ -40,6 +41,7 @@ namespace LightsOut.Utility
         //****************************************
         public static void EnableTable(Building table)
         {
+            if (table is null) return;
             SetConsumesPower(table.PowerComp as CompPowerTrader, true);
             ThingComp glower = GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
@@ -196,6 +198,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? SetConsumesPower(CompPower powerComp, bool? consumesPower)
         {
+            if (powerComp == null) return null;
             bool? previous = CanConsumePower(powerComp);
             BuildingStatus[powerComp.parent] = consumesPower;
 
@@ -227,6 +230,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsCharged(ThingWithComps thing)
         {
+            if (thing is null) return false;
             CompRechargeable rechargeable = null;
             if (CompRechargeables.ContainsKey(thing))
                 rechargeable = CompRechargeables[thing];
@@ -248,6 +252,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? SetCanGlow(ThingComp glower, bool? canGlow)
         {
+            if (glower is null) return false;
             bool? previous = CanGlow(glower);
             BuildingStatus[glower.parent] = canGlow;
 
@@ -267,6 +272,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool? CanGlow(ThingComp glower)
         {
+            if (glower is null) return false;
             return BuildingStatus.TryGetValue(glower.parent, null);
         }
 
@@ -276,6 +282,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool CanBeLight(Building thing)
         {
+            if (thing is null) return false;
             if (MemoizedCanBeLight.ContainsKey(thing))
                 return MemoizedCanBeLight[thing];
 
@@ -312,6 +319,7 @@ namespace LightsOut.Utility
         //****************************************
         public static ThingComp GetGlower(Building thing)
         {
+            if (thing is null) return null;
             if (Glowers.ContainsKey(thing))
                 return Glowers[thing];
 
@@ -382,7 +390,7 @@ namespace LightsOut.Utility
             }
 
             bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench)
-                && thing.PowerComp != null);
+                && thing.PowerComp as CompPowerTrader != null);
             MemoizedIsTable.Add(thing, isTable);
             return isTable;
         }
@@ -392,6 +400,7 @@ namespace LightsOut.Utility
         //****************************************
         public static bool IsRechargeable(Building thing)
         {
+            if (thing is null) return false;
             if (CompRechargeables.ContainsKey(thing))
                 return CompRechargeables[thing] != null;
 
@@ -536,6 +545,7 @@ namespace LightsOut.Utility
         //****************************************
         public static Room GetRoom(Building building)
         {
+            if (building is null) return null;
             if (!(building.Map?.regionAndRoomUpdater?.Enabled ?? false))
                 return null;
             return building.GetRoom();
@@ -546,6 +556,7 @@ namespace LightsOut.Utility
         //****************************************
         private static void UpdateGlower(ThingComp glower)
         {
+            if (glower is null) return;
             if (glower is CompGlower compGlower)
                 compGlower.UpdateLit(compGlower.parent.Map);
             else
@@ -557,6 +568,7 @@ namespace LightsOut.Utility
         //****************************************
         private static void TryUpdateGenericGlower(ThingComp glower)
         {
+            if (glower is null) return;
             ThingWithComps thing = glower.parent;
             MethodInfo updateLit = glower.GetType().GetMethod("UpdateLit", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             if (updateLit != null)
