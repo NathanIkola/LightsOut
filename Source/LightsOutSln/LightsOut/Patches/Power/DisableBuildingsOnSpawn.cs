@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 using HarmonyLib;
-using LightsOut.Utility;
+using LightsOut.Common;
 using LightsOut.ThingComps;
 using System;
 

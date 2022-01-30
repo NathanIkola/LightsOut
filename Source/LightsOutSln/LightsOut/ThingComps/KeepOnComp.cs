@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using LightsOut.Gizmos;
-using LightsOut.Utility;
+using LightsOut.Common;
 using RimWorld;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;

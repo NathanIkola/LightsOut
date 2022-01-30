@@ -2,11 +2,11 @@
 // Take care of the mod settings
 //************************************************
 
-using System;
 using System.Collections.Generic;
+using HarmonyLib;
 using HugsLib;
 using HugsLib.Settings;
-using LightsOut.Utility;
+using LightsOut.Common;
 using RimWorld;
 using Verse;
 
@@ -14,6 +14,17 @@ namespace LightsOut.Boilerplate
 {
     public class ModSettings : ModBase
     {
+        //****************************************
+        // The Harmony instance of this mod
+        //****************************************
+        public static Harmony Harmony => Instance?.HarmonyInst;
+
+        //****************************************
+        // The one instantiated instance of
+        // this mod (used to get Harmony)
+        //****************************************
+        private static ModSettings Instance { get; set; }
+
         //****************************************
         // Control whether or not pawns
         // flick the lights on and off

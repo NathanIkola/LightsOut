@@ -8,7 +8,7 @@
 //************************************************
 
 using HarmonyLib;
-using LightsOut.Utility;
+using LightsOut.Common;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Furnace

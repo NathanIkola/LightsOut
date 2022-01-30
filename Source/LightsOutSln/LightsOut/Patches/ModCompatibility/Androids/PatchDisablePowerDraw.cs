@@ -4,7 +4,7 @@
 //************************************************
 
 using LightsOut.Patches.Power;
-using LightsOut.Utility;
+using LightsOut.Common;
 using RimWorld;
 using System.Collections.Generic;
 using System.Reflection;

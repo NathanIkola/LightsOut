@@ -12,11 +12,10 @@ using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.Androids;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
-using Verse.AI;
 using LightsOut.ThingComps;
 using LightsOut.Patches.ModCompatibility.VEWallLights;
 
-namespace LightsOut.Utility
+namespace LightsOut.Common
 {
     using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
 
@@ -306,14 +305,6 @@ namespace LightsOut.Utility
         }
 
         //****************************************
-        // Detect if a pawn is ACTUALLY asleep
-        //****************************************
-        public static bool Sleeping(this Pawn pawn)
-        {
-            return (pawn?.CurJob?.GetCachedDriver(pawn) is JobDriver_LayDownResting);
-        }
-
-        //****************************************
         // Get the glower (if present) from a
         // building, or return null if not present
         //****************************************
@@ -589,8 +580,6 @@ namespace LightsOut.Utility
 
         // keep track of all disabled Things
         public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
-        // questionable attempt at caching power drawing to speed up ticks
-        public static Dictionary<ThingComp, float> PowerDrawCache { get; } = new Dictionary<ThingComp, float>();
 
         // finally, time to start memoizing things
         private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();
@@ -599,21 +588,6 @@ namespace LightsOut.Utility
         private static Dictionary<ThingWithComps, KeepOnComp> KeepOnComps { get; } = new Dictionary<ThingWithComps, KeepOnComp>();
         private static Dictionary<Building, ThingComp> Glowers { get; } = new Dictionary<Building, ThingComp>();
         private static Dictionary<Building, LightObject?> LightObjects { get; } = new Dictionary<Building, LightObject?>();
-
-        // list of ThingComp types that differentiates things that
-        // look like lights from things that are actually lights
-        // can be changed at runtime!
-        public static List<Type> LightCompBlacklist { get; } = new List<Type>()
-        { 
-            // ignore the landing beacon
-            typeof(CompShipLandingBeacon),
-            // ignore generators
-            typeof(CompPowerPlant),
-            // ignore grow lights
-            typeof(CompHeatPusher),
-            typeof(CompSchedule),
-            typeof(CompTempControl),
-        };
 
         //****************************************
         // Detects blacklisted comps on lights

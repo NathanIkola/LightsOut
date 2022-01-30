@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using Verse;
 using HarmonyLib;
 using System.Reflection;
-using LightsOut.Boilerplate;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -68,10 +68,10 @@ namespace LightsOut.Patches.ModCompatibility
                     switch (patch.patchType)
                     {
                         case PatchType.Prefix:
-                            HarmonyPatches.Harmony.Patch(GetMethod(type, patch), new HarmonyMethod(patch.patch));
+                            ModSettings.Harmony.Patch(GetMethod(type, patch), new HarmonyMethod(patch.patch));
                             break;
                         case PatchType.Postfix:
-                            HarmonyPatches.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
+                            ModSettings.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
                             break;
                         default:
                             Log.Warning($"Invalid PatchType encountered in patch \"{PatchName}\" for type {TypeNameToPatch}: {patch.patchType}");

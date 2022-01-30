@@ -5,7 +5,7 @@
 //************************************************
 
 using RimWorld;
-using LightsOut.Utility;
+using LightsOut.Common;
 using HarmonyLib;
 
 namespace LightsOut.Patches.Power

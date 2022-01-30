@@ -11,7 +11,9 @@ using HarmonyLib;
 using System.Reflection;
 using LightsOut.Boilerplate;
 using LightsOut.Patches.Lights;
-using LightsOut.Utility;
+using LightsOut.Common;
+
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches
 {
@@ -55,7 +57,7 @@ namespace LightsOut.Patches
                             if (postfix != null)
                             {
                                 Log.Message($"[LightsOut] patching \"{type.Namespace} - {type.Name}\" to count as a glower");
-                                HarmonyPatches.Harmony.Patch(original.GetMethod, null, new HarmonyMethod(postfix));
+                                ModSettings.Harmony.Patch(original.GetMethod, null, new HarmonyMethod(postfix));
                             }
                         }
                     }

@@ -5,7 +5,7 @@
 //************************************************
 
 using HarmonyLib;
-using LightsOut.Utility;
+using LightsOut.Common;
 using RimWorld;
 using Verse;
 using Verse.AI;

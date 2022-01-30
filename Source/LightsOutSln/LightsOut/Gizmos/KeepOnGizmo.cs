@@ -6,13 +6,10 @@
 
 using LightsOut.ThingComps;
 using RimWorld;
-using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Gizmos
 {
-    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
-
     public class KeepOnGizmo : Command_Toggle
     {
         public KeepOnGizmo(KeepOnComp parentComp)

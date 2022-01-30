@@ -4,9 +4,8 @@
 //************************************************
 
 using HarmonyLib;
-using LightsOut.Utility;
+using LightsOut.Common;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {
@@ -16,8 +15,6 @@ namespace LightsOut.Patches.Lights
     {
         public static void Postfix(ThingComp __instance, ref bool __result)
         {
-            Building parent = __instance.parent as Building;
-
             if(ModResources.CanGlow(__instance) == false)
                 __result = false;
         }

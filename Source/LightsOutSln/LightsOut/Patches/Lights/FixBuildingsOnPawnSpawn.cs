@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using LightsOut.Patches.ModCompatibility;
-using LightsOut.Utility;
+using LightsOut.Common;
 using Verse;
 using Verse.AI;
 using ModSettings = LightsOut.Boilerplate.ModSettings;

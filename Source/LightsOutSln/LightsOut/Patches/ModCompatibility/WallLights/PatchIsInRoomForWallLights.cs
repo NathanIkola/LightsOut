@@ -4,7 +4,7 @@
 // position of the Wall Light objects
 //************************************************
 
-using LightsOut.Utility;
+using LightsOut.Common;
 using System.Collections.Generic;
 using Verse;
 

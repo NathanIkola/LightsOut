@@ -4,18 +4,13 @@
 // as necessary
 //************************************************
 
-using System.Collections.Generic;
-using RimWorld;
 using Verse;
 using HarmonyLib;
-using LightsOut.Utility;
+using LightsOut.Common;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
-using System;
 
 namespace LightsOut.Patches.Lights
 {
-    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
-
     [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch("Tick")]
     public class DetectPawnRoomChange

@@ -3,8 +3,7 @@
 // Android Printer off when they leave the room
 //************************************************
 
-using LightsOut.Patches.Power;
-using LightsOut.Utility;
+using LightsOut.Common;
 using System.Collections.Generic;
 using Verse;
 

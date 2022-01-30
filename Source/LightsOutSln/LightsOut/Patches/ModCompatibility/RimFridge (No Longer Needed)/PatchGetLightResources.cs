@@ -3,7 +3,7 @@
 // a light
 //************************************************
 
-using LightsOut.Utility;
+using LightsOut.Common;
 using System.Collections.Generic;
 using Verse;
 

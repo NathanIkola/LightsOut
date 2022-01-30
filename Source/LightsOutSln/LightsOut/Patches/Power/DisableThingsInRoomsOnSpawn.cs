@@ -4,13 +4,9 @@
 // loading a save
 //************************************************
 
-using System.Collections.Generic;
-using RimWorld;
 using Verse;
 using HarmonyLib;
-using LightsOut.Utility;
-using System;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
+using LightsOut.Common;
 
 namespace LightsOut.Patches.Power
 {

@@ -2,7 +2,6 @@
 // Patch the neural supercharger
 //************************************************
 
-using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using ModSettings = LightsOut.Boilerplate.ModSettings;

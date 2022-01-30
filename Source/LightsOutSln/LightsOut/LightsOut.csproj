@@ -68,11 +68,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boilerplate\HarmonyPatches.cs" />
     <Compile Include="Boilerplate\ModSettings.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
-    <None Include="Patches\BetterMoodBars\PatchDrawColonist.cs" />
     <Compile Include="Patches\Legacy\GenericLightPatch.cs" />
     <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowOnSleep.cs" />
@@ -93,13 +91,11 @@
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
     <Compile Include="Patches\Power\DisableBasePowerDrawOnSet.cs" />
     <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
-    <None Include="Patches\Legacy\DisablePowerDrawPatch.cs" />
-    <None Include="Patches\Legacy\RemoveCryptoSleepSicknessPatch.cs" />
     <Compile Include="Patches\Power\DisableThingsInRoomsOnSpawn.cs" />
     <Compile Include="Patches\Power\RechargeablePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThingComps\KeepOnComp.cs" />
-    <Compile Include="Utility\ModResources.cs" />
+    <Compile Include="Common\ModResources.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
