@@ -6,7 +6,6 @@
 
 using Verse;
 using HarmonyLib;
-using LightsOut.Common;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
@@ -30,11 +29,11 @@ namespace LightsOut.Patches.Lights
             // if there was a room change
             if(newRoom != __state)
             {
-                if (ModResources.ShouldTurnOffAllLights(__state, __instance))
-                    ModResources.DisableAllLights(__state);
+                if (Common.Lights.ShouldTurnOffAllLights(__state, __instance))
+                    Common.Lights.DisableAllLights(__state);
 
-                if (ModResources.ShouldTurnOffAllLights(newRoom, __instance))
-                    ModResources.EnableAllLights(newRoom);
+                if (Common.Lights.ShouldTurnOffAllLights(newRoom, __instance))
+                    Common.Lights.EnableAllLights(newRoom);
             }
         }
     }

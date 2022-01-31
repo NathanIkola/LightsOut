@@ -33,7 +33,7 @@ namespace LightsOut.Patches.Lights
                 return;
 
             // get the current toil out of the driver
-            PropertyInfo curToil = typeof(JobDriver).GetProperty("CurToil", IModCompatibilityPatch.BindingFlags);
+            PropertyInfo curToil = typeof(JobDriver).GetProperty("CurToil", ICompatibilityPatchComponent.BindingFlags);
             Toil toil = (Toil)curToil.GetValue(driver);
             if (toil is null)
                 return;
@@ -41,21 +41,21 @@ namespace LightsOut.Patches.Lights
             // turn the power on the bench back on if the pawn is using it
             if (driver is JobDriver_DoBill doBill
                 && doBill.job.GetTarget(TargetIndex.A).Thing is Building building
-                && ModResources.IsTable(building))
+                && Tables.IsTable(building))
             {
                 toil.AddPreTickAction(() => 
                 {
                     if (!(building.PowerComp is null)
-                        && ModResources.CanConsumePower(building.PowerComp) == false)
+                        && Common.Power.CanConsumePower(building.PowerComp) == false)
                     {
-                        ModResources.EnableTable(building);
+                        Tables.EnableTable(building);
                     }
                 });
 
                 toil.AddFinishAction(() => 
                 { 
                     if (!(building.PowerComp is null))
-                        ModResources.DisableTable(building); 
+                        Tables.DisableTable(building); 
                 });
             }
             else if(driver.asleep && ModSettings.FlickLights && !ModSettings.NightLights)
@@ -74,15 +74,15 @@ namespace LightsOut.Patches.Lights
                         if (room.OutdoorsForWork)
                             return;
 
-                        if (ModResources.ShouldTurnOffAllLights(room, pawn))
+                        if (Common.Lights.ShouldTurnOffAllLights(room, pawn))
                         {
-                            ModResources.DisableAllLights(room);
+                            Common.Lights.DisableAllLights(room);
                         }
 
                         // this call to pawn.GetRoom() is strictly required in case the
                         // regions get dirtied before they wake up so that it gets the
                         // room they actually wake up in not the one they went to sleep in
-                        toil.AddFinishAction(() => { ModResources.EnableAllLights(pawn.GetRoom()); });
+                        toil.AddFinishAction(() => { Common.Lights.EnableAllLights(pawn.GetRoom()); });
                     }
                 });
             }

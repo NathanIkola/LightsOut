@@ -4,29 +4,30 @@
 //************************************************
 
 using LightsOut.Common;
+using System;
 using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Androids
 {
-    public class PatchIsTable : IModCompatibilityPatch
+    public class PatchIsTable : ICompatibilityPatchComponent
     {
-        protected override string TypeNameToPatch { get => "ModResources"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Androids Mod"; }
+        public override string TypeNameToPatch => "Tables";
+        public override bool TargetsMultipleTypes => false;
+        public override bool TypeNameIsExact => true;
+        public override string ComponentName => "Patch IsTable to accept the Android Printer";
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo correctIsTablePatch = new PatchInfo();
-            correctIsTablePatch.method = typeof(ModResources).GetMethod("IsTable", BindingFlags);
-            correctIsTablePatch.patch = this.GetType().GetMethod("IsTablePatch", BindingFlags);
-            correctIsTablePatch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo();
+            patch.method = GetMethod(typeof(Tables), "IsTable");
+            patch.patch = GetMethod<PatchIsTable>("Postfix");
+            patch.patchType = PatchType.Postfix;
 
-            return new List<PatchInfo>() { correctIsTablePatch };
+            return new List<PatchInfo>() { patch };
         }
 
-        private static void IsTablePatch(Building __0, ref bool __result)
+        private static void Postfix(Building __0, ref bool __result)
         {
             if (__0 is null) return;
             if (__0.GetType().Name == "Building_AndroidPrinter")

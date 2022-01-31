@@ -5,26 +5,27 @@
 //************************************************
 
 using LightsOut.Common;
+using System;
 using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
-    public class PatchIsInRoomForWallLights : IModCompatibilityPatch
+    public class PatchIsInRoomForWallLights : ICompatibilityPatchComponent
     {
-        protected override string TypeNameToPatch { get => "ModResources"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Wall Lights Mod"; }
+        public override string ComponentName => "Patch IsInRoom for Wall Lights";
+        public override string TypeNameToPatch => "Rooms";
+        public override bool TargetsMultipleTypes => false;
+        public override bool TypeNameIsExact => true;
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo getRoomPatch = new PatchInfo();
-            getRoomPatch.method = typeof(ModResources).GetMethod("GetRoom", BindingFlags);
-            getRoomPatch.patch = typeof(PatchIsInRoomForWallLights).GetMethod("GetRoomPatch", BindingFlags);
-            getRoomPatch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo();
+            patch.method = GetMethod(typeof(Rooms), "GetRoom");
+            patch.patch = GetMethod<PatchIsInRoomForWallLights>("GetRoomPatch");
+            patch.patchType = PatchType.Postfix;
 
-            return new List<PatchInfo>() { getRoomPatch };
+            return new List<PatchInfo>() { patch };
         }
 
         private static void GetRoomPatch(Building __0, ref Room __result)

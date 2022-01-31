@@ -38,7 +38,7 @@ namespace LightsOut.Patches.Benches
             IBillGiver giver = billDriver.job.GetTarget(TargetIndex.A).Thing as IBillGiver;
             if(giver is Building_WorkTable table)
             {
-                if (!ModResources.IsTable(table)) return;
+                if (!Tables.IsTable(table)) return;
 
                 CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
                 if (powerTrader is null) return;
@@ -57,7 +57,7 @@ namespace LightsOut.Patches.Benches
         {
             // why is the ResearchBench property private
             var bench = researchDriver.job.targetA.Thing as Building_ResearchBench;
-            if (bench is null || !ModResources.IsTable(bench)) return;
+            if (bench is null || !Tables.IsTable(bench)) return;
 
             CompPowerTrader powerTrader = bench.PowerComp as CompPowerTrader;
             if (powerTrader is null) return;
@@ -74,12 +74,12 @@ namespace LightsOut.Patches.Benches
         private static void ActivateBench(JobDriver driver, Building table)
         {
             // activate the bench
-            ModResources.EnableTable(table);
+            Tables.EnableTable(table);
             //ModResources.SetConsumesPower(powerTrader, true);
             // set the bench to turn off after the job is complete
             driver.AddFinishAction(() =>
             {
-                ModResources.DisableTable(table);
+                Tables.DisableTable(table);
             });
         }
     }

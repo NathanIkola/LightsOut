@@ -20,17 +20,17 @@ namespace LightsOut.Patches.Power
         public static void Postfix(Building __instance)
         {
             KeyValuePair<CompPowerTrader, ThingComp>? light;
-            if (ModResources.IsTable(__instance))
+            if (Tables.IsTable(__instance))
             {
-                ModResources.DisableTable(__instance);
+                Tables.DisableTable(__instance);
             }
-            else if ((light = ModResources.GetLightResources(__instance)) != null)
+            else if ((light = Common.Lights.GetLightResources(__instance)) != null)
             {
-                Room room = ModResources.GetRoom(__instance);
-                if (!(room is null) && ModResources.ShouldTurnOffAllLights(room, null))
-                    ModResources.DisableLight(light);
+                Room room = Rooms.GetRoom(__instance);
+                if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, null))
+                    Common.Lights.DisableLight(light);
                 else
-                    ModResources.EnableLight(light);
+                    Common.Lights.EnableLight(light);
 
                 // return so that we don't remove the KeepOnComp from this
                 return;

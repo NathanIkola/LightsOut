@@ -8,19 +8,21 @@ using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.Androids
 {
-    public class AndroidsCompatibilityPatch : IModCompatibilityPatch
+    public class AndroidsCompatibilityPatch : ICompatibilityPatch
     {
-        protected override string TypeNameToPatch { get => "Building_AndroidPrinter"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Androids Mod"; }
+        public override string CompatibilityPatchName => "Androids";
+        public override string TargetMod => "Androids";
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
         {
-            new PatchDisablePowerDraw();
-            new PatchIsTable();
-            new PatchInspectMessage();
-            return base.GetPatches();
+            List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
+            {
+                new PatchDisablePowerDraw(),
+                new PatchInspectMessage(),
+                new PatchIsTable()
+            };
+
+            return components;
         }
     }
 }

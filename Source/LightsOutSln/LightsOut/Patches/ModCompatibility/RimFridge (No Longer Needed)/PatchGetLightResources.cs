@@ -11,7 +11,7 @@ namespace LightsOut.Patches.ModCompatibility.RimFridge
 {
     public class PatchGetLightResources : IModCompatibilityPatch
     {
-        protected override string TypeNameToPatch => "ModResources";
+        protected override string TypeNameToPatch => "Lights";
         protected override bool TargetsMultipleTypes => false;
         protected override bool TypeNameIsExact => true;
         protected override string PatchName { get => "RimFridge Mod"; }
@@ -19,7 +19,7 @@ namespace LightsOut.Patches.ModCompatibility.RimFridge
         protected override IEnumerable<PatchInfo> GetPatches()
         {
             PatchInfo correctLightResource = new PatchInfo();
-            correctLightResource.method = typeof(ModResources).GetMethod("GetLightResources", BindingFlags);
+            correctLightResource.method = typeof(Common.Lights).GetMethod("GetLightResources", BindingFlags);
             correctLightResource.patch = this.GetType().GetMethod("Prefix", BindingFlags);
             correctLightResource.patchType = PatchType.Prefix;
 

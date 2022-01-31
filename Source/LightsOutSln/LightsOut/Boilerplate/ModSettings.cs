@@ -7,6 +7,7 @@ using HarmonyLib;
 using HugsLib;
 using HugsLib.Settings;
 using LightsOut.Common;
+using LightsOut.Patches.ModCompatibility;
 using RimWorld;
 using Verse;
 
@@ -14,10 +15,15 @@ namespace LightsOut.Boilerplate
 {
     public class ModSettings : ModBase
     {
+        public ModSettings()
+        {
+            Instance = this;
+        }
+
         //****************************************
         // The Harmony instance of this mod
         //****************************************
-        public static Harmony Harmony => Instance?.HarmonyInst;
+        public static Harmony Harmony => Instance.HarmonyInst;
 
         //****************************************
         // The one instantiated instance of
@@ -56,6 +62,7 @@ namespace LightsOut.Boilerplate
         public override void DefsLoaded()
         {
             SettingsChanged();
+            ModCompatibilityManager.LoadCompatibilityPatches();
         }
 
         public override void SettingsChanged()
@@ -106,10 +113,10 @@ namespace LightsOut.Boilerplate
             FlickLights = newVal;
 
             var affectedLights = new List<KeyValuePair<CompPowerTrader, ThingComp>?>();
-            foreach (var kv in ModResources.BuildingStatus)
+            foreach (var kv in Power.BuildingStatus)
             {
                 Thing thing = kv.Key;
-                var light = ModResources.GetLightResources(thing as Building);
+                var light = Lights.GetLightResources(thing as Building);
                 if (light != null)
                     affectedLights.Add(light);
             }
@@ -118,7 +125,7 @@ namespace LightsOut.Boilerplate
             {
                 foreach (var light in affectedLights)
                 {
-                    ModResources.EnableLight(light);
+                    Lights.EnableLight(light);
                 }
             }
             else
@@ -126,14 +133,14 @@ namespace LightsOut.Boilerplate
                 foreach (var light in affectedLights)
                 {
                     ThingComp glower = light?.Value;
-                    Room room = ModResources.GetRoom(glower?.parent as Building);
+                    Room room = Rooms.GetRoom(glower?.parent as Building);
 
                     if (room == null || room.OutdoorsForWork) return;
 
-                    if (ModResources.ShouldTurnOffAllLights(room, null))
-                        ModResources.DisableLight(light);
+                    if (Lights.ShouldTurnOffAllLights(room, null))
+                        Lights.DisableLight(light);
                     else
-                        ModResources.EnableLight(light);
+                        Lights.EnableLight(light);
                 }
             }
         }

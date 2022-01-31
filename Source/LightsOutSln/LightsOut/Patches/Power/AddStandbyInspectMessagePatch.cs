@@ -5,7 +5,6 @@
 //************************************************
 
 using RimWorld;
-using LightsOut.Common;
 using HarmonyLib;
 
 namespace LightsOut.Patches.Power
@@ -16,7 +15,7 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(CompPower __instance, ref string __result)
         {
-            if (__instance is CompPowerTrader powerTrader && ModResources.CanConsumePower(powerTrader) == false)
+            if (__instance is CompPowerTrader powerTrader && Common.Power.CanConsumePower(powerTrader) == false)
                 __result = "On Standby";
         }
     }

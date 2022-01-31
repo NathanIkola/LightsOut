@@ -4,38 +4,34 @@
 //************************************************
 
 using LightsOut.Patches.Power;
-using LightsOut.Common;
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Verse;
-using Verse.AI;
 
 namespace LightsOut.Patches.ModCompatibility
 {
-    public class PatchDisablePowerDraw : IModCompatibilityPatch
+    public class PatchDisablePowerDraw : ICompatibilityPatchComponent<PatchDisablePowerDraw>
     {
-        protected override string TypeNameToPatch { get => "CompPowerTrader"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Androids Mod"; }
+        public override string ComponentName => "Patch DisablePowerDraw for Android Printer";
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo disablePowerPatch = new PatchInfo();
-            disablePowerPatch.method = typeof(DisableBasePowerDrawOnSet).GetMethod("Postfix", BindingFlags);
-            disablePowerPatch.patch = this.GetType().GetMethod("PrefixPatch", BindingFlags);
-            disablePowerPatch.patchType = PatchType.Prefix;
+            PatchInfo patch = new PatchInfo();
+            patch.method = GetMethod<DisableBasePowerDrawOnSet>("Postfix");
+            patch.patch = GetMethod<PatchDisablePowerDraw>("PrefixPatch");
+            patch.patchType = PatchType.Prefix;
 
-            return new List<PatchInfo>() { disablePowerPatch };
+            return new List<PatchInfo>() { patch };
         }
 
         private static MethodInfo m_pawnCrafterStatus = null;
-
         private static Dictionary<CompPowerTrader, bool> MemoizedIsPrinter { get; } = new Dictionary<CompPowerTrader, bool>();
 
         private static bool PrefixPatch(CompPowerTrader __0)
         {
+            if (__0 is null || __0.parent is null) return true;
+
             if (!MemoizedIsPrinter.ContainsKey(__0))
                 MemoizedIsPrinter.Add(__0, __0.parent.GetType().Name == "Building_AndroidPrinter");
 

@@ -69,9 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boilerplate\ModSettings.cs" />
+    <Compile Include="Common\Glowers.cs" />
+    <Compile Include="Common\Lights.cs" />
+    <Compile Include="Common\Rooms.cs" />
+    <Compile Include="Common\Tables.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
-    <Compile Include="Patches\Legacy\GenericLightPatch.cs" />
     <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowOnSleep.cs" />
     <Compile Include="Patches\Lights\DisableLightGlowPatch.cs" />
@@ -81,9 +84,13 @@
     <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
     <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\Furnace\FurnaceIsNotAWorkTable.cs" />
-    <Compile Include="Patches\ModCompatibility\IModCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\PatchGetLightResources.cs" />
-    <Compile Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\RimFridgeCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ModGlowers\ModGlowerCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ICompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ICompatibilityPatchComponent.cs" />
+    <Compile Include="Patches\ModCompatibility\ModCompatibilityManager.cs" />
+    <None Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\PatchGetLightResources.cs" />
+    <None Include="Patches\ModCompatibility\RimFridge %28No Longer Needed%29\RimFridgeCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ModGlowers\PatchShouldBeLitNow.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\PatchIsInRoomForVEWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
@@ -95,7 +102,7 @@
     <Compile Include="Patches\Power\RechargeablePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThingComps\KeepOnComp.cs" />
-    <Compile Include="Common\ModResources.cs" />
+    <Compile Include="Common\Power.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

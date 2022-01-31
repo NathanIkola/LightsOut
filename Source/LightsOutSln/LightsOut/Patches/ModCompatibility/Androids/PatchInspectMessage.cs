@@ -4,31 +4,24 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using LightsOut.Patches.ModCompatibility;
 using LightsOut.Patches.Power;
 using RimWorld;
 
 namespace LightsOut.Patches.ModCompatibility.Androids
 {
-    public class PatchInspectMessage : IModCompatibilityPatch
+    public class PatchInspectMessage : ICompatibilityPatchComponent<AddStandbyInspectMessagePatch>
     {
-        protected override string TypeNameToPatch => "AddStandbyInspectMessagePatch";
-        protected override bool TargetsMultipleTypes => false;
-        protected override bool TypeNameIsExact => true;
-        protected override string PatchName { get => "Androids Mod"; }
+        public override string ComponentName => "Patch AddStandbyInspectMessage for Android Printer";
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo disablePowerPatch = new PatchInfo();
-            disablePowerPatch.method = typeof(AddStandbyInspectMessagePatch).GetMethod("Postfix", BindingFlags);
-            disablePowerPatch.patch = this.GetType().GetMethod("PostfixPatch", BindingFlags);
-            disablePowerPatch.patchType = PatchType.Prefix;
+            PatchInfo patch = new PatchInfo();
+            patch.method = GetMethod<DisableBasePowerDrawOnSet>("Postfix");
+            patch.patch = GetMethod<PatchDisablePowerDraw>("PrefixPatch");
+            patch.patchType = PatchType.Prefix;
 
-            return new List<PatchInfo>() { disablePowerPatch };
+            return new List<PatchInfo>() { patch };
         }
 
         private static bool PostfixPatch(CompPower __0)

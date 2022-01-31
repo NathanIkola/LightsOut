@@ -37,13 +37,13 @@ namespace LightsOut.ThingComps
                 {
                     Building thing = parent as Building;
                     CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
-                    ThingComp glower = ModResources.GetGlower(thing);
+                    ThingComp glower = Glowers.GetGlower(thing);
                     LightObject obj = new LightObject(powerTrader, glower);
-                    Room room = ModResources.GetRoom(thing);
+                    Room room = Rooms.GetRoom(thing);
 
-                    ModResources.DisableLight(obj);
-                    if (value || room.OutdoorsForWork || !ModResources.ShouldTurnOffAllLights(room, null))
-                        ModResources.EnableLight(obj);
+                    Lights.DisableLight(obj);
+                    if (value || room.OutdoorsForWork || !Lights.ShouldTurnOffAllLights(room, null))
+                        Lights.EnableLight(obj);
                 }
                 catch(Exception e)
                 {
@@ -67,7 +67,7 @@ namespace LightsOut.ThingComps
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (parent is Building building && ModResources.CanBeLight(building))
+            if (parent is Building building && Lights.CanBeLight(building))
             {
                 if (ModSettings.FlickLights)
                     yield return Gizmo;

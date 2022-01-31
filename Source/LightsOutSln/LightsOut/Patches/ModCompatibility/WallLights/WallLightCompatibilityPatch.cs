@@ -9,17 +9,19 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
-    public class WallLightCompatibilityPatch : IModCompatibilityPatch
+    public class WallLightCompatibilityPatch : ICompatibilityPatch
     {
-        protected override string TypeNameToPatch { get => "WallLight"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "Wall Lights Mod"; }
+        public override string CompatibilityPatchName => "Wall Lights";
+        public override string TargetMod => "Wall Light";
 
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
         {
-            new PatchIsInRoomForWallLights();
-            return base.GetPatches();
+            List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
+            {
+                new PatchIsInRoomForWallLights()
+            };
+
+            return components;
         }
     }
 }

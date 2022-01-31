@@ -6,7 +6,6 @@
 
 using Verse;
 using HarmonyLib;
-using LightsOut.Common;
 
 namespace LightsOut.Patches.Power
 {
@@ -19,10 +18,10 @@ namespace LightsOut.Patches.Power
             Room room = __1;
             if (room is null) return;
 
-            if (ModResources.ShouldTurnOffAllLights(room, null))
-                ModResources.DisableAllLights(room);
+            if (Common.Lights.ShouldTurnOffAllLights(room, null))
+                Common.Lights.DisableAllLights(room);
             else
-                ModResources.EnableAllLights(room);
+                Common.Lights.EnableAllLights(room);
         }
     }
 }

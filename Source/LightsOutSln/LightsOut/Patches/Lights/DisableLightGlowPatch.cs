@@ -15,7 +15,7 @@ namespace LightsOut.Patches.Lights
     {
         public static void Postfix(ThingComp __instance, ref bool __result)
         {
-            if(ModResources.CanGlow(__instance) == false)
+            if(Glowers.CanGlow(__instance) == false)
                 __result = false;
         }
     }

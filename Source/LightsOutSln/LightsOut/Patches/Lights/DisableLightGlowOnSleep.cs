@@ -5,7 +5,6 @@
 
 using System;
 using HarmonyLib;
-using LightsOut.Common;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -26,13 +25,13 @@ namespace LightsOut.Patches.Lights
                     Pawn pawn = __result.actor;
                     Room room = pawn?.GetRoom();
 
-                    if (!(room is null) && ModResources.ShouldTurnOffAllLights(room, pawn)
+                    if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, pawn)
                         && pawn.jobs.curDriver.asleep)
-                        ModResources.DisableAllLights(room);
+                        Common.Lights.DisableAllLights(room);
 
                     __result.AddFinishAction(() => 
                     {
-                        ModResources.EnableAllLights(pawn.GetRoom());
+                        Common.Lights.EnableAllLights(pawn.GetRoom());
                     });
                 });
 
@@ -53,12 +52,12 @@ namespace LightsOut.Patches.Lights
                         if(asleep == true)
                         {
                             // turn the lights back on
-                            ModResources.EnableAllLights(pawn.GetRoom());
+                            Common.Lights.EnableAllLights(pawn.GetRoom());
                         }
                         else if (asleep == false)
                         {
                             // turn the lights off
-                            ModResources.DisableAllLights(pawn.GetRoom());
+                            Common.Lights.DisableAllLights(pawn.GetRoom());
                         }
                     }
                 };

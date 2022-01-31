@@ -5,21 +5,22 @@
 //************************************************
 
 using System.Collections.Generic;
-using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.VEWallLights
 {
-    public class VEWallLightCompatibilityPatch : IModCompatibilityPatch
+    public class VEWallLightCompatibilityPatch : ICompatibilityPatch
     {
-        protected override string TypeNameToPatch { get => "GameComponent_Ancients"; }
-        protected override bool TargetsMultipleTypes { get => false; }
-        protected override bool TypeNameIsExact { get => true; }
-        protected override string PatchName { get => "VE Wall Lights Mod"; }
-
-        protected override IEnumerable<PatchInfo> GetPatches()
+        public override string CompatibilityPatchName => "VE Wall Lights";
+        public override string TargetMod => "Vanilla Factions Expanded - Ancients";
+        
+        public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
         {
-            new PatchIsInRoomForVEWallLights();
-            return base.GetPatches();
+            List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
+            {
+                new PatchIsInRoomForVEWallLights()
+            };
+
+            return components;
         }
     }
 }

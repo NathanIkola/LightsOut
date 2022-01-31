@@ -13,8 +13,8 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Furnace
 {
-    [HarmonyPatch(typeof(ModResources))]
-    [HarmonyPatch(nameof(ModResources.IsTable))]
+    [HarmonyPatch(typeof(Tables))]
+    [HarmonyPatch(nameof(Tables.IsTable))]
     public class FurnaceIsNotAWorkTable
     {
         public static void Postfix(Building thing, ref bool __result)
