@@ -2,6 +2,7 @@
 // Holds all of the common table operations
 //************************************************
 
+using LightsOut.Defs;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
@@ -73,8 +74,17 @@ namespace LightsOut.Common
         //****************************************
         public static bool HasBlacklistedTableComp(ThingWithComps thing)
         {
-
             return false;
+        }
+
+        //****************************************
+        // Detects if a building is a television
+        //****************************************
+        public static bool IsTelevision(Building thing)
+        {
+            return thing.def == MyThingDefOf.TubeTelevision
+                || thing.def == MyThingDefOf.FlatscreenTelevision
+                || thing.def == MyThingDefOf.MegascreenTelevision;
         }
 
         private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();

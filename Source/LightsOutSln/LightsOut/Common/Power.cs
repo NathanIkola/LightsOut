@@ -22,6 +22,8 @@ namespace LightsOut.Common
         {
             if (powerComp == null) return null;
             bool? previous = CanConsumePower(powerComp);
+            if (consumesPower == previous)
+                return previous;
             BuildingStatus[powerComp.parent] = consumesPower;
 
             // make sure to reset the power status

@@ -22,6 +22,9 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
+            if (type.Assembly == Assembly.GetAssembly(typeof(Pawn)))
+                return new List<PatchInfo>();
+
             // try and get our getters from the type passed in (it should either be PascalCase or camelCase)
             PropertyInfo getter = type.GetProperty("shouldBeLitNow", BindingFlags) ?? type.GetProperty("ShouldBeLitNow", BindingFlags);
             // if this type doesn't have it, return no patches

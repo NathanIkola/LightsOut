@@ -7,6 +7,8 @@
 using HarmonyLib;
 using LightsOut.Common;
 using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -26,6 +28,8 @@ namespace LightsOut.Patches.Benches
                 PawnIsAtTable(billDriver, pawn);
             else if (__instance is JobDriver_Research researchDriver)
                 PawnIsAtResearchBench(researchDriver, pawn);
+            else if (__instance.job?.GetTarget(TargetIndex.A).Thing is Building tv && Tables.IsTelevision(tv))
+                PawnIsAtTelevision(__instance, tv, pawn);
         }
 
         //****************************************
@@ -65,6 +69,37 @@ namespace LightsOut.Patches.Benches
             // the pawn needs to be in the correct place
             if(pawn.Position == bench.InteractionCell)
                 ActivateBench(researchDriver, bench);
+        }
+
+        //****************************************
+        // Check if the pawn is actually within
+        // the viewing area of a television
+        // then activate it if so
+        //****************************************
+        private static void PawnIsAtTelevision(JobDriver driver, Building tv, Pawn pawn)
+        {
+            if (tv is null || pawn is null)
+                return;
+
+            IEnumerable<IntVec3> watchArea = WatchBuildingUtility.CalculateWatchCells(tv.def, tv.Position, tv.Rotation, tv.Map);
+
+            Tables.EnableTable(tv);
+
+            driver.AddFinishAction(() =>
+            {
+                foreach (IntVec3 cell in watchArea)
+                {
+                    IEnumerable<Pawn> pawns = from thing in cell.GetThingList(tv.Map)
+                                       where thing is Pawn
+                                       select thing as Pawn;
+
+                    foreach (Pawn p in pawns)
+                        if (p != pawn && p.CurJob?.GetTarget(TargetIndex.A).Thing == tv)
+                            return;
+                }
+
+                Tables.DisableTable(tv);
+            });
         }
 
         //****************************************

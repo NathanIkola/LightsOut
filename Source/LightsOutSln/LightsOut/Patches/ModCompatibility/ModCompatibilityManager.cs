@@ -13,6 +13,7 @@ using LightsOut.Patches.ModCompatibility.Androids;
 using LightsOut.Patches.ModCompatibility.VEWallLights;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.ModGlowers;
+using LightsOut.Patches.ModCompatibility.Ideology;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -26,7 +27,8 @@ namespace LightsOut.Patches.ModCompatibility
             new AndroidsCompatibilityPatch(),
             new VEWallLightCompatibilityPatch(),
             new WallLightCompatibilityPatch(),
-            new ModGlowerCompatibilityPatch()
+            new ModGlowerCompatibilityPatch(),
+            new IdeologyCompatibilityPatch()
         };
 
         //****************************************
@@ -139,7 +141,7 @@ namespace LightsOut.Patches.ModCompatibility
         //****************************************
         private static IEnumerable<Type> GetTypesToPatch()
         {
-            List<Assembly> assemblies = new List<Assembly>();
+            List<Assembly> assemblies = new List<Assembly>() { Assembly.GetAssembly(typeof(Pawn)) };
             foreach (ModContentPack mod in LoadedModManager.RunningModsListForReading)
             {
                 assemblies.AddRange(mod.assemblies.loadedAssemblies);

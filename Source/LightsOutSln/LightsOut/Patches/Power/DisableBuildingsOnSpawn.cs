@@ -20,7 +20,7 @@ namespace LightsOut.Patches.Power
         public static void Postfix(Building __instance)
         {
             KeyValuePair<CompPowerTrader, ThingComp>? light;
-            if (Tables.IsTable(__instance))
+            if (Tables.IsTable(__instance) || Tables.IsTelevision(__instance))
             {
                 Tables.DisableTable(__instance);
             }
