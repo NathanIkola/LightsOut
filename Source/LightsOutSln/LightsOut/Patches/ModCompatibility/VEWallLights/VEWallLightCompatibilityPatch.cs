@@ -17,7 +17,7 @@ namespace LightsOut.Patches.ModCompatibility.VEWallLights
         {
             List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
             {
-                new PatchIsInRoomForVEWallLights()
+                new PatchGetRoomForVEWallLights()
             };
 
             return components;

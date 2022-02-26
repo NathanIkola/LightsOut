@@ -94,9 +94,9 @@
     <Compile Include="Patches\ModCompatibility\ICompatibilityPatchComponent.cs" />
     <Compile Include="Patches\ModCompatibility\ModCompatibilityManager.cs" />
     <Compile Include="Patches\ModCompatibility\ModGlowers\PatchShouldBeLitNow.cs" />
-    <Compile Include="Patches\ModCompatibility\VEWallLights\PatchIsInRoomForVEWallLights.cs" />
+    <Compile Include="Patches\ModCompatibility\VEWallLights\PatchGetRoomForVEWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\WallLights\PatchIsInRoomForWallLights.cs" />
+    <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
     <Compile Include="Patches\Power\DisableBasePowerDrawOnSet.cs" />

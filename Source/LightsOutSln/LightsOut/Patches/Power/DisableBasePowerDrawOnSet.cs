@@ -17,7 +17,6 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(CompPowerTrader __instance)
         {
-            // this simply resets the power draw rate using the normal rules
             bool? canConsumePower = Common.Power.CanConsumePower(__instance);
 
             if (canConsumePower == true)

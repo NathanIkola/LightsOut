@@ -11,9 +11,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
-    public class PatchIsInRoomForWallLights : ICompatibilityPatchComponent
+    public class PatchGetRoomForWallLights : ICompatibilityPatchComponent
     {
-        public override string ComponentName => "Patch IsInRoom for Wall Lights";
+        public override string ComponentName => "Patch GetRoom for Wall Lights";
         public override string TypeNameToPatch => "Rooms";
         public override bool TargetsMultipleTypes => false;
         public override bool TypeNameIsExact => true;
@@ -22,7 +22,7 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
         {
             PatchInfo patch = new PatchInfo();
             patch.method = GetMethod(typeof(Rooms), "GetRoom");
-            patch.patch = GetMethod<PatchIsInRoomForWallLights>("GetRoomPatch");
+            patch.patch = GetMethod<PatchGetRoomForWallLights>("GetRoomPatch");
             patch.patchType = PatchType.Postfix;
 
             return new List<PatchInfo>() { patch };
@@ -31,7 +31,7 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
         private static void GetRoomPatch(Building __0, ref Room __result)
         {
             if (__0 is null) return;
-            if (__0.GetType().Name == "WallLight")
+            if (__0.GetType().Name == "WallLight" && (__0.Map?.regionAndRoomUpdater?.Enabled ?? false))
                 __result = RegionAndRoomQuery.RoomAt(__0.Position + __0.Rotation.FacingCell, __0.Map);
         }
     }
