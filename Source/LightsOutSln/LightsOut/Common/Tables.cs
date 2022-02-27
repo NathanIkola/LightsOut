@@ -20,10 +20,11 @@ namespace LightsOut.Common
         public static void DisableTable(Building table)
         {
             if (table is null) return;
-            Power.SetConsumesPower(table.PowerComp as CompPowerTrader, false);
+            CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
+            Power.SetConsumesPower(powerTrader, false);
             ThingComp glower = Glowers.GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
-                Glowers.SetCanGlow(glower, false);
+                Glowers.SetCanGlow(powerTrader, glower, false);
         }
 
         //****************************************
@@ -33,10 +34,11 @@ namespace LightsOut.Common
         public static void EnableTable(Building table)
         {
             if (table is null) return;
-            Power.SetConsumesPower(table.PowerComp as CompPowerTrader, true);
+            CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
+            Power.SetConsumesPower(powerTrader, true);
             ThingComp glower = Glowers.GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
-                Glowers.SetCanGlow(glower, true);
+                Glowers.SetCanGlow(powerTrader, glower, true);
         }
 
         //****************************************

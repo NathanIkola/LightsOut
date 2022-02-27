@@ -2,6 +2,7 @@
 // Holds all of the common room operations
 //************************************************
 
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,10 @@ namespace LightsOut.Common
         // Returns: the previous value or null
         // if it was not in the dictionary before
         //****************************************
-        public static bool? SetCanGlow(ThingComp glower, bool? canGlow)
+        public static bool? SetCanGlow(CompPowerTrader powerTrader, ThingComp glower, bool? canGlow)
         {
             if (glower is null) return false;
-            bool? previous = CanGlow(glower);
-            Power.BuildingStatus[glower.parent] = canGlow;
+            bool? previous = Power.SetConsumesPower(powerTrader, canGlow);
 
             // only update if the state has changed
             if (previous is null || canGlow is null || previous != canGlow)
@@ -42,7 +42,7 @@ namespace LightsOut.Common
         public static bool? CanGlow(ThingComp glower)
         {
             if (glower is null) return false;
-            return Power.BuildingStatus.TryGetValue(glower.parent, null);
+            return Power.CanConsumePower(glower.parent);
         }
 
         //****************************************

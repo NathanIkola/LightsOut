@@ -8,6 +8,8 @@ using RimWorld;
 using HarmonyLib;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using CPower = LightsOut.Common.Power;
+using System;
 
 namespace LightsOut.Patches.Power
 {
@@ -27,9 +29,9 @@ namespace LightsOut.Patches.Power
             else if (canConsumePower == false)
             {
                 if (Common.Lights.CanBeLight(__instance.parent as Building))
-                    __instance.powerOutputInt = 0f;
+                    __instance.powerOutputInt = CPower.MinDraw;
                 else
-                    __instance.powerOutputInt *= ModSettings.StandbyPowerDrawRate;
+                    __instance.powerOutputInt = Math.Min(__instance.powerOutputInt * ModSettings.StandbyPowerDrawRate, CPower.MinDraw);
             }
         }
     }

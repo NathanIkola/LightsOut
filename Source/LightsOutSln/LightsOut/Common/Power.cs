@@ -18,18 +18,32 @@ namespace LightsOut.Common
         // Returns: the previous value or null
         // if it was not in the dictionary before
         //****************************************
-        public static bool? SetConsumesPower(CompPower powerComp, bool? consumesPower)
+        public static bool? SetConsumesPower(CompPowerTrader trader, bool? consumesPower)
         {
-            if (powerComp == null) return null;
-            bool? previous = CanConsumePower(powerComp);
-            if (consumesPower == previous)
-                return previous;
-            BuildingStatus[powerComp.parent] = consumesPower;
+            if (trader == null) return null;
+            bool? previous = SetConsumesPower(trader?.parent, consumesPower);
 
             // make sure to reset the power status
-            if (!(consumesPower is null) && powerComp is CompPowerTrader trader)
+            if (!(consumesPower is null))
                 trader.PowerOutput = -trader.Props.basePowerConsumption;
 
+            return previous;
+        }
+
+        //****************************************
+        // Add a thing to the power-consumable
+        // dictionary
+        //
+        // Returns: the previous value or null
+        // if it was not in the dictionary before
+        //****************************************
+        public static bool? SetConsumesPower(ThingWithComps thing, bool? consumesPower)
+        {
+            if (thing is null) return null;
+            bool? previous = CanConsumePower(thing);
+            if (consumesPower == previous)
+                return previous;
+            BuildingStatus[thing] = consumesPower;
             return previous;
         }
 
@@ -43,9 +57,22 @@ namespace LightsOut.Common
         //****************************************
         public static bool? CanConsumePower(CompPower powerComp)
         {
-            if (powerComp == null) return null;
-            if (IsCharged(powerComp.parent)) return false;
-            return BuildingStatus.TryGetValue(powerComp.parent, null);
+            return CanConsumePower(powerComp?.parent);
+        }
+
+        //****************************************
+        // Check if a CompPower is able to
+        // consume power
+        //
+        // Returns: whether or not the CompPower
+        // can consume power, or null if it is
+        // not in the dictionary
+        //****************************************
+        public static bool? CanConsumePower(ThingWithComps thing)
+        {
+            if (thing is null) return null;
+            if (IsCharged(thing)) return false;
+            return BuildingStatus.TryGetValue(thing, null);
         }
 
         //****************************************
@@ -81,6 +108,11 @@ namespace LightsOut.Common
             CompRechargeables.Add(thing, rechargeable);
             return rechargeable != null;
         }
+
+        //****************************************
+        // The minimum amount of power to draw
+        //****************************************
+        public static readonly float MinDraw = -1f / 100f;
 
         // keep track of all disabled Things
         public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();

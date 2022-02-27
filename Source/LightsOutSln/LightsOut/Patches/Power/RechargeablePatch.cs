@@ -5,6 +5,8 @@
 using HarmonyLib;
 using RimWorld;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using CPower = LightsOut.Common.Power;
+using System;
 
 namespace LightsOut.Patches.Power
 {
@@ -23,7 +25,7 @@ namespace LightsOut.Patches.Power
                     powerDraw *= ModSettings.StandbyPowerDrawRate;
                 else 
                     powerDraw *= ModSettings.ActivePowerDrawRate;
-                ___compPowerCached.powerOutputInt = powerDraw;
+                ___compPowerCached.powerOutputInt = Math.Min(powerDraw, CPower.MinDraw);
             }
         }
     }

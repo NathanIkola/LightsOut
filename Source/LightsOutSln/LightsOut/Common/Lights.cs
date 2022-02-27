@@ -30,8 +30,7 @@ namespace LightsOut.Common
             CompPowerTrader powerTrader = light?.Key;
             ThingComp glower = light?.Value;
 
-            Glowers.SetCanGlow(glower, true);
-            Power.SetConsumesPower(powerTrader, true);
+            Glowers.SetCanGlow(powerTrader, glower, true);
         }
 
         //****************************************
@@ -58,8 +57,7 @@ namespace LightsOut.Common
             }
             if (comp?.KeepOn == true) return;
 
-            Glowers.SetCanGlow(glower, false);
-            Power.SetConsumesPower(powerTrader, false);
+            Glowers.SetCanGlow(powerTrader, glower, false);
         }
 
         //****************************************
