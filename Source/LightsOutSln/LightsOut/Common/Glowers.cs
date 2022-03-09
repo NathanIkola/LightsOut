@@ -57,7 +57,7 @@ namespace LightsOut.Common
 
             try
             {
-                ThingComp glower = thing.AllComps.First(x => CompGlowers.Contains(x.GetType()));
+                ThingComp glower = thing.AllComps.Last(x => CompGlowers.Contains(x.GetType()));
                 CachedGlowers.Add(thing, glower);
                 return glower;
             }
