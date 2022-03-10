@@ -21,7 +21,7 @@ namespace LightsOut.Common
         {
             if (table is null) return;
             CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
-            Power.SetConsumesPower(powerTrader, false);
+            Resources.SetConsumesPower(powerTrader, false);
             ThingComp glower = Glowers.GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
                 Glowers.SetCanGlow(powerTrader, glower, false);
@@ -35,7 +35,7 @@ namespace LightsOut.Common
         {
             if (table is null) return;
             CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
-            Power.SetConsumesPower(powerTrader, true);
+            Resources.SetConsumesPower(powerTrader, true);
             ThingComp glower = Glowers.GetGlower(table);
             if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
                 Glowers.SetCanGlow(powerTrader, glower, true);

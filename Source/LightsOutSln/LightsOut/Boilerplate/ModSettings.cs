@@ -113,7 +113,7 @@ namespace LightsOut.Boilerplate
             FlickLights = newVal;
 
             var affectedLights = new List<KeyValuePair<CompPowerTrader, ThingComp>?>();
-            foreach (var kv in Power.BuildingStatus)
+            foreach (var kv in Resources.BuildingStatus)
             {
                 Thing thing = kv.Key;
                 var light = Lights.GetLightResources(thing as Building);

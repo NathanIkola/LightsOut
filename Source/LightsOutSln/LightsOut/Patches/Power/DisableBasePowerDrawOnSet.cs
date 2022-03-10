@@ -8,7 +8,7 @@ using RimWorld;
 using HarmonyLib;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
-using CPower = LightsOut.Common.Power;
+using CPower = LightsOut.Common.Resources;
 using System;
 
 namespace LightsOut.Patches.Power
@@ -19,7 +19,7 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(CompPowerTrader __instance)
         {
-            bool? canConsumePower = Common.Power.CanConsumePower(__instance);
+            bool? canConsumePower = Common.Resources.CanConsumeResources(__instance);
 
             if (canConsumePower == true)
             {

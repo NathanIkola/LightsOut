@@ -23,7 +23,7 @@ namespace LightsOut.Common
         public static bool? SetCanGlow(CompPowerTrader powerTrader, ThingComp glower, bool? canGlow)
         {
             if (glower is null) return false;
-            bool? previous = Power.SetConsumesPower(powerTrader, canGlow);
+            bool? previous = Resources.SetConsumesPower(powerTrader, canGlow);
 
             // only update if the state has changed
             if (previous is null || canGlow is null || previous != canGlow)
@@ -42,7 +42,7 @@ namespace LightsOut.Common
         public static bool? CanGlow(ThingComp glower)
         {
             if (glower is null) return false;
-            return Power.CanConsumePower(glower.parent);
+            return Resources.CanConsumeResources(glower.parent);
         }
 
         //****************************************

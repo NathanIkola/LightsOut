@@ -9,7 +9,7 @@ using Verse;
 namespace LightsOut.Common
 {
     [StaticConstructorOnStartup]
-    public static class Power
+    public static class Resources
     {
         //****************************************
         // Add a CompPower to the power-consumable
@@ -18,57 +18,72 @@ namespace LightsOut.Common
         // Returns: the previous value or null
         // if it was not in the dictionary before
         //****************************************
-        public static bool? SetConsumesPower(CompPowerTrader trader, bool? consumesPower)
+        public static bool? SetConsumesPower(CompPowerTrader powerTrader, bool? consumesPower)
         {
-            if (trader == null) return null;
-            bool? previous = SetConsumesPower(trader?.parent, consumesPower);
+            if (powerTrader == null) return null;
 
-            // make sure to reset the power status
-            if (!(consumesPower is null))
-                trader.PowerOutput = -trader.Props.basePowerConsumption;
+            return SetConsumesResources(powerTrader, consumesPower, () => 
+            {
+                powerTrader.PowerOutput = -powerTrader.Props.basePowerConsumption;
+            });
+        }
+
+        //****************************************
+        // Callback to reset the resource draw
+        // of a consumer
+        //****************************************
+        public delegate void ResetResourceDrawCallback();
+
+        public static bool? SetConsumesResources(ThingComp resourceTrader, bool? consumesResource, ResetResourceDrawCallback resetDrawCallback)
+        {
+            if (resourceTrader is null) return null;
+            bool? previous = SetConsumesResources(resourceTrader.parent, consumesResource);
+
+            if (!(consumesResource is null) && !(resetDrawCallback is null))
+                resetDrawCallback();
 
             return previous;
         }
 
         //****************************************
-        // Add a thing to the power-consumable
+        // Add a thing to the resource-consumable
         // dictionary
         //
         // Returns: the previous value or null
         // if it was not in the dictionary before
         //****************************************
-        public static bool? SetConsumesPower(ThingWithComps thing, bool? consumesPower)
+        public static bool? SetConsumesResources(ThingWithComps thing, bool? consumesResource)
         {
             if (thing is null) return null;
-            bool? previous = CanConsumePower(thing);
-            if (consumesPower == previous)
+            bool? previous = CanConsumeResources(thing);
+            if (consumesResource == previous)
                 return previous;
-            BuildingStatus[thing] = consumesPower;
+            BuildingStatus[thing] = consumesResource;
             return previous;
         }
 
         //****************************************
-        // Check if a CompPower is able to
-        // consume power
+        // Check if a trader is able to
+        // consume resources
         //
-        // Returns: whether or not the CompPower
-        // can consume power, or null if it is
+        // Returns: whether or not the trader
+        // can consume resources, or null if it is
         // not in the dictionary
         //****************************************
-        public static bool? CanConsumePower(CompPower powerComp)
+        public static bool? CanConsumeResources(ThingComp resourceTrader)
         {
-            return CanConsumePower(powerComp?.parent);
+            return CanConsumeResources(resourceTrader?.parent);
         }
 
         //****************************************
-        // Check if a CompPower is able to
-        // consume power
+        // Check if a trader is able to
+        // consume resources
         //
-        // Returns: whether or not the CompPower
-        // can consume power, or null if it is
+        // Returns: whether or not the trader
+        // can consume resources, or null if it is
         // not in the dictionary
         //****************************************
-        public static bool? CanConsumePower(ThingWithComps thing)
+        public static bool? CanConsumeResources(ThingWithComps thing)
         {
             if (thing is null) return null;
             if (IsCharged(thing)) return false;
@@ -76,7 +91,7 @@ namespace LightsOut.Common
         }
 
         //****************************************
-        // Check if a power consumer is a 
+        // Check if a consumer is a 
         // rechargeable building
         //****************************************
         public static bool IsCharged(ThingWithComps thing)
@@ -110,7 +125,7 @@ namespace LightsOut.Common
         }
 
         //****************************************
-        // The minimum amount of power to draw
+        // The minimum amount of resource to draw
         //****************************************
         public static readonly float MinDraw = -1f / 100f;
 

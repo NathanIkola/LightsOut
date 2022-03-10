@@ -15,7 +15,7 @@ namespace LightsOut.Patches.Power
     {
         public static void Postfix(CompPower __instance, ref string __result)
         {
-            if (__instance is CompPowerTrader powerTrader && Common.Power.CanConsumePower(powerTrader) == false)
+            if (__instance is CompPowerTrader powerTrader && Common.Resources.CanConsumeResources(powerTrader) == false)
                 __result = "On Standby";
         }
     }

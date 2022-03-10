@@ -5,7 +5,7 @@
 using HarmonyLib;
 using RimWorld;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
-using CPower = LightsOut.Common.Power;
+using CPower = LightsOut.Common.Resources;
 using System;
 
 namespace LightsOut.Patches.Power
