@@ -112,35 +112,34 @@ namespace LightsOut.Boilerplate
 
             FlickLights = newVal;
 
-            var affectedLights = new List<KeyValuePair<CompPowerTrader, ThingComp>?>();
+            var affectedLights = new List<ThingComp>();
             foreach (var kv in Resources.BuildingStatus)
             {
                 Thing thing = kv.Key;
-                var light = Lights.GetLightResources(thing as Building);
+                var light = Lights.GetGlower(thing as Building);
                 if (light != null)
                     affectedLights.Add(light);
             }
 
             if (!FlickLights)
             {
-                foreach (var light in affectedLights)
+                foreach (ThingComp glower in affectedLights)
                 {
-                    Lights.EnableLight(light);
+                    Lights.EnableLight(glower);
                 }
             }
             else
             {
-                foreach (var light in affectedLights)
+                foreach (ThingComp glower in affectedLights)
                 {
-                    ThingComp glower = light?.Value;
                     Room room = Rooms.GetRoom(glower?.parent as Building);
 
                     if (room == null || room.OutdoorsForWork) return;
 
                     if (Lights.ShouldTurnOffAllLights(room, null))
-                        Lights.DisableLight(light);
+                        Lights.DisableLight(glower);
                     else
-                        Lights.EnableLight(light);
+                        Lights.EnableLight(glower);
                 }
             }
         }

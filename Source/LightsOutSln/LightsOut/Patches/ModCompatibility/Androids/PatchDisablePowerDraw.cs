@@ -18,7 +18,7 @@ namespace LightsOut.Patches.ModCompatibility
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
             PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod<DisableBasePowerDrawOnSet>("Postfix");
+            patch.method = GetMethod<DisableBasePowerDrawOnGet>("Postfix");
             patch.patch = GetMethod<PatchDisablePowerDraw>("PrefixPatch");
             patch.patchType = PatchType.Prefix;
 

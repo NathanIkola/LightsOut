@@ -11,53 +11,46 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
-    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
-
     [StaticConstructorOnStartup]
     public static class Lights
     {
         //****************************************
         // Does the hard work of enabling a light
         //****************************************
-        public static void EnableLight(LightObject? light)
+        public static void EnableLight(ThingComp glower)
         {
             // imagine if I'd spent like half an hour
             // troubleshooting why I was getting a nullex
             // here after already solving it in the disable
             // function haha... :(
-            if (light is null) return;
+            if (glower is null) return;
 
-            CompPowerTrader powerTrader = light?.Key;
-            ThingComp glower = light?.Value;
-
-            Glowers.SetCanGlow(powerTrader, glower, true);
+            Common.Glowers.SetCanGlow(glower, true);
         }
 
         //****************************************
         // Does the hard work of disabling a light
         //****************************************
-        public static void DisableLight(LightObject? light)
+        public static void DisableLight(ThingComp glower)
         {
-            if (light is null || !ModSettings.FlickLights) return;
+            if (glower is null || !ModSettings.FlickLights) return;
+            ThingWithComps parent = glower.parent;
 
-            CompPowerTrader powerTrader = light?.Key;
-            ThingComp glower = light?.Value;
-
-            if (Rooms.GetRoom((glower.parent as Building)).OutdoorsForWork)
+            if (Rooms.GetRoom((parent as Building)).OutdoorsForWork)
                 return;
 
             // acknowledge the keep on setting
             KeepOnComp comp = null;
-            if (KeepOnComps.ContainsKey(glower.parent))
-                comp = KeepOnComps[glower.parent];
+            if (KeepOnComps.ContainsKey(parent))
+                comp = KeepOnComps[parent];
             else
             {
-                comp = glower.parent.TryGetComp<KeepOnComp>();
-                KeepOnComps.Add(glower.parent, comp);
+                comp = parent.TryGetComp<KeepOnComp>();
+                KeepOnComps.Add(parent, comp);
             }
             if (comp?.KeepOn == true) return;
 
-            Glowers.SetCanGlow(powerTrader, glower, false);
+            Common.Glowers.SetCanGlow(glower, false);
         }
 
         //****************************************
@@ -99,11 +92,11 @@ namespace LightsOut.Common
             {
                 if (t is Building thing)
                 {
-                    LightObject? light = GetLightResources(thing);
+                    ThingComp glower = GetGlower(thing);
 
-                    if (light is null || !Rooms.IsInRoom(thing, room)) continue;
+                    if (glower is null || !Rooms.IsInRoom(thing, room)) continue;
 
-                    DisableLight(light);
+                    DisableLight(glower);
                 }
             }
         }
@@ -146,11 +139,11 @@ namespace LightsOut.Common
             {
                 if (t is Building thing)
                 {
-                    LightObject? light = Lights.GetLightResources(thing);
+                    ThingComp glower = GetGlower(thing);
 
-                    if (light is null || !Rooms.IsInRoom(thing, room)) continue;
+                    if (glower is null || !Rooms.IsInRoom(thing, room)) continue;
 
-                    EnableLight(light);
+                    EnableLight(glower);
                 }
             }
         }
@@ -159,36 +152,34 @@ namespace LightsOut.Common
         // Check if a light has a comp on the
         // disallowed list
         //****************************************
-        public static LightObject? GetLightResources(Building thing)
+        public static ThingComp GetGlower(Building thing)
         {
-            if (LightObjects.ContainsKey(thing))
-                return LightObjects[thing];
+            if (Glowers.ContainsKey(thing))
+                return Glowers[thing];
 
             if (thing is null || Tables.IsTable(thing))
             {
-                LightObjects.Add(thing, null);
+                Glowers.Add(thing, null);
                 return null;
             }
 
             // use our light whitelist to cull out anything that doesn't claim to be a light
             if (!CanBeLight(thing))
             {
-                LightObjects.Add(thing, null);
+                Glowers.Add(thing, null);
                 return null;
             }
 
-            CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
-            ThingComp glower = Glowers.GetGlower(thing);
+            ThingComp glower = Common.Glowers.GetGlower(thing);
 
-            if (glower is null || powerTrader is null || powerTrader.powerOutputInt > 0)
+            if (glower is null)
             {
-                LightObjects.Add(thing, null);
+                Glowers.Add(thing, null);
                 return null;
             }
 
-            LightObject? light = new LightObject(powerTrader, glower);
-            LightObjects.Add(thing, light);
-            return light;
+            Glowers.Add(thing, glower);
+            return glower;
         }
 
         //****************************************
@@ -274,7 +265,7 @@ namespace LightsOut.Common
         };
 
         private static Dictionary<Building, bool> MemoizedCanBeLight { get; } = new Dictionary<Building, bool>();
-        private static Dictionary<Building, LightObject?> LightObjects { get; } = new Dictionary<Building, LightObject?>();
+        private static Dictionary<Building, ThingComp> Glowers { get; } = new Dictionary<Building, ThingComp>();
         private static Dictionary<ThingWithComps, KeepOnComp> KeepOnComps { get; } = new Dictionary<ThingWithComps, KeepOnComp>();
     }
 }

@@ -20,10 +20,10 @@ namespace LightsOut.Common
         // Returns: the previous value or null
         // if it was not in the dictionary before
         //****************************************
-        public static bool? SetCanGlow(CompPowerTrader powerTrader, ThingComp glower, bool? canGlow)
+        public static bool? SetCanGlow(ThingComp glower, bool? canGlow)
         {
             if (glower is null) return false;
-            bool? previous = Resources.SetConsumesPower(powerTrader, canGlow);
+            bool? previous = Resources.SetConsumesResources(glower.parent, canGlow);
 
             // only update if the state has changed
             if (previous is null || canGlow is null || previous != canGlow)

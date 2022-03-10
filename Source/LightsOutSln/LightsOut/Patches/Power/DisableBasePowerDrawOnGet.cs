@@ -8,30 +8,30 @@ using RimWorld;
 using HarmonyLib;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
-using CPower = LightsOut.Common.Resources;
 using System;
+using LightsOut.Common;
 
 namespace LightsOut.Patches.Power
 {
     [HarmonyPatch(typeof(CompPowerTrader))]
-    [HarmonyPatch(nameof(CompPowerTrader.PowerOutput), MethodType.Setter)]
-    public class DisableBasePowerDrawOnSet
+    [HarmonyPatch(nameof(CompPowerTrader.PowerOutput), MethodType.Getter)]
+    public class DisableBasePowerDrawOnGet
     {
-        public static void Postfix(CompPowerTrader __instance)
+        public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
-            bool? canConsumePower = Common.Resources.CanConsumeResources(__instance);
+            bool? canConsumePower = Resources.CanConsumeResources(__instance);
 
             if (canConsumePower == true)
             {
                 if (Common.Tables.IsTable(__instance.parent as Building))
-                    __instance.powerOutputInt *= ModSettings.ActivePowerDrawRate;
+                    __result *= ModSettings.ActivePowerDrawRate;
             }
             else if (canConsumePower == false)
             {
                 if (Common.Lights.CanBeLight(__instance.parent as Building))
-                    __instance.powerOutputInt = CPower.MinDraw;
+                    __result = Resources.MinDraw;
                 else
-                    __instance.powerOutputInt = Math.Min(__instance.powerOutputInt * ModSettings.StandbyPowerDrawRate, CPower.MinDraw);
+                    __result = Math.Min(__result * ModSettings.StandbyPowerDrawRate, Resources.MinDraw);
             }
         }
     }

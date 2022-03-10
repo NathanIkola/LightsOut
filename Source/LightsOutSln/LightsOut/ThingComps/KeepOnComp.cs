@@ -38,12 +38,11 @@ namespace LightsOut.ThingComps
                     Building thing = parent as Building;
                     CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
                     ThingComp glower = Glowers.GetGlower(thing);
-                    LightObject obj = new LightObject(powerTrader, glower);
                     Room room = Rooms.GetRoom(thing);
 
-                    Lights.DisableLight(obj);
+                    Lights.DisableLight(glower);
                     if (value || room.OutdoorsForWork || !Lights.ShouldTurnOffAllLights(room, null))
-                        Lights.EnableLight(obj);
+                        Lights.EnableLight(glower);
                 }
                 catch(Exception e)
                 {

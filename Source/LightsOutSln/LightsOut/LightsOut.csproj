@@ -99,7 +99,7 @@
     <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
-    <Compile Include="Patches\Power\DisableBasePowerDrawOnSet.cs" />
+    <Compile Include="Patches\Power\DisableBasePowerDrawOnGet.cs" />
     <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
     <Compile Include="Patches\Power\DisableThingsInRoomsOnSpawn.cs" />
     <Compile Include="Patches\Power\RechargeablePatch.cs" />

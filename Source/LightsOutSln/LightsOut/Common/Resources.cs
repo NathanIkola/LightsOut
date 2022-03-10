@@ -11,39 +11,12 @@ namespace LightsOut.Common
     [StaticConstructorOnStartup]
     public static class Resources
     {
-        //****************************************
-        // Add a CompPower to the power-consumable
-        // dictionary
-        //
-        // Returns: the previous value or null
-        // if it was not in the dictionary before
-        //****************************************
-        public static bool? SetConsumesPower(CompPowerTrader powerTrader, bool? consumesPower)
-        {
-            if (powerTrader == null) return null;
-
-            return SetConsumesResources(powerTrader, consumesPower, () => 
-            {
-                powerTrader.PowerOutput = -powerTrader.Props.basePowerConsumption;
-            });
-        }
 
         //****************************************
         // Callback to reset the resource draw
         // of a consumer
         //****************************************
         public delegate void ResetResourceDrawCallback();
-
-        public static bool? SetConsumesResources(ThingComp resourceTrader, bool? consumesResource, ResetResourceDrawCallback resetDrawCallback)
-        {
-            if (resourceTrader is null) return null;
-            bool? previous = SetConsumesResources(resourceTrader.parent, consumesResource);
-
-            if (!(consumesResource is null) && !(resetDrawCallback is null))
-                resetDrawCallback();
-
-            return previous;
-        }
 
         //****************************************
         // Add a thing to the resource-consumable
