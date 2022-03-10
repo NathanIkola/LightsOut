@@ -44,9 +44,6 @@ namespace LightsOut.Patches.Benches
             {
                 if (!Tables.IsTable(table)) return;
 
-                CompPowerTrader powerTrader = table.PowerComp as CompPowerTrader;
-                if (powerTrader is null) return;
-
                 if (pawn.Position == table.InteractionCell)
                     ActivateBench(billDriver, table);
             }
@@ -62,9 +59,6 @@ namespace LightsOut.Patches.Benches
             // why is the ResearchBench property private
             var bench = researchDriver.job.targetA.Thing as Building_ResearchBench;
             if (bench is null || !Tables.IsTable(bench)) return;
-
-            CompPowerTrader powerTrader = bench.PowerComp as CompPowerTrader;
-            if (powerTrader is null) return;
 
             // the pawn needs to be in the correct place
             if(pawn.Position == bench.InteractionCell)

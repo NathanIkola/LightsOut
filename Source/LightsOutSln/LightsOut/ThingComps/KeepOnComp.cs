@@ -13,8 +13,6 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.ThingComps
 {
-    using LightObject = KeyValuePair<CompPowerTrader, ThingComp>;
-
     public class KeepOnComp : ThingComp
     {
         public KeepOnComp() : base()
@@ -36,7 +34,6 @@ namespace LightsOut.ThingComps
                 try
                 {
                     Building thing = parent as Building;
-                    CompPowerTrader powerTrader = thing.PowerComp as CompPowerTrader;
                     ThingComp glower = Glowers.GetGlower(thing);
                     Room room = Rooms.GetRoom(thing);
 

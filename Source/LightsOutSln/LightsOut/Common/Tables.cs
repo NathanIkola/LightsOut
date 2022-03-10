@@ -62,8 +62,7 @@ namespace LightsOut.Common
                 return false;
             }
 
-            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench)
-                && thing.PowerComp as CompPowerTrader != null);
+            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench));
             MemoizedIsTable.Add(thing, isTable);
             return isTable;
         }
