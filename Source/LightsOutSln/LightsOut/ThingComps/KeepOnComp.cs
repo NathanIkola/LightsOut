@@ -68,11 +68,6 @@ namespace LightsOut.ThingComps
                 if (ModSettings.FlickLights)
                     yield return Gizmo;
             }
-            else
-            {
-                // if it isn't possible, STOP ASKING US
-                //parent.AllComps.Remove(this);
-            }
             yield break;
         }
     }

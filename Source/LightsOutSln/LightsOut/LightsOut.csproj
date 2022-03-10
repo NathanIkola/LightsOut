@@ -76,6 +76,7 @@
     <Compile Include="Defs\ThingDefOf.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
+    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchInspectMessage.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchPostSpawnSetup.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchCount.cs" />
     <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Patches\ModCompatibility\ModGlowers\PatchShouldBeLitNow.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\PatchGetRoomForVEWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\HelixienGas\HelixienGasCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGasConsumption.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />

@@ -46,7 +46,7 @@ namespace LightsOut.Patches.Lights
                 toil.AddPreTickAction(() => 
                 {
                     if (!(building.PowerComp is null)
-                        && Common.Resources.CanConsumeResources(building.PowerComp) == false)
+                        && Resources.CanConsumeResources(building.PowerComp) == false)
                     {
                         Tables.EnableTable(building);
                     }

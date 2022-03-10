@@ -14,6 +14,7 @@ using LightsOut.Patches.ModCompatibility.VEWallLights;
 using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.ModGlowers;
 using LightsOut.Patches.ModCompatibility.Ideology;
+using LightsOut.Patches.ModCompatibility.HelixienGas;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -28,7 +29,8 @@ namespace LightsOut.Patches.ModCompatibility
             new VEWallLightCompatibilityPatch(),
             new WallLightCompatibilityPatch(),
             new ModGlowerCompatibilityPatch(),
-            new IdeologyCompatibilityPatch()
+            new IdeologyCompatibilityPatch(),
+            new HelixienGasCompatibilityPatch()
         };
 
         //****************************************
