@@ -58,7 +58,6 @@ namespace LightsOut.ThingComps
             Scribe_Values.Look<bool>(ref this.m_keepOn, "keepItOn", false, false);
         }
 
-
         public KeepOnGizmo Gizmo { get; set; }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

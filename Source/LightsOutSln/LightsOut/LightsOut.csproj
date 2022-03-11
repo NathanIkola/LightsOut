@@ -76,6 +76,7 @@
     <Compile Include="Defs\ThingDefOf.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
+    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchInspectMessage.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchPostSpawnSetup.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchCount.cs" />

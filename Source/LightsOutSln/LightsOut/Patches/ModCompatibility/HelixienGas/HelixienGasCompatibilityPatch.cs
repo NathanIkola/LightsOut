@@ -16,7 +16,8 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
             {
                 new PatchGasConsumption(),
-                new PatchInspectMessage()
+                new PatchInspectMessage(),
+                new PatchGetRoomForVPEGasWallLights()
             };
 
             return components;
