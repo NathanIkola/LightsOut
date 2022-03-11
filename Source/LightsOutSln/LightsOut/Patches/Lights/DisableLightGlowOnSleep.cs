@@ -46,18 +46,20 @@ namespace LightsOut.Patches.Lights
                     tickAction();
 
                     // check if their status has changed
+                    Room room = pawn.GetRoom();
+                    bool shouldTurnOffLights = Common.Lights.ShouldTurnOffAllLights(room, pawn);
                     if(asleep != pawn.jobs.curDriver?.asleep)
                     {
                         // if the pawn was previously asleep
-                        if(asleep == true)
+                        if(asleep == true || !shouldTurnOffLights)
                         {
                             // turn the lights back on
-                            Common.Lights.EnableAllLights(pawn.GetRoom());
+                            Common.Lights.EnableAllLights(room);
                         }
-                        else if (asleep == false)
+                        else if (asleep == false && shouldTurnOffLights)
                         {
                             // turn the lights off
-                            Common.Lights.DisableAllLights(pawn.GetRoom());
+                            Common.Lights.DisableAllLights(room);
                         }
                     }
                 };
