@@ -31,7 +31,9 @@ namespace LightsOut.Patches.ModCompatibility.VEWallLights
         private static void GetRoomPatch(Building __0, ref Room __result)
         {
             if (__0 is null) return;
-            if (__0.def.defName.StartsWith("VFEA_WallLamp") && (__0.Map?.regionAndRoomUpdater?.Enabled ?? false))
+            if (__0.def.defName.StartsWith("VFEA_Wall")
+                && __0.def.defName.EndsWith("Lamp")
+                && (__0.Map?.regionAndRoomUpdater?.Enabled ?? false))
                 __result = RegionAndRoomQuery.RoomAt(__0.Position + __0.Rotation.FacingCell, __0.Map);
         }
     }
