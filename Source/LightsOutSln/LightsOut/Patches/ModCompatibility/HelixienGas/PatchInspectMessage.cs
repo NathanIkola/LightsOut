@@ -1,13 +1,12 @@
 ﻿//************************************************
-// Patches the 
+// Patches the inspect message of the gas
+// resource traders
+//************************************************
 
 using LightsOut.Common;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
