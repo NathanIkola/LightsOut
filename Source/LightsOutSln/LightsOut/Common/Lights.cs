@@ -253,7 +253,7 @@ namespace LightsOut.Common
                 return false;
             }
             // otherwise it did have a blacklisted comp
-            else return true;
+            return true;
         }
 
         // whitelist for things that can be lights

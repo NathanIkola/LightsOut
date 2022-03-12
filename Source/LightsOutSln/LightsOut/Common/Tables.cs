@@ -75,7 +75,11 @@ namespace LightsOut.Common
         //****************************************
         public static bool HasBlacklistedTableComp(ThingWithComps thing)
         {
-            return false;
+            if (thing.TryGetComp<CompFireOverlay>() is null)
+            {
+                return false;
+            }
+            return true;
         }
 
         //****************************************

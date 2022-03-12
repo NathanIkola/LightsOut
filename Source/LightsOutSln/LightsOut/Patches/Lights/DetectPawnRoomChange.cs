@@ -22,7 +22,7 @@ namespace LightsOut.Patches.Lights
         public static void Postfix(Pawn __instance, Room __state)
         {
             // animals PLEASE don't turn on my lights
-            if (!__instance.RaceProps.Humanlike || !ModSettings.FlickLights) return;
+            if (__instance.RaceProps.Animal || !ModSettings.FlickLights) return;
 
             Room newRoom = __instance.GetRoom();
 
