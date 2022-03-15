@@ -1,11 +1,10 @@
-﻿//************************************************
-// Adds support for modded glowers
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.ModGlowers
 {
+    /// <summary>
+    /// Add support for modded glowers
+    /// </summary>
     public class ModGlowerCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "Modded Glowers";

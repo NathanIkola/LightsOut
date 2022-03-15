@@ -1,15 +1,14 @@
-﻿//************************************************
-// Stop the pawns from flicking the
-// Android Printer off when they leave the room
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Androids
 {
+    /// <summary>
+    /// Stop the pawns from flicking the Android Printer
+    /// off when they leave the room
+    /// </summary>
     public class PatchIsTable : ICompatibilityPatchComponent
     {
         public override string TypeNameToPatch => "Tables";
@@ -27,6 +26,12 @@ namespace LightsOut.Patches.ModCompatibility.Androids
             return new List<PatchInfo>() { patch };
         }
 
+        /// <summary>
+        /// Checks if the Building is an Android Printer
+        /// and fixes IsTable to recognize it
+        /// </summary>
+        /// <param name="__0">The Building to check</param>
+        /// <param name="__result">The result of IsTable</param>
         private static void Postfix(Building __0, ref bool __result)
         {
             if (__0 is null) return;

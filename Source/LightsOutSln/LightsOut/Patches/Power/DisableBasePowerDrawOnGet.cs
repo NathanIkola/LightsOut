@@ -1,10 +1,4 @@
-﻿//************************************************
-// Set the power draw of a bench when it connects
-// to a power net to make sure it draws the
-// correct power
-//************************************************
-
-using RimWorld;
+﻿using RimWorld;
 using HarmonyLib;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
@@ -13,10 +7,19 @@ using LightsOut.Common;
 
 namespace LightsOut.Patches.Power
 {
+    /// <summary>
+    /// Modifies the power output of CompPowerTraders based on
+    /// the enabled/disabled status of the building it's attributed to
+    /// </summary>
     [HarmonyPatch(typeof(CompPowerTrader))]
     [HarmonyPatch(nameof(CompPowerTrader.PowerOutput), MethodType.Getter)]
     public class DisableBasePowerDrawOnGet
     {
+        /// <summary>
+        /// Determines if the power output of this CompPowerTrader should be adjusted
+        /// </summary>
+        /// <param name="__instance">The CompPowerTrader to adjust</param>
+        /// <param name="__result">The resulting power draw of this <paramref name="__instance"/></param>
         public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
             bool? canConsumePower = Resources.CanConsumeResources(__instance);
@@ -24,14 +27,14 @@ namespace LightsOut.Patches.Power
             if (canConsumePower == true)
             {
                 if (Common.Tables.IsTable(__instance.parent as Building))
-                    __result *= ModSettings.ActivePowerDrawRate;
+                    __result *= ModSettings.ActiveResourceDrawRate;
             }
             else if (canConsumePower == false)
             {
                 if (Common.Lights.CanBeLight(__instance.parent as Building))
                     __result = Resources.MinDraw;
                 else
-                    __result = Math.Min(__result * ModSettings.StandbyPowerDrawRate, Resources.MinDraw);
+                    __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
             }
         }
     }

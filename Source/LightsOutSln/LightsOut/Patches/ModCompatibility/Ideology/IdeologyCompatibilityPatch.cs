@@ -1,13 +1,10 @@
-﻿//************************************************
-// Detect if the WallLight mod is installed
-// and perform the necessary compatibility
-// patching if it is present
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.Ideology
 {
+    /// <summary>
+    /// Apply patches if Ideology is installed
+    /// </summary>
     public class IdeologyCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "Ideology";

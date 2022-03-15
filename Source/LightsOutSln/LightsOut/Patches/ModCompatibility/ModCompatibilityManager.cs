@@ -1,9 +1,4 @@
-﻿//************************************************
-// The class in charge of consuming all of the
-// mod compatibility patches
-//************************************************
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
@@ -18,11 +13,14 @@ using LightsOut.Patches.ModCompatibility.HelixienGas;
 
 namespace LightsOut.Patches.ModCompatibility
 {
+    /// <summary>
+    /// The class that is in charge of applying compatibility patches
+    /// </summary>
     public static class ModCompatibilityManager
     {
-        //****************************************
-        // The compatibility patches to apply
-        //****************************************
+        /// <summary>
+        /// The list of compatibility patches to apply
+        /// </summary>
         static readonly List<ICompatibilityPatch> CompatibilityPatches = new List<ICompatibilityPatch>()
         {
             new AndroidsCompatibilityPatch(),
@@ -33,10 +31,9 @@ namespace LightsOut.Patches.ModCompatibility
             new HelixienGasCompatibilityPatch()
         };
 
-        //****************************************
-        // Actually do the loading for the
-        // mods in the above list
-        //****************************************
+        /// <summary>
+        /// The method that actually iterates over the patches and applies them
+        /// </summary>
         public static void LoadCompatibilityPatches()
         {
             foreach (ICompatibilityPatch patch in CompatibilityPatches)
@@ -45,9 +42,10 @@ namespace LightsOut.Patches.ModCompatibility
             }
         }
 
-        //****************************************
-        // Apply a whole compatibility patch
-        //****************************************
+        /// <summary>
+        /// Applies a whole, single compatibility patch
+        /// </summary>
+        /// <param name="patch">The patch to apply</param>
         private static void ApplyPatch(ICompatibilityPatch patch)
         {
             if (string.IsNullOrWhiteSpace(patch.CompatibilityPatchName))
@@ -71,9 +69,10 @@ namespace LightsOut.Patches.ModCompatibility
             }
         }
 
-        //****************************************
-        // Apply a single compatibility component
-        //****************************************
+        /// <summary>
+        /// Applies a single compatibility component
+        /// </summary>
+        /// <param name="comp">The component to apply</param>
         private static void ApplyPatchComponent(ICompatibilityPatchComponent comp)
         {
             if (string.IsNullOrWhiteSpace(comp.ComponentName))
@@ -138,9 +137,10 @@ namespace LightsOut.Patches.ModCompatibility
             }
         }
 
-        //****************************************
-        // Gets all types from loaded mods
-        //****************************************
+        /// <summary>
+        /// Get all types from loaded mods
+        /// </summary>
+        /// <returns>A list of types to patch</returns>
         private static IEnumerable<Type> GetTypesToPatch()
         {
             List<Assembly> assemblies = new List<Assembly>() { Assembly.GetAssembly(typeof(Pawn)) };
@@ -163,22 +163,18 @@ namespace LightsOut.Patches.ModCompatibility
             return patchableTypes;
         }
 
-        //****************************************
-        // Raw dog the method out of a type
-        //****************************************
+        /// <summary>
+        /// Gets the method out of a type when given
+        /// a <see cref="PatchInfo"/> object
+        /// </summary>
+        /// <param name="type">The type to patch</param>
+        /// <param name="patch">The patch being applied to <paramref name="type"/></param>
+        /// <returns></returns>
         static MethodInfo GetMethod(Type type, PatchInfo patch)
         {
             if (patch.method != null) return patch.method;
 
-            return GetMethod(type, patch.methodName);
-        }
-
-        //****************************************
-        // Really raw dog it out using a string
-        //****************************************
-        static MethodInfo GetMethod(Type type, string methodName)
-        {
-            return type.GetMethod(methodName, ICompatibilityPatchComponent.BindingFlags);
+            return ICompatibilityPatchComponent.GetMethod(type, patch.methodName);
         }
     }
 }

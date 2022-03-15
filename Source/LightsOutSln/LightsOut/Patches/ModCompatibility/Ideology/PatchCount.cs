@@ -1,8 +1,4 @@
-﻿//************************************************
-// Detect if a ritual is ending
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -10,6 +6,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Ideology
 {
+    /// <summary>
+    /// Detect if a ritual is ending. Count is fired at the end of a ritual.
+    /// </summary>
     public class PatchCount : ICompatibilityPatchComponent<RitualOutcomeComp_NumActiveLoudspeakers>
     {
         public override string ComponentName => "Patch Count for RitualOutcomeComp_NumActiveLoudspeakers";
@@ -24,6 +23,12 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
             return new List<PatchInfo>() { prefix };
         }
 
+        /// <summary>
+        /// Check if any Loudspeakers are within range of the ritual, and if
+        /// so disable them since the ritual is ending.
+        /// </summary>
+        /// <param name="__instance">The loudspeaker presence comp being checked</param>
+        /// <param name="ritual">The ritual being performed</param>
         private static void Prefix(RitualOutcomeComp_NumActiveLoudspeakers __instance, LordJob_Ritual ritual)
         {
             TargetInfo selectedTarget = ritual.selectedTarget;

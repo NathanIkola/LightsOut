@@ -1,9 +1,4 @@
-﻿//************************************************
-// Holds all of the common room operations
-//************************************************
-
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,16 +6,20 @@ using Verse;
 
 namespace LightsOut.Common
 {
+    /// <summary>
+    /// Holds common glower operations
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Glowers
     {
-        //****************************************
-        // Add a glower to the glowable dictionary
-        //
-        // Returns: the previous value or null
-        // if it was not in the dictionary before
-        //****************************************
-        public static bool? SetCanGlow(ThingComp glower, bool? canGlow)
+        /// <summary>
+        /// Sets whether a glowable building is able to glow or not
+        /// </summary>
+        /// <param name="glower">The glower to enable or disable</param>
+        /// <param name="canGlow">Whether or not this glower can glow</param>
+        /// <returns>The previous value, or <see langword="null"/> if it wasn't 
+        /// in the dictionary before</returns>
+        private static bool? SetCanGlow(ThingComp glower, bool? canGlow)
         {
             if (glower is null) return false;
             bool? previous = Resources.SetConsumesResources(glower.parent, canGlow);
@@ -32,23 +31,46 @@ namespace LightsOut.Common
             return previous;
         }
 
-        //****************************************
-        // Add a glower to the glowable dictionary
-        //
-        // Returns: whether or not the glower
-        // is able to glow, or null if it is
-        // not in the dictionary
-        //****************************************
+        /// <summary>
+        /// Marks a glower as enabled
+        /// </summary>
+        /// <param name="glower">The glower to enable</param>
+        /// <returns>The previous value, or <see langword="null"/> if it wasn't 
+        /// in the dictionary before</returns>
+        public static bool? EnableGlower(ThingComp glower)
+        {
+            return SetCanGlow(glower, true);
+        }
+
+        /// <summary>
+        /// Marks a glower as disabled
+        /// </summary>
+        /// <param name="glower">The glower to disable</param>
+        /// <returns>The previous value, or <see langword="null"/> if it wasn't 
+        /// in the dictionary before</returns>
+        public static bool? DisableGlower(ThingComp glower)
+        {
+            return SetCanGlow(glower, false);
+        }
+
+        /// <summary>
+        /// Determine whether or not <paramref name="glower"/> is enabled
+        /// </summary>
+        /// <param name="glower">The glower to check</param>
+        /// <returns><see langword="true"/> if the glower is enabled, 
+        /// <see langword="false"/> if it's disabled, 
+        /// and <see langword="null"/> if it hasn't been set</returns>
         public static bool? CanGlow(ThingComp glower)
         {
             if (glower is null) return false;
             return Resources.CanConsumeResources(glower.parent);
         }
 
-        //****************************************
-        // Get the glower (if present) from a
-        // building, or return null if not present
-        //****************************************
+        /// <summary>
+        /// Gets the glower comp from a building
+        /// </summary>
+        /// <param name="thing">The <see cref="Building"/> to get the comp from</param>
+        /// <returns>The glower if present, otherwise <see langword="null"/></returns>
         public static ThingComp GetGlower(Building thing)
         {
             if (thing is null) return null;
@@ -64,9 +86,10 @@ namespace LightsOut.Common
             catch (Exception) { return null; }
         }
 
-        //****************************************
-        // Update any glower
-        //****************************************
+        /// <summary>
+        /// Update a glower's lit status
+        /// </summary>
+        /// <param name="glower">The glower to update</param>
         private static void UpdateGlower(ThingComp glower)
         {
             if (glower is null) return;
@@ -76,9 +99,10 @@ namespace LightsOut.Common
                 TryUpdateGenericGlower(glower);
         }
 
-        //****************************************
-        // Try to update a generic glower
-        //****************************************
+        /// <summary>
+        /// Attempt to update a generic glower's lit status
+        /// </summary>
+        /// <param name="glower">The glower to update</param>
         private static void TryUpdateGenericGlower(ThingComp glower)
         {
             if (glower is null) return;
@@ -100,7 +124,14 @@ namespace LightsOut.Common
             }
         }
 
+        /// <summary>
+        /// A memoized list of glowers to speed up subsequent calls to GetGlower
+        /// </summary>
         private static Dictionary<Building, ThingComp> CachedGlowers { get; } = new Dictionary<Building, ThingComp>();
+
+        /// <summary>
+        /// A list of valid glower types (can be added to by mod compatibility patches as needed)
+        /// </summary>
         public static List<Type> CompGlowers { get; } = new List<Type>() { typeof(CompGlower) };
     }
 }

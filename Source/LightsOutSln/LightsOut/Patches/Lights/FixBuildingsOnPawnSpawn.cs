@@ -1,17 +1,4 @@
-﻿//************************************************
-// Squash a bug I've neglected regarding what
-// happens when a pawn spawns in. Without this
-// patch, if a pawn spawns in the middle of
-// using a bench, the bench will still be in
-// standby since the pather never "arrived"
-// since the pawn never pathed to it
-//
-// Additionally, it will kill the lights after
-// the pawn spawns so that the load state
-// matches what you'd expect
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
 using LightsOut.Patches.ModCompatibility;
@@ -22,10 +9,19 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {
+    /// <summary>
+    /// Enables tables when Pawns spawn, allowing Pawns in the middle of a job
+    /// to enable their benches
+    /// </summary>
     [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch(nameof(Pawn.SpawnSetup))]
     public class FixBuildingsOnPawnSpawn
     {
+        /// <summary>
+        /// After a Pawn spawns, it checks if their current job involves a bench
+        /// and enables it if so
+        /// </summary>
+        /// <param name="__instance"></param>
         public static void Postfix(Pawn __instance)
         {
             JobDriver driver = __instance.jobs?.curDriver;
@@ -46,7 +42,7 @@ namespace LightsOut.Patches.Lights
                 toil.AddPreTickAction(() => 
                 {
                     if (!(building.PowerComp is null)
-                        && Resources.CanConsumeResources(building.PowerComp) == false)
+                        && Resources.CanConsumeResources(building) == false)
                     {
                         Tables.EnableTable(building);
                     }
@@ -82,12 +78,19 @@ namespace LightsOut.Patches.Lights
                         // this call to pawn.GetRoom() is strictly required in case the
                         // regions get dirtied before they wake up so that it gets the
                         // room they actually wake up in not the one they went to sleep in
-                        toil.AddFinishAction(() => { Common.Lights.EnableAllLights(pawn.GetRoom()); });
+                        toil.AddFinishAction(() => 
+                        {
+                            Sleepers.Remove(pawn);
+                            Common.Lights.EnableAllLights(pawn.GetRoom());
+                        });
                     }
                 });
             }
         }
 
-        private static Dictionary<Pawn, bool> Sleepers = new Dictionary<Pawn, bool>();
+        /// <summary>
+        /// List of sleeping Pawns (TODO: evaluate if this is doing anything)
+        /// </summary>
+        private static readonly Dictionary<Pawn, bool> Sleepers = new Dictionary<Pawn, bool>();
     }
 }

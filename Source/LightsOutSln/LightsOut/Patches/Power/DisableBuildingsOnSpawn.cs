@@ -1,11 +1,4 @@
-﻿//************************************************
-// Disable all compatible building as soon
-// as they spawn 
-//************************************************
-
-using System.Collections.Generic;
-using RimWorld;
-using Verse;
+﻿using Verse;
 using HarmonyLib;
 using LightsOut.Common;
 using LightsOut.ThingComps;
@@ -13,24 +6,30 @@ using System;
 
 namespace LightsOut.Patches.Power
 {
+    /// <summary>
+    /// Disables Buildings as they spawn
+    /// </summary>
     [HarmonyPatch(typeof(Building))]
-    [HarmonyPatch("SpawnSetup")]
+    [HarmonyPatch(nameof(Building.SpawnSetup))]
     public class DisableBuildingsOnSpawn
     {
+        /// <summary>
+        /// Checks if a Building needs to be disabled when it spawns
+        /// </summary>
+        /// <param name="__instance"></param>
         public static void Postfix(Building __instance)
         {
-            ThingComp glower;
             if (Tables.IsTable(__instance) || Tables.IsTelevision(__instance))
             {
                 Tables.DisableTable(__instance);
             }
-            else if ((glower = Common.Lights.GetGlower(__instance)) != null)
+            else if (Common.Lights.CanBeLight(__instance))
             {
                 Room room = Rooms.GetRoom(__instance);
                 if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, null))
-                    Common.Lights.DisableLight(glower);
+                    Common.Lights.DisableLight(__instance);
                 else
-                    Common.Lights.EnableLight(glower);
+                    Common.Lights.EnableLight(__instance);
 
                 // return so that we don't remove the KeepOnComp from this
                 return;

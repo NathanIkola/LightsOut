@@ -1,9 +1,4 @@
-﻿//************************************************
-// Patches the ShouldBeLitNow getter for
-// a modded glower
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using LightsOut.Patches.Lights;
 using System;
 using System.Collections.Generic;
@@ -12,6 +7,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.ModGlowers
 {
+    /// <summary>
+    /// Patches ShouldBeLitNow for modded glowers
+    /// </summary>
     public class PatchShouldBeLitNow : ICompatibilityPatchComponent
     {
         public override string TypeNameToPatch => "Glower";

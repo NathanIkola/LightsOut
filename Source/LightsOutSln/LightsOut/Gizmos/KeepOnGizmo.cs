@@ -1,38 +1,41 @@
-﻿//************************************************
-// Shows the button in a light that decides if
-// it is always on or subject to the light 
-// flicking by pawns
-//************************************************
-
-using LightsOut.ThingComps;
+﻿using LightsOut.ThingComps;
 using RimWorld;
 using Verse;
 
 namespace LightsOut.Gizmos
 {
+    /// <summary>
+    /// The gizmo for the KeepOnComp
+    /// (the thing you click to keep a light on)
+    /// </summary>
     public class KeepOnGizmo : Command_Toggle
     {
+        /// <summary>
+        /// Constructor that sets up the gizmo
+        /// </summary>
+        /// <param name="parentComp">The <see cref="KeepOnComp"/> this gizmo belongs to</param>
         public KeepOnGizmo(KeepOnComp parentComp)
         {
             ParentComp = parentComp;
-            defaultLabel = "Keep On";
-            defaultDesc = "Prevent pawns from turning this light off.";
+            defaultLabel = "LightsOut_Gizmos_KeepOnLabel".Translate();
+            defaultDesc = "LightsOut_Gizmos_KeepOnTooltip".Translate();
             icon = Widgets.GetIconFor(ThingDefOf.StandingLamp);
             isActive = () => ParentComp.KeepOn;
             toggleAction = () => { ToggleAction(); };
             order = 420;
         }
 
-        //****************************************
-        // Toggle the enabled-ness of this comp
-        // and then enable/disable the light
-        // as necessary
-        //****************************************
+        /// <summary>
+        /// The action to take when the gizmo is toggled
+        /// </summary>
         private void ToggleAction()
         {
             ParentComp.KeepOn = !ParentComp.KeepOn;
         }
 
+        /// <summary>
+        /// The <see cref="KeepOnComp"/> this gizmo belongs to
+        /// </summary>
         public KeepOnComp ParentComp { get; set; }
     }
 }

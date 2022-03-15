@@ -1,112 +1,122 @@
-﻿//************************************************
-// Take care of the mod settings
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using HugsLib;
 using HugsLib.Settings;
 using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility;
-using RimWorld;
 using Verse;
 
 namespace LightsOut.Boilerplate
 {
+    /// <summary>
+    /// The class that initializes the mod and holds all
+    /// mod-related settings
+    /// </summary>
     public class ModSettings : ModBase
     {
+        /// <summary>
+        /// Default constructor that sets the Harmony instance. 
+        /// This should only be called by the game when it loads the mod.
+        /// </summary>
         public ModSettings()
         {
             Instance = this;
         }
 
-        //****************************************
-        // The Harmony instance of this mod
-        //****************************************
+        /// <summary>
+        /// The Harmony instance associated with this mod
+        /// </summary>
         public static Harmony Harmony => Instance.HarmonyInst;
 
-        //****************************************
-        // The one instantiated instance of
-        // this mod (used to get Harmony)
-        //****************************************
+        /// <summary>
+        /// The instance of this mod that was instantiated by the game.
+        /// This is only used to get the Harmony instance.
+        /// </summary>
         private static ModSettings Instance { get; set; }
 
-        //****************************************
-        // Control whether or not pawns
-        // flick the lights on and off
-        //****************************************
+        /// <summary>
+        /// Control whether or not Pawns flick lights on and off
+        /// </summary>
         public static bool FlickLights { get; set; } = true;
 
-        //****************************************
-        // Latent power draw of things when
-        // they are flicked off
-        //****************************************
-        public static float StandbyPowerDrawRate { get; set; } = 0f;
+        /// <summary>
+        /// Latent power draw of things when they're flicked off
+        /// </summary>
+        public static float StandbyResourceDrawRate { get; set; } = 0f;
 
-        //****************************************
-        // Power draw of things when in use
-        //****************************************
-        public static float ActivePowerDrawRate { get; set; } = 0f;
+        /// <summary>
+        /// The resource draw rate of things when they're in-use
+        /// </summary>
+        public static float ActiveResourceDrawRate { get; set; } = 0f;
 
-        //****************************************
-        // Control whether or not pawns shut off
-        // the lights when they go to bed
-        //****************************************
+        /// <summary>
+        /// Control whether or not Pawns shut off the lights when
+        /// they go to bed
+        /// </summary>
         public static bool NightLights { get; set; } = false;
 
+        /// <summary>
+        /// The identifier this mod uses to identify itself in-game
+        /// </summary>
         public override string ModIdentifier
         {
             get { return "LightsOut"; }
         }
 
+        /// <summary>
+        /// The function called when the game finishes loading defs
+        /// </summary>
         public override void DefsLoaded()
         {
             SettingsChanged();
             ModCompatibilityManager.LoadCompatibilityPatches();
         }
 
+        /// <summary>
+        /// The function called when the game settings change for any reason
+        /// </summary>
         public override void SettingsChanged()
         {
             bool lightsOut = Settings.GetHandle<bool>(
                 "EverythingButLightsOut",
-                "Turn off lights in empty rooms?",
-                "If you turn this off, this mod becomes \"LightsOn\". On by default.",
+                "LightsOut_Settings_EverythingButLightsOutLabel".Translate(),
+                "LightsOut_Settings_EverythingButLightsOutTooltip".Translate(),
                 true);
 
             bool nightLights = Settings.GetHandle<bool>(
                 "NightLights",
-                "Keep the lights on when your pawns go to bed?",
-                "Enable this if your pawns are scared of the dark. Off by default.",
+                "LightsOut_Settings_NightLightsLabel".Translate(),
+                "LightsOut_Settings_NightLightsTooltip".Translate(),
                 false);
 
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
-                "Standby power draw (%)",
-                "Percentage of normal power to draw when in standby. 0% by default.",
+                "LightsOut_Settings_LatentPowerDrawRateLabel".Translate(),
+                "LightsOut_Settings_LatentPowerDrawRateTooltip".Translate(),
                 0,
                 Validators.IntRangeValidator(0, 100));
 
             uint activePower = Settings.GetHandle<uint>(
                 "ActivePowerDrawRate",
-                "Power draw when in use (%)",
-                "Percentage of normal power to draw when in use. 100% by default.",
+                "LightsOut_Settings_ActivePowerDrawRateLabel".Translate(),
+                "LightsOut_Settings_ActivePowerDrawRateTooltip".Translate(),
                 100,
                 Validators.IntRangeValidator(100, int.MaxValue));
 
-            StandbyPowerDrawRate = standbyPower / 100f;
-            ActivePowerDrawRate = activePower / 100f;
+            StandbyResourceDrawRate = standbyPower / 100f;
+            ActiveResourceDrawRate = activePower / 100f;
 
             NightLights = nightLights;
 
-            DoFlickLightsChange(lightsOut);
+            UpdateLightGlowersOnSettingChange(lightsOut);
             FlickLights = lightsOut;
         }
 
-        //****************************************
-        // Do the relevant stuff if the status
-        // of FlickLights is changing
-        //****************************************
-        private void DoFlickLightsChange(bool newVal)
+        /// <summary>
+        /// Flicks (or unflicks) lights depending on the new value from the settings
+        /// </summary>
+        /// <param name="newVal">The new value the setting is being set to</param>
+        private void UpdateLightGlowersOnSettingChange(bool newVal)
         {
             if (FlickLights == newVal) return;
 
@@ -116,7 +126,7 @@ namespace LightsOut.Boilerplate
             foreach (var kv in Resources.BuildingStatus)
             {
                 Thing thing = kv.Key;
-                var light = Lights.GetGlower(thing as Building);
+                var light = Glowers.GetGlower(thing as Building);
                 if (light != null)
                     affectedLights.Add(light);
             }
@@ -124,9 +134,7 @@ namespace LightsOut.Boilerplate
             if (!FlickLights)
             {
                 foreach (ThingComp glower in affectedLights)
-                {
-                    Lights.EnableLight(glower);
-                }
+                    Glowers.EnableGlower(glower);
             }
             else
             {
@@ -137,9 +145,9 @@ namespace LightsOut.Boilerplate
                     if (room == null || room.OutdoorsForWork) return;
 
                     if (Lights.ShouldTurnOffAllLights(room, null))
-                        Lights.DisableLight(glower);
+                        Glowers.DisableGlower(glower);
                     else
-                        Lights.EnableLight(glower);
+                        Glowers.EnableGlower(glower);
                 }
             }
         }

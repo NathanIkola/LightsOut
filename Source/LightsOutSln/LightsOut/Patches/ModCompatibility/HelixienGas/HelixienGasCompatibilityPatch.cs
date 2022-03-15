@@ -1,11 +1,10 @@
-﻿//************************************************
-// Adds support for Helixien gas benches
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
 {
+    /// <summary>
+    /// Adds support for Helixien gas benches
+    /// </summary>
     public class HelixienGasCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "Helixien Gas Buildings";

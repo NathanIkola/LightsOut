@@ -1,10 +1,4 @@
-﻿//************************************************
-// Detect if a pawn is at a research bench, then
-// have the bench start consuming power if it
-// is a valid bench
-//************************************************
-
-using HarmonyLib;
+﻿using HarmonyLib;
 using LightsOut.Common;
 using RimWorld;
 using System.Collections.Generic;
@@ -14,10 +8,17 @@ using Verse.AI;
 
 namespace LightsOut.Patches.Benches
 {
+    /// <summary>
+    /// Detects when a Pawn gets to a bench to do work
+    /// </summary>
     [HarmonyPatch(typeof(JobDriver))]
-    [HarmonyPatch("Notify_PatherArrived")]
+    [HarmonyPatch(nameof(JobDriver.Notify_PatherArrived))]
     public class TriggerOnPawnArrivedToBench
     {
+        /// <summary>
+        /// Check if a Pawn is arriving at an applicable bench or building
+        /// </summary>
+        /// <param name="__instance">The <see cref="JobDriver"/> that is arriving at its destination</param>
         public static void Prefix(JobDriver __instance)
         {
             if (__instance is null) return;
@@ -32,44 +33,42 @@ namespace LightsOut.Patches.Benches
                 PawnIsAtTelevision(__instance, tv, pawn);
         }
 
-        //****************************************
-        // Check if the pawn is actually at the
-        // worktable, then activate it if it
-        // is a valid table
-        //****************************************
-        private static void PawnIsAtTable(JobDriver_DoBill billDriver, Pawn pawn)
+        /// <summary>
+        /// Check if a Pawn is at an applicable table
+        /// </summary>
+        /// <param name="jobDriver">The <see cref="JobDriver"/> that set the target</param>
+        /// <param name="pawn">The pawn arriving to the table</param>
+        private static void PawnIsAtTable(JobDriver_DoBill jobDriver, Pawn pawn)
         {
-            IBillGiver giver = billDriver.job.GetTarget(TargetIndex.A).Thing as IBillGiver;
+            IBillGiver giver = jobDriver.job.GetTarget(TargetIndex.A).Thing as IBillGiver;
             if(giver is Building_WorkTable table)
             {
                 if (!Tables.IsTable(table)) return;
 
                 if (pawn.Position == table.InteractionCell)
-                    ActivateBench(billDriver, table);
+                    ActivateBench(jobDriver, table);
             }
         }
 
-        //****************************************
-        // Check if the pawn is actually at the
-        // research bench, then activate it if
-        // it is a valid bench
-        //****************************************
+        /// <summary>
+        /// Check if a Pawn is at an applicable research bench
+        /// </summary>
+        /// <param name="researchDriver">The <see cref="JobDriver"/> that set the target</param>
+        /// <param name="pawn">The pawn arriving to the research bench</param>
         private static void PawnIsAtResearchBench(JobDriver_Research researchDriver, Pawn pawn)
         {
-            // why is the ResearchBench property private
-            var bench = researchDriver.job.targetA.Thing as Building_ResearchBench;
-            if (bench is null || !Tables.IsTable(bench)) return;
-
-            // the pawn needs to be in the correct place
-            if(pawn.Position == bench.InteractionCell)
-                ActivateBench(researchDriver, bench);
+            if (researchDriver.job.targetA.Thing is Building_ResearchBench bench)
+            {
+                if(pawn.Position == bench.InteractionCell)
+                    ActivateBench(researchDriver, bench);
+            }
         }
 
-        //****************************************
-        // Check if the pawn is actually within
-        // the viewing area of a television
-        // then activate it if so
-        //****************************************
+        /// <summary>
+        /// Check if a Pawn is at a television
+        /// </summary>
+        /// <param name="driver">The <see cref="JobDriver"/> that set the target</param>
+        /// <param name="pawn">The pawn arriving to the television</param>
         private static void PawnIsAtTelevision(JobDriver driver, Building tv, Pawn pawn)
         {
             if (tv is null || pawn is null)
@@ -96,10 +95,11 @@ namespace LightsOut.Patches.Benches
             });
         }
 
-        //****************************************
-        // Actually activate the power switching
-        // on the bench/table
-        //****************************************
+        /// <summary>
+        /// Activate a bench and set it to deactivate when the Pawn finishes
+        /// </summary>
+        /// <param name="driver">The <see cref="JobDriver"/> that set the target</param>
+        /// <param name="table">The building that is being turned on or off</param>
         private static void ActivateBench(JobDriver driver, Building table)
         {
             // activate the bench

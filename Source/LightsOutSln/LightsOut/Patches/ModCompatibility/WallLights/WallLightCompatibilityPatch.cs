@@ -1,14 +1,10 @@
-﻿//************************************************
-// Detect if the WallLight mod is installed
-// and perform the necessary compatibility
-// patching if it is present
-//************************************************
-
-using System.Collections.Generic;
-using Verse;
+﻿using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
+    /// <summary>
+    /// Detects if Wall Light is installed and patches it if so
+    /// </summary>
     public class WallLightCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "Wall Lights";

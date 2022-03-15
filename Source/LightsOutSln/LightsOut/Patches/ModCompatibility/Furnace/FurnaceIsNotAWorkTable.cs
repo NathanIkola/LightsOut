@@ -1,22 +1,21 @@
-﻿//************************************************
-// Sam_ used the Building_WorkTable_HeatPush
-// thingClass when he made his furnaces, which
-// was probably the right choice for him, but it
-// makes this much more complicated, as I can't
-// rule out that class without also getting rid
-// of stoves, crematoriums, and smelters
-//************************************************
-
-using HarmonyLib;
+﻿using HarmonyLib;
 using LightsOut.Common;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Furnace
 {
+    /// <summary>
+    /// Fixes the Furnace mod to not get detected as a table
+    /// </summary>
     [HarmonyPatch(typeof(Tables))]
     [HarmonyPatch(nameof(Tables.IsTable))]
     public class FurnaceIsNotAWorkTable
     {
+        /// <summary>
+        /// Hijacks the IsTable method to rule out the Furnace
+        /// </summary>
+        /// <param name="thing">The Building to check</param>
+        /// <param name="__result">False if it's a furnace, unchanged otherwise</param>
         public static void Postfix(Building thing, ref bool __result)
         {
             // if we were going to return true

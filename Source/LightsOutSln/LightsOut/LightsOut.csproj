@@ -73,7 +73,7 @@
     <Compile Include="Common\Lights.cs" />
     <Compile Include="Common\Rooms.cs" />
     <Compile Include="Common\Tables.cs" />
-    <Compile Include="Defs\ThingDefOf.cs" />
+    <Compile Include="Defs\CustomThingDefs.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />

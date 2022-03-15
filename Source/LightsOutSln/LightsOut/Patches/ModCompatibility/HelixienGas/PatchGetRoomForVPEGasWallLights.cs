@@ -1,16 +1,13 @@
-﻿//************************************************
-// Patch the IsInRoom method in 
-// ModResources to reflect the actual
-// position of the Wall Light objects
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
 {
+    /// <summary>
+    /// Patch the IsInRoom method for the VPE Wall Lights
+    /// </summary>
     public class PatchGetRoomForVPEGasWallLights : ICompatibilityPatchComponent
     {
         public override string ComponentName => "Patch GetRoom for VPE Wall Lights";
@@ -28,6 +25,11 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             return new List<PatchInfo>() { patch };
         }
 
+        /// <summary>
+        /// The patch applied to GetRoom
+        /// </summary>
+        /// <param name="__0">The Building being checked</param>
+        /// <param name="__result">The Room the Building actually belongs to</param>
         private static void GetRoomPatch(Building __0, ref Room __result)
         {
             if (__0 is null) return;

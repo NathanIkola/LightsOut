@@ -1,30 +1,21 @@
-﻿//************************************************
-// Goulash class of various resources
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
 namespace LightsOut.Common
 {
+    /// <summary>
+    /// Holds common function for resource-consuming things
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Resources
     {
-
-        //****************************************
-        // Callback to reset the resource draw
-        // of a consumer
-        //****************************************
-        public delegate void ResetResourceDrawCallback();
-
-        //****************************************
-        // Add a thing to the resource-consumable
-        // dictionary
-        //
-        // Returns: the previous value or null
-        // if it was not in the dictionary before
-        //****************************************
+        /// <summary>
+        /// Set a <see cref="ThingWithComps"/>'s resource consumption status
+        /// </summary>
+        /// <param name="thing">The thing to set resource consumption for</param>
+        /// <param name="consumesResource">Whether or not it can consume resources</param>
+        /// <returns>The previous resource consumption status</returns>
         public static bool? SetConsumesResources(ThingWithComps thing, bool? consumesResource)
         {
             if (thing is null) return null;
@@ -35,27 +26,23 @@ namespace LightsOut.Common
             return previous;
         }
 
-        //****************************************
-        // Check if a trader is able to
-        // consume resources
-        //
-        // Returns: whether or not the trader
-        // can consume resources, or null if it is
-        // not in the dictionary
-        //****************************************
+        /// <summary>
+        /// Check if a specific resource trader is enabled or not
+        /// </summary>
+        /// <param name="resourceTrader">The resource trader to check</param>
+        /// <returns>Whether or not <paramref name="resourceTrader"/> can
+        /// consume resources, or <see langword="null"/> if it hasn't been set</returns>
         public static bool? CanConsumeResources(ThingComp resourceTrader)
         {
             return CanConsumeResources(resourceTrader?.parent);
         }
 
-        //****************************************
-        // Check if a trader is able to
-        // consume resources
-        //
-        // Returns: whether or not the trader
-        // can consume resources, or null if it is
-        // not in the dictionary
-        //****************************************
+        /// <summary>
+        /// Check if <paramref name="thing"/> can consume resources
+        /// </summary>
+        /// <param name="thing">The thing to check the status of</param>
+        /// <returns>Whether or not <paramref name="thing"/> can
+        /// consume resources, or <see langword="null"/> if it hasn't been set</returns>
         public static bool? CanConsumeResources(ThingWithComps thing)
         {
             if (thing is null) return null;
@@ -63,14 +50,15 @@ namespace LightsOut.Common
             return BuildingStatus.TryGetValue(thing, null);
         }
 
-        //****************************************
-        // Check if a consumer is a 
-        // rechargeable building
-        //****************************************
+        /// <summary>
+        /// Checks if <paramref name="thing"/> is charged
+        /// </summary>
+        /// <param name="thing">The thing to check the charge of</param>
+        /// <returns>Whether or not <paramref name="thing"/> is charged</returns>
         public static bool IsCharged(ThingWithComps thing)
         {
             if (thing is null) return false;
-            CompRechargeable rechargeable = null;
+            CompRechargeable rechargeable;
             if (CompRechargeables.ContainsKey(thing))
                 rechargeable = CompRechargeables[thing];
             else
@@ -84,28 +72,41 @@ namespace LightsOut.Common
         }
 
         //****************************************
-        // Get whether something is rechargeable
-        //****************************************
-        public static bool IsRechargeable(Building thing)
+        /// <summary>
+        /// Checks to see if <paramref name="building"/> is a
+        /// rechargeable building
+        /// </summary>
+        /// <param name="building">The thing to check the rechargeable status of</param>
+        /// <returns><see langword=""="true"/> if <paramref name="building"/> is
+        /// rechargeable, <see langword="false"/> otherwise</returns>
+        public static bool IsRechargeable(Building building)
         {
-            if (thing is null) return false;
-            if (CompRechargeables.ContainsKey(thing))
-                return CompRechargeables[thing] != null;
+            if (building is null) return false;
+            if (CompRechargeables.ContainsKey(building))
+                return CompRechargeables[building] != null;
 
-            CompRechargeable rechargeable = thing.GetComp<CompRechargeable>();
-            CompRechargeables.Add(thing, rechargeable);
+            CompRechargeable rechargeable = building.GetComp<CompRechargeable>();
+            CompRechargeables.Add(building, rechargeable);
             return rechargeable != null;
         }
 
-        //****************************************
-        // The minimum amount of resource to draw
-        //****************************************
+        /// <summary>
+        /// The minimum amount of a resource to draw. 
+        /// This being set properly allows buildings to
+        /// respond to loss of power correctly and prevents
+        /// a bug with Pawns pathing to unpowered benches repeatedly
+        /// </summary>
         public static readonly float MinDraw = -1f / 100f;
 
-        // keep track of all disabled Things
+        /// <summary>
+        /// The structure that holds the info on whether or not
+        /// a building is disabled
+        /// </summary>
         public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
 
-        // finally, time to start memoizing things
+        /// <summary>
+        /// A memoized list of the CompRechargeables to prevent repeated comp lookups
+        /// </summary>
         private static Dictionary<ThingWithComps, CompRechargeable> CompRechargeables { get; } = new Dictionary<ThingWithComps, CompRechargeable>();
     }
 }

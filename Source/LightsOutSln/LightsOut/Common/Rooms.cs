@@ -1,21 +1,22 @@
-﻿//************************************************
-// Holds all of the common room operations
-//************************************************
-
-using RimWorld;
+﻿using RimWorld;
 using System;
 using Verse;
 
 namespace LightsOut.Common
 {
+    /// <summary>
+    /// Holds common room operations
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Rooms
     {
-        //****************************************
-        // Detect if any pawns are in the room
-        // or if the room is outdoors
-        //****************************************
-        public static bool RoomIsEmpty(Room room, Pawn pawn)
+        /// <summary>
+        /// Checks if a <paramref name="room"/> is empty of all pawns except <paramref name="excludedPawn"/>
+        /// </summary>
+        /// <param name="room">The room to check</param>
+        /// <param name="excludedPawn">The pawn to ignore while checking the room</param>
+        /// <returns>Whether or not the room is empty</returns>
+        public static bool RoomIsEmpty(Room room, Pawn excludedPawn)
         {
             if (room is null || room.OutdoorsForWork || room.IsDoorway
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
@@ -48,11 +49,11 @@ namespace LightsOut.Common
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                if (thing is Pawn pawn && pawn.RaceProps.Humanlike && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
-                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??
-                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                    && (pawn.Position.GetEdifice(pawn.Map) as Building_Door) == null)
                 {
                     return false;
                 }
@@ -60,12 +61,13 @@ namespace LightsOut.Common
             return true;
         }
 
-        //****************************************
-        // Detect if all pawns in a room are
-        // currently sleeping except the one
-        // passed in
-        //****************************************
-        public static bool AllPawnsSleeping(Room room, Pawn pawn)
+        /// <summary>
+        /// Checks if all of the pawns in a <paramref name="room"/> are sleeping
+        /// </summary>
+        /// <param name="room">The room to check</param>
+        /// <param name="excludedPawn">The pawn to ignore while checking the room</param>
+        /// <returns>Whether or not all pawns in the room are sleeping</returns>
+        public static bool AllPawnsSleeping(Room room, Pawn excludedPawn)
         {
             if (room is null || room.OutdoorsForWork || room.IsDoorway
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
@@ -98,32 +100,40 @@ namespace LightsOut.Common
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn otherPawn && otherPawn.RaceProps.Humanlike && otherPawn != pawn
+                if (thing is Pawn pawn && pawn.RaceProps.Humanlike && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
-                    && (otherPawn.pather.nextCell.GetEdifice(otherPawn.Map) as Building_Door) == null
+                    && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??
-                    && (otherPawn.Position.GetEdifice(otherPawn.Map) as Building_Door) == null)
+                    && (pawn.Position.GetEdifice(pawn.Map) as Building_Door) == null)
                 {
-                    if (otherPawn.jobs?.curDriver?.asleep != true)
+                    if (pawn.jobs?.curDriver?.asleep != true)
                         return false;
                 }
 
             return true;
         }
 
-        //****************************************
-        // Check if a building is in a room
-        //****************************************
+        /// <summary>
+        /// Check if a building is in a specific room.
+        /// It uses the custom GetRoom function so that mod
+        /// compatibility patches can change this behavior easily
+        /// </summary>
+        /// <param name="building">The building to check</param>
+        /// <param name="room">The room to check</param>
+        /// <returns>Whether or not <paramref name="building"/> is in <paramref name="room"/></returns>
         public static bool IsInRoom(Building building, Room room)
         {
             if (building is null || room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
             return GetRoom(building)?.ID == room.ID;
         }
 
-        //****************************************
-        // Returns the room a particular
-        // building is a part of
-        //****************************************
+        /// <summary>
+        /// Basically just a passthrough to the existing GetRoom function,
+        /// but it double checks that the RegionAndRoomUpdater is enabled
+        /// and allows mod compatibility patches to change this behavior
+        /// </summary>
+        /// <param name="building">The building to check</param>
+        /// <returns>The room that <paramref name="building"/> is in</returns>
         public static Room GetRoom(Building building)
         {
             if (building is null) return null;

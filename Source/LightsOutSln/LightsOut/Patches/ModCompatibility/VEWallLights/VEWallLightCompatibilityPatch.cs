@@ -1,13 +1,10 @@
-﻿//************************************************
-// Detect if the WallLight mod is installed
-// and perform the necessary compatibility
-// patching if it is present
-//************************************************
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LightsOut.Patches.ModCompatibility.VEWallLights
 {
+    /// <summary>
+    /// Detects if VFE is installed and patches its Wall Lights if so
+    /// </summary>
     public class VEWallLightCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "VE Wall Lights";

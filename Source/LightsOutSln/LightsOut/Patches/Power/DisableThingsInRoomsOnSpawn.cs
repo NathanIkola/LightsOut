@@ -1,18 +1,20 @@
-﻿//************************************************
-// Disable all compatible things in a room when
-// the room finishes being made, such as when
-// loading a save
-//************************************************
-
-using Verse;
+﻿using Verse;
 using HarmonyLib;
 
 namespace LightsOut.Patches.Power
 {
+    /// <summary>
+    /// Disables all mod-compatible things in a Room when
+    /// the Room finishes being made (like when loading)
+    /// </summary>
     [HarmonyPatch(typeof(RegionAndRoomUpdater))]
     [HarmonyPatch("FloodAndSetRooms")]
     public class DisableThingsInRoomsOnSpawn
     {
+        /// <summary>
+        /// Checks if a Building's Room is empty when it spawns
+        /// </summary>
+        /// <param name="__1">The Room this Building is being spawned into</param>
         public static void Postfix(Room __1)
         {
             Room room = __1;

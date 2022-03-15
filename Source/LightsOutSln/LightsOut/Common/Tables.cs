@@ -21,8 +21,8 @@ namespace LightsOut.Common
         {
             if (table is null) return;
             ThingComp glower = Glowers.GetGlower(table);
-            if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
-                Glowers.SetCanGlow(glower, false);
+            if (!(glower is null) && ModSettings.StandbyResourceDrawRate == 0f)
+                Glowers.DisableGlower(glower);
             else
                 Resources.SetConsumesResources(table, false);
         }
@@ -35,8 +35,8 @@ namespace LightsOut.Common
         {
             if (table is null) return;
             ThingComp glower = Glowers.GetGlower(table);
-            if (!(glower is null) && ModSettings.StandbyPowerDrawRate == 0f)
-                Glowers.SetCanGlow(glower, true);
+            if (!(glower is null) && ModSettings.StandbyResourceDrawRate == 0f)
+                Glowers.EnableGlower(glower);
             else
                 Resources.SetConsumesResources(table, true);
         }
@@ -87,9 +87,9 @@ namespace LightsOut.Common
         //****************************************
         public static bool IsTelevision(Building thing)
         {
-            return thing.def == MyThingDefOf.TubeTelevision
-                || thing.def == MyThingDefOf.FlatscreenTelevision
-                || thing.def == MyThingDefOf.MegascreenTelevision;
+            return thing.def == CustomThingDefs.TubeTelevision
+                || thing.def == CustomThingDefs.FlatscreenTelevision
+                || thing.def == CustomThingDefs.MegascreenTelevision;
         }
 
         private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();

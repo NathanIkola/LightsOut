@@ -1,8 +1,4 @@
-﻿//************************************************
-// Holds all of the common light operations
-//************************************************
-
-using LightsOut.ThingComps;
+﻿using LightsOut.ThingComps;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -11,51 +7,57 @@ using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
+    /// <summary>
+    /// Holds common light operations
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Lights
     {
-        //****************************************
-        // Does the hard work of enabling a light
-        //****************************************
-        public static void EnableLight(ThingComp glower)
+        /// <summary>
+        /// Enables a light
+        /// </summary>
+        /// <param name="light">The <see cref="Building"/> to enable</param>
+        public static void EnableLight(Building light)
         {
-            // imagine if I'd spent like half an hour
-            // troubleshooting why I was getting a nullex
-            // here after already solving it in the disable
-            // function haha... :(
+            if (light is null) return;
+
+            ThingComp glower = Glowers.GetGlower(light);
             if (glower is null) return;
 
-            Common.Glowers.SetCanGlow(glower, true);
+            Common.Glowers.EnableGlower(glower);
         }
 
-        //****************************************
-        // Does the hard work of disabling a light
-        //****************************************
-        public static void DisableLight(ThingComp glower)
+        /// <summary>
+        /// Disables a light
+        /// </summary>
+        /// <param name="light">The <see cref="Building"/> to disable</param>
+        public static void DisableLight(Building light)
         {
-            if (glower is null || !ModSettings.FlickLights) return;
-            ThingWithComps parent = glower.parent;
+            if (light is null || !ModSettings.FlickLights) return;
 
-            if (Rooms.GetRoom((parent as Building)).OutdoorsForWork)
-                return;
+            if (Rooms.GetRoom(light).OutdoorsForWork) return;
 
             // acknowledge the keep on setting
-            KeepOnComp comp = null;
-            if (KeepOnComps.ContainsKey(parent))
-                comp = KeepOnComps[parent];
+            KeepOnComp comp;
+            if (KeepOnComps.ContainsKey(light))
+                comp = KeepOnComps[light];
             else
             {
-                comp = parent.TryGetComp<KeepOnComp>();
-                KeepOnComps.Add(parent, comp);
+                comp = light.TryGetComp<KeepOnComp>();
+                KeepOnComps.Add(light, comp);
             }
             if (comp?.KeepOn == true) return;
 
-            Common.Glowers.SetCanGlow(glower, false);
+            ThingComp glower = Common.Glowers.GetGlower(light);
+            if (glower is null) return;
+
+            Common.Glowers.DisableGlower(glower);
         }
 
-        //****************************************
-        // Disable all lights in a room
-        //****************************************
+        /// <summary>
+        /// Goes through a room and disables all lights in it
+        /// </summary>
+        /// <param name="room">The <see cref="Room"/> to disable the lights in</param>
         public static void DisableAllLights(Room room)
         {
             if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
@@ -88,22 +90,17 @@ namespace LightsOut.Common
                 Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             // now actually go through the collection
-            foreach (Thing t in things)
+            foreach (Thing thing in things)
             {
-                if (t is Building thing)
-                {
-                    ThingComp glower = GetGlower(thing);
-
-                    if (glower is null || !Rooms.IsInRoom(thing, room)) continue;
-
-                    DisableLight(glower);
-                }
+                if (thing is Building building && CanBeLight(building) && Rooms.IsInRoom(building, room))
+                    DisableLight(building);
             }
         }
 
-        //****************************************
-        // Enable all lights in a room
-        //****************************************
+        /// <summary>
+        /// Goes through a room and enables all lights in it
+        /// </summary>
+        /// <param name="room">The <see cref="Room"/> to enables the lights in</param>
         public static void EnableAllLights(Room room)
         {
             if (room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
@@ -135,59 +132,23 @@ namespace LightsOut.Common
                 Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             // now actually go through the collection
-            foreach (Thing t in things)
+            foreach (Thing thing in things)
             {
-                if (t is Building thing)
-                {
-                    ThingComp glower = GetGlower(thing);
-
-                    if (glower is null || !Rooms.IsInRoom(thing, room)) continue;
-
-                    EnableLight(glower);
-                }
+                if (thing is Building building && CanBeLight(building) && Rooms.IsInRoom(building, room))
+                    EnableLight(building);
             }
         }
 
-        //****************************************
-        // Check if a light has a comp on the
-        // disallowed list
-        //****************************************
-        public static ThingComp GetGlower(Building thing)
-        {
-            if (Glowers.ContainsKey(thing))
-                return Glowers[thing];
-
-            if (thing is null || Tables.IsTable(thing))
-            {
-                Glowers.Add(thing, null);
-                return null;
-            }
-
-            // use our light whitelist to cull out anything that doesn't claim to be a light
-            if (!CanBeLight(thing))
-            {
-                Glowers.Add(thing, null);
-                return null;
-            }
-
-            ThingComp glower = Common.Glowers.GetGlower(thing);
-
-            if (glower is null)
-            {
-                Glowers.Add(thing, null);
-                return null;
-            }
-
-            Glowers.Add(thing, glower);
-            return glower;
-        }
-
-        //****************************************
-        // We only need to check a room once
-        // but we currently do it twice, which
-        // is really sad, so stop it
-        //****************************************
-        public static bool ShouldTurnOffAllLights(Room room, Pawn pawn)
+        /// <summary>
+        /// Check if the mod should turn off all of the
+        /// lights in the specified <paramref name="room"/>
+        /// </summary>
+        /// <param name="room">The room to check</param>
+        /// <param name="excludedPawn">A pawn to disregard when 
+        /// checking (i.e the pawn leaving the room)</param>
+        /// <returns><see langword="true"/> if the mod should shut
+        /// off the lights, <see langword="false"/> otherwise</returns>
+        public static bool ShouldTurnOffAllLights(Room room, Pawn excludedPawn)
         {
             // never turn off the lights if we aren't supposed to
             if (!ModSettings.FlickLights)
@@ -197,50 +158,55 @@ namespace LightsOut.Common
             // then only check if all pawns are asleep (which intrinsically
             // also checks for pawn presence)
             if (!ModSettings.NightLights)
-                return Rooms.AllPawnsSleeping(room, pawn);
+                return Rooms.AllPawnsSleeping(room, excludedPawn);
 
             // otherwise only check for pawns in the room
-            return Rooms.RoomIsEmpty(room, pawn);
+            return Rooms.RoomIsEmpty(room, excludedPawn);
         }
 
-        //****************************************
-        // Checks if a building can even be a
-        // light in the first place
-        //****************************************
-        public static bool CanBeLight(Building thing)
+        /// <summary>
+        /// Check if something could possibly be a light
+        /// </summary>
+        /// <param name="building">The building to check</param>
+        /// <returns><see langword="true"/> if <paramref name="building"/> could
+        /// be a light, <see langword="false"/> otherwise</returns>
+        public static bool CanBeLight(Building building)
         {
-            if (thing is null) return false;
-            if (MemoizedCanBeLight.ContainsKey(thing))
-                return MemoizedCanBeLight[thing];
+            if (building is null) return false;
+            if (MemoizedCanBeLight.ContainsKey(building))
+                return MemoizedCanBeLight[building];
 
-            if (HasBlacklistedLightComp(thing))
+            if (HasDisallowedCompForLights(building))
             {
-                MemoizedCanBeLight.Add(thing, false);
+                MemoizedCanBeLight.Add(building, false);
                 return false;
             }
 
             // make sure it has one of the light kewords in its def name
-            string defName = thing.def.defName.ToLower();
+            string defName = building.def.defName.ToLower();
             foreach (string keyword in LightNamesMustInclude)
                 if (defName.Contains(keyword))
                 {
-                    MemoizedCanBeLight.Add(thing, true);
+                    MemoizedCanBeLight.Add(building, true);
                     return true;
                 }
 
-            MemoizedCanBeLight.Add(thing, false);
+            MemoizedCanBeLight.Add(building, false);
             return false;
         }
 
-        //****************************************
-        // Detects blacklisted comps on lights
-        //
-        // Used to be a list, but that has much
-        // worse performance implications
-        //****************************************
-        public static bool HasBlacklistedLightComp(ThingWithComps thing)
+        /// <summary>
+        /// Checks to see if a <see cref="ThingWithComps"/> has any
+        /// comps that are in the disallow list for a light
+        /// </summary>
+        /// <param name="thing">The <see cref="ThingWithComps"/> to check</param>
+        /// <returns><see langword="true"/> if <paramref name="thing"/> has
+        /// a comp in the disallowed list, <see langword="false"/> otherwise</returns>
+        public static bool HasDisallowedCompForLights(ThingWithComps thing)
         {
-            // if all of the blacklisted comps are null
+            // Check against the list of disallowed comps
+            // use AND logic here because we don't have access to
+            // the "is not null" construct. It's clunky but it works
             if (
                 thing.TryGetComp<CompPowerPlant>() is null
                 && thing.TryGetComp<CompHeatPusher>() is null
@@ -249,14 +215,16 @@ namespace LightsOut.Common
                 && thing.TryGetComp<CompShipLandingBeacon>() is null
                 )
             {
-                // then this did not have a blacklisted comp
                 return false;
             }
-            // otherwise it did have a blacklisted comp
+
+            // otherwise it did have a disallowed comp
             return true;
         }
 
-        // whitelist for things that can be lights
+        /// <summary>
+        /// List of things that a light name MUST include to be considered
+        /// </summary>
         public static List<string> LightNamesMustInclude { get; } = new List<string>()
         {
             "light",
@@ -264,8 +232,14 @@ namespace LightsOut.Common
             "illuminated"
         };
 
+        /// <summary>
+        /// The cached results of CanBeLight to speed up subsequent calls
+        /// </summary>
         private static Dictionary<Building, bool> MemoizedCanBeLight { get; } = new Dictionary<Building, bool>();
-        private static Dictionary<Building, ThingComp> Glowers { get; } = new Dictionary<Building, ThingComp>();
+        
+        /// <summary>
+        /// A cached list of KeepOnComps to prevent repeated comp lookups
+        /// </summary>
         private static Dictionary<ThingWithComps, KeepOnComp> KeepOnComps { get; } = new Dictionary<ThingWithComps, KeepOnComp>();
     }
 }

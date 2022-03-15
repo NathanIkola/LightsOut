@@ -1,16 +1,13 @@
-﻿//************************************************
-// Patch the IsInRoom method in 
-// ModResources to reflect the actual
-// position of the Wall Light objects
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.WallLights
 {
+    /// <summary>
+    /// Patch the IsInRoom method to reflect the actual Room a Wall Light is in
+    /// </summary>
     public class PatchGetRoomForWallLights : ICompatibilityPatchComponent
     {
         public override string ComponentName => "Patch GetRoom for Wall Lights";
@@ -28,6 +25,12 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
             return new List<PatchInfo>() { patch };
         }
 
+        /// <summary>
+        /// Check if <paramref name="__0"/> is a Wall Light, and if
+        /// so, change the room that GetRoom returns to be the correct one
+        /// </summary>
+        /// <param name="__0">The Building to check</param>
+        /// <param name="__result">The Room that <paramref name="__0"/> is actually in</param>
         private static void GetRoomPatch(Building __0, ref Room __result)
         {
             if (__0 is null) return;

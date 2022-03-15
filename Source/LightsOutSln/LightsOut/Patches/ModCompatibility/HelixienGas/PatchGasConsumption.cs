@@ -1,9 +1,4 @@
-﻿//************************************************
-// Patches the GasConsumption getter for
-// CompGasTrader
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -12,6 +7,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
 {
+    /// <summary>
+    /// Patches the GasConsumption getter for CompGasTrader
+    /// </summary>
     public class PatchGasConsumption : ICompatibilityPatchComponent
     {
         public override string TypeNameToPatch => "CompGasTrader";
@@ -26,14 +24,21 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             if (property is null)
                 return new List<PatchInfo>();
 
-            PatchInfo patch = new PatchInfo();
-            patch.method = property.GetMethod;
-            patch.patch = GetMethod<PatchGasConsumption>(nameof(GasConsumptionPatch));
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = property.GetMethod,
+                patch = GetMethod<PatchGasConsumption>(nameof(GasConsumptionPatch)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { patch };
         }
 
+        /// <summary>
+        /// Checks if a gas-consuming building is able to consume power, and disable it if not
+        /// </summary>
+        /// <param name="__instance">The CompGasTrader to check</param>
+        /// <param name="__result">The amount of gas this building pulls</param>
         private static void GasConsumptionPatch(ThingComp __instance, ref float __result)
         {
             bool? canConsumeGas = Resources.CanConsumeResources(__instance);
@@ -41,14 +46,14 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             if (canConsumeGas == true)
             {
                 if (Tables.IsTable(__instance.parent as Building))
-                    __result *= ModSettings.ActivePowerDrawRate;
+                    __result *= ModSettings.ActiveResourceDrawRate;
             }
             else if (canConsumeGas == false)
             {
                 if (Common.Lights.CanBeLight(__instance.parent as Building))
                     __result = Resources.MinDraw;
                 else
-                    __result = Math.Min(__result * ModSettings.StandbyPowerDrawRate, Resources.MinDraw);
+                    __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
             }
         }
     }

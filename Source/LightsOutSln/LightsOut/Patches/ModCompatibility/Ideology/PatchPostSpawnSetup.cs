@@ -1,17 +1,16 @@
-﻿//************************************************
-// Fix the speaker on spawn
-//************************************************
-
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using LightsOut.ThingComps;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using Verse;
-using Verse.AI.Group;
 
 namespace LightsOut.Patches.ModCompatibility.Ideology
 {
+    /// <summary>
+    /// Enable or disable speakers as they spawn in case
+    /// they spawn in the middle of a ritual
+    /// </summary>
     public class PatchPostSpawnSetup : ICompatibilityPatchComponent<CompLoudspeaker>
     {
         public override string ComponentName => "Patch PostPawnSetup for Loudspeaker";

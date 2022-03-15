@@ -1,27 +1,25 @@
-﻿//************************************************
-// A component of a compatibility patch
-// i.e. the part that actually does the work
-//************************************************
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 
 namespace LightsOut.Patches.ModCompatibility
 {
-    //********************************************
-    // Supported patch types
-    //********************************************
+    /// <summary>
+    /// The types of patches you can apply.
+    /// Goes along with the Harmony patches, but
+    /// doesn't currently support transpilers
+    /// </summary>
     public enum PatchType
     {
         Prefix,
         Postfix
     }
 
-    //********************************************
-    // Holds information about a particular
-    // patch (basically just what harmony needs)
-    //********************************************
+    /// <summary>
+    /// A structure holding all of the information about
+    /// a singular patch. Equivalent to a single
+    /// Harmony patch
+    /// </summary>
     public struct PatchInfo
     {
         public MethodInfo method;
@@ -30,39 +28,76 @@ namespace LightsOut.Patches.ModCompatibility
         public PatchType patchType;
     }
 
+    /// <summary>
+    /// A singular patch action inside of a compatibility patch.
+    /// This would be something equivalent to a file that contains
+    /// multiple Harmony patches for a single type
+    /// </summary>
     public abstract class ICompatibilityPatchComponent
     {
-        // the name of the type this component patches
+        /// <summary>
+        /// The type that this compatibility component is trying to patch
+        /// </summary>
         public abstract string TypeNameToPatch { get; }
 
-        // whether this component is intended to target a single type
+        /// <summary>
+        /// Whether or not this component should be applied to multiple types or just one.
+        /// This should be <see langword="true"/> unless your patch specifically intends 
+        /// to handle different types
+        /// </summary>
         public abstract bool TargetsMultipleTypes { get; }
 
-        // specify that the type name is exact (i.e. doesn't just contain the type name)
+        /// <summary>
+        /// Whether or not the type name specified is exactly correct. If this 
+        /// is <see langword="false"/> then it will search for all types that
+        /// simply contain the name
+        /// </summary>
         public abstract bool TypeNameIsExact { get; }
 
-        // specify that the search should be case-sensitive
+        /// <summary>
+        /// Whether or not to ignore case differences when matching type names
+        /// </summary>
         public virtual bool CaseSensitive => true;
 
-        // the name of this component
+        /// <summary>
+        /// The name to display in the console when this component is applied
+        /// </summary>
         public abstract string ComponentName { get; }
 
-        // return the applicable list of patches
+        /// <summary>
+        /// Returns the list of patches to apply in this component.
+        /// </summary>
+        /// <param name="type">The type being patched</param>
+        /// <returns>A list of patches to apply</returns>
         public abstract IEnumerable<PatchInfo> GetPatches(Type type);
 
-        // return the specified method
+        /// <summary>
+        /// Easier shortcut to getting the MethodInfo from a type
+        /// </summary>
+        /// <typeparam name="TypeName">The type to get the method from</typeparam>
+        /// <param name="methodName">The method to get</param>
+        /// <returns>A <see cref="MethodInfo"/> object for <paramref name="methodName"/>, 
+        /// or <see langword="null"/> if it doesn't exist</returns>
         public static MethodInfo GetMethod<TypeName>(string methodName)
         {
             return GetMethod(typeof(TypeName), methodName);
         }
 
-        // return the specified method
+        /// <summary>
+        /// Easier shortcut to getting the MethodInfo from a type
+        /// </summary>
+        /// <param name="type">The type to get the method from</param>
+        /// <param name="methodName">The method to get</param>
+        /// <returns>A <see cref="MethodInfo"/> object for <paramref name="methodName"/>, 
+        /// or <see langword="null"/> if it doesn't exist</returns>
         public static MethodInfo GetMethod(Type type, string methodName)
         {
             return type.GetMethod(methodName, BindingFlags);
         }
 
-        // the typical binding flags we are going to want to use
+        /// <summary>
+        /// A good list of <see cref="BindingFlags"/> to use to get most things
+        /// </summary>
         public readonly static BindingFlags BindingFlags = BindingFlags.Public
                             | BindingFlags.NonPublic
                             | BindingFlags.Instance
@@ -70,10 +105,11 @@ namespace LightsOut.Patches.ModCompatibility
                             | BindingFlags.FlattenHierarchy;
     }
 
-    //********************************************
-    // A more convenient way to patch things
-    // if you have the concrete type
-    //********************************************
+    /// <summary>
+    /// Overload of <see cref="ICompatibilityPatch"/> that automatically
+    /// fills out some patch information if you give it a type to work with
+    /// </summary>
+    /// <typeparam name="TypeName"></typeparam>
     public abstract class ICompatibilityPatchComponent<TypeName> : ICompatibilityPatchComponent
     {
         public override string TypeNameToPatch => typeof(TypeName).Name;
