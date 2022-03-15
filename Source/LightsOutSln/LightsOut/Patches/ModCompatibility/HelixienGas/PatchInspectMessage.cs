@@ -23,10 +23,12 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             if (method is null)
                 return new List<PatchInfo>();
 
-            PatchInfo patch = new PatchInfo();
-            patch.method = method;
-            patch.patch = GetMethod<PatchInspectMessage>(nameof(InspectMessagePatch));
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = method,
+                patch = GetMethod<PatchInspectMessage>(nameof(InspectMessagePatch)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { patch };
         }

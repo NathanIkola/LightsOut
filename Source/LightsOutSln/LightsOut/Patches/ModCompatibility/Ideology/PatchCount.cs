@@ -15,10 +15,12 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo prefix = new PatchInfo();
-            prefix.method = GetMethod<RitualOutcomeComp_NumActiveLoudspeakers>(nameof(RitualOutcomeComp_NumActiveLoudspeakers.Count));
-            prefix.patch = GetMethod<PatchCount>(nameof(Prefix));
-            prefix.patchType = PatchType.Prefix;
+            PatchInfo prefix = new PatchInfo
+            {
+                method = GetMethod<RitualOutcomeComp_NumActiveLoudspeakers>(nameof(RitualOutcomeComp_NumActiveLoudspeakers.Count)),
+                patch = GetMethod<PatchCount>(nameof(Prefix)),
+                patchType = PatchType.Prefix
+            };
 
             return new List<PatchInfo>() { prefix };
         }

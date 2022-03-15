@@ -29,10 +29,12 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
             if (getter is null)
                 return new List<PatchInfo>();
 
-            PatchInfo patch = new PatchInfo();
-            patch.method = getter.GetMethod;
-            patch.patch = GetMethod<DisableLightGlowPatch>("Postfix");
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = getter.GetMethod,
+                patch = GetMethod<DisableLightGlowPatch>("Postfix"),
+                patchType = PatchType.Postfix
+            };
 
             Log.Message($"[LightsOut]       patching \"{type.Namespace} - {type.Name}\" to count as a glower");
             // add it to the list of allowed glowers

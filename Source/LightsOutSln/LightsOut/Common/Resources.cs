@@ -71,13 +71,12 @@ namespace LightsOut.Common
             return rechargeable.Charged;
         }
 
-        //****************************************
         /// <summary>
         /// Checks to see if <paramref name="building"/> is a
         /// rechargeable building
         /// </summary>
         /// <param name="building">The thing to check the rechargeable status of</param>
-        /// <returns><see langword=""="true"/> if <paramref name="building"/> is
+        /// <returns><see langword="true"/> if <paramref name="building"/> is
         /// rechargeable, <see langword="false"/> otherwise</returns>
         public static bool IsRechargeable(Building building)
         {

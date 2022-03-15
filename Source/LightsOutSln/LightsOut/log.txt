@@ -1,0 +1,1 @@
+{"message":"Invalid triple slash comment is ignored: <!-- Badly formed XML comment ignored for member \"M:LightsOut.Common.Resources.IsRechargeable(Verse.Building)\" -->\r\n","source":"MetadataCommand.ExtractMetadata","date_time":"2022-03-15T04:09:19.195386Z","message_severity":"warning","correlation_id":"4A26504A-8F96-4AEA-AA7F-DCDC11776A1B.1.1.8"}

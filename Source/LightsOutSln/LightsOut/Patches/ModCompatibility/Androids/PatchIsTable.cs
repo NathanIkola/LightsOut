@@ -18,10 +18,12 @@ namespace LightsOut.Patches.ModCompatibility.Androids
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod(typeof(Tables), "IsTable");
-            patch.patch = GetMethod<PatchIsTable>("Postfix");
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = GetMethod(typeof(Tables), "IsTable"),
+                patch = GetMethod<PatchIsTable>(nameof(Postfix)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { patch };
         }

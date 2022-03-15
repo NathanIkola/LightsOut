@@ -17,10 +17,12 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo postfix = new PatchInfo();
-            postfix.method = GetMethod<CompLoudspeaker>(nameof(CompLoudspeaker.PostSpawnSetup));
-            postfix.patch = GetMethod<PatchPostSpawnSetup>(nameof(Postfix));
-            postfix.patchType = PatchType.Postfix;
+            PatchInfo postfix = new PatchInfo
+            {
+                method = GetMethod<CompLoudspeaker>(nameof(CompLoudspeaker.PostSpawnSetup)),
+                patch = GetMethod<PatchPostSpawnSetup>(nameof(Postfix)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { postfix };
         }

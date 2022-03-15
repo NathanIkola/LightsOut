@@ -17,10 +17,12 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod(typeof(Rooms), "GetRoom");
-            patch.patch = GetMethod<PatchGetRoomForWallLights>("GetRoomPatch");
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = GetMethod(typeof(Rooms), nameof(Rooms.GetRoom)),
+                patch = GetMethod<PatchGetRoomForWallLights>(nameof(GetRoomPatch)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { patch };
         }

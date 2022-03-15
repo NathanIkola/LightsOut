@@ -15,10 +15,12 @@ namespace LightsOut.Patches.ModCompatibility
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix));
-            patch.patch = GetMethod<PatchDisablePowerDraw>(nameof(PrefixPatch));
-            patch.patchType = PatchType.Prefix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
+                patch = GetMethod<PatchDisablePowerDraw>(nameof(PrefixPatch)),
+                patchType = PatchType.Prefix
+            };
 
             return new List<PatchInfo>() { patch };
         }

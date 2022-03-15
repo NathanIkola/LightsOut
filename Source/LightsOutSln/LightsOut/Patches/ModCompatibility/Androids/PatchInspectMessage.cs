@@ -15,10 +15,12 @@ namespace LightsOut.Patches.ModCompatibility.Androids
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod<DisableBasePowerDrawOnGet>("Postfix");
-            patch.patch = GetMethod<PatchDisablePowerDraw>("PrefixPatch");
-            patch.patchType = PatchType.Prefix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
+                patch = GetMethod<PatchInspectMessage>(nameof(PrefixPatch)),
+                patchType = PatchType.Prefix
+            };
 
             return new List<PatchInfo>() { patch };
         }
@@ -34,7 +36,7 @@ namespace LightsOut.Patches.ModCompatibility.Androids
         /// <param name="__0">The CompPower to fix the message of</param>
         /// <returns><see langword="true"/> if the printer is not printing,
         /// <see langword="false"/> otherwise</returns>
-        private static bool PostfixPatch(CompPower __0)
+        private static bool PrefixPatch(CompPower __0)
         {
             if (__0.parent.GetType().Name == "Building_AndroidPrinter")
             {

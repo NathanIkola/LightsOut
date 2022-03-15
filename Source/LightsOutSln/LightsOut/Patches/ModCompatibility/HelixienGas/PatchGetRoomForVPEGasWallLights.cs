@@ -17,10 +17,12 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            PatchInfo patch = new PatchInfo();
-            patch.method = GetMethod(typeof(Rooms), "GetRoom");
-            patch.patch = GetMethod<PatchGetRoomForVPEGasWallLights>("GetRoomPatch");
-            patch.patchType = PatchType.Postfix;
+            PatchInfo patch = new PatchInfo
+            {
+                method = GetMethod(typeof(Rooms), nameof(Rooms.GetRoom)),
+                patch = GetMethod<PatchGetRoomForVPEGasWallLights>(nameof(GetRoomPatch)),
+                patchType = PatchType.Postfix
+            };
 
             return new List<PatchInfo>() { patch };
         }
