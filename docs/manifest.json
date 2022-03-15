@@ -1,0 +1,860 @@
+{
+  "homepages": [],
+  "source_base_path": "P:/Projects/LightsOut/Source/LightsOutSln/LightsOut",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "wLplOVWYBK/pO5XxExyq/54yfg0+fLIFdlMx5Hj2LTI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "FIcuSFuPDVLZRZ2276NfKA8Q5MMNbSbq7v93wAkSv7k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "XK/2u98C6M8QQyOYxE+t1rPs8skKYnj2WFGuD83JD2k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Boilerplate.ModSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
+          "hash": "LfhGKVk4k3JfhjBIhuSiwCms33hnnklThTrILRppRMI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Boilerplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Boilerplate.html",
+          "hash": "cYsAwjwZDuift2RWwj+xo/hybC66NtJo8z44v3XujPI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.Glowers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.Glowers.html",
+          "hash": "q16h9vYE8vHxTejc/YT5lMZ+dSXjwCiaB4QQiVr26zM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.Lights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.Lights.html",
+          "hash": "7endRst53/kowBt7qKkTC5EYBZN7FIZOMngNSvEhESI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.Resources.html",
+          "hash": "sJFlcDaZHScrYFXcTxCdbhBJaU4i9PFpoQI1nXSZoZE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.Rooms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.Rooms.html",
+          "hash": "Y1IPvndjWQ1a5FDwoN7q1kkyZeh5/rV/JBh0ya+ugyc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.Tables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.Tables.html",
+          "hash": "WxcU8iUwUH0+krzGeBhYlDeXeo8Ai/CilPHm4iq6nCw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.html",
+          "hash": "fIa7/C8mtLt3s9TlL4RaTG/w0MvkuZuoYbUwDSzTc5o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Defs.CustomThingDefs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Defs.CustomThingDefs.html",
+          "hash": "Mpd5FzojBcCNZ5VTCMGapOnFEE8oYpRN58EfXthxARY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Defs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Defs.html",
+          "hash": "HN5CRuHNWmPC91+94krwzdFz1Tl10jWMbBX2RFzXDSA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Gizmos.KeepOnGizmo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Gizmos.KeepOnGizmo.html",
+          "hash": "w2bA2mEbX/wHExFCGE4ij8bdcN51HH+2TXEugVeincg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Gizmos.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Gizmos.html",
+          "hash": "jUQop9zvylr0SYnTbU7D8WAno6mXfVUmwQjx/5fArto="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench.html",
+          "hash": "MY3JhPsKeheVUcdrT8YAzvp1IhrtGMzmF6yZ4sJs1Eg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Benches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Benches.html",
+          "hash": "cdpoM8VBSqpuWMt7K4cS/DvIkROZoOsRWhNhd3II78U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Lights.DetectPawnRoomChange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Lights.DetectPawnRoomChange.html",
+          "hash": "PBAamient0eoGMvQNJsUg+4gW06YcifEpYnErp2dIss="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Lights.DisableLightGlowOnSleep.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Lights.DisableLightGlowOnSleep.html",
+          "hash": "fm/AHw0m4JvE4mHss6W0Fe4+QvI0fvAU4IAgXiALlnE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Lights.DisableLightGlowPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Lights.DisableLightGlowPatch.html",
+          "hash": "0XxjNWVNhfnVcf1rPgWG7F3Q6BNyL2wZuNH3te6Kljg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn.html",
+          "hash": "c9LdvRNCIiEWim4ap3VS1CAjxrews0bzNAIFwtN+meU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Lights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Lights.html",
+          "hash": "axHIUGNTVUwwe/bVVLC0kV17cgowJg1UkIYpRZ8RcPw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Androids.AndroidsCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.AndroidsCompatibilityPatch.html",
+          "hash": "HlQ8/1awRIkycvhU/8JcOagaOB2qojR98WIYVjsB2Cc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Androids.PatchInspectMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.PatchInspectMessage.html",
+          "hash": "5O4rCUNTrXHVRNvYcbHl3e7kxKPRdHv2Dt3UD5L88XU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.html",
+          "hash": "UnaKJt8X//TGS1lZAT6dT0A9FIhosUlil3NHMcHuopc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Androids.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.html",
+          "hash": "ALjDlXj56yAwolhd3QaDNs9RJCGIXcs6F56Ai2ZIOFQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.html",
+          "hash": "vSu0UptPlP0s014bAEsmr7im8NHaUKLmHgbDdJKpHmg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Furnace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Furnace.html",
+          "hash": "4rDvv/9vJwnULi8wnO8LvoBBObLKy4kbgwNqgcP9Chg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.HelixienGas.HelixienGasCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.HelixienGasCompatibilityPatch.html",
+          "hash": "4nzpzO3EaR184u2y+Nr33rxf5WinSB6KuQtLhHCpPRc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGasConsumption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGasConsumption.html",
+          "hash": "yNDyrPhBIjapE5+FBW0cT1py2jsvm7NJpAzj6esJAWg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGetRoomForVPEGasWallLights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGetRoomForVPEGasWallLights.html",
+          "hash": "bZKwSRoqT0MRPHhcSj8mPqzZCAThnMVrT7w48rbo6/s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchInspectMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchInspectMessage.html",
+          "hash": "V9cjCavkt6OG5z+EbUeYm3v6Q9VmC0dqxtoE/UVxyBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.HelixienGas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.html",
+          "hash": "vkDjaU3hGy24Tc2SP/wCGBgfGqiOWINQT5JqkS6oBFY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
+          "hash": "vDNrhrXMx3hKa6T2+rSv6Px28BIbufLZniTHeopbDGY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent-1.html",
+          "hash": "otD1WdWyq0iRHJU0vQjvvlPvBZ7Jp6gPQvKiRkMcoU4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html",
+          "hash": "Yin+vxibWgl7H32fX27xkz1KFBWdcIzPesb+ROHa7hM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Ideology.IdeologyCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.IdeologyCompatibilityPatch.html",
+          "hash": "+VqYcTIHWKhP+UzV7iDpfHstwz5DZX2jwth4PFbHjLI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Ideology.PatchCount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchCount.html",
+          "hash": "v2fddpOrg9RrxKMhheU8hZCHNq941APdsrsLS/v1Kvo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Ideology.PatchPostSpawnSetup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchPostSpawnSetup.html",
+          "hash": "RXLlZ4oJadoayeLL1i6EhOmmpkJEoXiIkH8cPpf3tC8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Ideology.PatchTick.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchTick.html",
+          "hash": "UkpjQrN0Ol8dfekglUaitkNUnlMhDmSjq51uJbH3+9c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.Ideology.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.html",
+          "hash": "gG4Cz5BG8FsFrghir0KCVeG3rQf4gR9j1qdo/mxFxWQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
+          "hash": "0vDO4GFAq14UB50iK9p24nrrDe06rtcB5r5xqvBv/7k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ModGlowers.ModGlowerCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.ModGlowerCompatibilityPatch.html",
+          "hash": "Rb86/Oj30GFJWaHJCNWq92sGYO5el/aAwrXtNGj6L6I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ModGlowers.PatchShouldBeLitNow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.PatchShouldBeLitNow.html",
+          "hash": "SYH6Y25pwoU+iNjvhI/VuuYLcC5hdwX3GkcNHgbjJaE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ModGlowers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.html",
+          "hash": "13tyNKkeC/k0Et76YHbDNOaA3lamyFQAKiG5Y4BhiNw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.PatchDisablePowerDraw.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.PatchDisablePowerDraw.html",
+          "hash": "SFbuP0gtxyFsPZqu8GdjP3rhOKqmEa0PR/W5nEgwqPk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.PatchInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.PatchInfo.html",
+          "hash": "5n29exGSzCuqUJmkpiRiED6shSHTaoz+XZ5bYnkMFts="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.PatchType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.PatchType.html",
+          "hash": "2Ye3yWluQXE/3HQT1sOxqrM13ZZP6L8huNl5a2QnpOM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.VEWallLights.PatchGetRoomForVEWallLights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.PatchGetRoomForVEWallLights.html",
+          "hash": "lT96PqMlvTKTWEfJsGmaHROIZYQv4SndCPAYn4n/yRs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.VEWallLights.VEWallLightCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.VEWallLightCompatibilityPatch.html",
+          "hash": "ZgXJDBBRFtCGggLY663IIQm8aXgZsRCrWU4xJBvr7A4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.VEWallLights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.html",
+          "hash": "zgQSUuudkWTVxunqlMNRjN6sg8heO52u7TYldO9Xiug="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.WallLights.PatchGetRoomForWallLights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.PatchGetRoomForWallLights.html",
+          "hash": "JPmItUy8tHAUjagx7v3e9zsZ2sGLOSpEO8IqZJMNpoQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.html",
+          "hash": "VY+tAbnxS+aqllWxRlyGjU/nBeN0QKsY+MYI7A8xWQ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.WallLights.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.html",
+          "hash": "LqmAEh6j1nutYKf7m5OKJ03/DyGOIMAuHGce4a8XDuY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.html",
+          "hash": "x+NFLxR87qwEO3l5pjYEZzg85Ei+Cl6eEAbMFlnwZaY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.AddStandbyInspectMessagePatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.AddStandbyInspectMessagePatch.html",
+          "hash": "to6VCLweeABOslg7sAxIJfis79dq84mYw44egcU6ZZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html",
+          "hash": "OByE/QtKB86gmx+kJIyhvWBgGt9ILFmKyjxlzq7YMHY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.html",
+          "hash": "OsrPL1rF0KLvrbYXsXtYAlKE5jV/aJsxDx/LJ20oBaw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.DisableThingsInRoomsOnSpawn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.DisableThingsInRoomsOnSpawn.html",
+          "hash": "9zgLNBEZ32Rv/OWHKH/VxAQCM5WcNAwqXlI5dUz3K2c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.RechargeablePatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.RechargeablePatch.html",
+          "hash": "lq6z6Rubsidh9a/QilkknxVYWPLzmtnKbF9g+fU9WjA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.html",
+          "hash": "RLxVprlxFtc6SB9Zb5SYcaeKiPcHTZ85gNMxwWPdLXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.ThingComps.KeepOnComp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.ThingComps.KeepOnComp.html",
+          "hash": "W9ah8bcYtXR+HyQlH99J+b9pPeqjfHvUxMaRP9dR/9Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.ThingComps.LoudspeakerTurnOffComp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.ThingComps.LoudspeakerTurnOffComp.html",
+          "hash": "wxwMTOBlWrMYX1OJD3+y/oauPVHSW+xnDobcM1zemPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.ThingComps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.ThingComps.html",
+          "hash": "PF6k+CA4b6oFszs9/LzH++c/zqqaXRhE3T2Ppc+d1bM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "2Nj2+waN/GU/GApwp3j9UcF+1qBjhsTyreUkmV31kPg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 61,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
