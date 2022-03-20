@@ -16,13 +16,18 @@ namespace LightsOut.Common
         private static bool ShouldLog => Boilerplate.ModSettings.DebugMessages;
 
         /// <summary>
+        /// Alias for the SpamMessages mod setting property
+        /// </summary>
+        private static bool ShouldSpam => Boilerplate.ModSettings.SpamMessages;
+
+        /// <summary>
         /// Adds the debug header to a message
         /// </summary>
         /// <param name="message">The message to print</param>
         /// <returns>The message witht he debug header prepended</returns>
         private static string AddDebugHeader(string message)
         {
-            return "[LightsOut - Debug] " + message;
+            return "<color=orange>[LightsOut - Debug]</color> " + message;
         }
 
         /// <summary>
@@ -31,8 +36,11 @@ namespace LightsOut.Common
         /// know, but are not problematic
         /// </summary>
         /// <param name="message">The message to print</param>
-        public static void LogInfo(string message)
+        /// <param name="isSpammy">Whether this message is logged
+        /// often enough to be considered console spam</param>
+        public static void LogInfo(string message, bool isSpammy = false)
         {
+            if (!ShouldSpam && isSpammy) return;
             if (ShouldLog) Log.Message(AddDebugHeader(message));
         }
 

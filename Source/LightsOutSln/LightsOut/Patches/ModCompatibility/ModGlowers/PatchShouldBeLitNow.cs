@@ -36,7 +36,7 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
                 patchType = PatchType.Postfix
             };
 
-            Log.Message($"[LightsOut]       patching \"{type.Namespace} - {type.Name}\" to count as a glower");
+            DebugLogger.LogInfo($"       patching \"{type.Namespace} - {type.Name}\" to count as a glower");
             // add it to the list of allowed glowers
             Glowers.CompGlowers.Add(type);
 

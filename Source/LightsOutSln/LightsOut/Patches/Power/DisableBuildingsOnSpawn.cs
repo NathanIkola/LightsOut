@@ -26,7 +26,7 @@ namespace LightsOut.Patches.Power
             else if (Common.Lights.CanBeLight(__instance))
             {
                 Room room = Rooms.GetRoom(__instance);
-                if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, null))
+                if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, null) && !Common.Lights.KeepLightOn(__instance))
                     Common.Lights.DisableLight(__instance);
                 else
                     Common.Lights.EnableLight(__instance);
@@ -52,13 +52,13 @@ namespace LightsOut.Patches.Power
                     }
                     else
                     {
-                        Log.Warning($"[LightsOut](SpawnSetup): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(SpawnSetup): InvalidOperationException: {e.Message}");
                         removed = true;
                     }
                 }
             }
             if (attempts > 1)
-                Log.Warning($"[LightsOut](SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
         }
     }
 }

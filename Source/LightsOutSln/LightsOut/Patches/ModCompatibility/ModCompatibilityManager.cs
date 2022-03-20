@@ -10,6 +10,7 @@ using LightsOut.Patches.ModCompatibility.WallLights;
 using LightsOut.Patches.ModCompatibility.ModGlowers;
 using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.ModCompatibility.HelixienGas;
+using LightsOut.Common;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -50,7 +51,7 @@ namespace LightsOut.Patches.ModCompatibility
         {
             if (string.IsNullOrWhiteSpace(patch.CompatibilityPatchName))
             {
-                Log.Error($"[LightsOut] encountered compatibility patch with empty name; skipping it.");
+                DebugLogger.LogWarning($"encountered compatibility patch with empty name; skipping it.");
                 return;
             }
 
@@ -61,12 +62,15 @@ namespace LightsOut.Patches.ModCompatibility
                     return;
             }
 
-            Log.Message($"[LightsOut] applying mod compatibility patch: {patch.CompatibilityPatchName}");
-
+            DebugLogger.LogInfo($"applying mod compatibility patch: {patch.CompatibilityPatchName}");
+            patch.OnBeforePatchApplied();
             foreach (ICompatibilityPatchComponent component in patch.GetComponents())
             {
+                component.OnBeforeComponentApplied();
                 ApplyPatchComponent(component);
+                component.OnAfterComponentApplied();
             }
+            patch.OnAfterPatchApplied();
         }
 
         /// <summary>
@@ -77,13 +81,13 @@ namespace LightsOut.Patches.ModCompatibility
         {
             if (string.IsNullOrWhiteSpace(comp.ComponentName))
             {
-                Log.Error("[LightsOut] encountered a compatibility component with an empty name; skipping it.");
+                DebugLogger.LogWarning("encountered a compatibility component with an empty name; skipping it.");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(comp.TypeNameToPatch))
             {
-                Log.Error($"[LightsOut] encountered a compatibility component ({comp.ComponentName}) with an empty type to patch; skipping it.");
+                DebugLogger.LogWarning($"encountered a compatibility component ({comp.ComponentName}) with an empty type to patch; skipping it.");
                 return;
             }
 
@@ -103,20 +107,20 @@ namespace LightsOut.Patches.ModCompatibility
                     continue;
 
                 if (!wasApplied)
-                    Log.Message($"[LightsOut]    component applied: {comp.ComponentName}");
+                    DebugLogger.LogInfo($"    component applied: {comp.ComponentName}");
                 wasApplied = true;
 
                 foreach (PatchInfo patch in comp.GetPatches(type))
                 {
                     if (patch.method is null && patch.methodName is null)
                     {
-                        Log.Warning($"[LightsOut]    encountered a component with a null method; skipping it.");
+                        DebugLogger.LogWarning($"    encountered a component with a null method; skipping it.");
                         continue;
                     }
 
                     if (patch.patch is null)
                     {
-                        Log.Warning($"[LightsOut]    encountered a component with a null patch; skipping it.");
+                        DebugLogger.LogWarning($"    encountered a component with a null patch; skipping it.");
                         continue;
                     }
 
@@ -130,7 +134,7 @@ namespace LightsOut.Patches.ModCompatibility
                             ModSettings.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
                             break;
                         default:
-                            Log.Warning($"[LightsOut]    encountered an invalid patch type in component {comp.ComponentName}; skipping it.");
+                            DebugLogger.LogWarning($"    encountered an invalid patch type in component {comp.ComponentName}; skipping it.");
                             break;
                     }
                 }

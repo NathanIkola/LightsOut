@@ -19,5 +19,15 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
 
             return components;
         }
+
+        /// <summary>
+        /// Adds the glower that Wall Lights decided should be a
+        /// Building of all things to the exclude list so that
+        /// they are not disabled when spawned.
+        /// </summary>
+        public override void OnAfterPatchApplied()
+        {
+            Common.Lights.LightNamesMustNotInclude.Add("MURWallLight_Glower");
+        }
     }
 }

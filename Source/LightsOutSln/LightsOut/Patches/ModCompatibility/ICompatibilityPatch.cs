@@ -9,6 +9,17 @@ namespace LightsOut.Patches.ModCompatibility
     public abstract class ICompatibilityPatch
     {
         /// <summary>
+        /// Called immediately before a patch is applied.
+        /// This is not called unless the patch is actually being applied.
+        /// </summary>
+        public virtual void OnBeforePatchApplied() { }
+
+        /// <summary>
+        /// Called immediately after a patch is applied.
+        /// </summary>
+        public virtual void OnAfterPatchApplied() { }
+
+        /// <summary>
         /// Returns a list of compatibility components to apply
         /// </summary>
         /// <returns>A list of compatibility components to apply</returns>

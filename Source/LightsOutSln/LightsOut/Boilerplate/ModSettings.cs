@@ -62,6 +62,12 @@ namespace LightsOut.Boilerplate
         public static bool DebugMessages { get; set; } = false;
 
         /// <summary>
+        /// Control whether or not the extra spammy debug
+        /// messages get printed to the console during gameplay
+        /// </summary>
+        public static bool SpamMessages { get; set; } = false;
+
+        /// <summary>
         /// The identifier this mod uses to identify itself in-game
         /// </summary>
         public override string ModIdentifier
@@ -74,6 +80,7 @@ namespace LightsOut.Boilerplate
         /// </summary>
         public override void DefsLoaded()
         {
+            Log.Message("LightsOut_InitializingMod".Translate() + " [" + typeof(ModSettings).Assembly.GetName().Version + "]");
             SettingsChanged();
             ModCompatibilityManager.LoadCompatibilityPatches();
         }
@@ -116,11 +123,19 @@ namespace LightsOut.Boilerplate
                 false
                 );
 
+            bool spamMessages = Settings.GetHandle<bool>(
+                "SpamMessages",
+                "LightsOut_Settings_SpamMessagesLabel".Translate(),
+                "LightsOut_Settings_SpamMessagesTooltip".Translate(),
+                false
+                );
+
             StandbyResourceDrawRate = standbyPower / 100f;
             ActiveResourceDrawRate = activePower / 100f;
 
             NightLights = nightLights;
             DebugMessages = debugMessages;
+            SpamMessages = spamMessages;
 
             UpdateLightGlowersOnSettingChange(lightsOut);
             FlickLights = lightsOut;
@@ -132,6 +147,7 @@ namespace LightsOut.Boilerplate
         /// <param name="newVal">The new value the setting is being set to</param>
         private void UpdateLightGlowersOnSettingChange(bool newVal)
         {
+            DebugLogger.LogInfo($"Changing FlickLights from {FlickLights} to {newVal}", true);
             if (FlickLights == newVal) return;
 
             FlickLights = newVal;
@@ -155,8 +171,6 @@ namespace LightsOut.Boilerplate
                 foreach (ThingComp glower in affectedLights)
                 {
                     Room room = Rooms.GetRoom(glower?.parent as Building);
-
-                    if (room == null || room.OutdoorsForWork) return;
 
                     if (Lights.ShouldTurnOffAllLights(room, null))
                         Glowers.DisableGlower(glower);

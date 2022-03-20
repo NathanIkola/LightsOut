@@ -96,6 +96,16 @@ namespace LightsOut.Patches.ModCompatibility
         }
 
         /// <summary>
+        /// Called immediately before a component is applied.
+        /// </summary>
+        public virtual void OnBeforeComponentApplied() { }
+
+        /// <summary>
+        /// Called immediately after a component is applied.
+        /// </summary>
+        public virtual void OnAfterComponentApplied() { }
+
+        /// <summary>
         /// A good list of <see cref="BindingFlags"/> to use to get most things
         /// </summary>
         public readonly static BindingFlags BindingFlags = BindingFlags.Public

@@ -22,6 +22,8 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
+            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID}", true);
+
             ThingComp glower = Glowers.GetGlower(light);
             DebugLogger.AssertFalse(glower is null, $"EnableLight called on a building without an approved glower: {light.def.defName}");
             if (glower is null) return;
@@ -38,7 +40,32 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
 
+            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID}", true);
+
             if (Rooms.GetRoom(light).OutdoorsForWork) return;
+
+            // acknowledge the keep on setting
+            if (KeepLightOn(light)) return;
+
+            ThingComp glower = Glowers.GetGlower(light);
+            DebugLogger.AssertFalse(glower is null, $"DisableLight called on a building without an approved glower: {light.def.defName}");
+            if (glower is null) return;
+
+            Glowers.DisableGlower(glower);
+        }
+
+        /// <summary>
+        /// Check if a light's KeepOnComp is keeping it on
+        /// </summary>
+        /// <param name="light">The light to check</param>
+        /// <returns>
+        /// <see langword="true"/> if the KeepOnComp is keeping
+        /// the light on, <see langword="false"/> otherwise
+        /// </returns>
+        public static bool KeepLightOn(Building light)
+        {
+            DebugLogger.AssertFalse(light is null, "KeepLightOn called on a null light");
+            if (light is null) return false;
 
             // acknowledge the keep on setting
             KeepOnComp comp;
@@ -49,13 +76,9 @@ namespace LightsOut.Common
                 comp = light.TryGetComp<KeepOnComp>();
                 KeepOnComps.Add(light, comp);
             }
-            if (comp?.KeepOn == true) return;
 
-            ThingComp glower = Glowers.GetGlower(light);
-            DebugLogger.AssertFalse(glower is null, $"DisableLight called on a building without an approved glower: {light.def.defName}");
-            if (glower is null) return;
-
-            Glowers.DisableGlower(glower);
+            DebugLogger.AssertFalse(comp is null, $"Found a light that doesn't have a KeepOnComp: {light.def.defName}");
+            return comp?.KeepOn ?? false;
         }
 
         /// <summary>
@@ -86,13 +109,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        Log.Warning($"[LightsOut](DisableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(DisableAllLights): InvalidOperationException: {e.Message}");
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                Log.Warning($"[LightsOut](DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -129,13 +152,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        Log.Warning($"[LightsOut](EnableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(EnableAllLights): InvalidOperationException: {e.Message}");
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                Log.Warning($"[LightsOut](EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -193,10 +216,18 @@ namespace LightsOut.Common
             if (Glowers.GetGlower(building) is null) 
                 return false;
 
-            // make sure it has one of the light kewords in its def name
+            // make sure it doesn't have a disallowed name
             string defName = building.def.defName.ToLower();
+            foreach (string keyword in LightNamesMustNotInclude)
+                if (defName.Contains(keyword.ToLower()))
+                {
+                    MemoizedCanBeLight.Add(building, false);
+                    return false;
+                }
+
+            // make sure it has one of the light kewords in its def name
             foreach (string keyword in LightNamesMustInclude)
-                if (defName.Contains(keyword))
+                if (defName.Contains(keyword.ToLower()))
                 {
                     MemoizedCanBeLight.Add(building, true);
                     return true;
@@ -242,6 +273,11 @@ namespace LightsOut.Common
             "lamp",
             "illuminated"
         };
+
+        /// <summary>
+        /// List of things that a light name MUST NOT include to be considered
+        /// </summary>
+        public static List<string> LightNamesMustNotInclude { get; } = new List<string>();
 
         /// <summary>
         /// The cached results of CanBeLight to speed up subsequent calls

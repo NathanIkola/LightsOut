@@ -130,6 +130,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.SettingsChanged
   nameWithType: ModSettings.SettingsChanged
+- uid: LightsOut.Boilerplate.ModSettings.SpamMessages
+  name: SpamMessages
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages
+  commentId: P:LightsOut.Boilerplate.ModSettings.SpamMessages
+  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
+  nameWithType: ModSettings.SpamMessages
+- uid: LightsOut.Boilerplate.ModSettings.SpamMessages*
+  name: SpamMessages
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.SpamMessages
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
+  nameWithType: ModSettings.SpamMessages
 - uid: LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate
   name: StandbyResourceDrawRate
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate
@@ -213,12 +226,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogErrorOnce
   nameWithType: DebugLogger.LogErrorOnce
-- uid: LightsOut.Common.DebugLogger.LogInfo(System.String)
-  name: LogInfo(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String)
-  nameWithType: DebugLogger.LogInfo(String)
+- uid: LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
+  name: LogInfo(String, Boolean)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_System_Boolean_
+  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
+  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String, System.Boolean)
+  nameWithType: DebugLogger.LogInfo(String, Boolean)
 - uid: LightsOut.Common.DebugLogger.LogInfo*
   name: LogInfo
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_
@@ -394,6 +407,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.HasDisallowedCompForLights
   nameWithType: Lights.HasDisallowedCompForLights
+- uid: LightsOut.Common.Lights.KeepLightOn(Verse.Building)
+  name: KeepLightOn(Building)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_KeepLightOn_Verse_Building_
+  commentId: M:LightsOut.Common.Lights.KeepLightOn(Verse.Building)
+  fullName: LightsOut.Common.Lights.KeepLightOn(Verse.Building)
+  nameWithType: Lights.KeepLightOn(Building)
+- uid: LightsOut.Common.Lights.KeepLightOn*
+  name: KeepLightOn
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_KeepLightOn_
+  commentId: Overload:LightsOut.Common.Lights.KeepLightOn
+  isSpec: "True"
+  fullName: LightsOut.Common.Lights.KeepLightOn
+  nameWithType: Lights.KeepLightOn
 - uid: LightsOut.Common.Lights.LightNamesMustInclude
   name: LightNamesMustInclude
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustInclude
@@ -407,6 +433,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.LightNamesMustInclude
   nameWithType: Lights.LightNamesMustInclude
+- uid: LightsOut.Common.Lights.LightNamesMustNotInclude
+  name: LightNamesMustNotInclude
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustNotInclude
+  commentId: P:LightsOut.Common.Lights.LightNamesMustNotInclude
+  fullName: LightsOut.Common.Lights.LightNamesMustNotInclude
+  nameWithType: Lights.LightNamesMustNotInclude
+- uid: LightsOut.Common.Lights.LightNamesMustNotInclude*
+  name: LightNamesMustNotInclude
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustNotInclude_
+  commentId: Overload:LightsOut.Common.Lights.LightNamesMustNotInclude
+  isSpec: "True"
+  fullName: LightsOut.Common.Lights.LightNamesMustNotInclude
+  nameWithType: Lights.LightNamesMustNotInclude
 - uid: LightsOut.Common.Lights.ShouldTurnOffAllLights(Verse.Room,Verse.Pawn)
   name: ShouldTurnOffAllLights(Room, Pawn)
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_ShouldTurnOffAllLights_Verse_Room_Verse_Pawn_
@@ -1339,6 +1378,32 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.GetComponents
   nameWithType: ICompatibilityPatch.GetComponents
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: ICompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnAfterPatchApplied
+  nameWithType: ICompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied
+  name: OnBeforePatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatch_OnBeforePatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied()
+  nameWithType: ICompatibilityPatch.OnBeforePatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied*
+  name: OnBeforePatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatch_OnBeforePatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.OnBeforePatchApplied
+  nameWithType: ICompatibilityPatch.OnBeforePatchApplied
 - uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatch.TargetMod
   name: TargetMod
   href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatch_TargetMod
@@ -1425,6 +1490,32 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.GetPatches
   nameWithType: ICompatibilityPatchComponent.GetPatches
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied
+  name: OnAfterComponentApplied()
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatchComponent_OnAfterComponentApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied()
+  nameWithType: ICompatibilityPatchComponent.OnAfterComponentApplied()
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied*
+  name: OnAfterComponentApplied
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatchComponent_OnAfterComponentApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnAfterComponentApplied
+  nameWithType: ICompatibilityPatchComponent.OnAfterComponentApplied
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied
+  name: OnBeforeComponentApplied()
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatchComponent_OnBeforeComponentApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied()
+  nameWithType: ICompatibilityPatchComponent.OnBeforeComponentApplied()
+- uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied*
+  name: OnBeforeComponentApplied
+  href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatchComponent_OnBeforeComponentApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.OnBeforeComponentApplied
+  nameWithType: ICompatibilityPatchComponent.OnBeforeComponentApplied
 - uid: LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.TargetsMultipleTypes
   name: TargetsMultipleTypes
   href: api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html#LightsOut_Patches_ModCompatibility_ICompatibilityPatchComponent_TargetsMultipleTypes
@@ -2123,6 +2214,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.GetComponents
   nameWithType: WallLightCompatibilityPatch.GetComponents
+- uid: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_WallLights_WallLightCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: WallLightCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_WallLights_WallLightCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: WallLightCompatibilityPatch.OnAfterPatchApplied
 - uid: LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.TargetMod
   name: TargetMod
   href: api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_WallLights_WallLightCompatibilityPatch_TargetMod

@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
-          "hash": "GWymO9CygJALgv9qGZ5w/qaGIJ33u8yDOHaAj6gl3ZE="
+          "hash": "jJ4QGlBVUBtCzoADMncpdZhV3ngM+yDFSZzDR14zWVM="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -72,7 +72,7 @@
           "hash": "cYsAwjwZDuift2RWwj+xo/hybC66NtJo8z44v3XujPI="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.DebugLogger.html",
-          "hash": "bpGDjCGNFMDWSeWmaq/N8Zn1BnDWACINQe0FZslFviY="
+          "hash": "JUdfs5yoCTdgOXatQQtQAYjFmTZDb2A7N8OA3tZtFFY="
         }
       },
       "is_incremental": true,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Lights.html",
-          "hash": "s5rkm77/YIUL2lMulNbRmdFvdTf23k1HE5Qg38XVQrU="
+          "hash": "xEmOH34h02x+O4HYclwCA2/i+P1cKu8WNofpaELt+Hk="
         }
       },
       "is_incremental": true,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.AndroidsCompatibilityPatch.html",
-          "hash": "HlQ8/1awRIkycvhU/8JcOagaOB2qojR98WIYVjsB2Cc="
+          "hash": "1zc3gMQ/+JxFno6zydjoZYxtpK8vK8TcpoQ4FdEwAr4="
         }
       },
       "is_incremental": true,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.PatchInspectMessage.html",
-          "hash": "5O4rCUNTrXHVRNvYcbHl3e7kxKPRdHv2Dt3UD5L88XU="
+          "hash": "f8fdCzTPMU3XAqaHfS9AMSRUVXabVYiaaG0/PP0wwoU="
         }
       },
       "is_incremental": true,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.html",
-          "hash": "UnaKJt8X//TGS1lZAT6dT0A9FIhosUlil3NHMcHuopc="
+          "hash": "4tHZQ0WgBeqyak0NG4CNfsN49irSsR7JjiFhA//DxAI="
         }
       },
       "is_incremental": true,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.HelixienGasCompatibilityPatch.html",
-          "hash": "4nzpzO3EaR184u2y+Nr33rxf5WinSB6KuQtLhHCpPRc="
+          "hash": "IWXN49yhLUieKlLS9SCAiC7XuSbSyLw8R60wJi5xtd0="
         }
       },
       "is_incremental": true,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGasConsumption.html",
-          "hash": "yNDyrPhBIjapE5+FBW0cT1py2jsvm7NJpAzj6esJAWg="
+          "hash": "+2VWvMf6DBhMM4txU7g9YuenznONHMakAHK54UVu6SA="
         }
       },
       "is_incremental": true,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchGetRoomForVPEGasWallLights.html",
-          "hash": "bZKwSRoqT0MRPHhcSj8mPqzZCAThnMVrT7w48rbo6/s="
+          "hash": "+IMoWwYcHEFEV4rWR0cr7O9/bCR5NI3O1K+t2UI2soE="
         }
       },
       "is_incremental": true,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.PatchInspectMessage.html",
-          "hash": "V9cjCavkt6OG5z+EbUeYm3v6Q9VmC0dqxtoE/UVxyBE="
+          "hash": "bzfLOECis2v0CMZnpvUJxsEUweAUlUzdEyjKzj+ocXw="
         }
       },
       "is_incremental": true,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
-          "hash": "vDNrhrXMx3hKa6T2+rSv6Px28BIbufLZniTHeopbDGY="
+          "hash": "6HrUxJfnIR4xacEAVIcCawMwMDoDRcbIrCvY+ri0RUo="
         }
       },
       "is_incremental": true,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent-1.html",
-          "hash": "otD1WdWyq0iRHJU0vQjvvlPvBZ7Jp6gPQvKiRkMcoU4="
+          "hash": "fgbKXZB0x9Fb9DWOU5oMyOKJMSQP3CIsp+jU9rEWb5Y="
         }
       },
       "is_incremental": true,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html",
-          "hash": "Yin+vxibWgl7H32fX27xkz1KFBWdcIzPesb+ROHa7hM="
+          "hash": "LvMnI9lGZA4wwRMJkOZeIgLg3R1MSnt0VHE3kH7T9BU="
         }
       },
       "is_incremental": true,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.IdeologyCompatibilityPatch.html",
-          "hash": "+VqYcTIHWKhP+UzV7iDpfHstwz5DZX2jwth4PFbHjLI="
+          "hash": "7xbCSuL2hkg7P1MAm7DGk4IFLxvDbUogjTPhAhc0Tms="
         }
       },
       "is_incremental": true,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchCount.html",
-          "hash": "v2fddpOrg9RrxKMhheU8hZCHNq941APdsrsLS/v1Kvo="
+          "hash": "lXvnAQLfbSvjhHM5XCAigJ12iUC5r4fX/hngLU7RpNc="
         }
       },
       "is_incremental": true,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchPostSpawnSetup.html",
-          "hash": "RXLlZ4oJadoayeLL1i6EhOmmpkJEoXiIkH8cPpf3tC8="
+          "hash": "+EBPfJ/hHMqKAahDKwjjyHvdRkPxr/gN3F+xFBaz2+A="
         }
       },
       "is_incremental": true,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.PatchTick.html",
-          "hash": "UkpjQrN0Ol8dfekglUaitkNUnlMhDmSjq51uJbH3+9c="
+          "hash": "rpl576K3WSie30/j/MAz5nwMlT7WO8ZRVJoXy1mBQik="
         }
       },
       "is_incremental": true,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
-          "hash": "0vDO4GFAq14UB50iK9p24nrrDe06rtcB5r5xqvBv/7k="
+          "hash": "mNwelnSHzvRG27fk0h5rm8GTXyAwSX1AJc/+qhKikks="
         }
       },
       "is_incremental": true,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.ModGlowerCompatibilityPatch.html",
-          "hash": "Rb86/Oj30GFJWaHJCNWq92sGYO5el/aAwrXtNGj6L6I="
+          "hash": "FcXVqQJ1jKEkI0HUtdGMLhazCBr6N35xcJYOq+aA6aY="
         }
       },
       "is_incremental": true,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.PatchShouldBeLitNow.html",
-          "hash": "SYH6Y25pwoU+iNjvhI/VuuYLcC5hdwX3GkcNHgbjJaE="
+          "hash": "cHlCkmIeL51LPcBjaNqbHxgm478VzHMkYd4mtOLRn1M="
         }
       },
       "is_incremental": true,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.PatchDisablePowerDraw.html",
-          "hash": "SFbuP0gtxyFsPZqu8GdjP3rhOKqmEa0PR/W5nEgwqPk="
+          "hash": "CMcxk/4A/Md49Ao1RQn10KQHhy/plC6+Zy6QVzN+vJo="
         }
       },
       "is_incremental": true,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.PatchGetRoomForVEWallLights.html",
-          "hash": "lT96PqMlvTKTWEfJsGmaHROIZYQv4SndCPAYn4n/yRs="
+          "hash": "oKUJ9grIkGh+DwLMwvqHx7vSZG7MdoTS28YSIJCm6VM="
         }
       },
       "is_incremental": true,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.VEWallLightCompatibilityPatch.html",
-          "hash": "ZgXJDBBRFtCGggLY663IIQm8aXgZsRCrWU4xJBvr7A4="
+          "hash": "b5QrCACprXnJE69BxYFsO6FGz5gMn30jSNzd5Wussto="
         }
       },
       "is_incremental": true,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.PatchGetRoomForWallLights.html",
-          "hash": "JPmItUy8tHAUjagx7v3e9zsZ2sGLOSpEO8IqZJMNpoQ="
+          "hash": "GZ46PASxo2bjInTZyPcGYqT2QeLQnFG+dXG48zFN1FU="
         }
       },
       "is_incremental": true,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.WallLightCompatibilityPatch.html",
-          "hash": "VY+tAbnxS+aqllWxRlyGjU/nBeN0QKsY+MYI7A8xWQ0="
+          "hash": "lCEW3L1755ul9yM22vbK9WyKZ+BevsDe1eOZRqCXd3I="
         }
       },
       "is_incremental": true,
@@ -839,7 +839,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 62,
-          "skipped_file_count": 62
+          "skipped_file_count": 61
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
