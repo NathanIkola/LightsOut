@@ -11,7 +11,7 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
     public class PatchGetRoomForWallLights : ICompatibilityPatchComponent
     {
         public override string ComponentName => "Patch GetRoom for Wall Lights";
-        public override string TypeNameToPatch => "Rooms";
+        public override string TypeNameToPatch => nameof(Rooms);
         public override bool TargetsMultipleTypes => false;
         public override bool TypeNameIsExact => true;
 

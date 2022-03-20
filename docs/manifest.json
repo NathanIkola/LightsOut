@@ -12,7 +12,7 @@
           "hash": "9L3kH0pTg5kMQTL/gISwlG9c6VESCh88gz7c9bbsY2E="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "wGEQ7PBZRraWIQ/3cBCbTtDwW9PouNlE3idqsdlZbuY="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
-          "hash": "LfhGKVk4k3JfhjBIhuSiwCms33hnnklThTrILRppRMI="
+          "hash": "GWymO9CygJALgv9qGZ5w/qaGIJ33u8yDOHaAj6gl3ZE="
         }
       },
       "is_incremental": true,
@@ -77,11 +77,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.DebugLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.DebugLogger.html",
+          "hash": "bpGDjCGNFMDWSeWmaq/N8Zn1BnDWACINQe0FZslFviY="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/LightsOut.Common.Glowers.yml",
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Glowers.html",
-          "hash": "q16h9vYE8vHxTejc/YT5lMZ+dSXjwCiaB4QQiVr26zM="
+          "hash": "gi6JYtilOPdYNs8yRL25wfi6dAwH6chZNP+xDmp/QOI="
         }
       },
       "is_incremental": true,
@@ -93,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Lights.html",
-          "hash": "7endRst53/kowBt7qKkTC5EYBZN7FIZOMngNSvEhESI="
+          "hash": "s5rkm77/YIUL2lMulNbRmdFvdTf23k1HE5Qg38XVQrU="
         }
       },
       "is_incremental": true,
@@ -105,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Resources.html",
-          "hash": "sJFlcDaZHScrYFXcTxCdbhBJaU4i9PFpoQI1nXSZoZE="
+          "hash": "TIyGmubNfvlSVPpoqb7efYUuLCgmPfRt5Rd+JNWKvbs="
         }
       },
       "is_incremental": true,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Rooms.html",
-          "hash": "Y1IPvndjWQ1a5FDwoN7q1kkyZeh5/rV/JBh0ya+ugyc="
+          "hash": "A5d8WdbQqfS75ZKzII8e+W935bTdphtm5/j4CRNpS1k="
         }
       },
       "is_incremental": true,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Tables.html",
-          "hash": "WxcU8iUwUH0+krzGeBhYlDeXeo8Ai/CilPHm4iq6nCw="
+          "hash": "aNojtWHj2ZjLswWlMtcdXSo0S8qd10fBHzr+S05xuYI="
         }
       },
       "is_incremental": true,
@@ -141,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.html",
-          "hash": "fIa7/C8mtLt3s9TlL4RaTG/w0MvkuZuoYbUwDSzTc5o="
+          "hash": "qdVMa4VD7ZfrrQ405n72MjrhL1wwUEzIttqlEz6PyRQ="
         }
       },
       "is_incremental": true,
@@ -753,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.ThingComps.KeepOnComp.html",
-          "hash": "W9ah8bcYtXR+HyQlH99J+b9pPeqjfHvUxMaRP9dR/9Q="
+          "hash": "ClgUIxbyEgyNzvcBB8EdekeMZDma/3etsQtyR6jKqOs="
         }
       },
       "is_incremental": true,
@@ -789,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "2Nj2+waN/GU/GApwp3j9UcF+1qBjhsTyreUkmV31kPg="
+          "hash": "p9ZmsiLD3s8xJXYCjevmq4lg3snCiV300FgKzIWuzmE="
         }
       },
       "is_incremental": false,
@@ -821,13 +833,13 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 1
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 61,
-          "skipped_file_count": 61
+          "total_file_count": 62,
+          "skipped_file_count": 62
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

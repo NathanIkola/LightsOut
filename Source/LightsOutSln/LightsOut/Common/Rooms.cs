@@ -18,6 +18,7 @@ namespace LightsOut.Common
         /// <returns>Whether or not the room is empty</returns>
         public static bool RoomIsEmpty(Room room, Pawn excludedPawn)
         {
+            DebugLogger.AssertFalse(room is null, "RoomIsEmpty was called on a null room");
             if (room is null || room.OutdoorsForWork || room.IsDoorway
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
 
@@ -69,6 +70,7 @@ namespace LightsOut.Common
         /// <returns>Whether or not all pawns in the room are sleeping</returns>
         public static bool AllPawnsSleeping(Room room, Pawn excludedPawn)
         {
+            DebugLogger.AssertFalse(room is null, "AllPawnsSleeping called on a null room");
             if (room is null || room.OutdoorsForWork || room.IsDoorway
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
 
@@ -123,6 +125,8 @@ namespace LightsOut.Common
         /// <returns>Whether or not <paramref name="building"/> is in <paramref name="room"/></returns>
         public static bool IsInRoom(Building building, Room room)
         {
+            DebugLogger.AssertFalse(building is null, "IsInRoom called on a null building");
+            DebugLogger.AssertFalse(room is null, "IsInRoom called on a null room");
             if (building is null || room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return false;
             return GetRoom(building)?.ID == room.ID;
         }
@@ -136,6 +140,7 @@ namespace LightsOut.Common
         /// <returns>The room that <paramref name="building"/> is in</returns>
         public static Room GetRoom(Building building)
         {
+            DebugLogger.AssertFalse(building is null, "GetRoom called on a null building");
             if (building is null) return null;
             if (!(building.Map?.regionAndRoomUpdater?.Enabled ?? false))
                 return null;

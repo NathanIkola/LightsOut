@@ -19,12 +19,14 @@ namespace LightsOut.Common
         /// <param name="light">The <see cref="Building"/> to enable</param>
         public static void EnableLight(Building light)
         {
+            DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
             ThingComp glower = Glowers.GetGlower(light);
+            DebugLogger.AssertFalse(glower is null, $"EnableLight called on a building without an approved glower: {light.def.defName}");
             if (glower is null) return;
 
-            Common.Glowers.EnableGlower(glower);
+            Glowers.EnableGlower(glower);
         }
 
         /// <summary>
@@ -33,6 +35,7 @@ namespace LightsOut.Common
         /// <param name="light">The <see cref="Building"/> to disable</param>
         public static void DisableLight(Building light)
         {
+            DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
 
             if (Rooms.GetRoom(light).OutdoorsForWork) return;
@@ -48,10 +51,11 @@ namespace LightsOut.Common
             }
             if (comp?.KeepOn == true) return;
 
-            ThingComp glower = Common.Glowers.GetGlower(light);
+            ThingComp glower = Glowers.GetGlower(light);
+            DebugLogger.AssertFalse(glower is null, $"DisableLight called on a building without an approved glower: {light.def.defName}");
             if (glower is null) return;
 
-            Common.Glowers.DisableGlower(glower);
+            Glowers.DisableGlower(glower);
         }
 
         /// <summary>
@@ -60,6 +64,7 @@ namespace LightsOut.Common
         /// <param name="room">The <see cref="Room"/> to disable the lights in</param>
         public static void DisableAllLights(Room room)
         {
+            DebugLogger.AssertFalse(room is null, "DisableAllLights called on a null room");
             if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
 
@@ -103,6 +108,7 @@ namespace LightsOut.Common
         /// <param name="room">The <see cref="Room"/> to enables the lights in</param>
         public static void EnableAllLights(Room room)
         {
+            DebugLogger.AssertFalse(room is null, "EnableAllLights called on a null room");
             if (room is null || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
 
             bool done = false;
@@ -172,6 +178,7 @@ namespace LightsOut.Common
         /// be a light, <see langword="false"/> otherwise</returns>
         public static bool CanBeLight(Building building)
         {
+            DebugLogger.AssertFalse(building is null, "CanBeLight called on a null building");
             if (building is null) return false;
             if (MemoizedCanBeLight.ContainsKey(building))
                 return MemoizedCanBeLight[building];
@@ -181,6 +188,10 @@ namespace LightsOut.Common
                 MemoizedCanBeLight.Add(building, false);
                 return false;
             }
+
+            // double check that it actually has a glower
+            if (Glowers.GetGlower(building) is null) 
+                return false;
 
             // make sure it has one of the light kewords in its def name
             string defName = building.def.defName.ToLower();

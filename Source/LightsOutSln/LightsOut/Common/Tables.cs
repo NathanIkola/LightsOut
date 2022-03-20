@@ -6,7 +6,6 @@ using LightsOut.Defs;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
@@ -19,9 +18,10 @@ namespace LightsOut.Common
         //****************************************
         public static void DisableTable(Building table)
         {
+            DebugLogger.AssertFalse(table is null, "DisableTable called on a null table");
             if (table is null) return;
             ThingComp glower = Glowers.GetGlower(table);
-            if (!(glower is null) && ModSettings.StandbyResourceDrawRate == 0f)
+            if (!(glower is null))
                 Glowers.DisableGlower(glower);
             else
                 Resources.SetConsumesResources(table, false);
@@ -33,9 +33,10 @@ namespace LightsOut.Common
         //****************************************
         public static void EnableTable(Building table)
         {
+            DebugLogger.AssertFalse(table is null, "EnableTable called on a null table");
             if (table is null) return;
             ThingComp glower = Glowers.GetGlower(table);
-            if (!(glower is null) && ModSettings.StandbyResourceDrawRate == 0f)
+            if (!(glower is null))
                 Glowers.EnableGlower(glower);
             else
                 Resources.SetConsumesResources(table, true);
@@ -47,6 +48,7 @@ namespace LightsOut.Common
         //****************************************
         public static bool IsTable(Building thing)
         {
+            DebugLogger.AssertFalse(thing is null, "IsTable called on a null thing");
             if (MemoizedIsTable.ContainsKey(thing))
                 return MemoizedIsTable[thing];
 

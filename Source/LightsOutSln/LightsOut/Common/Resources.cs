@@ -18,6 +18,7 @@ namespace LightsOut.Common
         /// <returns>The previous resource consumption status</returns>
         public static bool? SetConsumesResources(ThingWithComps thing, bool? consumesResource)
         {
+            DebugLogger.AssertFalse(thing is null, "SetConsumesResources called on a null thing");
             if (thing is null) return null;
             bool? previous = CanConsumeResources(thing);
             if (consumesResource == previous)
@@ -45,6 +46,7 @@ namespace LightsOut.Common
         /// consume resources, or <see langword="null"/> if it hasn't been set</returns>
         public static bool? CanConsumeResources(ThingWithComps thing)
         {
+            DebugLogger.AssertFalse(thing is null, "CanConsumeResources called on a null thing");
             if (thing is null) return null;
             if (IsCharged(thing)) return false;
             return BuildingStatus.TryGetValue(thing, null);
@@ -57,6 +59,7 @@ namespace LightsOut.Common
         /// <returns>Whether or not <paramref name="thing"/> is charged</returns>
         public static bool IsCharged(ThingWithComps thing)
         {
+            DebugLogger.AssertFalse(thing is null, "IsCharged called on a null thing");
             if (thing is null) return false;
             CompRechargeable rechargeable;
             if (CompRechargeables.ContainsKey(thing))
@@ -80,6 +83,7 @@ namespace LightsOut.Common
         /// rechargeable, <see langword="false"/> otherwise</returns>
         public static bool IsRechargeable(Building building)
         {
+            DebugLogger.AssertFalse(building is null, "IsRechargeable called on a null building");
             if (building is null) return false;
             if (CompRechargeables.ContainsKey(building))
                 return CompRechargeables[building] != null;

@@ -15,6 +15,9 @@
 	<LightsOut_Settings_ActivePowerDrawRateLabel>Power draw when in use (%)</LightsOut_Settings_ActivePowerDrawRateLabel>
 	<LightsOut_Settings_ActivePowerDrawRateTooltip>Percentage of normal power (or other resource) to draw when in use. 100% by default (100+%).</LightsOut_Settings_ActivePowerDrawRateTooltip>
 	
+	<LightsOut_Settings_DebugMessagesLabel>Log extra debug information</LightsOut_Settings_DebugMessagesLabel>
+	<LightsOut_Settings_DebugMessagesTooltip>If enabled extra debug messages will be logged. Keep this off unless you're debugging this mod.</LightsOut_Settings_DebugMessagesTooltip>
+	
 	<LightsOut_Gizmos_KeepOnLabel>Keep On</LightsOut_Gizmos_KeepOnLabel>
 	<LightsOut_Gizmos_KeepOnTooltip>Prevent pawns from turning this light off.</LightsOut_Gizmos_KeepOnTooltip>
 </LanguageData>

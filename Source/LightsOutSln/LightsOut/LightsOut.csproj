@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boilerplate\ModSettings.cs" />
+    <Compile Include="Common\DebugLogger.cs" />
     <Compile Include="Common\Glowers.cs" />
     <Compile Include="Common\Lights.cs" />
     <Compile Include="Common\Rooms.cs" />

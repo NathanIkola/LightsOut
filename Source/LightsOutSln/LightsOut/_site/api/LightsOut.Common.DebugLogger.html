@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DebugLogger
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DebugLogger
+   ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Common.DebugLogger">
+  
+  
+  <h1 id="LightsOut_Common_DebugLogger" data-uid="LightsOut.Common.DebugLogger" class="text-break">Class DebugLogger
+  </h1>
+  <div class="markdown level0 summary"><p>Handles all of the debug logging needs for my mod.
+Respects the mod settings option for printing extra debug messages.
+Adds a header to the beginning of all messages passed in so they
+are easy to identify in the log.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DebugLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Common.html">LightsOut.Common</a></h6>
+  <h6><strong>Assembly</strong>: LightsOut.dll</h6>
+  <h5 id="LightsOut_Common_DebugLogger_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DebugLogger</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.Assert(System.Boolean%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L102">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_Assert_" data-uid="LightsOut.Common.DebugLogger.Assert*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_" data-uid="LightsOut.Common.DebugLogger.Assert(System.Boolean,System.String,System.Boolean)">Assert(Boolean, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Used to catch places where an expression is expected to be true,
+but is actually false. Useful for finding places where code is
+not behaving correctly. Does not log unless an error is found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Assert(bool expression, string failMessage, bool onlyOnce = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>The expression that should be <span class="xref">true</span></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">failMessage</span></td>
+        <td><p>The error message to print out if <code data-dev-comment-type="paramref" class="paramref">expression</code> is <span class="xref">false</span></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onlyOnce</span></td>
+        <td><p>Log this assertion failure only one time</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">onlyOnce</code> is set, this uses the hash of <code data-dev-comment-type="paramref" class="paramref">failMessage</code>
+to only log the message once. If you make <code data-dev-comment-type="paramref" class="paramref">failMessage</code> have dynamic
+content, it will appear once for every unique version of <code data-dev-comment-type="paramref" class="paramref">failMessage</code>
+that is passed in.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_AssertFalse_System_Boolean_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.AssertFalse(System.Boolean%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L119">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_AssertFalse_" data-uid="LightsOut.Common.DebugLogger.AssertFalse*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_AssertFalse_System_Boolean_System_String_System_Boolean_" data-uid="LightsOut.Common.DebugLogger.AssertFalse(System.Boolean,System.String,System.Boolean)">AssertFalse(Boolean, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Same as <a class="xref" href="LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_">Assert(Boolean, String, Boolean)</a>, except it expects the
+expression passed in to be false instead of true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AssertFalse(bool expression, string failMessage, bool onlyOnce = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>The expression that should be <span class="xref">false</span></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">failMessage</span></td>
+        <td><p>The error message to print out if <code data-dev-comment-type="paramref" class="paramref">expression</code> is <span class="xref">true</span></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onlyOnce</span></td>
+        <td><p>Log this assertion failure only one time</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogError_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogError(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L56">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_LogError_" data-uid="LightsOut.Common.DebugLogger.LogError*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_LogError_System_String_" data-uid="LightsOut.Common.DebugLogger.LogError(System.String)">LogError(String)</h4>
+  <div class="markdown level1 summary"><p>Logs an error message to the console.
+Should be used to log when something has
+gone terribly, terribly wrong.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogError(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to print</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogErrorOnce_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogErrorOnce(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L83">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_LogErrorOnce_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce(System.String)">LogErrorOnce(String)</h4>
+  <div class="markdown level1 summary"><p>Logs an error a single time, no matter how
+many times it was encountered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogErrorOnce(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Uses the hash of <code data-dev-comment-type="paramref" class="paramref">message</code>
+to only log the message once. If you make <code data-dev-comment-type="paramref" class="paramref">message</code> have dynamic
+content, it will appear once for every unique version of <code data-dev-comment-type="paramref" class="paramref">message</code>
+that is passed in.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogErrorOnce(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L67">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_LogErrorOnce_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32)">LogErrorOnce(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Logs an error a single time, no matter how
+many times it was encountered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogErrorOnce(string message, int errorKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to print</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">errorKey</span></td>
+        <td><p>The error&apos;s key (unique for each error)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogInfo_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogInfo(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L34">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_LogInfo_" data-uid="LightsOut.Common.DebugLogger.LogInfo*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_LogInfo_System_String_" data-uid="LightsOut.Common.DebugLogger.LogInfo(System.String)">LogInfo(String)</h4>
+  <div class="markdown level1 summary"><p>Logs an informational message to the console.
+Should be used to log things that are good to
+know, but are not problematic</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogInfo(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to print</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogWarning_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogWarning(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L45">View Source</a>
+  </span>
+  <a id="LightsOut_Common_DebugLogger_LogWarning_" data-uid="LightsOut.Common.DebugLogger.LogWarning*"></a>
+  <h4 id="LightsOut_Common_DebugLogger_LogWarning_System_String_" data-uid="LightsOut.Common.DebugLogger.LogWarning(System.String)">LogWarning(String)</h4>
+  <div class="markdown level1 summary"><p>Logs a warning message to the console.
+Should be used to log things that could be
+issues, but aren&apos;t causing any fatal problems</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void LogWarning(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message to print</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

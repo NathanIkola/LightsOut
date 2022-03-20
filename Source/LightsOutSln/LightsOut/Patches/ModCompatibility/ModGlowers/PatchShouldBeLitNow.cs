@@ -32,7 +32,7 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
             PatchInfo patch = new PatchInfo
             {
                 method = getter.GetMethod,
-                patch = GetMethod<DisableLightGlowPatch>("Postfix"),
+                patch = GetMethod<DisableLightGlowPatch>(nameof(DisableLightGlowPatch.Postfix)),
                 patchType = PatchType.Postfix
             };
 

@@ -22,11 +22,10 @@ namespace LightsOut.Common
         private static bool? SetCanGlow(ThingComp glower, bool? canGlow)
         {
             if (glower is null) return false;
+
             bool? previous = Resources.SetConsumesResources(glower.parent, canGlow);
 
-            // only update if the state has changed
-            if (previous is null || canGlow is null || previous != canGlow)
-                UpdateGlower(glower);
+            UpdateGlower(glower);
 
             return previous;
         }
@@ -39,6 +38,7 @@ namespace LightsOut.Common
         /// in the dictionary before</returns>
         public static bool? EnableGlower(ThingComp glower)
         {
+            DebugLogger.AssertFalse(glower is null, "EnableGlower was called on a null glower");
             return SetCanGlow(glower, true);
         }
 
@@ -50,6 +50,7 @@ namespace LightsOut.Common
         /// in the dictionary before</returns>
         public static bool? DisableGlower(ThingComp glower)
         {
+            DebugLogger.AssertFalse(glower is null, "DisableGlower was called on a null glower");
             return SetCanGlow(glower, false);
         }
 
@@ -62,6 +63,7 @@ namespace LightsOut.Common
         /// and <see langword="null"/> if it hasn't been set</returns>
         public static bool? CanGlow(ThingComp glower)
         {
+            DebugLogger.AssertFalse(glower is null, "CanGlow was called on a null glower");
             if (glower is null) return false;
             return Resources.CanConsumeResources(glower.parent);
         }
@@ -73,6 +75,7 @@ namespace LightsOut.Common
         /// <returns>The glower if present, otherwise <see langword="null"/></returns>
         public static ThingComp GetGlower(Building thing)
         {
+            DebugLogger.AssertFalse(thing is null, "GetGlower called on a null building");
             if (thing is null) return null;
             if (CachedGlowers.ContainsKey(thing))
                 return CachedGlowers[thing];
@@ -92,6 +95,7 @@ namespace LightsOut.Common
         /// <param name="glower">The glower to update</param>
         private static void UpdateGlower(ThingComp glower)
         {
+            DebugLogger.AssertFalse(glower is null, "UpdateGlower was called on a null glower");
             if (glower is null) return;
             if (glower is CompGlower compGlower)
                 compGlower.UpdateLit(compGlower.parent.Map);
@@ -108,6 +112,9 @@ namespace LightsOut.Common
             if (glower is null) return;
             ThingWithComps thing = glower.parent;
             MethodInfo updateLit = glower.GetType().GetMethod("UpdateLit", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
+            DebugLogger.AssertFalse(updateLit is null, $"Could not find UpdateLit method on {glower.GetType().FullName}", true);
+
             if (updateLit != null)
             {
                 try
@@ -116,10 +123,12 @@ namespace LightsOut.Common
                         updateLit.Invoke(glower, new object[] { thing.Map });
                     else if (updateLit.GetParameters().Length == 0)
                         updateLit.Invoke(glower, null);
+                    else
+                        DebugLogger.LogWarning($"Too many arguments for UpdateLit on {glower.GetType().FullName}");
                 }
                 catch (Exception e)
                 {
-                    Log.Warning($"[LightsOut] Having trouble updating a generic glower: {glower.GetType()}: {e}");
+                    DebugLogger.LogErrorOnce($"Having trouble updating a generic glower: {glower.GetType().FullName}: {e}");
                 }
             }
         }

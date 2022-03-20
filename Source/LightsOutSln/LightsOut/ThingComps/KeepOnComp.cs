@@ -42,6 +42,10 @@ namespace LightsOut.ThingComps
                     Building building = parent as Building;
                     Room room = Rooms.GetRoom(building);
 
+                    DebugLogger.AssertFalse(parent is null, "KeepOnComp found a null parent");
+                    DebugLogger.AssertFalse(building is null, $"A KeepOnComp can was applied to {parent.GetType().FullName}, which wasn't a Building.");
+                    DebugLogger.AssertFalse(room is null, $"A KeepOnComp was applied to {parent.GetType().FullName}, which had no associated Room.");
+
                     if (value || room.OutdoorsForWork || !Lights.ShouldTurnOffAllLights(room, null))
                         Lights.EnableLight(building);
                     else

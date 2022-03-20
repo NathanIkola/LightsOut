@@ -56,6 +56,12 @@ namespace LightsOut.Boilerplate
         public static bool NightLights { get; set; } = false;
 
         /// <summary>
+        /// Control whether or not extra debug messages get 
+        /// printed to the console during gameplay
+        /// </summary>
+        public static bool DebugMessages { get; set; } = false;
+
+        /// <summary>
         /// The identifier this mod uses to identify itself in-game
         /// </summary>
         public override string ModIdentifier
@@ -103,10 +109,18 @@ namespace LightsOut.Boilerplate
                 100,
                 Validators.IntRangeValidator(100, int.MaxValue));
 
+            bool debugMessages = Settings.GetHandle<bool>(
+                "DebugMessages",
+                "LightsOut_Settings_DebugMessagesLabel".Translate(),
+                "LightsOut_Settings_DebugMessagesTooltip".Translate(),
+                false
+                );
+
             StandbyResourceDrawRate = standbyPower / 100f;
             ActiveResourceDrawRate = activePower / 100f;
 
             NightLights = nightLights;
+            DebugMessages = debugMessages;
 
             UpdateLightGlowersOnSettingChange(lightsOut);
             FlickLights = lightsOut;
