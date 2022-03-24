@@ -39,10 +39,10 @@ namespace LightsOut.Patches.Lights
             // if there was a room change
             if(newRoom != __state)
             {
-                if (Common.Lights.ShouldTurnOffAllLights(__state, __instance))
+                if (!(__state is null) && Common.Lights.ShouldTurnOffAllLights(__state, __instance))
                     Common.Lights.DisableAllLights(__state);
 
-                if (Common.Lights.ShouldTurnOffAllLights(newRoom, __instance))
+                if (!(newRoom is null) && Common.Lights.ShouldTurnOffAllLights(newRoom, __instance))
                     Common.Lights.EnableAllLights(newRoom);
             }
         }

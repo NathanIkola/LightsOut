@@ -22,7 +22,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
-            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID}", true);
+            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
 
             ThingComp glower = Glowers.GetGlower(light);
             DebugLogger.AssertFalse(glower is null, $"EnableLight called on a building without an approved glower: {light.def.defName}");
@@ -40,7 +40,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
 
-            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID}", true);
+            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
 
             if (Rooms.GetRoom(light).OutdoorsForWork) return;
 
