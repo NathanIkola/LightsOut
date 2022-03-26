@@ -1,6 +1,7 @@
 ﻿using Verse;
 using HarmonyLib;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using System.Collections.Generic;
 
 namespace LightsOut.Patches.Lights
 {
@@ -17,9 +18,10 @@ namespace LightsOut.Patches.Lights
         /// </summary>
         /// <param name="__instance">The Pawn being tracked</param>
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
-        public static void Prefix(Pawn __instance, ref Room __state)
+        public static void Prefix(Pawn __instance)
         {
-            __state = __instance.GetRoom();
+
+            RoomCache[__instance] = __instance.GetRoom();
         }
 
         /// <summary>
@@ -29,22 +31,29 @@ namespace LightsOut.Patches.Lights
         /// </summary>
         /// <param name="__instance">The Pawn being tracked</param>
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
-        public static void Postfix(Pawn __instance, Room __state)
+        public static void Postfix(Pawn __instance)
         {
+            Room oldRoom = RoomCache[__instance];
+
             // animals PLEASE don't turn on my lights
             if (__instance.RaceProps.Animal || !ModSettings.FlickLights) return;
 
             Room newRoom = __instance.GetRoom();
 
             // if there was a room change
-            if(newRoom != __state)
+            if (newRoom != oldRoom)
             {
-                if (!(__state is null) && Common.Lights.ShouldTurnOffAllLights(__state, __instance))
-                    Common.Lights.DisableAllLights(__state);
+                if (!(oldRoom is null) && Common.Lights.ShouldTurnOffAllLights(oldRoom, __instance))
+                    Common.Lights.DisableAllLights(oldRoom);
 
                 if (!(newRoom is null) && Common.Lights.ShouldTurnOffAllLights(newRoom, __instance))
                     Common.Lights.EnableAllLights(newRoom);
             }
         }
+
+        /// <summary>
+        /// The cache that holds the room in lieu of __state
+        /// </summary>
+        private static Dictionary<Pawn, Room> RoomCache { get; } = new Dictionary<Pawn, Room>();
     }
 }

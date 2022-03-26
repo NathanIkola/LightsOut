@@ -29,12 +29,12 @@ namespace LightsOut.Patches.ModCompatibility.Androids
         }
 
         /// <summary>
-        /// Checks if the Building is an Android Printer
+        /// Checks if the ThingWithComps is an Android Printer
         /// and fixes IsTable to recognize it
         /// </summary>
-        /// <param name="__0">The Building to check</param>
+        /// <param name="__0">The ThingWithComps to check</param>
         /// <param name="__result">The result of IsTable</param>
-        private static void Postfix(Building __0, ref bool __result)
+        private static void Postfix(ThingWithComps __0, ref bool __result)
         {
             if (__0 is null) return;
             if (__0.GetType().Name == "Building_AndroidPrinter")

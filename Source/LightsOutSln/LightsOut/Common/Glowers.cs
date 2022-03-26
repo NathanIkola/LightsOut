@@ -73,7 +73,7 @@ namespace LightsOut.Common
         /// </summary>
         /// <param name="thing">The <see cref="Building"/> to get the comp from</param>
         /// <returns>The glower if present, otherwise <see langword="null"/></returns>
-        public static ThingComp GetGlower(Building thing)
+        public static ThingComp GetGlower(ThingWithComps thing)
         {
             DebugLogger.AssertFalse(thing is null, "GetGlower called on a null building");
             if (thing is null) return null;
@@ -136,7 +136,7 @@ namespace LightsOut.Common
         /// <summary>
         /// A memoized list of glowers to speed up subsequent calls to GetGlower
         /// </summary>
-        private static Dictionary<Building, ThingComp> CachedGlowers { get; } = new Dictionary<Building, ThingComp>();
+        private static Dictionary<ThingWithComps, ThingComp> CachedGlowers { get; } = new Dictionary<ThingWithComps, ThingComp>();
 
         /// <summary>
         /// A list of valid glower types (can be added to by mod compatibility patches as needed)

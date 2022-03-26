@@ -81,7 +81,7 @@ namespace LightsOut.Common
         /// <param name="building">The thing to check the rechargeable status of</param>
         /// <returns><see langword="true"/> if <paramref name="building"/> is
         /// rechargeable, <see langword="false"/> otherwise</returns>
-        public static bool IsRechargeable(Building building)
+        public static bool IsRechargeable(ThingWithComps building)
         {
             DebugLogger.AssertFalse(building is null, "IsRechargeable called on a null building");
             if (building is null) return false;

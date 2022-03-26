@@ -14,9 +14,9 @@ namespace LightsOut.Patches.ModCompatibility.Furnace
         /// <summary>
         /// Hijacks the IsTable method to rule out the Furnace
         /// </summary>
-        /// <param name="thing">The Building to check</param>
+        /// <param name="thing">The ThingWithComps to check</param>
         /// <param name="__result">False if it's a furnace, unchanged otherwise</param>
-        public static void Postfix(Building thing, ref bool __result)
+        public static void Postfix(ThingWithComps thing, ref bool __result)
         {
             // if we were going to return true
             if (__result)

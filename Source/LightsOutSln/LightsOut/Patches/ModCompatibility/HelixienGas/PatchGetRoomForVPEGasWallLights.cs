@@ -30,9 +30,9 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
         /// <summary>
         /// The patch applied to GetRoom
         /// </summary>
-        /// <param name="__0">The Building being checked</param>
-        /// <param name="__result">The Room the Building actually belongs to</param>
-        private static void GetRoomPatch(Building __0, ref Room __result)
+        /// <param name="__0">The ThingWithComps being checked</param>
+        /// <param name="__result">The Room the ThingWithComps actually belongs to</param>
+        private static void GetRoomPatch(ThingWithComps __0, ref Room __result)
         {
             if (__0 is null) return;
             if (__0.def.defName.StartsWith("VPE_GasWall")

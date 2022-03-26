@@ -39,7 +39,7 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
 
             foreach (Thing thing in selectedTarget.Map.listerBuldingOfDefInProximity.GetForCell(
                 selectedTarget.Cell, (float)__instance.maxDistance, ThingDefOf.Loudspeaker))
-                Tables.DisableTable(thing as Building);
+                Tables.DisableTable(thing as ThingWithComps);
         }
     }
 }

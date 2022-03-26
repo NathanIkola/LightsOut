@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AddStandbyInspectMessagePatch
+    <title>Class Cache&lt;TValue&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AddStandbyInspectMessagePatch
+    <meta name="title" content="Class Cache&lt;TValue&gt;
    ">
     <meta name="generator" content="docfx 2.59.0.0">
     
@@ -68,21 +68,31 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Power.AddStandbyInspectMessagePatch">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Common.Performance.Cache`1">
   
   
-  <h1 id="LightsOut_Patches_Power_AddStandbyInspectMessagePatch" data-uid="LightsOut.Patches.Power.AddStandbyInspectMessagePatch" class="text-break">Class AddStandbyInspectMessagePatch
+  <h1 id="LightsOut_Common_Performance_Cache_1" data-uid="LightsOut.Common.Performance.Cache`1" class="text-break">Class Cache&lt;TValue&gt;
   </h1>
-  <div class="markdown level0 summary"><p>Adds the &quot;On Standby&quot; message in the inspect panel</p>
+  <div class="markdown level0 summary"><p>Alias for a cache object that uses a string key</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">AddStandbyInspectMessagePatch</span></div>
+    <div class="level1"><a class="xref" href="LightsOut.Common.Performance.Cache-2.html">Cache</a>&lt;<span class="xref">System.String</span>, TValue&gt;</div>
+    <div class="level2"><span class="xref">Cache&lt;TValue&gt;</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="LightsOut.Common.Performance.Cache-2.html#LightsOut_Common_Performance_Cache_2_Insert__0__1_">Cache&lt;String, TValue&gt;.Insert(String, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="LightsOut.Common.Performance.Cache-2.html#LightsOut_Common_Performance_Cache_2_Get__0_">Cache&lt;String, TValue&gt;.Get(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="LightsOut.Common.Performance.Cache-2.html#LightsOut_Common_Performance_Cache_2_TicksToExpiration">Cache&lt;String, TValue&gt;.TicksToExpiration()</a>
+    </div>
     <div>
       <span class="xref">System.Object.ToString()</span>
     </div>
@@ -105,32 +115,45 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Power.html">LightsOut.Patches.Power</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Common.Performance.html">LightsOut.Common.Performance</a></h6>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
-  <h5 id="LightsOut_Patches_Power_AddStandbyInspectMessagePatch_syntax">Syntax</h5>
+  <h5 id="LightsOut_Common_Performance_Cache_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(CompPower))]
-[HarmonyPatch(&quot;CompInspectStringExtra&quot;)]
-public class AddStandbyInspectMessagePatch</code></pre>
+    <pre><code class="lang-csharp hljs">public class Cache&lt;TValue&gt; : Cache&lt;string, TValue&gt;</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type that this cache contains</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Patches_Power_AddStandbyInspectMessagePatch_Postfix_RimWorld_CompPower_System_String__.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.AddStandbyInspectMessagePatch.Postfix(RimWorld.CompPower%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_1__ctor_LightsOut_Common_Performance_CacheDuration__0_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%601.%23ctor(LightsOut.Common.Performance.CacheDuration%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Patches/Power/AddStandbyInspectMessagePatch.cs/#L20">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L130">View Source</a>
   </span>
-  <a id="LightsOut_Patches_Power_AddStandbyInspectMessagePatch_Postfix_" data-uid="LightsOut.Patches.Power.AddStandbyInspectMessagePatch.Postfix*"></a>
-  <h4 id="LightsOut_Patches_Power_AddStandbyInspectMessagePatch_Postfix_RimWorld_CompPower_System_String__" data-uid="LightsOut.Patches.Power.AddStandbyInspectMessagePatch.Postfix(RimWorld.CompPower,System.String@)">Postfix(CompPower, ref String)</h4>
-  <div class="markdown level1 summary"><p>Checks if a CompPowerTrader is disabled, and if so changes the output
-of the inspect string to say &quot;On Standby&quot;</p>
+  <a id="LightsOut_Common_Performance_Cache_1__ctor_" data-uid="LightsOut.Common.Performance.Cache`1.#ctor*"></a>
+  <h4 id="LightsOut_Common_Performance_Cache_1__ctor_LightsOut_Common_Performance_CacheDuration__0_" data-uid="LightsOut.Common.Performance.Cache`1.#ctor(LightsOut.Common.Performance.CacheDuration,`0)">Cache(CacheDuration, TValue)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Cache object</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Postfix(CompPower __instance, ref string __result)</code></pre>
+    <pre><code class="lang-csharp hljs">public Cache(CacheDuration defaultDuration, TValue defaultValue)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -143,15 +166,15 @@ of the inspect string to say &quot;On Standby&quot;</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RimWorld.CompPower</span></td>
-        <td><span class="parametername">__instance</span></td>
-        <td><p>The CompPower being affected</p>
+        <td><a class="xref" href="LightsOut.Common.Performance.CacheDuration.html">CacheDuration</a></td>
+        <td><span class="parametername">defaultDuration</span></td>
+        <td><p>The duration to keep entries in this cache</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">__result</span></td>
-        <td><p>The output string from the function</p>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td><p>The value to return for an entry that doesn&apos;t exist in the cache</p>
 </td>
       </tr>
     </tbody>
@@ -164,10 +187,10 @@ of the inspect string to say &quot;On Standby&quot;</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Patches_Power_AddStandbyInspectMessagePatch.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.AddStandbyInspectMessagePatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_1.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Patches/Power/AddStandbyInspectMessagePatch.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L123" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

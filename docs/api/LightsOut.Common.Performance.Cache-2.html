@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Cache&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Cache&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Common.Performance.Cache`2">
+  
+  
+  <h1 id="LightsOut_Common_Performance_Cache_2" data-uid="LightsOut.Common.Performance.Cache`2" class="text-break">Class Cache&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>A cache that can invalidate entries based on game ticks</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Cache&lt;TKey, TValue&gt;</span></div>
+      <div class="level2"><a class="xref" href="LightsOut.Common.Performance.Cache-1.html">Cache&lt;TValue&gt;</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Common.Performance.html">LightsOut.Common.Performance</a></h6>
+  <h6><strong>Assembly</strong>: LightsOut.dll</h6>
+  <h5 id="LightsOut_Common_Performance_Cache_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Cache&lt;TKey, TValue&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type that this cache holds</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_2__ctor_LightsOut_Common_Performance_CacheDuration__1_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%602.%23ctor(LightsOut.Common.Performance.CacheDuration%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L33">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Performance_Cache_2__ctor_" data-uid="LightsOut.Common.Performance.Cache`2.#ctor*"></a>
+  <h4 id="LightsOut_Common_Performance_Cache_2__ctor_LightsOut_Common_Performance_CacheDuration__1_" data-uid="LightsOut.Common.Performance.Cache`2.#ctor(LightsOut.Common.Performance.CacheDuration,`1)">Cache(CacheDuration, TValue)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Cache object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cache(CacheDuration defaultDuration, TValue defaultValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LightsOut.Common.Performance.CacheDuration.html">CacheDuration</a></td>
+        <td><span class="parametername">defaultDuration</span></td>
+        <td><p>The duration to keep entries in this cache</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td><p>The value to return for an entry that doesn&apos;t exist in the cache</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_2_Get__0_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%602.Get(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L81">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Performance_Cache_2_Get_" data-uid="LightsOut.Common.Performance.Cache`2.Get*"></a>
+  <h4 id="LightsOut_Common_Performance_Cache_2_Get__0_" data-uid="LightsOut.Common.Performance.Cache`2.Get(`0)">Get(TKey)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a value from the cache if possible,
+or returns the default value if not present</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue Get(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to look the value up with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value in the cache, or <span class="xref">LightsOut.Common.Performance.Cache`2.DefaultValue</span> if not</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_2_Insert__0__1_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%602.Insert(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L65">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Performance_Cache_2_Insert_" data-uid="LightsOut.Common.Performance.Cache`2.Insert*"></a>
+  <h4 id="LightsOut_Common_Performance_Cache_2_Insert__0__1_" data-uid="LightsOut.Common.Performance.Cache`2.Insert(`0,`1)">Insert(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Stores a value in the cache with the specified key</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Insert(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to store the value under</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to cache</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_2_TicksToExpiration.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%602.TicksToExpiration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L102">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Performance_Cache_2_TicksToExpiration_" data-uid="LightsOut.Common.Performance.Cache`2.TicksToExpiration*"></a>
+  <h4 id="LightsOut_Common_Performance_Cache_2_TicksToExpiration" data-uid="LightsOut.Common.Performance.Cache`2.TicksToExpiration">TicksToExpiration()</h4>
+  <div class="markdown level1 summary"><p>Returns the number of ticks it takes an entry to expire</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long TicksToExpiration()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/perf/apiSpec/new?filename=LightsOut_Common_Performance_Cache_2.md&amp;value=---%0Auid%3A%20LightsOut.Common.Performance.Cache%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/perf/Source/LightsOutSln/LightsOut/Common/Performance/Cache.cs/#L26" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -17,7 +17,7 @@ namespace LightsOut.Common
         /// Enables a light
         /// </summary>
         /// <param name="light">The <see cref="Building"/> to enable</param>
-        public static void EnableLight(Building light)
+        public static void EnableLight(ThingWithComps light)
         {
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
@@ -35,7 +35,7 @@ namespace LightsOut.Common
         /// Disables a light
         /// </summary>
         /// <param name="light">The <see cref="Building"/> to disable</param>
-        public static void DisableLight(Building light)
+        public static void DisableLight(ThingWithComps light)
         {
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
@@ -62,7 +62,7 @@ namespace LightsOut.Common
         /// <see langword="true"/> if the KeepOnComp is keeping
         /// the light on, <see langword="false"/> otherwise
         /// </returns>
-        public static bool KeepLightOn(Building light)
+        public static bool KeepLightOn(ThingWithComps light)
         {
             DebugLogger.AssertFalse(light is null, "KeepLightOn called on a null light");
             if (light is null) return false;
@@ -120,7 +120,7 @@ namespace LightsOut.Common
             // now actually go through the collection
             foreach (Thing thing in things)
             {
-                if (thing is Building building && CanBeLight(building) && Rooms.IsInRoom(building, room))
+                if (thing is ThingWithComps building && CanBeLight(building) && Rooms.IsInRoom(building, room))
                     DisableLight(building);
             }
         }
@@ -163,7 +163,7 @@ namespace LightsOut.Common
             // now actually go through the collection
             foreach (Thing thing in things)
             {
-                if (thing is Building building && CanBeLight(building) && Rooms.IsInRoom(building, room))
+                if (thing is ThingWithComps building && CanBeLight(building) && Rooms.IsInRoom(building, room))
                     EnableLight(building);
             }
         }
@@ -199,7 +199,7 @@ namespace LightsOut.Common
         /// <param name="building">The building to check</param>
         /// <returns><see langword="true"/> if <paramref name="building"/> could
         /// be a light, <see langword="false"/> otherwise</returns>
-        public static bool CanBeLight(Building building)
+        public static bool CanBeLight(ThingWithComps building)
         {
             DebugLogger.AssertFalse(building is null, "CanBeLight called on a null building");
             if (building is null) return false;
@@ -213,8 +213,11 @@ namespace LightsOut.Common
             }
 
             // double check that it actually has a glower
-            if (Glowers.GetGlower(building) is null) 
+            if (Glowers.GetGlower(building) is null)
+            {
+                MemoizedCanBeLight.Add(building, false);
                 return false;
+            }
 
             // make sure it doesn't have a disallowed name
             string defName = building.def.defName.ToLower();
@@ -282,7 +285,7 @@ namespace LightsOut.Common
         /// <summary>
         /// The cached results of CanBeLight to speed up subsequent calls
         /// </summary>
-        private static Dictionary<Building, bool> MemoizedCanBeLight { get; } = new Dictionary<Building, bool>();
+        private static Dictionary<ThingWithComps, bool> MemoizedCanBeLight { get; } = new Dictionary<ThingWithComps, bool>();
         
         /// <summary>
         /// A cached list of KeepOnComps to prevent repeated comp lookups

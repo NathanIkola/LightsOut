@@ -1,6 +1,5 @@
 ﻿using RimWorld;
 using HarmonyLib;
-using Verse;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
 using System;
 using LightsOut.Common;
@@ -26,12 +25,12 @@ namespace LightsOut.Patches.Power
 
             if (canConsumePower == true)
             {
-                if (Common.Tables.IsTable(__instance.parent as Building))
+                if (Common.Tables.IsTable(__instance.parent))
                     __result *= ModSettings.ActiveResourceDrawRate;
             }
             else if (canConsumePower == false)
             {
-                if (Common.Lights.CanBeLight(__instance.parent as Building))
+                if (Common.Lights.CanBeLight(__instance.parent))
                     __result = Resources.MinDraw;
                 else
                     __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);

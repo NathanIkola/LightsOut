@@ -155,8 +155,8 @@ namespace LightsOut.Boilerplate
             var affectedLights = new List<ThingComp>();
             foreach (var kv in Resources.BuildingStatus)
             {
-                Thing thing = kv.Key;
-                var light = Glowers.GetGlower(thing as Building);
+                ThingWithComps thing = kv.Key;
+                var light = Glowers.GetGlower(thing);
                 if (light != null)
                     affectedLights.Add(light);
             }
@@ -170,7 +170,7 @@ namespace LightsOut.Boilerplate
             {
                 foreach (ThingComp glower in affectedLights)
                 {
-                    Room room = Rooms.GetRoom(glower?.parent as Building);
+                    Room room = Rooms.GetRoom(glower?.parent);
 
                     if (Lights.ShouldTurnOffAllLights(room, null))
                         Glowers.DisableGlower(glower);

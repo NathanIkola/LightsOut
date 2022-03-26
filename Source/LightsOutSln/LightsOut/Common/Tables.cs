@@ -16,7 +16,7 @@ namespace LightsOut.Common
         // Does the hard work of disabling
         // a worktable
         //****************************************
-        public static void DisableTable(Building table)
+        public static void DisableTable(ThingWithComps table)
         {
             DebugLogger.AssertFalse(table is null, "DisableTable called on a null table");
             if (table is null) return;
@@ -31,7 +31,7 @@ namespace LightsOut.Common
         // Does the hard work of enabling
         // a worktable
         //****************************************
-        public static void EnableTable(Building table)
+        public static void EnableTable(ThingWithComps table)
         {
             DebugLogger.AssertFalse(table is null, "EnableTable called on a null table");
             if (table is null) return;
@@ -46,7 +46,7 @@ namespace LightsOut.Common
         // Check if a table has a comp on the
         // disallowed list
         //****************************************
-        public static bool IsTable(Building thing)
+        public static bool IsTable(ThingWithComps thing)
         {
             DebugLogger.AssertFalse(thing is null, "IsTable called on a null thing");
             if (MemoizedIsTable.ContainsKey(thing))
@@ -87,13 +87,13 @@ namespace LightsOut.Common
         //****************************************
         // Detects if a building is a television
         //****************************************
-        public static bool IsTelevision(Building thing)
+        public static bool IsTelevision(ThingWithComps thing)
         {
             return thing.def == CustomThingDefs.TubeTelevision
                 || thing.def == CustomThingDefs.FlatscreenTelevision
                 || thing.def == CustomThingDefs.MegascreenTelevision;
         }
 
-        private static Dictionary<Building, bool> MemoizedIsTable { get; } = new Dictionary<Building, bool>();
+        private static Dictionary<ThingWithComps, bool> MemoizedIsTable { get; } = new Dictionary<ThingWithComps, bool>();
     }
 }

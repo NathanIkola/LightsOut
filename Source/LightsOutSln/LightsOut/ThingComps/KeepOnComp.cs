@@ -39,7 +39,7 @@ namespace LightsOut.ThingComps
 
                 try
                 {
-                    Building building = parent as Building;
+                    ThingWithComps building = parent;
                     Room room = Rooms.GetRoom(building);
 
                     DebugLogger.AssertFalse(parent is null, "KeepOnComp found a null parent");
@@ -79,7 +79,7 @@ namespace LightsOut.ThingComps
         /// <returns>A list of Gizmos to display on the light</returns>
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (parent is Building building && Lights.CanBeLight(building))
+            if (parent is ThingWithComps building && Lights.CanBeLight(building))
             {
                 if (ModSettings.FlickLights)
                     yield return Gizmo;

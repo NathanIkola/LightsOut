@@ -14,10 +14,10 @@ namespace LightsOut.Patches.Power
     public class DisableBuildingsOnSpawn
     {
         /// <summary>
-        /// Checks if a Building needs to be disabled when it spawns
+        /// Checks if a ThingWithComps needs to be disabled when it spawns
         /// </summary>
         /// <param name="__instance"></param>
-        public static void Postfix(Building __instance)
+        public static void Postfix(ThingWithComps __instance)
         {
             if (Tables.IsTable(__instance) || Tables.IsTelevision(__instance))
             {

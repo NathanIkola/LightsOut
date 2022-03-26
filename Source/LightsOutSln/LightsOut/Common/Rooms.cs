@@ -123,7 +123,7 @@ namespace LightsOut.Common
         /// <param name="building">The building to check</param>
         /// <param name="room">The room to check</param>
         /// <returns>Whether or not <paramref name="building"/> is in <paramref name="room"/></returns>
-        public static bool IsInRoom(Building building, Room room)
+        public static bool IsInRoom(ThingWithComps building, Room room)
         {
             DebugLogger.AssertFalse(building is null, "IsInRoom called on a null building");
             DebugLogger.AssertFalse(room is null, "IsInRoom called on a null room");
@@ -138,7 +138,7 @@ namespace LightsOut.Common
         /// </summary>
         /// <param name="building">The building to check</param>
         /// <returns>The room that <paramref name="building"/> is in</returns>
-        public static Room GetRoom(Building building)
+        public static Room GetRoom(ThingWithComps building)
         {
             DebugLogger.AssertFalse(building is null, "GetRoom called on a null building");
             if (building is null) return null;

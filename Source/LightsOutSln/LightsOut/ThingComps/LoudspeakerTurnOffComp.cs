@@ -27,7 +27,7 @@ namespace LightsOut.ThingComps
         public override void Notify_SignalReceived(Signal signal)
         {
             if (signal.tag == "RitualStarted")
-                Tables.EnableTable(parent as Building);
+                Tables.EnableTable(parent);
         }
     }
 }

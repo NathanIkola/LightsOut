@@ -31,9 +31,9 @@ namespace LightsOut.Patches.ModCompatibility.VEWallLights
         /// Check if <paramref name="__0"/> is a Wall Light, and if
         /// so, change the room that GetRoom returns to be the correct one
         /// </summary>
-        /// <param name="__0">The Building to check</param>
+        /// <param name="__0">The ThingWithComps to check</param>
         /// <param name="__result">The Room that <paramref name="__0"/> is actually in</param>
-        private static void GetRoomPatch(Building __0, ref Room __result)
+        private static void GetRoomPatch(ThingWithComps __0, ref Room __result)
         {
             if (__0 is null) return;
             if (__0.def.defName.StartsWith("VFEA_Wall")

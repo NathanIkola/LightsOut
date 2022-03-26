@@ -44,7 +44,7 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
 
             foreach (Thing thing in selectedTarget.Map.listerBuldingOfDefInProximity.GetForCell(
                 selectedTarget.Cell, (float)__instance.maxDistance, ThingDefOf.Loudspeaker))
-                Tables.EnableTable(thing as Building);
+                Tables.EnableTable(thing as ThingWithComps);
         }
 
         private static int _tick = 0;

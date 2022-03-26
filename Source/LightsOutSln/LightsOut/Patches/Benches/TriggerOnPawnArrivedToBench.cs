@@ -29,7 +29,7 @@ namespace LightsOut.Patches.Benches
                 PawnIsAtTable(billDriver, pawn);
             else if (__instance is JobDriver_Research researchDriver)
                 PawnIsAtResearchBench(researchDriver, pawn);
-            else if (__instance.job?.GetTarget(TargetIndex.A).Thing is Building tv && Tables.IsTelevision(tv))
+            else if (__instance.job?.GetTarget(TargetIndex.A).Thing is ThingWithComps tv && Tables.IsTelevision(tv))
                 PawnIsAtTelevision(__instance, tv, pawn);
         }
 
@@ -69,7 +69,7 @@ namespace LightsOut.Patches.Benches
         /// </summary>
         /// <param name="driver">The <see cref="JobDriver"/> that set the target</param>
         /// <param name="pawn">The pawn arriving to the television</param>
-        private static void PawnIsAtTelevision(JobDriver driver, Building tv, Pawn pawn)
+        private static void PawnIsAtTelevision(JobDriver driver, ThingWithComps tv, Pawn pawn)
         {
             if (tv is null || pawn is null)
                 return;
@@ -100,7 +100,7 @@ namespace LightsOut.Patches.Benches
         /// </summary>
         /// <param name="driver">The <see cref="JobDriver"/> that set the target</param>
         /// <param name="table">The building that is being turned on or off</param>
-        private static void ActivateBench(JobDriver driver, Building table)
+        private static void ActivateBench(JobDriver driver, ThingWithComps table)
         {
             // activate the bench
             Tables.EnableTable(table);

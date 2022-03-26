@@ -31,9 +31,9 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
         {
             __instance.parent.AllComps.Add(new LoudspeakerTurnOffComp(__instance.parent));
             if (!__instance.Active)
-                Tables.DisableTable(__instance.parent as Building);
+                Tables.DisableTable(__instance.parent);
             else
-                Tables.EnableTable(__instance.parent as Building);
+                Tables.EnableTable(__instance.parent);
         }
     }
 }

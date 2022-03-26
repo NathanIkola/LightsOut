@@ -14,7 +14,7 @@ namespace LightsOut.Patches.Power
         /// <summary>
         /// Checks if a Building's Room is empty when it spawns
         /// </summary>
-        /// <param name="__1">The Room this Building is being spawned into</param>
+        /// <param name="__1">The Room this ThingWithComps is being spawned into</param>
         public static void Postfix(Room __1)
         {
             Room room = __1;

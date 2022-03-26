@@ -310,12 +310,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Glowers.EnableGlower
   nameWithType: Glowers.EnableGlower
-- uid: LightsOut.Common.Glowers.GetGlower(Verse.Building)
-  name: GetGlower(Building)
-  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_GetGlower_Verse_Building_
-  commentId: M:LightsOut.Common.Glowers.GetGlower(Verse.Building)
-  fullName: LightsOut.Common.Glowers.GetGlower(Verse.Building)
-  nameWithType: Glowers.GetGlower(Building)
+- uid: LightsOut.Common.Glowers.GetGlower(Verse.ThingWithComps)
+  name: GetGlower(ThingWithComps)
+  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_GetGlower_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Glowers.GetGlower(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Glowers.GetGlower(Verse.ThingWithComps)
+  nameWithType: Glowers.GetGlower(ThingWithComps)
 - uid: LightsOut.Common.Glowers.GetGlower*
   name: GetGlower
   href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_GetGlower_
@@ -329,12 +329,12 @@ references:
   commentId: T:LightsOut.Common.Lights
   fullName: LightsOut.Common.Lights
   nameWithType: Lights
-- uid: LightsOut.Common.Lights.CanBeLight(Verse.Building)
-  name: CanBeLight(Building)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_CanBeLight_Verse_Building_
-  commentId: M:LightsOut.Common.Lights.CanBeLight(Verse.Building)
-  fullName: LightsOut.Common.Lights.CanBeLight(Verse.Building)
-  nameWithType: Lights.CanBeLight(Building)
+- uid: LightsOut.Common.Lights.CanBeLight(Verse.ThingWithComps)
+  name: CanBeLight(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_CanBeLight_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.CanBeLight(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.CanBeLight(Verse.ThingWithComps)
+  nameWithType: Lights.CanBeLight(ThingWithComps)
 - uid: LightsOut.Common.Lights.CanBeLight*
   name: CanBeLight
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_CanBeLight_
@@ -355,12 +355,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.DisableAllLights
   nameWithType: Lights.DisableAllLights
-- uid: LightsOut.Common.Lights.DisableLight(Verse.Building)
-  name: DisableLight(Building)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_Building_
-  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.Building)
-  fullName: LightsOut.Common.Lights.DisableLight(Verse.Building)
-  nameWithType: Lights.DisableLight(Building)
+- uid: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  name: DisableLight(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  nameWithType: Lights.DisableLight(ThingWithComps)
 - uid: LightsOut.Common.Lights.DisableLight*
   name: DisableLight
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_
@@ -381,12 +381,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.EnableAllLights
   nameWithType: Lights.EnableAllLights
-- uid: LightsOut.Common.Lights.EnableLight(Verse.Building)
-  name: EnableLight(Building)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_EnableLight_Verse_Building_
-  commentId: M:LightsOut.Common.Lights.EnableLight(Verse.Building)
-  fullName: LightsOut.Common.Lights.EnableLight(Verse.Building)
-  nameWithType: Lights.EnableLight(Building)
+- uid: LightsOut.Common.Lights.EnableLight(Verse.ThingWithComps)
+  name: EnableLight(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_EnableLight_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.EnableLight(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.EnableLight(Verse.ThingWithComps)
+  nameWithType: Lights.EnableLight(ThingWithComps)
 - uid: LightsOut.Common.Lights.EnableLight*
   name: EnableLight
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_EnableLight_
@@ -407,12 +407,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.HasDisallowedCompForLights
   nameWithType: Lights.HasDisallowedCompForLights
-- uid: LightsOut.Common.Lights.KeepLightOn(Verse.Building)
-  name: KeepLightOn(Building)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_KeepLightOn_Verse_Building_
-  commentId: M:LightsOut.Common.Lights.KeepLightOn(Verse.Building)
-  fullName: LightsOut.Common.Lights.KeepLightOn(Verse.Building)
-  nameWithType: Lights.KeepLightOn(Building)
+- uid: LightsOut.Common.Lights.KeepLightOn(Verse.ThingWithComps)
+  name: KeepLightOn(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_KeepLightOn_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.KeepLightOn(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.KeepLightOn(Verse.ThingWithComps)
+  nameWithType: Lights.KeepLightOn(ThingWithComps)
 - uid: LightsOut.Common.Lights.KeepLightOn*
   name: KeepLightOn
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_KeepLightOn_
@@ -510,12 +510,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.IsCharged
   nameWithType: Resources.IsCharged
-- uid: LightsOut.Common.Resources.IsRechargeable(Verse.Building)
-  name: IsRechargeable(Building)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsRechargeable_Verse_Building_
-  commentId: M:LightsOut.Common.Resources.IsRechargeable(Verse.Building)
-  fullName: LightsOut.Common.Resources.IsRechargeable(Verse.Building)
-  nameWithType: Resources.IsRechargeable(Building)
+- uid: LightsOut.Common.Resources.IsRechargeable(Verse.ThingWithComps)
+  name: IsRechargeable(ThingWithComps)
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsRechargeable_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Resources.IsRechargeable(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Resources.IsRechargeable(Verse.ThingWithComps)
+  nameWithType: Resources.IsRechargeable(ThingWithComps)
 - uid: LightsOut.Common.Resources.IsRechargeable*
   name: IsRechargeable
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsRechargeable_
@@ -564,12 +564,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Rooms.AllPawnsSleeping
   nameWithType: Rooms.AllPawnsSleeping
-- uid: LightsOut.Common.Rooms.GetRoom(Verse.Building)
-  name: GetRoom(Building)
-  href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_GetRoom_Verse_Building_
-  commentId: M:LightsOut.Common.Rooms.GetRoom(Verse.Building)
-  fullName: LightsOut.Common.Rooms.GetRoom(Verse.Building)
-  nameWithType: Rooms.GetRoom(Building)
+- uid: LightsOut.Common.Rooms.GetRoom(Verse.ThingWithComps)
+  name: GetRoom(ThingWithComps)
+  href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_GetRoom_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Rooms.GetRoom(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Rooms.GetRoom(Verse.ThingWithComps)
+  nameWithType: Rooms.GetRoom(ThingWithComps)
 - uid: LightsOut.Common.Rooms.GetRoom*
   name: GetRoom
   href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_GetRoom_
@@ -577,12 +577,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Rooms.GetRoom
   nameWithType: Rooms.GetRoom
-- uid: LightsOut.Common.Rooms.IsInRoom(Verse.Building,Verse.Room)
-  name: IsInRoom(Building, Room)
-  href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_IsInRoom_Verse_Building_Verse_Room_
-  commentId: M:LightsOut.Common.Rooms.IsInRoom(Verse.Building,Verse.Room)
-  fullName: LightsOut.Common.Rooms.IsInRoom(Verse.Building, Verse.Room)
-  nameWithType: Rooms.IsInRoom(Building, Room)
+- uid: LightsOut.Common.Rooms.IsInRoom(Verse.ThingWithComps,Verse.Room)
+  name: IsInRoom(ThingWithComps, Room)
+  href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_IsInRoom_Verse_ThingWithComps_Verse_Room_
+  commentId: M:LightsOut.Common.Rooms.IsInRoom(Verse.ThingWithComps,Verse.Room)
+  fullName: LightsOut.Common.Rooms.IsInRoom(Verse.ThingWithComps, Verse.Room)
+  nameWithType: Rooms.IsInRoom(ThingWithComps, Room)
 - uid: LightsOut.Common.Rooms.IsInRoom*
   name: IsInRoom
   href: api/LightsOut.Common.Rooms.html#LightsOut_Common_Rooms_IsInRoom_
@@ -609,12 +609,12 @@ references:
   commentId: T:LightsOut.Common.Tables
   fullName: LightsOut.Common.Tables
   nameWithType: Tables
-- uid: LightsOut.Common.Tables.DisableTable(Verse.Building)
-  name: DisableTable(Building)
-  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_DisableTable_Verse_Building_
-  commentId: M:LightsOut.Common.Tables.DisableTable(Verse.Building)
-  fullName: LightsOut.Common.Tables.DisableTable(Verse.Building)
-  nameWithType: Tables.DisableTable(Building)
+- uid: LightsOut.Common.Tables.DisableTable(Verse.ThingWithComps)
+  name: DisableTable(ThingWithComps)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_DisableTable_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Tables.DisableTable(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Tables.DisableTable(Verse.ThingWithComps)
+  nameWithType: Tables.DisableTable(ThingWithComps)
 - uid: LightsOut.Common.Tables.DisableTable*
   name: DisableTable
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_DisableTable_
@@ -622,12 +622,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Tables.DisableTable
   nameWithType: Tables.DisableTable
-- uid: LightsOut.Common.Tables.EnableTable(Verse.Building)
-  name: EnableTable(Building)
-  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_EnableTable_Verse_Building_
-  commentId: M:LightsOut.Common.Tables.EnableTable(Verse.Building)
-  fullName: LightsOut.Common.Tables.EnableTable(Verse.Building)
-  nameWithType: Tables.EnableTable(Building)
+- uid: LightsOut.Common.Tables.EnableTable(Verse.ThingWithComps)
+  name: EnableTable(ThingWithComps)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_EnableTable_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Tables.EnableTable(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Tables.EnableTable(Verse.ThingWithComps)
+  nameWithType: Tables.EnableTable(ThingWithComps)
 - uid: LightsOut.Common.Tables.EnableTable*
   name: EnableTable
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_EnableTable_
@@ -648,12 +648,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Tables.HasBlacklistedTableComp
   nameWithType: Tables.HasBlacklistedTableComp
-- uid: LightsOut.Common.Tables.IsTable(Verse.Building)
-  name: IsTable(Building)
-  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTable_Verse_Building_
-  commentId: M:LightsOut.Common.Tables.IsTable(Verse.Building)
-  fullName: LightsOut.Common.Tables.IsTable(Verse.Building)
-  nameWithType: Tables.IsTable(Building)
+- uid: LightsOut.Common.Tables.IsTable(Verse.ThingWithComps)
+  name: IsTable(ThingWithComps)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTable_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Tables.IsTable(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Tables.IsTable(Verse.ThingWithComps)
+  nameWithType: Tables.IsTable(ThingWithComps)
 - uid: LightsOut.Common.Tables.IsTable*
   name: IsTable
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTable_
@@ -661,12 +661,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Tables.IsTable
   nameWithType: Tables.IsTable
-- uid: LightsOut.Common.Tables.IsTelevision(Verse.Building)
-  name: IsTelevision(Building)
-  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTelevision_Verse_Building_
-  commentId: M:LightsOut.Common.Tables.IsTelevision(Verse.Building)
-  fullName: LightsOut.Common.Tables.IsTelevision(Verse.Building)
-  nameWithType: Tables.IsTelevision(Building)
+- uid: LightsOut.Common.Tables.IsTelevision(Verse.ThingWithComps)
+  name: IsTelevision(ThingWithComps)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTelevision_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Tables.IsTelevision(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Tables.IsTelevision(Verse.ThingWithComps)
+  nameWithType: Tables.IsTelevision(ThingWithComps)
 - uid: LightsOut.Common.Tables.IsTelevision*
   name: IsTelevision
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTelevision_
@@ -779,12 +779,12 @@ references:
   commentId: T:LightsOut.Patches.Lights.DetectPawnRoomChange
   fullName: LightsOut.Patches.Lights.DetectPawnRoomChange
   nameWithType: DetectPawnRoomChange
-- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn,Verse.Room)
-  name: Postfix(Pawn, Room)
-  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_Verse_Room_
-  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn,Verse.Room)
-  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn, Verse.Room)
-  nameWithType: DetectPawnRoomChange.Postfix(Pawn, Room)
+- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
+  name: Postfix(Pawn)
+  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_
+  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
+  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
+  nameWithType: DetectPawnRoomChange.Postfix(Pawn)
 - uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix*
   name: Postfix
   href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_
@@ -792,15 +792,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix
   nameWithType: DetectPawnRoomChange.Postfix
-- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn,Verse.Room@)
-  name: Prefix(Pawn, ref Room)
-  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_Verse_Room__
-  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn,Verse.Room@)
-  name.vb: Prefix(Pawn, ByRef Room)
-  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn, ref Verse.Room)
-  fullName.vb: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn, ByRef Verse.Room)
-  nameWithType: DetectPawnRoomChange.Prefix(Pawn, ref Room)
-  nameWithType.vb: DetectPawnRoomChange.Prefix(Pawn, ByRef Room)
+- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
+  name: Prefix(Pawn)
+  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_
+  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
+  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
+  nameWithType: DetectPawnRoomChange.Prefix(Pawn)
 - uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix*
   name: Prefix
   href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_
@@ -1040,15 +1037,15 @@ references:
   commentId: T:LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable
   fullName: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable
   nameWithType: FurnaceIsNotAWorkTable
-- uid: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.Building,System.Boolean@)
-  name: Postfix(Building, ref Boolean)
-  href: api/LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.html#LightsOut_Patches_ModCompatibility_Furnace_FurnaceIsNotAWorkTable_Postfix_Verse_Building_System_Boolean__
-  commentId: M:LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.Building,System.Boolean@)
-  name.vb: Postfix(Building, ByRef Boolean)
-  fullName: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.Building, ref System.Boolean)
-  fullName.vb: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.Building, ByRef System.Boolean)
-  nameWithType: FurnaceIsNotAWorkTable.Postfix(Building, ref Boolean)
-  nameWithType.vb: FurnaceIsNotAWorkTable.Postfix(Building, ByRef Boolean)
+- uid: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.ThingWithComps,System.Boolean@)
+  name: Postfix(ThingWithComps, ref Boolean)
+  href: api/LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.html#LightsOut_Patches_ModCompatibility_Furnace_FurnaceIsNotAWorkTable_Postfix_Verse_ThingWithComps_System_Boolean__
+  commentId: M:LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.ThingWithComps,System.Boolean@)
+  name.vb: Postfix(ThingWithComps, ByRef Boolean)
+  fullName: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.ThingWithComps, ref System.Boolean)
+  fullName.vb: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix(Verse.ThingWithComps, ByRef System.Boolean)
+  nameWithType: FurnaceIsNotAWorkTable.Postfix(ThingWithComps, ref Boolean)
+  nameWithType.vb: FurnaceIsNotAWorkTable.Postfix(ThingWithComps, ByRef Boolean)
 - uid: LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.Postfix*
   name: Postfix
   href: api/LightsOut.Patches.ModCompatibility.Furnace.FurnaceIsNotAWorkTable.html#LightsOut_Patches_ModCompatibility_Furnace_FurnaceIsNotAWorkTable_Postfix_
@@ -2296,12 +2293,12 @@ references:
   commentId: T:LightsOut.Patches.Power.DisableBuildingsOnSpawn
   fullName: LightsOut.Patches.Power.DisableBuildingsOnSpawn
   nameWithType: DisableBuildingsOnSpawn
-- uid: LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.Building)
-  name: Postfix(Building)
-  href: api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.html#LightsOut_Patches_Power_DisableBuildingsOnSpawn_Postfix_Verse_Building_
-  commentId: M:LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.Building)
-  fullName: LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.Building)
-  nameWithType: DisableBuildingsOnSpawn.Postfix(Building)
+- uid: LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.ThingWithComps)
+  name: Postfix(ThingWithComps)
+  href: api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.html#LightsOut_Patches_Power_DisableBuildingsOnSpawn_Postfix_Verse_ThingWithComps_
+  commentId: M:LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.ThingWithComps)
+  fullName: LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix(Verse.ThingWithComps)
+  nameWithType: DisableBuildingsOnSpawn.Postfix(ThingWithComps)
 - uid: LightsOut.Patches.Power.DisableBuildingsOnSpawn.Postfix*
   name: Postfix
   href: api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.html#LightsOut_Patches_Power_DisableBuildingsOnSpawn_Postfix_

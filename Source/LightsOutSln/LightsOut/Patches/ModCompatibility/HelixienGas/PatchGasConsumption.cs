@@ -45,12 +45,12 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
 
             if (canConsumeGas == true)
             {
-                if (Tables.IsTable(__instance.parent as Building))
+                if (Tables.IsTable(__instance.parent))
                     __result *= ModSettings.ActiveResourceDrawRate;
             }
             else if (canConsumeGas == false)
             {
-                if (Common.Lights.CanBeLight(__instance.parent as Building))
+                if (Common.Lights.CanBeLight(__instance.parent))
                     __result = Resources.MinDraw;
                 else
                     __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
