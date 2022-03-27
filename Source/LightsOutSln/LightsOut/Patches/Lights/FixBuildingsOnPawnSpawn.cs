@@ -24,6 +24,8 @@ namespace LightsOut.Patches.Lights
         /// <param name="__instance"></param>
         public static void Postfix(Pawn __instance)
         {
+            if (__instance.RaceProps.Animal) return;
+
             JobDriver driver = __instance.jobs?.curDriver;
             if (driver is null)
                 return;

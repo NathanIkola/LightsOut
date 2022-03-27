@@ -22,13 +22,15 @@ namespace LightsOut.Patches.Power
         public static void Postfix(CompPowerTrader __instance, ref float __result)
         {
             bool? canConsumePower = Resources.CanConsumeResources(__instance);
+            if (canConsumePower is null) 
+                return;
 
             if (canConsumePower == true)
             {
                 if (Common.Tables.IsTable(__instance.parent))
                     __result *= ModSettings.ActiveResourceDrawRate;
             }
-            else if (canConsumePower == false)
+            else
             {
                 if (Common.Lights.CanBeLight(__instance.parent))
                     __result = Resources.MinDraw;

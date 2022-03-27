@@ -33,6 +33,7 @@ namespace LightsOut.Patches.Lights
                 __result.AddPreInitAction(() =>
                 {
                     Pawn pawn = __result.actor;
+                    if (pawn.RaceProps.Animal) return;
                     Room room = pawn?.GetRoom();
 
                     if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, pawn)
@@ -56,6 +57,7 @@ namespace LightsOut.Patches.Lights
                     tickAction();
 
                     // check if their status has changed
+                    if (pawn.RaceProps.Animal) return;
                     Room room = pawn.GetRoom();
                     bool shouldTurnOffLights = Common.Lights.ShouldTurnOffAllLights(room, pawn);
                     if(asleep != pawn.jobs.curDriver?.asleep)

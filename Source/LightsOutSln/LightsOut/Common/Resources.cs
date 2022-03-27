@@ -48,8 +48,12 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(thing is null, "CanConsumeResources called on a null thing");
             if (thing is null) return null;
-            if (IsCharged(thing)) return false;
-            return BuildingStatus.TryGetValue(thing, null);
+            bool? canConsumeResources = BuildingStatus.TryGetValue(thing, null);
+
+            if (canConsumeResources == true && IsRechargeable(thing) && IsCharged(thing))
+                return false;
+
+            return canConsumeResources;
         }
 
         /// <summary>

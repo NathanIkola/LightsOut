@@ -24,6 +24,7 @@ namespace LightsOut.Patches.Benches
             if (__instance is null) return;
 
             Pawn pawn = __instance.GetActor();
+            if (pawn.RaceProps.Animal) return;
 
             if (__instance is JobDriver_DoBill billDriver)
                 PawnIsAtTable(billDriver, pawn);
