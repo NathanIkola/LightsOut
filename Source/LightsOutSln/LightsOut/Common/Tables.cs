@@ -9,13 +9,16 @@ using Verse;
 
 namespace LightsOut.Common
 {
+    /// <summary>
+    /// Holds common table operations
+    /// </summary>
     [StaticConstructorOnStartup]
     public static class Tables
     {
-        //****************************************
-        // Does the hard work of disabling
-        // a worktable
-        //****************************************
+        /// <summary>
+        /// Provides a way to disable a table
+        /// </summary>
+        /// <param name="table">The table to disable</param>
         public static void DisableTable(ThingWithComps table)
         {
             DebugLogger.AssertFalse(table is null, "DisableTable called on a null table");
@@ -27,10 +30,10 @@ namespace LightsOut.Common
                 Resources.SetConsumesResources(table, false);
         }
 
-        //****************************************
-        // Does the hard work of enabling
-        // a worktable
-        //****************************************
+        /// <summary>
+        /// Provides a way to enable a table
+        /// </summary>
+        /// <param name="table">The table to enable</param>
         public static void EnableTable(ThingWithComps table)
         {
             DebugLogger.AssertFalse(table is null, "EnableTable called on a null table");
@@ -42,10 +45,11 @@ namespace LightsOut.Common
                 Resources.SetConsumesResources(table, true);
         }
 
-        //****************************************
-        // Check if a table has a comp on the
-        // disallowed list
-        //****************************************
+        /// <summary>
+        /// Checks if the specified <paramref name="thing"/> can possibly be a table or not
+        /// </summary>
+        /// <param name="thing">The <see cref="ThingWithComps"/> to check</param>
+        /// <returns><see langword="true"/> if it can be a table, <see langword="false"/> if not</returns>
         public static bool IsTable(ThingWithComps thing)
         {
             DebugLogger.AssertFalse(thing is null, "IsTable called on a null thing");
@@ -69,24 +73,26 @@ namespace LightsOut.Common
             return isTable;
         }
 
-        //****************************************
-        // Detects blacklisted comps on tables
-        //
-        // Used to be a list, but that has much
-        // worse performance implications
-        //****************************************
+        /// <summary>
+        /// Checks to see if the provided <see cref="ThingWithComps"/> contains an illegal comp
+        /// </summary>
+        /// <param name="thing">The <see cref="ThingWithComps"/> to check</param>
+        /// <returns><see langword="true"/> if it contains an illegal comp, <see langword="false"/> if not</returns>
         public static bool HasBlacklistedTableComp(ThingWithComps thing)
         {
-            if (thing.TryGetComp<CompFireOverlay>() is null)
+            if (thing.TryGetComp<CompFireOverlay>() is null
+                && thing.TryGetComp<CompDarklightOverlay>() is null)
             {
                 return false;
             }
             return true;
         }
 
-        //****************************************
-        // Detects if a building is a television
-        //****************************************
+        /// <summary>
+        /// Checks to see if a building is a television
+        /// </summary>
+        /// <param name="thing">The <see cref="ThingWithComps"/> to check</param>
+        /// <returns><see langword="true"/> if <paramref name="thing"/> is a television, <see langword="false"/> if not</returns>
         public static bool IsTelevision(ThingWithComps thing)
         {
             return thing.def == CustomThingDefs.TubeTelevision
@@ -94,6 +100,10 @@ namespace LightsOut.Common
                 || thing.def == CustomThingDefs.MegascreenTelevision;
         }
 
+        /// <summary>
+        /// Memoized list of results from the IsTable function since that doesn't change.
+        /// Used to speed up subsequent calls to IsTable
+        /// </summary>
         private static Dictionary<ThingWithComps, bool> MemoizedIsTable { get; } = new Dictionary<ThingWithComps, bool>();
     }
 }
