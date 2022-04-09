@@ -156,6 +156,9 @@ namespace LightsOut.Boilerplate
             foreach (var kv in Resources.BuildingStatus)
             {
                 ThingWithComps thing = kv.Key;
+                if (!Lights.CanBeLight(thing))
+                    continue;
+
                 var light = Glowers.GetGlower(thing);
                 if (light != null)
                     affectedLights.Add(light);
