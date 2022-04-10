@@ -27,8 +27,8 @@ namespace LightsOut.Patches.ModCompatibility.WallLights
         /// </summary>
         public override void OnAfterPatchApplied()
         {
-            Common.Lights.LightNamesMustNotInclude.Add("MURWallLight_Glower");
-            Common.Lights.LightNamesMustNotInclude.Add("MURWallSunLight_Glower");
+            Common.Lights.AddIllegalLightName("MURWallLight_Glower");
+            Common.Lights.AddIllegalLightName("MURWallSunLight_Glower");
         }
     }
 }

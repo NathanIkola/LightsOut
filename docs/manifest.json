@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "RWsZvk+vA77hU8R4mTE0oklE806gfMTJGAw7UTxjnYI="
+          "hash": "9L3kH0pTg5kMQTL/gISwlG9c6VESCh88gz7c9bbsY2E="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "EUS3tJuMDn8C3aoSgWkFnVTw9aNKC2AYu48ancTPZoE="
+          "hash": "FIcuSFuPDVLZRZ2276NfKA8Q5MMNbSbq7v93wAkSv7k="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "90/2TH4aHLxKw2pvhGrD/CzAR3GxeWcHyT9wV9An/DI="
+          "hash": "wGEQ7PBZRraWIQ/3cBCbTtDwW9PouNlE3idqsdlZbuY="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Lights.html",
-          "hash": "i/+Zwh5b4zGLffdNkYKGeDtFeATnPKGSpV7QqMv35lg="
+          "hash": "RO6qrU9e0WkrjV33Edy4PkmSGrLo3dIRIIzhl+bDGWA="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
-          "hash": "6HrUxJfnIR4xacEAVIcCawMwMDoDRcbIrCvY+ri0RUo="
+          "hash": "9HWLienRM8wvsAntj6xxDUYPH7fYtLShEJ4hWh97/i4="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
-          "hash": "mNwelnSHzvRG27fk0h5rm8GTXyAwSX1AJc/+qhKikks="
+          "hash": "n+A9nNxkXckmEt4739eIJtrrtpOiNi6RDO0r651wu9M="
         }
       },
       "is_incremental": false,
@@ -598,6 +598,30 @@
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.PatchType.html",
           "hash": "2Ye3yWluQXE/3HQT1sOxqrM13ZZP6L8huNl5a2QnpOM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html",
+          "hash": "CvOutPyjPxPJxSejPcgF4Lf/Io7IZIXzLPjS8ksYUz8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.html",
+          "hash": "86eaho3p+2CBKo4T6mE8USs7zXQM1it5aV8ZHfDfjsg="
         }
       },
       "is_incremental": false,
@@ -801,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "p9ZmsiLD3s8xJXYCjevmq4lg3snCiV300FgKzIWuzmE="
+          "hash": "8ly++8+rrQ2El1JHVSrlHru0n/BpS7fP3iI3zd9KgaE="
         }
       },
       "is_incremental": false,
@@ -823,23 +847,25 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 3
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 62,
-          "skipped_file_count": 16
+          "total_file_count": 64,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -852,8 +878,8 @@
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

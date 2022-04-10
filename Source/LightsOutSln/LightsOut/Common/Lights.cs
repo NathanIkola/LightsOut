@@ -268,9 +268,31 @@ namespace LightsOut.Common
         }
 
         /// <summary>
+        /// Adds a new requirement that a light's def name can include
+        /// </summary>
+        /// <param name="nameMustInclude">A string that a light's def name should be able to include</param>
+        /// <remarks>Case insensitive. Light def names must include at least ONE of these required terms</remarks>
+        public static void AddLightNameRequirement(string nameMustInclude)
+        {
+            DebugLogger.AssertFalse(string.IsNullOrWhiteSpace(nameMustInclude), "AddLightNameRequirement called with a null argument");
+            LightNamesMustInclude.Add(nameMustInclude);
+        }
+
+        /// <summary>
+        /// Adds a new string that a light's def name should NOT include
+        /// </summary>
+        /// <param name="nameMustNotInclude">The string that no light's def name should include</param>
+        /// <remarks>Case insensitive. Light def names CANNOT include any of these terms</remarks>
+        public static void AddIllegalLightName(string nameMustNotInclude)
+        {
+            DebugLogger.AssertFalse(string.IsNullOrWhiteSpace(nameMustNotInclude), "AddIllegalLightName called with a null argument");
+            LightNamesMustNotInclude.Add(nameMustNotInclude);
+        }
+
+        /// <summary>
         /// List of things that a light name MUST include to be considered
         /// </summary>
-        public static List<string> LightNamesMustInclude { get; } = new List<string>()
+        private static List<string> LightNamesMustInclude { get; } = new List<string>()
         {
             "light",
             "lamp",
@@ -280,7 +302,7 @@ namespace LightsOut.Common
         /// <summary>
         /// List of things that a light name MUST NOT include to be considered
         /// </summary>
-        public static List<string> LightNamesMustNotInclude { get; } = new List<string>();
+        private static List<string> LightNamesMustNotInclude { get; } = new List<string>();
 
         /// <summary>
         /// The cached results of CanBeLight to speed up subsequent calls

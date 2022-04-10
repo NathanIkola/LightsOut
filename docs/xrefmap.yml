@@ -329,6 +329,32 @@ references:
   commentId: T:LightsOut.Common.Lights
   fullName: LightsOut.Common.Lights
   nameWithType: Lights
+- uid: LightsOut.Common.Lights.AddIllegalLightName(System.String)
+  name: AddIllegalLightName(String)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_AddIllegalLightName_System_String_
+  commentId: M:LightsOut.Common.Lights.AddIllegalLightName(System.String)
+  fullName: LightsOut.Common.Lights.AddIllegalLightName(System.String)
+  nameWithType: Lights.AddIllegalLightName(String)
+- uid: LightsOut.Common.Lights.AddIllegalLightName*
+  name: AddIllegalLightName
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_AddIllegalLightName_
+  commentId: Overload:LightsOut.Common.Lights.AddIllegalLightName
+  isSpec: "True"
+  fullName: LightsOut.Common.Lights.AddIllegalLightName
+  nameWithType: Lights.AddIllegalLightName
+- uid: LightsOut.Common.Lights.AddLightNameRequirement(System.String)
+  name: AddLightNameRequirement(String)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_AddLightNameRequirement_System_String_
+  commentId: M:LightsOut.Common.Lights.AddLightNameRequirement(System.String)
+  fullName: LightsOut.Common.Lights.AddLightNameRequirement(System.String)
+  nameWithType: Lights.AddLightNameRequirement(String)
+- uid: LightsOut.Common.Lights.AddLightNameRequirement*
+  name: AddLightNameRequirement
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_AddLightNameRequirement_
+  commentId: Overload:LightsOut.Common.Lights.AddLightNameRequirement
+  isSpec: "True"
+  fullName: LightsOut.Common.Lights.AddLightNameRequirement
+  nameWithType: Lights.AddLightNameRequirement
 - uid: LightsOut.Common.Lights.CanBeLight(Verse.ThingWithComps)
   name: CanBeLight(ThingWithComps)
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_CanBeLight_Verse_ThingWithComps_
@@ -420,32 +446,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.KeepLightOn
   nameWithType: Lights.KeepLightOn
-- uid: LightsOut.Common.Lights.LightNamesMustInclude
-  name: LightNamesMustInclude
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustInclude
-  commentId: P:LightsOut.Common.Lights.LightNamesMustInclude
-  fullName: LightsOut.Common.Lights.LightNamesMustInclude
-  nameWithType: Lights.LightNamesMustInclude
-- uid: LightsOut.Common.Lights.LightNamesMustInclude*
-  name: LightNamesMustInclude
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustInclude_
-  commentId: Overload:LightsOut.Common.Lights.LightNamesMustInclude
-  isSpec: "True"
-  fullName: LightsOut.Common.Lights.LightNamesMustInclude
-  nameWithType: Lights.LightNamesMustInclude
-- uid: LightsOut.Common.Lights.LightNamesMustNotInclude
-  name: LightNamesMustNotInclude
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustNotInclude
-  commentId: P:LightsOut.Common.Lights.LightNamesMustNotInclude
-  fullName: LightsOut.Common.Lights.LightNamesMustNotInclude
-  nameWithType: Lights.LightNamesMustNotInclude
-- uid: LightsOut.Common.Lights.LightNamesMustNotInclude*
-  name: LightNamesMustNotInclude
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_LightNamesMustNotInclude_
-  commentId: Overload:LightsOut.Common.Lights.LightNamesMustNotInclude
-  isSpec: "True"
-  fullName: LightsOut.Common.Lights.LightNamesMustNotInclude
-  nameWithType: Lights.LightNamesMustNotInclude
 - uid: LightsOut.Common.Lights.ShouldTurnOffAllLights(Verse.Room,Verse.Pawn)
   name: ShouldTurnOffAllLights(Room, Pawn)
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_ShouldTurnOffAllLights_Verse_Room_Verse_Pawn_
@@ -1980,6 +1980,70 @@ references:
   commentId: F:LightsOut.Patches.ModCompatibility.PatchType.Prefix
   fullName: LightsOut.Patches.ModCompatibility.PatchType.Prefix
   nameWithType: PatchType.Prefix
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+  name: LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.html
+  commentId: N:LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+  nameWithType: LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch
+  name: SelfLitHydroponicsCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch
+  nameWithType: SelfLitHydroponicsCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
+  name: GetComponents()
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_GetComponents
+  commentId: M:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents()
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.GetComponents()
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents*
+  name: GetComponents
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_GetComponents_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.GetComponents
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.TargetMod
+  nameWithType: SelfLitHydroponicsCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.VEWallLights
   name: LightsOut.Patches.ModCompatibility.VEWallLights
   href: api/LightsOut.Patches.ModCompatibility.VEWallLights.html

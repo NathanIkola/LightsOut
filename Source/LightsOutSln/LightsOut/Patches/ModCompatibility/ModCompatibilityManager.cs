@@ -11,6 +11,7 @@ using LightsOut.Patches.ModCompatibility.ModGlowers;
 using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.ModCompatibility.HelixienGas;
 using LightsOut.Common;
+using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -29,7 +30,8 @@ namespace LightsOut.Patches.ModCompatibility
             new WallLightCompatibilityPatch(),
             new ModGlowerCompatibilityPatch(),
             new IdeologyCompatibilityPatch(),
-            new HelixienGasCompatibilityPatch()
+            new HelixienGasCompatibilityPatch(),
+            new SelfLitHydroponicsCompatibilityPatch()
         };
 
         /// <summary>

@@ -112,72 +112,82 @@
     <pre><code class="lang-csharp hljs">[StaticConstructorOnStartup]
 public static class Lights</code></pre>
   </div>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Lights_LightNamesMustInclude.md&amp;value=---%0Auid%3A%20LightsOut.Common.Lights.LightNamesMustInclude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Lights.cs/#L273">View Source</a>
-  </span>
-  <a id="LightsOut_Common_Lights_LightNamesMustInclude_" data-uid="LightsOut.Common.Lights.LightNamesMustInclude*"></a>
-  <h4 id="LightsOut_Common_Lights_LightNamesMustInclude" data-uid="LightsOut.Common.Lights.LightNamesMustInclude">LightNamesMustInclude</h4>
-  <div class="markdown level1 summary"><p>List of things that a light name MUST include to be considered</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;string&gt; LightNamesMustInclude { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Lights_LightNamesMustNotInclude.md&amp;value=---%0Auid%3A%20LightsOut.Common.Lights.LightNamesMustNotInclude%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Lights.cs/#L283">View Source</a>
-  </span>
-  <a id="LightsOut_Common_Lights_LightNamesMustNotInclude_" data-uid="LightsOut.Common.Lights.LightNamesMustNotInclude*"></a>
-  <h4 id="LightsOut_Common_Lights_LightNamesMustNotInclude" data-uid="LightsOut.Common.Lights.LightNamesMustNotInclude">LightNamesMustNotInclude</h4>
-  <div class="markdown level1 summary"><p>List of things that a light name MUST NOT include to be considered</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;string&gt; LightNamesMustNotInclude { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Lights_AddIllegalLightName_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Lights.AddIllegalLightName(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Lights.cs/#L286">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Lights_AddIllegalLightName_" data-uid="LightsOut.Common.Lights.AddIllegalLightName*"></a>
+  <h4 id="LightsOut_Common_Lights_AddIllegalLightName_System_String_" data-uid="LightsOut.Common.Lights.AddIllegalLightName(System.String)">AddIllegalLightName(String)</h4>
+  <div class="markdown level1 summary"><p>Adds a new string that a light&apos;s def name should NOT include</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddIllegalLightName(string nameMustNotInclude)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">nameMustNotInclude</span></td>
+        <td><p>The string that no light&apos;s def name should include</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LightsOut_Common_Lights_AddIllegalLightName_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Case insensitive. Light def names CANNOT include any of these terms</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Lights_AddLightNameRequirement_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Lights.AddLightNameRequirement(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Lights.cs/#L275">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Lights_AddLightNameRequirement_" data-uid="LightsOut.Common.Lights.AddLightNameRequirement*"></a>
+  <h4 id="LightsOut_Common_Lights_AddLightNameRequirement_System_String_" data-uid="LightsOut.Common.Lights.AddLightNameRequirement(System.String)">AddLightNameRequirement(String)</h4>
+  <div class="markdown level1 summary"><p>Adds a new requirement that a light&apos;s def name can include</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddLightNameRequirement(string nameMustInclude)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">nameMustInclude</span></td>
+        <td><p>A string that a light&apos;s def name should be able to include</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LightsOut_Common_Lights_AddLightNameRequirement_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Case insensitive. Light def names must include at least ONE of these required terms</p>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Lights_CanBeLight_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Lights.CanBeLight(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
