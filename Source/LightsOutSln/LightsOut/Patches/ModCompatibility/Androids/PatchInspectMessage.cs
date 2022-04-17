@@ -38,6 +38,8 @@ namespace LightsOut.Patches.ModCompatibility.Androids
         /// <see langword="false"/> otherwise</returns>
         private static bool PrefixPatch(CompPower __0)
         {
+            if (__0 is null || __0.parent is null) return true;
+
             if (__0.parent.GetType().Name == "Building_AndroidPrinter")
             {
                 if (m_pawnCrafterStatus is null)

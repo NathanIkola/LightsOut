@@ -12,6 +12,7 @@ using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.ModCompatibility.HelixienGas;
 using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
+using LightsOut.Patches.ModCompatibility.QuestionableEthics;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -31,7 +32,8 @@ namespace LightsOut.Patches.ModCompatibility
             new ModGlowerCompatibilityPatch(),
             new IdeologyCompatibilityPatch(),
             new HelixienGasCompatibilityPatch(),
-            new SelfLitHydroponicsCompatibilityPatch()
+            new SelfLitHydroponicsCompatibilityPatch(),
+            new QECompatibilityPatch(),
         };
 
         /// <summary>
