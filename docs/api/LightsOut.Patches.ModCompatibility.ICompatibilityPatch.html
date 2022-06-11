@@ -82,6 +82,7 @@ solely dependent upon whether a mod is loaded or not</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ICompatibilityPatch</span></div>
       <div class="level2"><a class="xref" href="LightsOut.Patches.ModCompatibility.Androids.AndroidsCompatibilityPatch.html">AndroidsCompatibilityPatch</a></div>
+      <div class="level2"><a class="xref" href="LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html">ErinsJapaneseFurnitureCompatibilityPatch</a></div>
       <div class="level2"><a class="xref" href="LightsOut.Patches.ModCompatibility.HelixienGas.HelixienGasCompatibilityPatch.html">HelixienGasCompatibilityPatch</a></div>
       <div class="level2"><a class="xref" href="LightsOut.Patches.ModCompatibility.Ideology.IdeologyCompatibilityPatch.html">IdeologyCompatibilityPatch</a></div>
       <div class="level2"><a class="xref" href="LightsOut.Patches.ModCompatibility.ModGlowers.ModGlowerCompatibilityPatch.html">ModGlowerCompatibilityPatch</a></div>
@@ -127,7 +128,7 @@ solely dependent upon whether a mod is loaded or not</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_ModCompatibility_ICompatibilityPatch_CompatibilityPatchName.md&amp;value=---%0Auid%3A%20LightsOut.Patches.ModCompatibility.ICompatibilityPatch.CompatibilityPatchName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/ModCompatibility/ICompatibilityPatch.cs/#L37">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/ModCompatibility/ICompatibilityPatch.cs/#L40">View Source</a>
   </span>
   <a id="LightsOut_Patches_ModCompatibility_ICompatibilityPatch_CompatibilityPatchName_" data-uid="LightsOut.Patches.ModCompatibility.ICompatibilityPatch.CompatibilityPatchName*"></a>
   <h4 id="LightsOut_Patches_ModCompatibility_ICompatibilityPatch_CompatibilityPatchName" data-uid="LightsOut.Patches.ModCompatibility.ICompatibilityPatch.CompatibilityPatchName">CompatibilityPatchName</h4>
@@ -158,7 +159,7 @@ solely dependent upon whether a mod is loaded or not</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_ModCompatibility_ICompatibilityPatch_TargetMod.md&amp;value=---%0Auid%3A%20LightsOut.Patches.ModCompatibility.ICompatibilityPatch.TargetMod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/ModCompatibility/ICompatibilityPatch.cs/#L32">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/ModCompatibility/ICompatibilityPatch.cs/#L35">View Source</a>
   </span>
   <a id="LightsOut_Patches_ModCompatibility_ICompatibilityPatch_TargetMod_" data-uid="LightsOut.Patches.ModCompatibility.ICompatibilityPatch.TargetMod*"></a>
   <h4 id="LightsOut_Patches_ModCompatibility_ICompatibilityPatch_TargetMod" data-uid="LightsOut.Patches.ModCompatibility.ICompatibilityPatch.TargetMod">TargetMod</h4>
@@ -201,7 +202,7 @@ or <span class="xref">null</span> to always apply it</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract IEnumerable&lt;ICompatibilityPatchComponent&gt; GetComponents()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;ICompatibilityPatchComponent&gt; GetComponents()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">

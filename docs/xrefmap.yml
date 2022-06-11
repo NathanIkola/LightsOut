@@ -1025,6 +1025,57 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.TypeNameToPatch
   nameWithType: PatchIsTable.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
+  name: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.html
+  commentId: N:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
+  nameWithType: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch
+  name: ErinsJapaneseFurnitureCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ErinsJapaneseFurniture_ErinsJapaneseFurnitureCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+  nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.Furnace
   name: LightsOut.Patches.ModCompatibility.Furnace
   href: api/LightsOut.Patches.ModCompatibility.Furnace.html
@@ -2191,19 +2242,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
   nameWithType: SelfLitHydroponicsCompatibilityPatch.CompatibilityPatchName
-- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
-  name: GetComponents()
-  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_GetComponents
-  commentId: M:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
-  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents()
-  nameWithType: SelfLitHydroponicsCompatibilityPatch.GetComponents()
-- uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents*
-  name: GetComponents
-  href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_GetComponents_
-  commentId: Overload:LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
-  isSpec: "True"
-  fullName: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.GetComponents
-  nameWithType: SelfLitHydroponicsCompatibilityPatch.GetComponents
 - uid: LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.OnAfterPatchApplied
   name: OnAfterPatchApplied()
   href: api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_SelfLitHydroponics_SelfLitHydroponicsCompatibilityPatch_OnAfterPatchApplied

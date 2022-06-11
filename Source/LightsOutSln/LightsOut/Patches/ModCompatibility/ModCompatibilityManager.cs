@@ -13,6 +13,7 @@ using LightsOut.Patches.ModCompatibility.HelixienGas;
 using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
 using LightsOut.Patches.ModCompatibility.QuestionableEthics;
+using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -34,6 +35,7 @@ namespace LightsOut.Patches.ModCompatibility
             new HelixienGasCompatibilityPatch(),
             new SelfLitHydroponicsCompatibilityPatch(),
             new QECompatibilityPatch(),
+            new ErinsJapaneseFurnitureCompatibilityPatch(),
         };
 
         /// <summary>
