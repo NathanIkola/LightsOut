@@ -23,7 +23,10 @@ namespace LightsOut.Patches.ModCompatibility
         /// Returns a list of compatibility components to apply
         /// </summary>
         /// <returns>A list of compatibility components to apply</returns>
-        public abstract IEnumerable<ICompatibilityPatchComponent> GetComponents();
+        public virtual IEnumerable<ICompatibilityPatchComponent> GetComponents()
+        {
+            return new List<ICompatibilityPatchComponent>();
+        }
 
         /// <summary>
         /// The mod that causes this patch to take effect,

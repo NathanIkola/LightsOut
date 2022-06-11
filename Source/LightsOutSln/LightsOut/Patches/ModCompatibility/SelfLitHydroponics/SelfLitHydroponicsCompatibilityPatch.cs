@@ -10,11 +10,10 @@ namespace LightsOut.Patches.ModCompatibility.SelfLitHydroponics
         public override string CompatibilityPatchName => "SelfLitHydroponics";
         public override string TargetMod => "Self Lit Hydroponics";
 
-        public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
-        {
-            return new List<ICompatibilityPatchComponent>();
-        }
-
+        /// <summary>
+        /// Adds the illegal light name required to stop the HydroponicsLight
+        /// from being captured as a light
+        /// </summary>
         public override void OnAfterPatchApplied()
         {
             Common.Lights.AddIllegalLightName("HydroponicsLight");
