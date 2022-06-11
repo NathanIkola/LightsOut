@@ -39,17 +39,15 @@ namespace LightsOut.ThingComps
 
                 try
                 {
-                    ThingWithComps building = parent;
-                    Room room = Rooms.GetRoom(building);
+                    Room room = Rooms.GetRoom(parent);
 
                     DebugLogger.AssertFalse(parent is null, "KeepOnComp found a null parent");
-                    DebugLogger.AssertFalse(building is null, $"A KeepOnComp can was applied to {parent?.def?.defName}, which wasn't a Building.");
                     DebugLogger.AssertFalse(room is null, $"A KeepOnComp was applied to {parent?.def?.defName}, which had no associated Room.");
 
                     if (value || room.OutdoorsForWork || !Lights.ShouldTurnOffAllLights(room, null))
-                        Lights.EnableLight(building);
+                        Lights.EnableLight(parent);
                     else
-                        Lights.DisableLight(building);
+                        Lights.DisableLight(parent);
                 }
                 catch(Exception e)
                 {
