@@ -28,7 +28,7 @@ namespace LightsOut.Patches.Lights
         /// <param name="canSleep">Whether or not the Pawn is allowed to sleep</param>
         public static void Postfix(Toil __result, bool canSleep)
         {
-            if (!ModSettings.NightLights && ModSettings.FlickLights && canSleep)
+            if (!ModSettings.NightLights && canSleep)
             {
                 __result.AddPreInitAction(() =>
                 {

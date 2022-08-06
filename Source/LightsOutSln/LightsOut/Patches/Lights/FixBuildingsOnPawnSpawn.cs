@@ -56,7 +56,7 @@ namespace LightsOut.Patches.Lights
                         Tables.DisableTable(building); 
                 });
             }
-            else if(driver.asleep && ModSettings.FlickLights && !ModSettings.NightLights)
+            else if(driver.asleep && !ModSettings.NightLights)
             {
                 // ask the pawn to nicely turn off the lights when they start sleeping
                 toil.AddPreTickAction(() =>

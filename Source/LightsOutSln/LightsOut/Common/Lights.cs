@@ -179,15 +179,15 @@ namespace LightsOut.Common
         /// off the lights, <see langword="false"/> otherwise</returns>
         public static bool ShouldTurnOffAllLights(Room room, Pawn excludedPawn)
         {
-            // never turn off the lights if we aren't supposed to
-            if (!ModSettings.FlickLights)
-                return false;
-
             // if pawns are allowed to turn off the lights at night
             // then only check if all pawns are asleep (which intrinsically
             // also checks for pawn presence)
             if (!ModSettings.NightLights)
                 return Rooms.AllPawnsSleeping(room, excludedPawn);
+
+            // otherwise, if we aren't allowed to turn off the lights in normal rooms then bail out
+            if (!ModSettings.FlickLights)
+                return false;
 
             // otherwise only check for pawns in the room
             return Rooms.RoomIsEmpty(room, excludedPawn);
