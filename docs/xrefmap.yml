@@ -648,6 +648,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Tables.HasBlacklistedTableComp
   nameWithType: Tables.HasBlacklistedTableComp
+- uid: LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps,Verse.Pawn)
+  name: IsAnyoneElseWatching(ThingWithComps, Pawn)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsAnyoneElseWatching_Verse_ThingWithComps_Verse_Pawn_
+  commentId: M:LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps,Verse.Pawn)
+  fullName: LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps, Verse.Pawn)
+  nameWithType: Tables.IsAnyoneElseWatching(ThingWithComps, Pawn)
+- uid: LightsOut.Common.Tables.IsAnyoneElseWatching*
+  name: IsAnyoneElseWatching
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsAnyoneElseWatching_
+  commentId: Overload:LightsOut.Common.Tables.IsAnyoneElseWatching
+  isSpec: "True"
+  fullName: LightsOut.Common.Tables.IsAnyoneElseWatching
+  nameWithType: Tables.IsAnyoneElseWatching
 - uid: LightsOut.Common.Tables.IsTable(Verse.ThingWithComps)
   name: IsTable(ThingWithComps)
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTable_Verse_ThingWithComps_
@@ -748,6 +761,25 @@ references:
   commentId: N:LightsOut.Patches.Benches
   fullName: LightsOut.Patches.Benches
   nameWithType: LightsOut.Patches.Benches
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  name: EnableAndDisableTelevisions
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html
+  commentId: T:LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  nameWithType: EnableAndDisableTelevisions
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)
+  name: Postfix(JobDriver_WatchBuilding, Boolean)
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html#LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_
+  commentId: M:LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding, System.Boolean)
+  nameWithType: EnableAndDisableTelevisions.Postfix(JobDriver_WatchBuilding, Boolean)
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix*
+  name: Postfix
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html#LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_
+  commentId: Overload:LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix
+  nameWithType: EnableAndDisableTelevisions.Postfix
 - uid: LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench
   name: TriggerOnPawnArrivedToBench
   href: api/LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench.html

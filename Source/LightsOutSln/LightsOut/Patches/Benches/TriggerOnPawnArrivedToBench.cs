@@ -2,7 +2,6 @@
 using LightsOut.Common;
 using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using Verse;
 using Verse.AI;
 
@@ -81,18 +80,8 @@ namespace LightsOut.Patches.Benches
 
             driver.AddFinishAction(() =>
             {
-                foreach (IntVec3 cell in watchArea)
-                {
-                    IEnumerable<Pawn> pawns = from thing in cell.GetThingList(tv.Map)
-                                       where thing is Pawn
-                                       select thing as Pawn;
-
-                    foreach (Pawn p in pawns)
-                        if (p != pawn && p.CurJob?.GetTarget(TargetIndex.A).Thing == tv)
-                            return;
-                }
-
-                Tables.DisableTable(tv);
+                if (!Tables.IsAnyoneElseWatching(tv, pawn))
+                    Tables.DisableTable(tv);
             });
         }
 

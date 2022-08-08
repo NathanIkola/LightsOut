@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class FixBuildingsOnPawnSpawn
+    <title>Class FixTelevisions
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class FixBuildingsOnPawnSpawn
+    <meta name="title" content="Class FixTelevisions
    ">
     <meta name="generator" content="docfx 2.59.3.0">
     
@@ -68,19 +68,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Benches.FixTelevisions">
   
   
-  <h1 id="LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn" data-uid="LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn" class="text-break">Class FixBuildingsOnPawnSpawn
+  <h1 id="LightsOut_Patches_Benches_FixTelevisions" data-uid="LightsOut.Patches.Benches.FixTelevisions" class="text-break">Class FixTelevisions
   </h1>
-  <div class="markdown level0 summary"><p>Enables tables when Pawns spawn, allowing Pawns in the middle of a job
-to enable their benches</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">FixBuildingsOnPawnSpawn</span></div>
+    <div class="level1"><span class="xref">FixTelevisions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -106,32 +104,32 @@ to enable their benches</p>
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Lights.html">LightsOut.Patches.Lights</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Benches.html">LightsOut.Patches.Benches</a></h6>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
-  <h5 id="LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn_syntax">Syntax</h5>
+  <h5 id="LightsOut_Patches_Benches_FixTelevisions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(Pawn))]
-[HarmonyPatch(&quot;SpawnSetup&quot;)]
-public class FixBuildingsOnPawnSpawn</code></pre>
+    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(JobDriver_WatchBuilding))]
+[HarmonyPatch(&quot;TryMakePreToilReservations&quot;)]
+public class FixTelevisions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn_Postfix_Verse_Pawn_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn.Postfix(Verse.Pawn)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_FixTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.FixTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Lights/FixBuildingsOnPawnSpawn.cs/#L25">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/FixTelevisions.cs/#L18">View Source</a>
   </span>
-  <a id="LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn_Postfix_" data-uid="LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn.Postfix*"></a>
-  <h4 id="LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn_Postfix_Verse_Pawn_" data-uid="LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn.Postfix(Verse.Pawn)">Postfix(Pawn)</h4>
-  <div class="markdown level1 summary"><p>After a Pawn spawns, it checks if their current job involves a bench
-and enables it if so</p>
+  <a id="LightsOut_Patches_Benches_FixTelevisions_Postfix_" data-uid="LightsOut.Patches.Benches.FixTelevisions.Postfix*"></a>
+  <h4 id="LightsOut_Patches_Benches_FixTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_" data-uid="LightsOut.Patches.Benches.FixTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)">Postfix(JobDriver_WatchBuilding, Boolean)</h4>
+  <div class="markdown level1 summary"><p>If we successfully made pre-toil reservations, turn the TV on, and turn it off
+afterward if nobody else is watching</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Postfix(Pawn __instance)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Postfix(JobDriver_WatchBuilding __instance, bool __result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -144,9 +142,16 @@ and enables it if so</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Verse.Pawn</span></td>
+        <td><span class="xref">RimWorld.JobDriver_WatchBuilding</span></td>
         <td><span class="parametername">__instance</span></td>
-        <td></td>
+        <td><p>The JobDriver_WatchBuilding being started</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">__result</span></td>
+        <td><p>Whether or not it should be starting</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -158,10 +163,10 @@ and enables it if so</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Lights_FixBuildingsOnPawnSpawn.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.FixBuildingsOnPawnSpawn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_FixTelevisions.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.FixTelevisions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Lights/FixBuildingsOnPawnSpawn.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/FixTelevisions.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

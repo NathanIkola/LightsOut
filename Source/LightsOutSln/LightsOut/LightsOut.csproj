@@ -78,6 +78,7 @@
     <Compile Include="Common\Tables.cs" />
     <Compile Include="Defs\CustomThingDefs.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
+    <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\ModCompatibility\ErinsJapaneseFurniture\ErinsJapaneseFurnitureCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />

@@ -1,9 +1,4 @@
-﻿//************************************************
-// Disable the light glow in a room any time a
-// pawn goes to sleep
-//************************************************
-
-using System;
+﻿using System;
 using HarmonyLib;
 using RimWorld;
 using Verse;
