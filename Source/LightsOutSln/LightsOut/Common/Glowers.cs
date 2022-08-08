@@ -124,11 +124,11 @@ namespace LightsOut.Common
                     else if (updateLit.GetParameters().Length == 0)
                         updateLit.Invoke(glower, null);
                     else
-                        DebugLogger.LogWarning($"Too many arguments for UpdateLit on {glower.GetType().FullName}");
+                        DebugLogger.LogWarning($"Too many arguments for UpdateLit on {glower.GetType().FullName}", DebugMessageKeys.Glowers);
                 }
                 catch (Exception e)
                 {
-                    DebugLogger.LogErrorOnce($"Having trouble updating a generic glower: {glower.GetType().FullName}: {e}");
+                    DebugLogger.LogErrorOnce($"Having trouble updating a generic glower: {glower.GetType().FullName}: {e}", DebugMessageKeys.Glowers);
                 }
             }
         }

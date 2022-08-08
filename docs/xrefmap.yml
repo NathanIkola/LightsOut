@@ -39,19 +39,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate
   nameWithType: ModSettings.ActiveResourceDrawRate
-- uid: LightsOut.Boilerplate.ModSettings.DebugMessages
-  name: DebugMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DebugMessages
-  commentId: P:LightsOut.Boilerplate.ModSettings.DebugMessages
-  fullName: LightsOut.Boilerplate.ModSettings.DebugMessages
-  nameWithType: ModSettings.DebugMessages
-- uid: LightsOut.Boilerplate.ModSettings.DebugMessages*
-  name: DebugMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DebugMessages_
-  commentId: Overload:LightsOut.Boilerplate.ModSettings.DebugMessages
-  isSpec: "True"
-  fullName: LightsOut.Boilerplate.ModSettings.DebugMessages
-  nameWithType: ModSettings.DebugMessages
 - uid: LightsOut.Boilerplate.ModSettings.DefsLoaded
   name: DefsLoaded()
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DefsLoaded
@@ -91,6 +78,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.Harmony
   nameWithType: ModSettings.Harmony
+- uid: LightsOut.Boilerplate.ModSettings.MessageFilters
+  name: MessageFilters
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_MessageFilters
+  commentId: P:LightsOut.Boilerplate.ModSettings.MessageFilters
+  fullName: LightsOut.Boilerplate.ModSettings.MessageFilters
+  nameWithType: ModSettings.MessageFilters
+- uid: LightsOut.Boilerplate.ModSettings.MessageFilters*
+  name: MessageFilters
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_MessageFilters_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.MessageFilters
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.MessageFilters
+  nameWithType: ModSettings.MessageFilters
 - uid: LightsOut.Boilerplate.ModSettings.ModIdentifier
   name: ModIdentifier
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_ModIdentifier
@@ -130,19 +130,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.SettingsChanged
   nameWithType: ModSettings.SettingsChanged
-- uid: LightsOut.Boilerplate.ModSettings.SpamMessages
-  name: SpamMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages
-  commentId: P:LightsOut.Boilerplate.ModSettings.SpamMessages
-  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
-  nameWithType: ModSettings.SpamMessages
-- uid: LightsOut.Boilerplate.ModSettings.SpamMessages*
-  name: SpamMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages_
-  commentId: Overload:LightsOut.Boilerplate.ModSettings.SpamMessages
-  isSpec: "True"
-  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
-  nameWithType: ModSettings.SpamMessages
 - uid: LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate
   name: StandbyResourceDrawRate
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate
@@ -194,12 +181,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.AssertFalse
   nameWithType: DebugLogger.AssertFalse
-- uid: LightsOut.Common.DebugLogger.LogError(System.String)
-  name: LogError(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogError(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogError(System.String)
-  nameWithType: DebugLogger.LogError(String)
+- uid: LightsOut.Common.DebugLogger.LogError(System.String,System.String)
+  name: LogError(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogError(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogError(System.String, System.String)
+  nameWithType: DebugLogger.LogError(String, String)
 - uid: LightsOut.Common.DebugLogger.LogError*
   name: LogError
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_
@@ -207,18 +194,18 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogError
   nameWithType: DebugLogger.LogError
-- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  name: LogErrorOnce(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  nameWithType: DebugLogger.LogErrorOnce(String)
-- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32)
-  name: LogErrorOnce(String, Int32)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_
-  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32)
-  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.Int32)
-  nameWithType: DebugLogger.LogErrorOnce(String, Int32)
+- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32,System.String)
+  name: LogErrorOnce(String, Int32, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.Int32, System.String)
+  nameWithType: DebugLogger.LogErrorOnce(String, Int32, String)
+- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.String)
+  name: LogErrorOnce(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.String)
+  nameWithType: DebugLogger.LogErrorOnce(String, String)
 - uid: LightsOut.Common.DebugLogger.LogErrorOnce*
   name: LogErrorOnce
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_
@@ -226,12 +213,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogErrorOnce
   nameWithType: DebugLogger.LogErrorOnce
-- uid: LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
-  name: LogInfo(String, Boolean)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_System_Boolean_
-  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
-  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String, System.Boolean)
-  nameWithType: DebugLogger.LogInfo(String, Boolean)
+- uid: LightsOut.Common.DebugLogger.LogInfo(System.String,System.String)
+  name: LogInfo(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String, System.String)
+  nameWithType: DebugLogger.LogInfo(String, String)
 - uid: LightsOut.Common.DebugLogger.LogInfo*
   name: LogInfo
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_
@@ -239,12 +226,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogInfo
   nameWithType: DebugLogger.LogInfo
-- uid: LightsOut.Common.DebugLogger.LogWarning(System.String)
-  name: LogWarning(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogWarning(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogWarning(System.String)
-  nameWithType: DebugLogger.LogWarning(String)
+- uid: LightsOut.Common.DebugLogger.LogWarning(System.String,System.String)
+  name: LogWarning(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogWarning(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogWarning(System.String, System.String)
+  nameWithType: DebugLogger.LogWarning(String, String)
 - uid: LightsOut.Common.DebugLogger.LogWarning*
   name: LogWarning
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_
@@ -252,6 +239,142 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogWarning
   nameWithType: DebugLogger.LogWarning
+- uid: LightsOut.Common.DebugMessageKeys
+  name: DebugMessageKeys
+  href: api/LightsOut.Common.DebugMessageKeys.html
+  commentId: T:LightsOut.Common.DebugMessageKeys
+  fullName: LightsOut.Common.DebugMessageKeys
+  nameWithType: DebugMessageKeys
+- uid: LightsOut.Common.DebugMessageKeys.Assert
+  name: Assert
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Assert
+  commentId: P:LightsOut.Common.DebugMessageKeys.Assert
+  fullName: LightsOut.Common.DebugMessageKeys.Assert
+  nameWithType: DebugMessageKeys.Assert
+- uid: LightsOut.Common.DebugMessageKeys.Assert*
+  name: Assert
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Assert_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Assert
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Assert
+  nameWithType: DebugMessageKeys.Assert
+- uid: LightsOut.Common.DebugMessageKeys.Comps
+  name: Comps
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Comps
+  commentId: P:LightsOut.Common.DebugMessageKeys.Comps
+  fullName: LightsOut.Common.DebugMessageKeys.Comps
+  nameWithType: DebugMessageKeys.Comps
+- uid: LightsOut.Common.DebugMessageKeys.Comps*
+  name: Comps
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Comps_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Comps
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Comps
+  nameWithType: DebugMessageKeys.Comps
+- uid: LightsOut.Common.DebugMessageKeys.Error
+  name: Error
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Error
+  commentId: P:LightsOut.Common.DebugMessageKeys.Error
+  fullName: LightsOut.Common.DebugMessageKeys.Error
+  nameWithType: DebugMessageKeys.Error
+- uid: LightsOut.Common.DebugMessageKeys.Error*
+  name: Error
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Error_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Error
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Error
+  nameWithType: DebugMessageKeys.Error
+- uid: LightsOut.Common.DebugMessageKeys.Glowers
+  name: Glowers
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Glowers
+  commentId: P:LightsOut.Common.DebugMessageKeys.Glowers
+  fullName: LightsOut.Common.DebugMessageKeys.Glowers
+  nameWithType: DebugMessageKeys.Glowers
+- uid: LightsOut.Common.DebugMessageKeys.Glowers*
+  name: Glowers
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Glowers_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Glowers
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Glowers
+  nameWithType: DebugMessageKeys.Glowers
+- uid: LightsOut.Common.DebugMessageKeys.Info
+  name: Info
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Info
+  commentId: P:LightsOut.Common.DebugMessageKeys.Info
+  fullName: LightsOut.Common.DebugMessageKeys.Info
+  nameWithType: DebugMessageKeys.Info
+- uid: LightsOut.Common.DebugMessageKeys.Info*
+  name: Info
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Info_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Info
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Info
+  nameWithType: DebugMessageKeys.Info
+- uid: LightsOut.Common.DebugMessageKeys.Lights
+  name: Lights
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Lights
+  commentId: P:LightsOut.Common.DebugMessageKeys.Lights
+  fullName: LightsOut.Common.DebugMessageKeys.Lights
+  nameWithType: DebugMessageKeys.Lights
+- uid: LightsOut.Common.DebugMessageKeys.Lights*
+  name: Lights
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Lights_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Lights
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Lights
+  nameWithType: DebugMessageKeys.Lights
+- uid: LightsOut.Common.DebugMessageKeys.Mods
+  name: Mods
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Mods
+  commentId: P:LightsOut.Common.DebugMessageKeys.Mods
+  fullName: LightsOut.Common.DebugMessageKeys.Mods
+  nameWithType: DebugMessageKeys.Mods
+- uid: LightsOut.Common.DebugMessageKeys.Mods*
+  name: Mods
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Mods_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Mods
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Mods
+  nameWithType: DebugMessageKeys.Mods
+- uid: LightsOut.Common.DebugMessageKeys.Patches
+  name: Patches
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Patches
+  commentId: P:LightsOut.Common.DebugMessageKeys.Patches
+  fullName: LightsOut.Common.DebugMessageKeys.Patches
+  nameWithType: DebugMessageKeys.Patches
+- uid: LightsOut.Common.DebugMessageKeys.Patches*
+  name: Patches
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Patches_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Patches
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Patches
+  nameWithType: DebugMessageKeys.Patches
+- uid: LightsOut.Common.DebugMessageKeys.Settings
+  name: Settings
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Settings
+  commentId: P:LightsOut.Common.DebugMessageKeys.Settings
+  fullName: LightsOut.Common.DebugMessageKeys.Settings
+  nameWithType: DebugMessageKeys.Settings
+- uid: LightsOut.Common.DebugMessageKeys.Settings*
+  name: Settings
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Settings_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Settings
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Settings
+  nameWithType: DebugMessageKeys.Settings
+- uid: LightsOut.Common.DebugMessageKeys.Warning
+  name: Warning
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Warning
+  commentId: P:LightsOut.Common.DebugMessageKeys.Warning
+  fullName: LightsOut.Common.DebugMessageKeys.Warning
+  nameWithType: DebugMessageKeys.Warning
+- uid: LightsOut.Common.DebugMessageKeys.Warning*
+  name: Warning
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Warning_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Warning
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Warning
+  nameWithType: DebugMessageKeys.Warning
 - uid: LightsOut.Common.Glowers
   name: Glowers
   href: api/LightsOut.Common.Glowers.html

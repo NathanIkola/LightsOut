@@ -22,7 +22,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
-            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
+            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
             ThingComp glower = Glowers.GetGlower(light);
             DebugLogger.AssertFalse(glower is null, $"EnableLight called on a building without an approved glower: {light.def.defName}");
@@ -40,7 +40,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
 
-            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
+            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
             if (Rooms.GetRoom(light).OutdoorsForWork) return;
 
@@ -109,13 +109,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(DisableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(DisableAllLights): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -152,13 +152,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(EnableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(EnableAllLights): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)

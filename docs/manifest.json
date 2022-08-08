@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
-          "hash": "S/dNYTJCZEgOWwKuyT6mZQeKYByn2M3TbEvlKTFARjc="
+          "hash": "Gls0k1autG4zazqyWj2/dRpQ7/CNlUxh1nDberEDljc="
         }
       },
       "is_incremental": true,
@@ -81,7 +81,19 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.DebugLogger.html",
-          "hash": "wJsvESwjbYj/94aactOic3nk5bMoKSxm3kr99rXYX6k="
+          "hash": "eSxJ0T79XupU7HQ1qIUdqHWaxmF3dZV4p/hG5QvvDGI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Common.DebugMessageKeys.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Common.DebugMessageKeys.html",
+          "hash": "QkoV5OWwtEc/eZDvKPXLldEQnAH3hvjMSyN4KsXSNWM="
         }
       },
       "is_incremental": true,
@@ -153,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.html",
-          "hash": "KuCvGhjATbacdMgbytG4BjtAulSy7LDfHFaLBvjhnhM="
+          "hash": "hQVtZtZBjCFlCzlHH/Yf2irc5IxwOo4/HrJKokzzJQ0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -921,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "tkQ4qAVGscADqgYkHF3vi96G0OAym0Ou/aBk8u3joNE="
+          "hash": "R9FB3Ju6y6sdQEigRyh5dSu1rq+upC6DWeTdK1azxls="
         }
       },
       "is_incremental": false,
@@ -958,7 +970,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 72,
+          "total_file_count": 73,
           "skipped_file_count": 72
         },
         "TocDocumentProcessor": {
