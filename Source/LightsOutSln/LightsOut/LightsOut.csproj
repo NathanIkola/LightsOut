@@ -140,13 +140,14 @@ xcopy "$(ProjectDir)..\..\..\Languages" "C:\Program Files (x86)\Steam\steamapps\
 xcopy "$(ProjectDir)..\..\..\Patches" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Patches"  /Y/E/H/C/I
 xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Sounds"  /Y/E/H/C/I
 xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures"  /Y/E/H/C/I
+xcopy "$(ProjectDir)..\..\..\1.4" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\1.4"  /Y/E/H/C/I
 xcopy "$(ProjectDir)_site" "$(ProjectDir)..\..\..\docs"  /Y/E/H/C/I
 echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
 echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />
