@@ -1,5 +1,8 @@
-﻿using LightsOut.ThingComps;
+﻿using LightsOut.Common;
+using LightsOut.Patches.ModCompatibility;
+using LightsOut.ThingComps;
 using RimWorld;
+using System.Reflection;
 using Verse;
 
 namespace LightsOut.Gizmos
@@ -22,7 +25,25 @@ namespace LightsOut.Gizmos
             icon = Widgets.GetIconFor(ThingDefOf.StandingLamp);
             isActive = () => ParentComp.KeepOn;
             toggleAction = () => { ToggleAction(); };
-            Order = 420;
+
+            FieldInfo order = typeof(KeepOnGizmo).GetField("order", ICompatibilityPatchComponent.BindingFlags);
+            int orderVal = 420;
+            if (order is null)
+            {
+                PropertyInfo Order = typeof(KeepOnGizmo).GetProperty("Order", ICompatibilityPatchComponent.BindingFlags);
+                if (Order is null)
+                {
+                    DebugLogger.LogWarning("Failed to get the order field/property for a gizmo");
+                }
+                else
+                {
+                    Order.SetValue(this, orderVal);
+                }
+            }
+            else
+            {
+                order.SetValue(this, orderVal);
+            }
         }
 
         /// <summary>
