@@ -35,7 +35,8 @@ namespace LightsOut.Common
         /// Disables a light
         /// </summary>
         /// <param name="light">The <see cref="Building"/> to disable</param>
-        public static void DisableLight(ThingWithComps light)
+        /// <param name="delay">The delay (in ticks) to keep the light on for</param>
+        public static void DisableLight(ThingWithComps light, int? delay = 0)
         {
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
@@ -51,7 +52,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(glower is null, $"DisableLight called on a building without an approved glower: {light.def.defName}");
             if (glower is null) return;
 
-            Glowers.DisableGlower(glower);
+            Glowers.DisableGlower(glower, delay);
         }
 
         /// <summary>

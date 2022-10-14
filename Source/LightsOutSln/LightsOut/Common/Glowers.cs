@@ -16,17 +16,14 @@ namespace LightsOut.Common
         /// Sets whether a glowable building is able to glow or not
         /// </summary>
         /// <param name="glower">The glower to enable or disable</param>
-        /// <param name="canGlow">Whether or not this glower can glow</param>
+        /// <param name="ticksRemaining">The delay (in ticks) to keep the glower on for, -1 if it should stay on</param>
         /// <returns>The previous value, or <see langword="null"/> if it wasn't 
         /// in the dictionary before</returns>
-        private static bool? SetCanGlow(ThingComp glower, bool? canGlow)
+        private static int? SetTicksRemaining(ThingComp glower, int? ticksRemaining)
         {
-            if (glower is null) return false;
-
-            bool? previous = Resources.SetConsumesResources(glower.parent, canGlow);
-
+            if (glower is null) return null;
+            int? previous = Resources.SetTicksRemaining(glower.parent, ticksRemaining);
             UpdateGlower(glower);
-
             return previous;
         }
 
@@ -39,19 +36,24 @@ namespace LightsOut.Common
         public static bool? EnableGlower(ThingComp glower)
         {
             DebugLogger.AssertFalse(glower is null, "EnableGlower was called on a null glower");
-            return SetCanGlow(glower, true);
+            int? previous = SetTicksRemaining(glower, -1);
+            if (previous is null) return false;
+            return previous != 0;
         }
 
         /// <summary>
         /// Marks a glower as disabled
         /// </summary>
         /// <param name="glower">The glower to disable</param>
+        /// <param name="delay">The delay (in ticks) to keep the glower on for</param>
         /// <returns>The previous value, or <see langword="null"/> if it wasn't 
         /// in the dictionary before</returns>
-        public static bool? DisableGlower(ThingComp glower)
+        public static bool? DisableGlower(ThingComp glower, int? delay = 0)
         {
             DebugLogger.AssertFalse(glower is null, "DisableGlower was called on a null glower");
-            return SetCanGlow(glower, false);
+            int? previous = SetTicksRemaining(glower, delay);
+            if (previous is null) return false;
+            return previous != 0;
         }
 
         /// <summary>

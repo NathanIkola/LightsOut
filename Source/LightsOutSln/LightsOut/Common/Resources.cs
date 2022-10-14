@@ -20,11 +20,16 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(thing is null, "SetConsumesResources called on a null thing");
             if (thing is null) return null;
-            bool? previous = CanConsumeResources(thing);
-            if (consumesResource == previous)
-                return previous;
-            BuildingStatus[thing] = consumesResource;
-            return previous;
+
+            // convert bool? into its int? counterpart
+            int? ticks = null;
+            if (consumesResource == true) ticks = -1;
+            else if (consumesResource == false) ticks = 0;
+
+            ticks = SetTicksRemaining(thing, ticks);
+            if (ticks is null) return null;
+
+            return ticks != 0;
         }
 
         /// <summary>
@@ -48,12 +53,74 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(thing is null, "CanConsumeResources called on a null thing");
             if (thing is null) return null;
-            bool? canConsumeResources = BuildingStatus.TryGetValue(thing, null);
+            int? ticksRemaining = GetTicksRemaining(thing);
+            bool? canConsumeResources = !(ticksRemaining is null) && ticksRemaining != 0;
 
             if (canConsumeResources == true && IsRechargeable(thing) && IsCharged(thing))
                 return false;
 
             return canConsumeResources;
+        }
+
+        /// <summary>
+        /// Check how many ticks <paramref name="thing"/> has
+        /// until it can no longer consume resources
+        /// </summary>
+        /// <param name="thing">The thing to check</param>
+        /// <returns>The number of ticks until <paramref name="thing"/> can
+        /// no longer consume resources</returns>
+        public static int? GetTicksRemaining(ThingWithComps thing)
+        {
+            DebugLogger.AssertFalse(thing is null, "GetTicksRemaining called on a null thing");
+            if (thing is null) return null;
+            return BuildingStatus.TryGetValue(thing, null);
+        }
+
+        /// <summary>
+        /// Sets the number of <paramref name="ticksRemaining"/> for the specified <paramref name="thing"/>
+        /// </summary>
+        /// <param name="thing">The thing to set the ticks for</param>
+        /// <param name="ticksRemaining">The number of ticks to set it to</param>
+        /// <returns>The previous value</returns>
+        public static int? SetTicksRemaining(ThingWithComps thing, int? ticksRemaining)
+        {
+            DebugLogger.AssertFalse(thing is null, "SetTicksRemaining called on a null thing");
+            if (thing is null) return null;
+
+            int? previous = GetTicksRemaining(thing);
+            if (ticksRemaining == previous) return previous;
+
+            BuildingStatus[thing] = ticksRemaining;
+            return previous;
+        }
+
+        /// <summary>
+        /// Decrement the number of ticks remaining for the specified <paramref name="thing"/>
+        /// </summary>
+        /// <param name="thing">The thing to check</param>
+        /// <returns>The new number of ticks remaining</returns>
+        public static int? DecrementTicksRemaining(ThingWithComps thing)
+        {
+            DebugLogger.AssertFalse(thing is null, "DecrementTicksRemaining called on a null thing");
+            if (thing is null) return null;
+            
+            int? ticksRemaining = GetTicksRemaining(thing);
+            if (ticksRemaining is null) return null;
+
+            if (ticksRemaining > 0)
+                SetTicksRemaining(thing, --ticksRemaining);
+
+            return ticksRemaining;
+        }
+
+        /// <summary>
+        /// Decrements all positive tick counts in the tick dictionary
+        /// </summary>
+        /// <remarks>Be careful to only call this once per tick</remarks>
+        public static void DecrementAllTicksRemaining()
+        {
+            foreach(ThingWithComps thing in BuildingStatus.Keys)
+                DecrementTicksRemaining(thing);
         }
 
         /// <summary>
@@ -109,7 +176,7 @@ namespace LightsOut.Common
         /// The structure that holds the info on whether or not
         /// a building is disabled
         /// </summary>
-        public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
+        public static Dictionary<ThingWithComps, int?> BuildingStatus { get; } = new Dictionary<ThingWithComps, int?>();
 
         /// <summary>
         /// A memoized list of the CompRechargeables to prevent repeated comp lookups
