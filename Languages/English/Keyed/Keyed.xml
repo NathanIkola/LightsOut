@@ -20,8 +20,8 @@
 	<LightsOut_Settings_DebugMessagesLabel>Log extra debug information</LightsOut_Settings_DebugMessagesLabel>
 	<LightsOut_Settings_DebugMessagesTooltip>If enabled extra debug messages will be logged. Keep this off unless you're debugging this mod.</LightsOut_Settings_DebugMessagesTooltip>
 	
-	<LightsOut_Settings_SpamMessagesLabel>Log the spammy debug info</LightsOut_Settings_SpamMessagesLabel>
-	<LightsOut_Settings_SpamMessagesTooltip>If enabled the extra debug messages that happen a lot will be logged. Pretty much always keep this off (unless you like huge logs).</LightsOut_Settings_SpamMessagesTooltip>
+	<LightsOut_Settings_DebugMessageFilterLabel>Debug message keys</LightsOut_Settings_DebugMessageFilterLabel>
+	<LightsOut_Settings_DebugMessageFilterTooltip>A space-delimited list of debug message keys that should log.</LightsOut_Settings_DebugMessageFilterTooltip>
 	
 	<LightsOut_Gizmos_KeepOnLabel>Keep On</LightsOut_Gizmos_KeepOnLabel>
 	<LightsOut_Gizmos_KeepOnTooltip>Prevent pawns from turning this light off.</LightsOut_Gizmos_KeepOnTooltip>

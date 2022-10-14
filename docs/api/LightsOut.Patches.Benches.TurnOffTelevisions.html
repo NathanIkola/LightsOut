@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DisableLightGlowPatch
+    <title>Class TurnOffTelevisions
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DisableLightGlowPatch
+    <meta name="title" content="Class TurnOffTelevisions
    ">
     <meta name="generator" content="docfx 2.59.3.0">
     
@@ -68,18 +68,17 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Lights.DisableLightGlowPatch">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Benches.TurnOffTelevisions">
   
   
-  <h1 id="LightsOut_Patches_Lights_DisableLightGlowPatch" data-uid="LightsOut.Patches.Lights.DisableLightGlowPatch" class="text-break">Class DisableLightGlowPatch
+  <h1 id="LightsOut_Patches_Benches_TurnOffTelevisions" data-uid="LightsOut.Patches.Benches.TurnOffTelevisions" class="text-break">Class TurnOffTelevisions
   </h1>
-  <div class="markdown level0 summary"><p>Turns off glowers if necessary</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">DisableLightGlowPatch</span></div>
+    <div class="level1"><span class="xref">TurnOffTelevisions</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,31 +104,31 @@
       <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Lights.html">LightsOut.Patches.Lights</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Benches.html">LightsOut.Patches.Benches</a></h6>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
-  <h5 id="LightsOut_Patches_Lights_DisableLightGlowPatch_syntax">Syntax</h5>
+  <h5 id="LightsOut_Patches_Benches_TurnOffTelevisions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(CompGlower))]
-[HarmonyPatch(&quot;ShouldBeLitNow&quot;, MethodType.Getter)]
-public class DisableLightGlowPatch</code></pre>
+    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(JoyUtility))]
+[HarmonyPatch(&quot;TryGainRecRoomThought&quot;)]
+public class TurnOffTelevisions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/1.4/apiSpec/new?filename=LightsOut_Patches_Lights_DisableLightGlowPatch_Postfix_Verse_ThingComp_System_Boolean__.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.DisableLightGlowPatch.Postfix(Verse.ThingComp%2CSystem.Boolean%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_TurnOffTelevisions_Prefix_Verse_Pawn_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.TurnOffTelevisions.Prefix(Verse.Pawn)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/1.4/Source/LightsOutSln/LightsOut/Patches/Lights/DisableLightGlowPatch.cs/#L19">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/TurnOffTelevisions.cs/#L16">View Source</a>
   </span>
-  <a id="LightsOut_Patches_Lights_DisableLightGlowPatch_Postfix_" data-uid="LightsOut.Patches.Lights.DisableLightGlowPatch.Postfix*"></a>
-  <h4 id="LightsOut_Patches_Lights_DisableLightGlowPatch_Postfix_Verse_ThingComp_System_Boolean__" data-uid="LightsOut.Patches.Lights.DisableLightGlowPatch.Postfix(Verse.ThingComp,System.Boolean@)">Postfix(ThingComp, ref Boolean)</h4>
-  <div class="markdown level1 summary"><p>Disables a glower when needed</p>
+  <a id="LightsOut_Patches_Benches_TurnOffTelevisions_Prefix_" data-uid="LightsOut.Patches.Benches.TurnOffTelevisions.Prefix*"></a>
+  <h4 id="LightsOut_Patches_Benches_TurnOffTelevisions_Prefix_Verse_Pawn_" data-uid="LightsOut.Patches.Benches.TurnOffTelevisions.Prefix(Verse.Pawn)">Prefix(Pawn)</h4>
+  <div class="markdown level1 summary"><p>Check if this is a &quot;WatchTelevision&quot; job driver, and if so turn on/off the television</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Postfix(ThingComp __instance, ref bool __result)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Prefix(Pawn pawn)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,16 +141,9 @@ public class DisableLightGlowPatch</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Verse.ThingComp</span></td>
-        <td><span class="parametername">__instance</span></td>
-        <td><p>The glower being affected</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">__result</span></td>
-        <td><p>Whether or not this glower should be able to glow</p>
-</td>
+        <td><span class="xref">Verse.Pawn</span></td>
+        <td><span class="parametername">pawn</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -163,10 +155,10 @@ public class DisableLightGlowPatch</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/1.4/apiSpec/new?filename=LightsOut_Patches_Lights_DisableLightGlowPatch.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.DisableLightGlowPatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_TurnOffTelevisions.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.TurnOffTelevisions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/1.4/Source/LightsOutSln/LightsOut/Patches/Lights/DisableLightGlowPatch.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/TurnOffTelevisions.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

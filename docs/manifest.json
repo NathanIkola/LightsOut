@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "P:/Projects/LightsOut/Source/LightsOutSln/LightsOut",
+  "source_base_path": "C:/Programming/Projects/LightsOut/Source/LightsOutSln/LightsOut",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.html",
-          "hash": "cYsAwjwZDuift2RWwj+xo/hybC66NtJo8z44v3XujPI="
+          "hash": "kBlfOLrVyHSir2VVQpufR+tIeWsNZFgq47gIHDCcjhg="
         }
       },
       "is_incremental": true,
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.html",
-          "hash": "hn+zsmhlqT95vUxn5musq5szQ2lyEEBosvKyqQSL0Xk="
+          "hash": "hQVtZtZBjCFlCzlHH/Yf2irc5IxwOo4/HrJKokzzJQ0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Defs.html",
-          "hash": "HN5CRuHNWmPC91+94krwzdFz1Tl10jWMbBX2RFzXDSA="
+          "hash": "nKbEM/6AJN9kpXYMxrP2X4rMukmnWYuzltxR/7N/0Ks="
         }
       },
       "is_incremental": true,
@@ -201,7 +201,19 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Gizmos.html",
-          "hash": "jUQop9zvylr0SYnTbU7D8WAno6mXfVUmwQjx/5fArto="
+          "hash": "+W++jPIkIWuwYH99iqQaAlvjAoaKrXHCOtzH6zRFQL0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html",
+          "hash": "1sO17BmQ0VHZfmvzI4anXtYNOujY/wRvsY0dM0DdOy8="
         }
       },
       "is_incremental": true,
@@ -225,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.Benches.html",
-          "hash": "cdpoM8VBSqpuWMt7K4cS/DvIkROZoOsRWhNhd3II78U="
+          "hash": "+eyHYAzkhPC8SCAYRUPOsKx/QVpuSMWSsyGUQZ1NomU="
         }
       },
       "is_incremental": true,
@@ -285,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.Lights.html",
-          "hash": "axHIUGNTVUwwe/bVVLC0kV17cgowJg1UkIYpRZ8RcPw="
+          "hash": "E3AZuqkF4Q9oSNI6HpomVs/pLTKbX8ZrGRU3IRIdNhM="
         }
       },
       "is_incremental": true,
@@ -333,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.html",
-          "hash": "ALjDlXj56yAwolhd3QaDNs9RJCGIXcs6F56Ai2ZIOFQ="
+          "hash": "51dlJ6P0FjaQlb2W0/7qyTnHUTQg8XrCR45hCCHnaKM="
         }
       },
       "is_incremental": true,
@@ -357,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.html",
-          "hash": "FMsC6yKDRRtyFMVBdxDFSktfEK1XjvWnpL+PQwBxsnc="
+          "hash": "uJvZAH5mPoEx2wmP1xgj/KPWElm1+SmRzFqwlBcAma0="
         }
       },
       "is_incremental": true,
@@ -381,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Furnace.html",
-          "hash": "4rDvv/9vJwnULi8wnO8LvoBBObLKy4kbgwNqgcP9Chg="
+          "hash": "2RGq2pU+r/R38o6C6yr9K0ezZo2FjmQulbrnJHJOkTc="
         }
       },
       "is_incremental": true,
@@ -441,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.HelixienGas.html",
-          "hash": "vkDjaU3hGy24Tc2SP/wCGBgfGqiOWINQT5JqkS6oBFY="
+          "hash": "r7wItixs0GjGI0acYZdvrVXYKuGsDuKrpIA3ZYPyc5w="
         }
       },
       "is_incremental": true,
@@ -537,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Ideology.html",
-          "hash": "gG4Cz5BG8FsFrghir0KCVeG3rQf4gR9j1qdo/mxFxWQ="
+          "hash": "jMUedNRWBY/saBr1WTPMjQQLDr3kbxF3QXCnI3jGqA0="
         }
       },
       "is_incremental": true,
@@ -585,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModGlowers.html",
-          "hash": "13tyNKkeC/k0Et76YHbDNOaA3lamyFQAKiG5Y4BhiNw="
+          "hash": "YZJYQVmKB3cn695FeV10lyTwa5HLzemM+Rv1czKjvgU="
         }
       },
       "is_incremental": true,
@@ -681,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.QuestionableEthics.html",
-          "hash": "jErZ0JmJgGDQwplHAPRXmg3jyiRNBxvnqb78sYFWg78="
+          "hash": "6Ru+xeFQgLfkGnlEbLTNUqSnNh36PNWdcf8Un95Aa3s="
         }
       },
       "is_incremental": true,
@@ -705,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.html",
-          "hash": "86eaho3p+2CBKo4T6mE8USs7zXQM1it5aV8ZHfDfjsg="
+          "hash": "273jS0Tf/kgrqCP5NnIu8AAXdwESQjaVICu+PiEf3mo="
         }
       },
       "is_incremental": true,
@@ -741,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.VEWallLights.html",
-          "hash": "zgQSUuudkWTVxunqlMNRjN6sg8heO52u7TYldO9Xiug="
+          "hash": "AxkfT7RLll5XnVxKaREk+m2Ei+H9mRVh4bGjKMK7eT8="
         }
       },
       "is_incremental": true,
@@ -777,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.WallLights.html",
-          "hash": "LqmAEh6j1nutYKf7m5OKJ03/DyGOIMAuHGce4a8XDuY="
+          "hash": "Q3R/S5mxQNKVU+PGRyFVUthZHc3lFgXu1BA/nXQ98PI="
         }
       },
       "is_incremental": true,
@@ -789,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.html",
-          "hash": "x+NFLxR87qwEO3l5pjYEZzg85Ei+Cl6eEAbMFlnwZaY="
+          "hash": "33KK3AAHwBmpNovt49XOoUmVIclHulA8WbYFBcrAJUc="
         }
       },
       "is_incremental": true,
@@ -861,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.Power.html",
-          "hash": "RLxVprlxFtc6SB9Zb5SYcaeKiPcHTZ85gNMxwWPdLXY="
+          "hash": "YyBQ6vRkV85sNj1R2QXx/6ApUwRjXGA/QTVExCJRuh8="
         }
       },
       "is_incremental": true,
@@ -897,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.ThingComps.html",
-          "hash": "PF6k+CA4b6oFszs9/LzH++c/zqqaXRhE3T2Ppc+d1bM="
+          "hash": "oXkxHCkCy/+s3EPRWvPZx4ejoQLFFRrO3IZ9LK/zGNQ="
         }
       },
       "is_incremental": true,
@@ -909,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "AXA1yqmLz2IqqnoBvXxwslvJEKIpk1uFVw1UwPcoLrs="
+          "hash": "R9FB3Ju6y6sdQEigRyh5dSu1rq+upC6DWeTdK1azxls="
         }
       },
       "is_incremental": false,

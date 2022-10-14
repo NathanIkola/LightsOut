@@ -40,13 +40,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(RoomIsEmpty): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(RoomIsEmpty): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -92,13 +92,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(AllPawnsSleeping): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(AllPawnsSleeping): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)

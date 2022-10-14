@@ -72,12 +72,14 @@
   <ItemGroup>
     <Compile Include="Boilerplate\ModSettings.cs" />
     <Compile Include="Common\DebugLogger.cs" />
+    <Compile Include="Common\DebugMessageKeys.cs" />
     <Compile Include="Common\Glowers.cs" />
     <Compile Include="Common\Lights.cs" />
     <Compile Include="Common\Rooms.cs" />
     <Compile Include="Common\Tables.cs" />
     <Compile Include="Defs\CustomThingDefs.cs" />
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
+    <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\ModCompatibility\ErinsJapaneseFurniture\ErinsJapaneseFurnitureCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />
@@ -142,16 +144,16 @@ xcopy "$(ProjectDir)_site" "$(ProjectDir)..\..\..\docs"  /Y/E/H/C/I
 echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
 echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\docfx.console.2.59.0\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.0\build\docfx.console.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\docfx.console.2.59.0\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.59.0\build\docfx.console.targets'))" />
+    <Error Condition="!Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.59.3\build\docfx.console.targets'))" />
   </Target>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
-    </VisualStudio>
-  </ProjectExtensions>
 </Project>

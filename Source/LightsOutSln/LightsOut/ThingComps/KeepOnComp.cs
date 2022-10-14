@@ -51,7 +51,7 @@ namespace LightsOut.ThingComps
                 }
                 catch(Exception e)
                 {
-                    DebugLogger.LogWarning($"Caught error of type: {e.GetType()} in KeepOnComp.");
+                    DebugLogger.LogWarning($"Caught error of type: {e.GetType()} in KeepOnComp.", DebugMessageKeys.Comps);
                 }
             }
         }

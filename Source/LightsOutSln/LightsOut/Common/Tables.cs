@@ -1,8 +1,4 @@
-﻿//************************************************
-// Holds all of the common table operations
-//************************************************
-
-using LightsOut.Defs;
+﻿using LightsOut.Defs;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
@@ -98,6 +94,28 @@ namespace LightsOut.Common
             return thing.def == CustomThingDefs.TubeTelevision
                 || thing.def == CustomThingDefs.FlatscreenTelevision
                 || thing.def == CustomThingDefs.MegascreenTelevision;
+        }
+
+        /// <summary>
+        /// Check if anyone else is watching a television
+        /// </summary>
+        /// <param name="tv">The television to check</param>
+        /// <param name="pawn">The pawn that is currently watching</param>
+        /// <returns><see langword="true"/> if another pawn is watching <paramref name="tv"/>, <see langword="false"/> otherwise</returns>
+        public static bool IsAnyoneElseWatching(ThingWithComps tv, Pawn pawn)
+        {
+            if (tv is null || !IsTelevision(tv))
+                return false;
+
+            IEnumerable<IntVec3> watchArea = WatchBuildingUtility.CalculateWatchCells(tv.def, tv.Position, tv.Rotation, tv.Map);
+            foreach (IntVec3 cell in watchArea)
+            {
+                foreach (Thing thing in cell.GetThingList(tv.Map))
+                    if (thing is Pawn p && p != pawn && p.CurJob?.GetTarget(Verse.AI.TargetIndex.A).Thing == tv)
+                        return true;
+            }
+
+            return false;
         }
 
         /// <summary>
