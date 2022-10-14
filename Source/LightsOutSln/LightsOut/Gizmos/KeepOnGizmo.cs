@@ -33,7 +33,7 @@ namespace LightsOut.Gizmos
                 PropertyInfo Order = typeof(KeepOnGizmo).GetProperty("Order", ICompatibilityPatchComponent.BindingFlags);
                 if (Order is null)
                 {
-                    DebugLogger.LogWarning("Failed to get the order field/property for a gizmo");
+                    DebugLogger.LogWarning("Failed to get the order field/property for a gizmo",DebugMessageKeys.Comps);
                 }
                 else
                 {
