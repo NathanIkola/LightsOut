@@ -47,7 +47,7 @@ namespace LightsOut.Boilerplate
         /// <summary>
         /// The resource draw rate of things when they're in-use
         /// </summary>
-        public static float ActiveResourceDrawRate { get; set; } = 0f;
+        public static float ActiveResourceDrawRate { get; set; } = 1f;
 
         /// <summary>
         /// Control whether or not Pawns shut off the lights when

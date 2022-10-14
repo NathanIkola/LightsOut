@@ -30,8 +30,8 @@ namespace LightsOut.Patches.Power
             FieldInfo basePowerConsumption = ___compPowerCached.Props.GetType().GetField("basePowerConsumption", ICompatibilityPatchComponent.BindingFlags);
             DebugLogger.AssertFalse(basePowerConsumption is null, "CompProperties_Power.basePowerConsumption was not found");
             float powerDraw = -(float)basePowerConsumption.GetValue(___compPowerCached.Props);
-            
-            if(powerDraw > 0)
+
+            if(Math.Abs(powerDraw) > 0)
             {
                 if (__instance.Charged) 
                     powerDraw *= ModSettings.StandbyResourceDrawRate;
