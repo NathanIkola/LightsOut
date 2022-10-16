@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LightsOut.Patches.ModCompatibility.SelfLitHydroponics
+﻿namespace LightsOut.Patches.ModCompatibility.SelfLitHydroponics
 {
     /// <summary>
     /// Conditionally applies patches if the SelfLitHydroponics mod is installed

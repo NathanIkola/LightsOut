@@ -77,7 +77,7 @@ namespace LightsOut.Common
                 KeepOnComps.Add(light, comp);
             }
 
-            DebugLogger.AssertFalse(comp is null, $"Found a light that doesn't have a KeepOnComp: {light.def.defName}");
+            DebugLogger.AssertFalse(comp is null, $"Found a light that doesn't have a KeepOnComp: {light.def.defName}", true);
             return comp?.KeepOn ?? false;
         }
 

@@ -81,6 +81,7 @@
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
+    <Compile Include="Patches\ModCompatibility\DubsBadHygiene\DubsBadHygieneCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ErinsJapaneseFurniture\ErinsJapaneseFurnitureCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchInspectMessage.cs" />
@@ -142,12 +143,13 @@ xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\com
 xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures"  /Y/E/H/C/I
 xcopy "$(ProjectDir)..\..\..\1.4" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\1.4"  /Y/E/H/C/I
 xcopy "$(ProjectDir)_site" "$(ProjectDir)..\..\..\docs"  /Y/E/H/C/I
+echo F|xcopy "$(ProjectDir)..\..\..\loadFolders.xml" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\loadFolders.xml" /Y/H/C/I
 echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
 echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
+      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />
