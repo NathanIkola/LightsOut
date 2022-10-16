@@ -1180,6 +1180,57 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.TypeNameToPatch
   nameWithType: PatchIsTable.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  name: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.html
+  commentId: N:LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  nameWithType: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  name: DubsBadHygieneCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  nameWithType: DubsBadHygieneCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  nameWithType: DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  nameWithType: DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  nameWithType: DubsBadHygieneCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  nameWithType: DubsBadHygieneCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
   name: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
   href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.html

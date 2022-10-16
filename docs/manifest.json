@@ -24,7 +24,7 @@
           "hash": "v9CwuPWZ7JiGp0ZAIguL3HTfaWXZ86dax+ZERW1MPk8="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "jxAIThp5FVRknnpOGvSZEJDEqiptZYfG7QpIedu76cg="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -365,6 +365,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html",
+          "hash": "FEI0YVLRaG7T8VRimJz/3gtKQkWAMoajrVdxomF9yzo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.html",
+          "hash": "d4uGQ2GkbzzDLjpeU9Cvlt5uoFkGSujbTjz8vSzBHlM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.yml",
       "output": {
         ".html": {
@@ -477,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
-          "hash": "5+wkbmI8JACI77xCWax12CA+E6D62l1MJJm0i2I3YVA="
+          "hash": "VNkihVFRZ5U2Vgz7Y9gQLEWYaLgsuJ/KPpxF9lEU4ZQ="
         }
       },
       "is_incremental": false,
@@ -573,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
-          "hash": "1I9L/EUdZ875Hs70kEcYZdmGYccD+VKZZMeH3v1nbzk="
+          "hash": "HiCoYNRF2v/pv6HveItp+zVIDMfzIRXRnvU/gTcRsHM="
         }
       },
       "is_incremental": false,
@@ -717,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.SelfLitHydroponics.SelfLitHydroponicsCompatibilityPatch.html",
-          "hash": "HnsBa3fF+cH+j7MAmbl+0XMaFaDHztxsLgYZXbwHBa4="
+          "hash": "UJhj1P0tmZCmpHpsDQWCCqy8UZZ5shY8Xc5VqSAgFmQ="
         }
       },
       "is_incremental": false,
@@ -933,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "R9FB3Ju6y6sdQEigRyh5dSu1rq+upC6DWeTdK1azxls="
+          "hash": "t4+0tjypeu2iW8q5wrIJzwsbXYilSPHVPsvatpmCpEw="
         }
       },
       "is_incremental": false,
@@ -955,25 +979,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 3,
-          "skipped_file_count": 0
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 73,
-          "skipped_file_count": 0
+          "total_file_count": 75,
+          "skipped_file_count": 70
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -986,8 +1008,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
