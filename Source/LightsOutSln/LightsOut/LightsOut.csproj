@@ -83,6 +83,8 @@
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\ModCompatibility\DubsBadHygiene\DubsBadHygieneCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ErinsJapaneseFurniture\ErinsJapaneseFurnitureCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ExtinguishRefuelables\DisallowCustomOverlay.cs" />
+    <Compile Include="Patches\ModCompatibility\ExtinguishRefuelables\ExtinguishRefuelablesCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchInspectMessage.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchPostSpawnSetup.cs" />
@@ -149,7 +151,7 @@ echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />

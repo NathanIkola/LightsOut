@@ -15,6 +15,7 @@ using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
 using LightsOut.Patches.ModCompatibility.QuestionableEthics;
 using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
 using LightsOut.Patches.ModCompatibility.DubsBadHygiene;
+using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -38,6 +39,7 @@ namespace LightsOut.Patches.ModCompatibility
             new QECompatibilityPatch(),
             new ErinsJapaneseFurnitureCompatibilityPatch(),
             new DubsBadHygieneCompatibilityPatch(),
+            new ExtinguishRefuelablesCompatibilityPatch(),
         };
 
         /// <summary>
