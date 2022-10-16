@@ -1,5 +1,8 @@
 ﻿namespace LightsOut.Patches.ModCompatibility.DubsBadHygiene
 {
+    /// <summary>
+    /// Detects if Dubs Bad Hygiene is installed and patches it if so
+    /// </summary>
     public class DubsBadHygieneCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "DubsBadHygiene";
