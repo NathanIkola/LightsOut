@@ -204,7 +204,7 @@
           "hash": "+B3YoWr0tmePQOL/TCagM++sfoAVAeyyV87kOLvkoPc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -216,7 +216,7 @@
           "hash": "+W++jPIkIWuwYH99iqQaAlvjAoaKrXHCOtzH6zRFQL0="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -358,6 +358,42 @@
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.Androids.html",
           "hash": "51dlJ6P0FjaQlb2W0/7qyTnHUTQg8XrCR45hCCHnaKM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html",
+          "hash": "oXAc39vIw8R5nWJb7fOuqa2GaCRFlFfoxLoaSaIStU0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html",
+          "hash": "sRtfWaP8pQXzmUtMn0W0Y9WkNhL4Xg8TdOBxnscAngc="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ColonyManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.ColonyManager.html",
+          "hash": "Op6d15E1EuqzzVdqzQP/xl5ue6IqeYosY/1Evg0rr2g="
         }
       },
       "is_incremental": true,
@@ -537,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
-          "hash": "gkSRI5ZR4Xf32+txQETkltCFNNSco6Zi7BqKJErILsM="
+          "hash": "5tVsCRvl+BlLMZitnRNC5II3LoVO7UwP4r6ZAA/60O8="
         }
       },
       "is_incremental": true,
@@ -561,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatchComponent.html",
-          "hash": "rTXaU8YSpsJobAcGng2NciC9WVN8gi5RIqlrTM5ViLw="
+          "hash": "psf50w9QCLgzr3kiJx0mYlFZbUx4HHTi2GIeWdYxHJQ="
         }
       },
       "is_incremental": true,
@@ -633,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
-          "hash": "oT/JqCXT4wmdk1Cq9cyXcwM5JQrwPbqSVqgczWzk+i4="
+          "hash": "pu4qDcKNABiEBAeEYkIwrCGoEOiA6eplAD0Aer0/+sM="
         }
       },
       "is_incremental": true,
@@ -960,7 +996,7 @@
           "hash": "81jmamir/C4WbaOq9a08p7wx1i2N2ilQyn1FvwKRkng="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -972,7 +1008,7 @@
           "hash": "5qXbnj8Wdgds5BCTnLAoLtbQf6Vvmt2H36IgfbQ7inE="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -984,7 +1020,7 @@
           "hash": "oXkxHCkCy/+s3EPRWvPZx4ejoQLFFRrO3IZ9LK/zGNQ="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -993,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jqqFrfUMoSn/3ZRZwVUJogRSB18A/foXhqH52aOTwZk="
+          "hash": "i2/5V08lC4M9EFwrG976FjqEPpAlIbq7v6AVzV862Gs="
         }
       },
       "is_incremental": false,
@@ -1030,8 +1066,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 78,
-          "skipped_file_count": 75
+          "total_file_count": 81,
+          "skipped_file_count": 81
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

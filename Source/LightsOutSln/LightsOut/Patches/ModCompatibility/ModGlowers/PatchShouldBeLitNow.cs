@@ -52,6 +52,12 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
             if (getter is null)
                 return new List<PatchInfo>();
 
+            if (getter.DeclaringType != getter.ReflectedType)
+            {
+                DebugLogger.LogInfo($"       failed to patch \"{type.Namespace} - {type.Name}\" to count as a glower; it does not define any known ShouldBeLitNow properties", DebugMessageKeys.Mods);
+                return new List<PatchInfo>();
+            }
+
             PatchInfo patch = new PatchInfo
             {
                 method = getter.GetMethod,
