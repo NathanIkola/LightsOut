@@ -16,6 +16,7 @@ using LightsOut.Patches.ModCompatibility.QuestionableEthics;
 using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
 using LightsOut.Patches.ModCompatibility.DubsBadHygiene;
 using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
+using LightsOut.Patches.ModCompatibility.ColonyManager;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -40,6 +41,7 @@ namespace LightsOut.Patches.ModCompatibility
             new ErinsJapaneseFurnitureCompatibilityPatch(),
             new DubsBadHygieneCompatibilityPatch(),
             new ExtinguishRefuelablesCompatibilityPatch(),
+            new ColonyManagerCompatibilityPatch(),
         };
 
         /// <summary>
