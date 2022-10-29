@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using Verse;
 using LightsOut.Common;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {
@@ -14,7 +15,11 @@ namespace LightsOut.Patches.Power
         /// </summary>
         public static void Prefix()
         {
-            Resources.DecrementAllTicksRemaining();
+            // don't need to check every single tick
+            if (GenTicks.TicksGame % ModSettings.TicksBetweenDecrement == 0)
+                Resources.DecrementAllTicksRemaining();
         }
+
+
     }
 }

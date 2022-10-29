@@ -65,6 +65,32 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.DefsLoaded
   nameWithType: ModSettings.DefsLoaded
+- uid: LightsOut.Boilerplate.ModSettings.DelaySeconds
+  name: DelaySeconds
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DelaySeconds
+  commentId: P:LightsOut.Boilerplate.ModSettings.DelaySeconds
+  fullName: LightsOut.Boilerplate.ModSettings.DelaySeconds
+  nameWithType: ModSettings.DelaySeconds
+- uid: LightsOut.Boilerplate.ModSettings.DelaySeconds*
+  name: DelaySeconds
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DelaySeconds_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.DelaySeconds
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.DelaySeconds
+  nameWithType: ModSettings.DelaySeconds
+- uid: LightsOut.Boilerplate.ModSettings.DelayTicks
+  name: DelayTicks
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DelayTicks
+  commentId: P:LightsOut.Boilerplate.ModSettings.DelayTicks
+  fullName: LightsOut.Boilerplate.ModSettings.DelayTicks
+  nameWithType: ModSettings.DelayTicks
+- uid: LightsOut.Boilerplate.ModSettings.DelayTicks*
+  name: DelayTicks
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DelayTicks_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.DelayTicks
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.DelayTicks
+  nameWithType: ModSettings.DelayTicks
 - uid: LightsOut.Boilerplate.ModSettings.FlickLights
   name: FlickLights
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_FlickLights
@@ -420,12 +446,15 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Glowers.CompGlowers
   nameWithType: Glowers.CompGlowers
-- uid: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
-  name: DisableGlower(ThingComp)
-  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_Verse_ThingComp_
-  commentId: M:LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
-  fullName: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
-  nameWithType: Glowers.DisableGlower(ThingComp)
+- uid: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp,System.Nullable{System.Int32})
+  name: DisableGlower(ThingComp, Nullable<Int32>)
+  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_Verse_ThingComp_System_Nullable_System_Int32__
+  commentId: M:LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp,System.Nullable{System.Int32})
+  name.vb: DisableGlower(ThingComp, Nullable(Of Int32))
+  fullName: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp, System.Nullable<System.Int32>)
+  fullName.vb: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp, System.Nullable(Of System.Int32))
+  nameWithType: Glowers.DisableGlower(ThingComp, Nullable<Int32>)
+  nameWithType.vb: Glowers.DisableGlower(ThingComp, Nullable(Of Int32))
 - uid: LightsOut.Common.Glowers.DisableGlower*
   name: DisableGlower
   href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_
@@ -517,12 +546,15 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.DisableAllLights
   nameWithType: Lights.DisableAllLights
-- uid: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
-  name: DisableLight(ThingWithComps)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_ThingWithComps_
-  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
-  fullName: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
-  nameWithType: Lights.DisableLight(ThingWithComps)
+- uid: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps,System.Nullable{System.Int32})
+  name: DisableLight(ThingWithComps, Nullable<Int32>)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_ThingWithComps_System_Nullable_System_Int32__
+  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps,System.Nullable{System.Int32})
+  name.vb: DisableLight(ThingWithComps, Nullable(Of Int32))
+  fullName: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps, System.Nullable<System.Int32>)
+  fullName.vb: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps, System.Nullable(Of System.Int32))
+  nameWithType: Lights.DisableLight(ThingWithComps, Nullable<Int32>)
+  nameWithType.vb: Lights.DisableLight(ThingWithComps, Nullable(Of Int32))
 - uid: LightsOut.Common.Lights.DisableLight*
   name: DisableLight
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_
@@ -633,6 +665,45 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.CanConsumeResources
   nameWithType: Resources.CanConsumeResources
+- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining
+  name: DecrementAllTicksRemaining()
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining
+  commentId: M:LightsOut.Common.Resources.DecrementAllTicksRemaining
+  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining()
+  nameWithType: Resources.DecrementAllTicksRemaining()
+- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining*
+  name: DecrementAllTicksRemaining
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining_
+  commentId: Overload:LightsOut.Common.Resources.DecrementAllTicksRemaining
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining
+  nameWithType: Resources.DecrementAllTicksRemaining
+- uid: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
+  name: DecrementTicksRemaining(ThingWithComps)
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
+  nameWithType: Resources.DecrementTicksRemaining(ThingWithComps)
+- uid: LightsOut.Common.Resources.DecrementTicksRemaining*
+  name: DecrementTicksRemaining
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_
+  commentId: Overload:LightsOut.Common.Resources.DecrementTicksRemaining
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.DecrementTicksRemaining
+  nameWithType: Resources.DecrementTicksRemaining
+- uid: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
+  name: GetTicksRemaining(ThingWithComps)
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
+  nameWithType: Resources.GetTicksRemaining(ThingWithComps)
+- uid: LightsOut.Common.Resources.GetTicksRemaining*
+  name: GetTicksRemaining
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_
+  commentId: Overload:LightsOut.Common.Resources.GetTicksRemaining
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.GetTicksRemaining
+  nameWithType: Resources.GetTicksRemaining
 - uid: LightsOut.Common.Resources.IsCharged(Verse.ThingWithComps)
   name: IsCharged(ThingWithComps)
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsCharged_Verse_ThingWithComps_
@@ -681,6 +752,22 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.SetConsumesResources
   nameWithType: Resources.SetConsumesResources
+- uid: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps,System.Nullable{System.Int32})
+  name: SetTicksRemaining(ThingWithComps, Nullable<Int32>)
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_SetTicksRemaining_Verse_ThingWithComps_System_Nullable_System_Int32__
+  commentId: M:LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps,System.Nullable{System.Int32})
+  name.vb: SetTicksRemaining(ThingWithComps, Nullable(Of Int32))
+  fullName: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps, System.Nullable<System.Int32>)
+  fullName.vb: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps, System.Nullable(Of System.Int32))
+  nameWithType: Resources.SetTicksRemaining(ThingWithComps, Nullable<Int32>)
+  nameWithType.vb: Resources.SetTicksRemaining(ThingWithComps, Nullable(Of Int32))
+- uid: LightsOut.Common.Resources.SetTicksRemaining*
+  name: SetTicksRemaining
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_SetTicksRemaining_
+  commentId: Overload:LightsOut.Common.Resources.SetTicksRemaining
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.SetTicksRemaining
+  nameWithType: Resources.SetTicksRemaining
 - uid: LightsOut.Common.Rooms
   name: Rooms
   href: api/LightsOut.Common.Rooms.html
@@ -947,12 +1034,15 @@ references:
   commentId: T:LightsOut.Patches.Lights.DetectPawnRoomChange
   fullName: LightsOut.Patches.Lights.DetectPawnRoomChange
   nameWithType: DetectPawnRoomChange
-- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
-  name: Postfix(Pawn)
-  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_
-  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
-  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn)
-  nameWithType: DetectPawnRoomChange.Postfix(Pawn)
+- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn,Verse.Room@)
+  name: Postfix(Pawn, ref Room)
+  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_Verse_Room__
+  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn,Verse.Room@)
+  name.vb: Postfix(Pawn, ByRef Room)
+  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn, ref Verse.Room)
+  fullName.vb: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn, ByRef Verse.Room)
+  nameWithType: DetectPawnRoomChange.Postfix(Pawn, ref Room)
+  nameWithType.vb: DetectPawnRoomChange.Postfix(Pawn, ByRef Room)
 - uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix*
   name: Postfix
   href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_
@@ -960,12 +1050,15 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix
   nameWithType: DetectPawnRoomChange.Postfix
-- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
-  name: Prefix(Pawn)
-  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_
-  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
-  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn)
-  nameWithType: DetectPawnRoomChange.Prefix(Pawn)
+- uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn,Verse.Room@)
+  name: Prefix(Pawn, ref Room)
+  href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_Verse_Room__
+  commentId: M:LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn,Verse.Room@)
+  name.vb: Prefix(Pawn, ByRef Room)
+  fullName: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn, ref Verse.Room)
+  fullName.vb: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn, ByRef Verse.Room)
+  nameWithType: DetectPawnRoomChange.Prefix(Pawn, ref Room)
+  nameWithType.vb: DetectPawnRoomChange.Prefix(Pawn, ByRef Room)
 - uid: LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix*
   name: Prefix
   href: api/LightsOut.Patches.Lights.DetectPawnRoomChange.html#LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_
@@ -3019,6 +3112,25 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Power.AddStandbyInspectMessagePatch.Postfix
   nameWithType: AddStandbyInspectMessagePatch.Postfix
+- uid: LightsOut.Patches.Power.DecrementTickCounts
+  name: DecrementTickCounts
+  href: api/LightsOut.Patches.Power.DecrementTickCounts.html
+  commentId: T:LightsOut.Patches.Power.DecrementTickCounts
+  fullName: LightsOut.Patches.Power.DecrementTickCounts
+  nameWithType: DecrementTickCounts
+- uid: LightsOut.Patches.Power.DecrementTickCounts.Prefix
+  name: Prefix()
+  href: api/LightsOut.Patches.Power.DecrementTickCounts.html#LightsOut_Patches_Power_DecrementTickCounts_Prefix
+  commentId: M:LightsOut.Patches.Power.DecrementTickCounts.Prefix
+  fullName: LightsOut.Patches.Power.DecrementTickCounts.Prefix()
+  nameWithType: DecrementTickCounts.Prefix()
+- uid: LightsOut.Patches.Power.DecrementTickCounts.Prefix*
+  name: Prefix
+  href: api/LightsOut.Patches.Power.DecrementTickCounts.html#LightsOut_Patches_Power_DecrementTickCounts_Prefix_
+  commentId: Overload:LightsOut.Patches.Power.DecrementTickCounts.Prefix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Power.DecrementTickCounts.Prefix
+  nameWithType: DecrementTickCounts.Prefix
 - uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet
   name: DisableBasePowerDrawOnGet
   href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html
