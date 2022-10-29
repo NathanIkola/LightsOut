@@ -22,7 +22,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
-            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
+            DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
             ThingComp glower = Glowers.GetGlower(light);
             DebugLogger.AssertFalse(glower is null, $"EnableLight called on a building without an approved glower: {light.def.defName}");
@@ -41,7 +41,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !ModSettings.FlickLights) return;
 
-            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", true);
+            DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
             if (Rooms.GetRoom(light).OutdoorsForWork) return;
 
@@ -78,7 +78,7 @@ namespace LightsOut.Common
                 KeepOnComps.Add(light, comp);
             }
 
-            DebugLogger.AssertFalse(comp is null, $"Found a light that doesn't have a KeepOnComp: {light.def.defName}");
+            DebugLogger.AssertFalse(comp is null, $"Found a light that doesn't have a KeepOnComp: {light.def.defName}", true);
             return comp?.KeepOn ?? false;
         }
 
@@ -110,13 +110,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(DisableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(DisableAllLights): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(DisableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -153,13 +153,13 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(EnableAllLights): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(EnableAllLights): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(EnableAllLights): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
@@ -180,15 +180,15 @@ namespace LightsOut.Common
         /// off the lights, <see langword="false"/> otherwise</returns>
         public static bool ShouldTurnOffAllLights(Room room, Pawn excludedPawn)
         {
-            // never turn off the lights if we aren't supposed to
-            if (!ModSettings.FlickLights)
-                return false;
-
             // if pawns are allowed to turn off the lights at night
             // then only check if all pawns are asleep (which intrinsically
             // also checks for pawn presence)
             if (!ModSettings.NightLights)
                 return Rooms.AllPawnsSleeping(room, excludedPawn);
+
+            // otherwise, if we aren't allowed to turn off the lights in normal rooms then bail out
+            if (!ModSettings.FlickLights)
+                return false;
 
             // otherwise only check for pawns in the room
             return Rooms.RoomIsEmpty(room, excludedPawn);

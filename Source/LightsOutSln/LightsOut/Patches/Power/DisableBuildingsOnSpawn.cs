@@ -52,13 +52,13 @@ namespace LightsOut.Patches.Power
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(SpawnSetup): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(SpawnSetup): InvalidOperationException: {e.Message}", DebugMessageKeys.Patches + DebugMessageKeys.Comps);
                         removed = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(SpawnSetup): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Patches + DebugMessageKeys.Comps);
         }
     }
 }

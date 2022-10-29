@@ -11,20 +11,52 @@ namespace LightsOut.Common
     public static class DebugLogger
     {
         /// <summary>
-        /// Alias for the DebugMessages mod setting property
+        /// Alias for the message filters mod setting property
         /// </summary>
-        private static bool ShouldLog => Boilerplate.ModSettings.DebugMessages;
+        private static string[] MessageFilters => Boilerplate.ModSettings.MessageFilters;
 
         /// <summary>
-        /// Alias for the SpamMessages mod setting property
+        /// Checks whether the specific debug message should be logged
         /// </summary>
-        private static bool ShouldSpam => Boilerplate.ModSettings.SpamMessages;
+        /// <param name="keyString">A list of debug message keys to log</param>
+        /// <returns><see langword="true"/> if the messages should be logged, 
+        /// <see langword="false"/> otherwise</returns>
+        private static bool ShouldLog(string keyString)
+        {
+            if (string.IsNullOrWhiteSpace(keyString))
+                return false;
+
+            string[] keys = keyString.ToLower().Split(' ');
+
+            bool allowAll = false;
+            foreach (string allowedKey in MessageFilters)
+            {
+                // split introduces the empty string :(
+                if (allowedKey.Equals(string.Empty))
+                    continue;
+
+                // there could still be disallowed keys specified later
+                if (allowedKey.Equals("all")) 
+                    allowAll = true;
+
+                foreach (string key in keys)
+                {
+                    // explicitly allowed key
+                    if (key.Equals(allowedKey)) return true;
+
+                    // explicitly disallowed key
+                    if (allowedKey.Equals('!' + key)) return false;
+                }
+            }
+
+            return allowAll;
+        }
 
         /// <summary>
         /// Adds the debug header to a message
         /// </summary>
         /// <param name="message">The message to print</param>
-        /// <returns>The message witht he debug header prepended</returns>
+        /// <returns>The message with the debug header prepended</returns>
         private static string AddDebugHeader(string message)
         {
             return "<color=orange>[LightsOut - Debug]</color> " + message;
@@ -36,12 +68,11 @@ namespace LightsOut.Common
         /// know, but are not problematic
         /// </summary>
         /// <param name="message">The message to print</param>
-        /// <param name="isSpammy">Whether this message is logged
-        /// often enough to be considered console spam</param>
-        public static void LogInfo(string message, bool isSpammy = false)
+        /// <param name="keys">A list of keys that apply to this message</param>
+        public static void LogInfo(string message, string keys)
         {
-            if (!ShouldSpam && isSpammy) return;
-            if (ShouldLog) Log.Message(AddDebugHeader(message));
+            keys = "info " + keys;
+            if (ShouldLog(keys)) Log.Message(AddDebugHeader(message));
         }
 
         /// <summary>
@@ -50,9 +81,11 @@ namespace LightsOut.Common
         /// issues, but aren't causing any fatal problems
         /// </summary>
         /// <param name="message">The message to print</param>
-        public static void LogWarning(string message)
+        /// <param name="keys">A list of keys that apply to this message</param>
+        public static void LogWarning(string message, string keys)
         {
-            if (ShouldLog) Log.Warning(AddDebugHeader(message));
+            keys = "warning " + keys;
+            if (ShouldLog(keys)) Log.Warning(AddDebugHeader(message));
         }
 
         /// <summary>
@@ -61,9 +94,11 @@ namespace LightsOut.Common
         /// gone terribly, terribly wrong.
         /// </summary>
         /// <param name="message">The message to print</param>
-        public static void LogError(string message)
+        /// <param name="keys">A list of keys that apply to this message</param>
+        public static void LogError(string message, string keys)
         {
-            if (ShouldLog) Log.Error(AddDebugHeader(message));
+            keys = "error " + keys;
+            if (ShouldLog(keys)) Log.Error(AddDebugHeader(message));
         }
 
         /// <summary>
@@ -72,9 +107,11 @@ namespace LightsOut.Common
         /// </summary>
         /// <param name="message">The message to print</param>
         /// <param name="errorKey">The error's key (unique for each error)</param>
-        public static void LogErrorOnce(string message, int errorKey)
+        /// <param name="debugKeys">A list of keys that apply to this message</param>
+        public static void LogErrorOnce(string message, int errorKey, string debugKeys)
         {
-            if (ShouldLog) Log.ErrorOnce(AddDebugHeader(message), errorKey);
+            debugKeys = "error " + debugKeys;
+            if (ShouldLog(debugKeys)) Log.ErrorOnce(AddDebugHeader(message), errorKey);
         }
 
         /// <summary>
@@ -82,15 +119,16 @@ namespace LightsOut.Common
         /// many times it was encountered.
         /// </summary>
         /// <param name="message"></param>
+        /// <param name="keys">A list of keys that apply to this message</param>
         /// <remarks>
         /// Uses the hash of <paramref name="message"/>
         /// to only log the message once. If you make <paramref name="message"/> have dynamic
         /// content, it will appear once for every unique version of <paramref name="message"/>
         /// that is passed in.
         /// </remarks>
-        public static void LogErrorOnce(string message)
+        public static void LogErrorOnce(string message, string keys)
         {
-            if (ShouldLog) LogErrorOnce(message, message.GetHashCode());
+            LogErrorOnce(message, message.GetHashCode(), keys);
         }
 
         /// <summary>
@@ -112,9 +150,9 @@ namespace LightsOut.Common
             if (expression) return;
 
             if (onlyOnce)
-                LogErrorOnce(failMessage, failMessage.GetHashCode());
+                LogErrorOnce(failMessage, failMessage.GetHashCode(), DebugMessageKeys.Assert);
             else
-                LogError(failMessage);
+                LogError(failMessage, DebugMessageKeys.Assert);
         }
 
         /// <summary>

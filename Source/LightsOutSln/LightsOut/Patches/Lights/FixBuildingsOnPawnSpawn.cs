@@ -24,8 +24,6 @@ namespace LightsOut.Patches.Lights
         /// <param name="__instance"></param>
         public static void Postfix(Pawn __instance)
         {
-            if (__instance.RaceProps.Animal) return;
-
             JobDriver driver = __instance.jobs?.curDriver;
             if (driver is null)
                 return;
@@ -56,7 +54,7 @@ namespace LightsOut.Patches.Lights
                         Tables.DisableTable(building); 
                 });
             }
-            else if(driver.asleep && ModSettings.FlickLights && !ModSettings.NightLights)
+            else if(driver.asleep && !ModSettings.NightLights)
             {
                 // ask the pawn to nicely turn off the lights when they start sleeping
                 toil.AddPreTickAction(() =>

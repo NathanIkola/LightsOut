@@ -39,19 +39,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate
   nameWithType: ModSettings.ActiveResourceDrawRate
-- uid: LightsOut.Boilerplate.ModSettings.DebugMessages
-  name: DebugMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DebugMessages
-  commentId: P:LightsOut.Boilerplate.ModSettings.DebugMessages
-  fullName: LightsOut.Boilerplate.ModSettings.DebugMessages
-  nameWithType: ModSettings.DebugMessages
-- uid: LightsOut.Boilerplate.ModSettings.DebugMessages*
-  name: DebugMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DebugMessages_
-  commentId: Overload:LightsOut.Boilerplate.ModSettings.DebugMessages
+- uid: LightsOut.Boilerplate.ModSettings.AnimalParty
+  name: AnimalParty
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_AnimalParty
+  commentId: P:LightsOut.Boilerplate.ModSettings.AnimalParty
+  fullName: LightsOut.Boilerplate.ModSettings.AnimalParty
+  nameWithType: ModSettings.AnimalParty
+- uid: LightsOut.Boilerplate.ModSettings.AnimalParty*
+  name: AnimalParty
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_AnimalParty_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.AnimalParty
   isSpec: "True"
-  fullName: LightsOut.Boilerplate.ModSettings.DebugMessages
-  nameWithType: ModSettings.DebugMessages
+  fullName: LightsOut.Boilerplate.ModSettings.AnimalParty
+  nameWithType: ModSettings.AnimalParty
 - uid: LightsOut.Boilerplate.ModSettings.DefsLoaded
   name: DefsLoaded()
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DefsLoaded
@@ -91,6 +91,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.Harmony
   nameWithType: ModSettings.Harmony
+- uid: LightsOut.Boilerplate.ModSettings.MessageFilters
+  name: MessageFilters
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_MessageFilters
+  commentId: P:LightsOut.Boilerplate.ModSettings.MessageFilters
+  fullName: LightsOut.Boilerplate.ModSettings.MessageFilters
+  nameWithType: ModSettings.MessageFilters
+- uid: LightsOut.Boilerplate.ModSettings.MessageFilters*
+  name: MessageFilters
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_MessageFilters_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.MessageFilters
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.MessageFilters
+  nameWithType: ModSettings.MessageFilters
 - uid: LightsOut.Boilerplate.ModSettings.ModIdentifier
   name: ModIdentifier
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_ModIdentifier
@@ -130,19 +143,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.SettingsChanged
   nameWithType: ModSettings.SettingsChanged
-- uid: LightsOut.Boilerplate.ModSettings.SpamMessages
-  name: SpamMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages
-  commentId: P:LightsOut.Boilerplate.ModSettings.SpamMessages
-  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
-  nameWithType: ModSettings.SpamMessages
-- uid: LightsOut.Boilerplate.ModSettings.SpamMessages*
-  name: SpamMessages
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_SpamMessages_
-  commentId: Overload:LightsOut.Boilerplate.ModSettings.SpamMessages
-  isSpec: "True"
-  fullName: LightsOut.Boilerplate.ModSettings.SpamMessages
-  nameWithType: ModSettings.SpamMessages
 - uid: LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate
   name: StandbyResourceDrawRate
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate
@@ -194,12 +194,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.AssertFalse
   nameWithType: DebugLogger.AssertFalse
-- uid: LightsOut.Common.DebugLogger.LogError(System.String)
-  name: LogError(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogError(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogError(System.String)
-  nameWithType: DebugLogger.LogError(String)
+- uid: LightsOut.Common.DebugLogger.LogError(System.String,System.String)
+  name: LogError(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogError(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogError(System.String, System.String)
+  nameWithType: DebugLogger.LogError(String, String)
 - uid: LightsOut.Common.DebugLogger.LogError*
   name: LogError
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogError_
@@ -207,18 +207,18 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogError
   nameWithType: DebugLogger.LogError
-- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  name: LogErrorOnce(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String)
-  nameWithType: DebugLogger.LogErrorOnce(String)
-- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32)
-  name: LogErrorOnce(String, Int32)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_
-  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32)
-  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.Int32)
-  nameWithType: DebugLogger.LogErrorOnce(String, Int32)
+- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32,System.String)
+  name: LogErrorOnce(String, Int32, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.Int32, System.String)
+  nameWithType: DebugLogger.LogErrorOnce(String, Int32, String)
+- uid: LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.String)
+  name: LogErrorOnce(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogErrorOnce(System.String, System.String)
+  nameWithType: DebugLogger.LogErrorOnce(String, String)
 - uid: LightsOut.Common.DebugLogger.LogErrorOnce*
   name: LogErrorOnce
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogErrorOnce_
@@ -226,12 +226,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogErrorOnce
   nameWithType: DebugLogger.LogErrorOnce
-- uid: LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
-  name: LogInfo(String, Boolean)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_System_Boolean_
-  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String,System.Boolean)
-  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String, System.Boolean)
-  nameWithType: DebugLogger.LogInfo(String, Boolean)
+- uid: LightsOut.Common.DebugLogger.LogInfo(System.String,System.String)
+  name: LogInfo(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogInfo(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogInfo(System.String, System.String)
+  nameWithType: DebugLogger.LogInfo(String, String)
 - uid: LightsOut.Common.DebugLogger.LogInfo*
   name: LogInfo
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogInfo_
@@ -239,12 +239,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogInfo
   nameWithType: DebugLogger.LogInfo
-- uid: LightsOut.Common.DebugLogger.LogWarning(System.String)
-  name: LogWarning(String)
-  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_System_String_
-  commentId: M:LightsOut.Common.DebugLogger.LogWarning(System.String)
-  fullName: LightsOut.Common.DebugLogger.LogWarning(System.String)
-  nameWithType: DebugLogger.LogWarning(String)
+- uid: LightsOut.Common.DebugLogger.LogWarning(System.String,System.String)
+  name: LogWarning(String, String)
+  href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_System_String_System_String_
+  commentId: M:LightsOut.Common.DebugLogger.LogWarning(System.String,System.String)
+  fullName: LightsOut.Common.DebugLogger.LogWarning(System.String, System.String)
+  nameWithType: DebugLogger.LogWarning(String, String)
 - uid: LightsOut.Common.DebugLogger.LogWarning*
   name: LogWarning
   href: api/LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_LogWarning_
@@ -252,6 +252,142 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.DebugLogger.LogWarning
   nameWithType: DebugLogger.LogWarning
+- uid: LightsOut.Common.DebugMessageKeys
+  name: DebugMessageKeys
+  href: api/LightsOut.Common.DebugMessageKeys.html
+  commentId: T:LightsOut.Common.DebugMessageKeys
+  fullName: LightsOut.Common.DebugMessageKeys
+  nameWithType: DebugMessageKeys
+- uid: LightsOut.Common.DebugMessageKeys.Assert
+  name: Assert
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Assert
+  commentId: P:LightsOut.Common.DebugMessageKeys.Assert
+  fullName: LightsOut.Common.DebugMessageKeys.Assert
+  nameWithType: DebugMessageKeys.Assert
+- uid: LightsOut.Common.DebugMessageKeys.Assert*
+  name: Assert
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Assert_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Assert
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Assert
+  nameWithType: DebugMessageKeys.Assert
+- uid: LightsOut.Common.DebugMessageKeys.Comps
+  name: Comps
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Comps
+  commentId: P:LightsOut.Common.DebugMessageKeys.Comps
+  fullName: LightsOut.Common.DebugMessageKeys.Comps
+  nameWithType: DebugMessageKeys.Comps
+- uid: LightsOut.Common.DebugMessageKeys.Comps*
+  name: Comps
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Comps_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Comps
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Comps
+  nameWithType: DebugMessageKeys.Comps
+- uid: LightsOut.Common.DebugMessageKeys.Error
+  name: Error
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Error
+  commentId: P:LightsOut.Common.DebugMessageKeys.Error
+  fullName: LightsOut.Common.DebugMessageKeys.Error
+  nameWithType: DebugMessageKeys.Error
+- uid: LightsOut.Common.DebugMessageKeys.Error*
+  name: Error
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Error_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Error
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Error
+  nameWithType: DebugMessageKeys.Error
+- uid: LightsOut.Common.DebugMessageKeys.Glowers
+  name: Glowers
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Glowers
+  commentId: P:LightsOut.Common.DebugMessageKeys.Glowers
+  fullName: LightsOut.Common.DebugMessageKeys.Glowers
+  nameWithType: DebugMessageKeys.Glowers
+- uid: LightsOut.Common.DebugMessageKeys.Glowers*
+  name: Glowers
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Glowers_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Glowers
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Glowers
+  nameWithType: DebugMessageKeys.Glowers
+- uid: LightsOut.Common.DebugMessageKeys.Info
+  name: Info
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Info
+  commentId: P:LightsOut.Common.DebugMessageKeys.Info
+  fullName: LightsOut.Common.DebugMessageKeys.Info
+  nameWithType: DebugMessageKeys.Info
+- uid: LightsOut.Common.DebugMessageKeys.Info*
+  name: Info
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Info_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Info
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Info
+  nameWithType: DebugMessageKeys.Info
+- uid: LightsOut.Common.DebugMessageKeys.Lights
+  name: Lights
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Lights
+  commentId: P:LightsOut.Common.DebugMessageKeys.Lights
+  fullName: LightsOut.Common.DebugMessageKeys.Lights
+  nameWithType: DebugMessageKeys.Lights
+- uid: LightsOut.Common.DebugMessageKeys.Lights*
+  name: Lights
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Lights_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Lights
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Lights
+  nameWithType: DebugMessageKeys.Lights
+- uid: LightsOut.Common.DebugMessageKeys.Mods
+  name: Mods
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Mods
+  commentId: P:LightsOut.Common.DebugMessageKeys.Mods
+  fullName: LightsOut.Common.DebugMessageKeys.Mods
+  nameWithType: DebugMessageKeys.Mods
+- uid: LightsOut.Common.DebugMessageKeys.Mods*
+  name: Mods
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Mods_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Mods
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Mods
+  nameWithType: DebugMessageKeys.Mods
+- uid: LightsOut.Common.DebugMessageKeys.Patches
+  name: Patches
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Patches
+  commentId: P:LightsOut.Common.DebugMessageKeys.Patches
+  fullName: LightsOut.Common.DebugMessageKeys.Patches
+  nameWithType: DebugMessageKeys.Patches
+- uid: LightsOut.Common.DebugMessageKeys.Patches*
+  name: Patches
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Patches_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Patches
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Patches
+  nameWithType: DebugMessageKeys.Patches
+- uid: LightsOut.Common.DebugMessageKeys.Settings
+  name: Settings
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Settings
+  commentId: P:LightsOut.Common.DebugMessageKeys.Settings
+  fullName: LightsOut.Common.DebugMessageKeys.Settings
+  nameWithType: DebugMessageKeys.Settings
+- uid: LightsOut.Common.DebugMessageKeys.Settings*
+  name: Settings
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Settings_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Settings
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Settings
+  nameWithType: DebugMessageKeys.Settings
+- uid: LightsOut.Common.DebugMessageKeys.Warning
+  name: Warning
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Warning
+  commentId: P:LightsOut.Common.DebugMessageKeys.Warning
+  fullName: LightsOut.Common.DebugMessageKeys.Warning
+  nameWithType: DebugMessageKeys.Warning
+- uid: LightsOut.Common.DebugMessageKeys.Warning*
+  name: Warning
+  href: api/LightsOut.Common.DebugMessageKeys.html#LightsOut_Common_DebugMessageKeys_Warning_
+  commentId: Overload:LightsOut.Common.DebugMessageKeys.Warning
+  isSpec: "True"
+  fullName: LightsOut.Common.DebugMessageKeys.Warning
+  nameWithType: DebugMessageKeys.Warning
 - uid: LightsOut.Common.Glowers
   name: Glowers
   href: api/LightsOut.Common.Glowers.html
@@ -284,15 +420,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Glowers.CompGlowers
   nameWithType: Glowers.CompGlowers
-- uid: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp,System.Nullable{System.Int32})
-  name: DisableGlower(ThingComp, Nullable<Int32>)
-  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_Verse_ThingComp_System_Nullable_System_Int32__
-  commentId: M:LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp,System.Nullable{System.Int32})
-  name.vb: DisableGlower(ThingComp, Nullable(Of Int32))
-  fullName: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp, System.Nullable<System.Int32>)
-  fullName.vb: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp, System.Nullable(Of System.Int32))
-  nameWithType: Glowers.DisableGlower(ThingComp, Nullable<Int32>)
-  nameWithType.vb: Glowers.DisableGlower(ThingComp, Nullable(Of Int32))
+- uid: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
+  name: DisableGlower(ThingComp)
+  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_Verse_ThingComp_
+  commentId: M:LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
+  fullName: LightsOut.Common.Glowers.DisableGlower(Verse.ThingComp)
+  nameWithType: Glowers.DisableGlower(ThingComp)
 - uid: LightsOut.Common.Glowers.DisableGlower*
   name: DisableGlower
   href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_DisableGlower_
@@ -384,15 +517,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.DisableAllLights
   nameWithType: Lights.DisableAllLights
-- uid: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps,System.Nullable{System.Int32})
-  name: DisableLight(ThingWithComps, Nullable<Int32>)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_ThingWithComps_System_Nullable_System_Int32__
-  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps,System.Nullable{System.Int32})
-  name.vb: DisableLight(ThingWithComps, Nullable(Of Int32))
-  fullName: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps, System.Nullable<System.Int32>)
-  fullName.vb: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps, System.Nullable(Of System.Int32))
-  nameWithType: Lights.DisableLight(ThingWithComps, Nullable<Int32>)
-  nameWithType.vb: Lights.DisableLight(ThingWithComps, Nullable(Of Int32))
+- uid: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  name: DisableLight(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.DisableLight(Verse.ThingWithComps)
+  nameWithType: Lights.DisableLight(ThingWithComps)
 - uid: LightsOut.Common.Lights.DisableLight*
   name: DisableLight
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableLight_
@@ -503,45 +633,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.CanConsumeResources
   nameWithType: Resources.CanConsumeResources
-- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining
-  name: DecrementAllTicksRemaining()
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining
-  commentId: M:LightsOut.Common.Resources.DecrementAllTicksRemaining
-  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining()
-  nameWithType: Resources.DecrementAllTicksRemaining()
-- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining*
-  name: DecrementAllTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.DecrementAllTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining
-  nameWithType: Resources.DecrementAllTicksRemaining
-- uid: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  name: DecrementTicksRemaining(ThingWithComps)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_Verse_ThingWithComps_
-  commentId: M:LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  fullName: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  nameWithType: Resources.DecrementTicksRemaining(ThingWithComps)
-- uid: LightsOut.Common.Resources.DecrementTicksRemaining*
-  name: DecrementTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.DecrementTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.DecrementTicksRemaining
-  nameWithType: Resources.DecrementTicksRemaining
-- uid: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  name: GetTicksRemaining(ThingWithComps)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_Verse_ThingWithComps_
-  commentId: M:LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  fullName: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  nameWithType: Resources.GetTicksRemaining(ThingWithComps)
-- uid: LightsOut.Common.Resources.GetTicksRemaining*
-  name: GetTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.GetTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.GetTicksRemaining
-  nameWithType: Resources.GetTicksRemaining
 - uid: LightsOut.Common.Resources.IsCharged(Verse.ThingWithComps)
   name: IsCharged(ThingWithComps)
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsCharged_Verse_ThingWithComps_
@@ -590,22 +681,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.SetConsumesResources
   nameWithType: Resources.SetConsumesResources
-- uid: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps,System.Nullable{System.Int32})
-  name: SetTicksRemaining(ThingWithComps, Nullable<Int32>)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_SetTicksRemaining_Verse_ThingWithComps_System_Nullable_System_Int32__
-  commentId: M:LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps,System.Nullable{System.Int32})
-  name.vb: SetTicksRemaining(ThingWithComps, Nullable(Of Int32))
-  fullName: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps, System.Nullable<System.Int32>)
-  fullName.vb: LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps, System.Nullable(Of System.Int32))
-  nameWithType: Resources.SetTicksRemaining(ThingWithComps, Nullable<Int32>)
-  nameWithType.vb: Resources.SetTicksRemaining(ThingWithComps, Nullable(Of Int32))
-- uid: LightsOut.Common.Resources.SetTicksRemaining*
-  name: SetTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_SetTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.SetTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.SetTicksRemaining
-  nameWithType: Resources.SetTicksRemaining
 - uid: LightsOut.Common.Rooms
   name: Rooms
   href: api/LightsOut.Common.Rooms.html
@@ -709,6 +784,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Tables.HasBlacklistedTableComp
   nameWithType: Tables.HasBlacklistedTableComp
+- uid: LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps,Verse.Pawn)
+  name: IsAnyoneElseWatching(ThingWithComps, Pawn)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsAnyoneElseWatching_Verse_ThingWithComps_Verse_Pawn_
+  commentId: M:LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps,Verse.Pawn)
+  fullName: LightsOut.Common.Tables.IsAnyoneElseWatching(Verse.ThingWithComps, Verse.Pawn)
+  nameWithType: Tables.IsAnyoneElseWatching(ThingWithComps, Pawn)
+- uid: LightsOut.Common.Tables.IsAnyoneElseWatching*
+  name: IsAnyoneElseWatching
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsAnyoneElseWatching_
+  commentId: Overload:LightsOut.Common.Tables.IsAnyoneElseWatching
+  isSpec: "True"
+  fullName: LightsOut.Common.Tables.IsAnyoneElseWatching
+  nameWithType: Tables.IsAnyoneElseWatching
 - uid: LightsOut.Common.Tables.IsTable(Verse.ThingWithComps)
   name: IsTable(ThingWithComps)
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_IsTable_Verse_ThingWithComps_
@@ -809,6 +897,25 @@ references:
   commentId: N:LightsOut.Patches.Benches
   fullName: LightsOut.Patches.Benches
   nameWithType: LightsOut.Patches.Benches
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  name: EnableAndDisableTelevisions
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html
+  commentId: T:LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions
+  nameWithType: EnableAndDisableTelevisions
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)
+  name: Postfix(JobDriver_WatchBuilding, Boolean)
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html#LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_
+  commentId: M:LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding, System.Boolean)
+  nameWithType: EnableAndDisableTelevisions.Postfix(JobDriver_WatchBuilding, Boolean)
+- uid: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix*
+  name: Postfix
+  href: api/LightsOut.Patches.Benches.EnableAndDisableTelevisions.html#LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_
+  commentId: Overload:LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix
+  nameWithType: EnableAndDisableTelevisions.Postfix
 - uid: LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench
   name: TriggerOnPawnArrivedToBench
   href: api/LightsOut.Patches.Benches.TriggerOnPawnArrivedToBench.html
@@ -1086,6 +1193,182 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.Androids.PatchIsTable.TypeNameToPatch
   nameWithType: PatchIsTable.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager
+  name: LightsOut.Patches.ModCompatibility.ColonyManager
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.html
+  commentId: N:LightsOut.Patches.ModCompatibility.ColonyManager
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager
+  nameWithType: LightsOut.Patches.ModCompatibility.ColonyManager
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch
+  name: ColonyManagerCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch
+  nameWithType: ColonyManagerCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ColonyManager_ColonyManagerCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ColonyManagerCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ColonyManager_ColonyManagerCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ColonyManagerCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents
+  name: GetComponents()
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ColonyManager_ColonyManagerCompatibilityPatch_GetComponents
+  commentId: M:LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents()
+  nameWithType: ColonyManagerCompatibilityPatch.GetComponents()
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents*
+  name: GetComponents
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ColonyManager_ColonyManagerCompatibilityPatch_GetComponents_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.ColonyManagerCompatibilityPatch.GetComponents
+  nameWithType: ColonyManagerCompatibilityPatch.GetComponents
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn
+  name: KeepAIManagerOn
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html
+  commentId: T:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn
+  nameWithType: KeepAIManagerOn
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName
+  name: ComponentName
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_ComponentName
+  commentId: P:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName
+  nameWithType: KeepAIManagerOn.ComponentName
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName*
+  name: ComponentName
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_ComponentName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.ComponentName
+  nameWithType: KeepAIManagerOn.ComponentName
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches(System.Type)
+  name: GetPatches(Type)
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_GetPatches_System_Type_
+  commentId: M:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches(System.Type)
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches(System.Type)
+  nameWithType: KeepAIManagerOn.GetPatches(Type)
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches*
+  name: GetPatches
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_GetPatches_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.GetPatches
+  nameWithType: KeepAIManagerOn.GetPatches
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix(Verse.ThingWithComps,System.Boolean@)
+  name: Postfix(ThingWithComps, ref Boolean)
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_Postfix_Verse_ThingWithComps_System_Boolean__
+  commentId: M:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix(Verse.ThingWithComps,System.Boolean@)
+  name.vb: Postfix(ThingWithComps, ByRef Boolean)
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix(Verse.ThingWithComps, ref System.Boolean)
+  fullName.vb: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix(Verse.ThingWithComps, ByRef System.Boolean)
+  nameWithType: KeepAIManagerOn.Postfix(ThingWithComps, ref Boolean)
+  nameWithType.vb: KeepAIManagerOn.Postfix(ThingWithComps, ByRef Boolean)
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix*
+  name: Postfix
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_Postfix_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.Postfix
+  nameWithType: KeepAIManagerOn.Postfix
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes
+  name: TargetsMultipleTypes
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TargetsMultipleTypes
+  commentId: P:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes
+  nameWithType: KeepAIManagerOn.TargetsMultipleTypes
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes*
+  name: TargetsMultipleTypes
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TargetsMultipleTypes_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TargetsMultipleTypes
+  nameWithType: KeepAIManagerOn.TargetsMultipleTypes
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact
+  name: TypeNameIsExact
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TypeNameIsExact
+  commentId: P:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact
+  nameWithType: KeepAIManagerOn.TypeNameIsExact
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact*
+  name: TypeNameIsExact
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TypeNameIsExact_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameIsExact
+  nameWithType: KeepAIManagerOn.TypeNameIsExact
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch
+  name: TypeNameToPatch
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TypeNameToPatch
+  commentId: P:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch
+  nameWithType: KeepAIManagerOn.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch*
+  name: TypeNameToPatch
+  href: api/LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.html#LightsOut_Patches_ModCompatibility_ColonyManager_KeepAIManagerOn_TypeNameToPatch_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ColonyManager.KeepAIManagerOn.TypeNameToPatch
+  nameWithType: KeepAIManagerOn.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  name: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.html
+  commentId: N:LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+  nameWithType: LightsOut.Patches.ModCompatibility.DubsBadHygiene
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  name: DubsBadHygieneCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch
+  nameWithType: DubsBadHygieneCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  nameWithType: DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+  nameWithType: DubsBadHygieneCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: DubsBadHygieneCompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  nameWithType: DubsBadHygieneCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_DubsBadHygiene_DubsBadHygieneCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.DubsBadHygiene.DubsBadHygieneCompatibilityPatch.TargetMod
+  nameWithType: DubsBadHygieneCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
   name: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture
   href: api/LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.html
@@ -1137,6 +1420,128 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture.ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
   nameWithType: ErinsJapaneseFurnitureCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables
+  name: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.html
+  commentId: N:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables
+  nameWithType: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay
+  name: DisallowCustomOverlay
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html
+  commentId: T:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay
+  nameWithType: DisallowCustomOverlay
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName
+  name: ComponentName
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_ComponentName
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName
+  nameWithType: DisallowCustomOverlay.ComponentName
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName*
+  name: ComponentName
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_ComponentName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.ComponentName
+  nameWithType: DisallowCustomOverlay.ComponentName
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches(System.Type)
+  name: GetPatches(Type)
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_GetPatches_System_Type_
+  commentId: M:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches(System.Type)
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches(System.Type)
+  nameWithType: DisallowCustomOverlay.GetPatches(Type)
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches*
+  name: GetPatches
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_GetPatches_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.GetPatches
+  nameWithType: DisallowCustomOverlay.GetPatches
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes
+  name: TargetsMultipleTypes
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TargetsMultipleTypes
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes
+  nameWithType: DisallowCustomOverlay.TargetsMultipleTypes
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes*
+  name: TargetsMultipleTypes
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TargetsMultipleTypes_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TargetsMultipleTypes
+  nameWithType: DisallowCustomOverlay.TargetsMultipleTypes
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact
+  name: TypeNameIsExact
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TypeNameIsExact
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact
+  nameWithType: DisallowCustomOverlay.TypeNameIsExact
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact*
+  name: TypeNameIsExact
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TypeNameIsExact_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameIsExact
+  nameWithType: DisallowCustomOverlay.TypeNameIsExact
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch
+  name: TypeNameToPatch
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TypeNameToPatch
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch
+  nameWithType: DisallowCustomOverlay.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch*
+  name: TypeNameToPatch
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_DisallowCustomOverlay_TypeNameToPatch_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.DisallowCustomOverlay.TypeNameToPatch
+  nameWithType: DisallowCustomOverlay.TypeNameToPatch
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch
+  name: ExtinguishRefuelablesCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents
+  name: GetComponents()
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_GetComponents
+  commentId: M:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents()
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.GetComponents()
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents*
+  name: GetComponents
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_GetComponents_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.GetComponents
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.GetComponents
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_ExtinguishRefuelables_ExtinguishRefuelablesCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.ExtinguishRefuelables.ExtinguishRefuelablesCompatibilityPatch.TargetMod
+  nameWithType: ExtinguishRefuelablesCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.Furnace
   name: LightsOut.Patches.ModCompatibility.Furnace
   href: api/LightsOut.Patches.ModCompatibility.Furnace.html

@@ -47,7 +47,7 @@ namespace LightsOut.Boilerplate
         /// <summary>
         /// The resource draw rate of things when they're in-use
         /// </summary>
-        public static float ActiveResourceDrawRate { get; set; } = 0f;
+        public static float ActiveResourceDrawRate { get; set; } = 1f;
 
         /// <summary>
         /// Control whether or not Pawns shut off the lights when
@@ -56,16 +56,15 @@ namespace LightsOut.Boilerplate
         public static bool NightLights { get; set; } = false;
 
         /// <summary>
-        /// Control whether or not extra debug messages get 
-        /// printed to the console during gameplay
+        /// If set to true, allows animals to turn on the lights
         /// </summary>
-        public static bool DebugMessages { get; set; } = false;
+        public static bool AnimalParty { get; set; } = false;
 
         /// <summary>
-        /// Control whether or not the extra spammy debug
-        /// messages get printed to the console during gameplay
+        /// A list of message filters to add.
+        /// Allows messages based on their debug message key.
         /// </summary>
-        public static bool SpamMessages { get; set; } = false;
+        public static string[] MessageFilters { get; set; } = { };
 
         /// <summary>
         /// The identifier this mod uses to identify itself in-game
@@ -102,6 +101,12 @@ namespace LightsOut.Boilerplate
                 "LightsOut_Settings_NightLightsTooltip".Translate(),
                 false);
 
+            bool animalParty = Settings.GetHandle<bool>(
+                "AnimalParty",
+                "LightsOut_Settings_AnimalPartyLabel".Translate(),
+                "LightsOut_Settings_AnimalPartyTooltip".Translate(),
+                false);
+
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
                 "LightsOut_Settings_LatentPowerDrawRateLabel".Translate(),
@@ -116,26 +121,20 @@ namespace LightsOut.Boilerplate
                 100,
                 Validators.IntRangeValidator(100, int.MaxValue));
 
-            bool debugMessages = Settings.GetHandle<bool>(
-                "DebugMessages",
-                "LightsOut_Settings_DebugMessagesLabel".Translate(),
-                "LightsOut_Settings_DebugMessagesTooltip".Translate(),
-                false
-                );
-
-            bool spamMessages = Settings.GetHandle<bool>(
-                "SpamMessages",
-                "LightsOut_Settings_SpamMessagesLabel".Translate(),
-                "LightsOut_Settings_SpamMessagesTooltip".Translate(),
-                false
+            string messageFilters = Settings.GetHandle<string>(
+                "DebugFilters",
+                "LightsOut_Settings_DebugMessageFilterLabel".Translate(),
+                "LightsOut_Settings_DebugMessageFilterTooltip".Translate(),
+                DebugMessageKeys.Error + DebugMessageKeys.Mods
                 );
 
             StandbyResourceDrawRate = standbyPower / 100f;
             ActiveResourceDrawRate = activePower / 100f;
 
             NightLights = nightLights;
-            DebugMessages = debugMessages;
-            SpamMessages = spamMessages;
+            AnimalParty = animalParty;
+
+            MessageFilters = messageFilters.ToLower().Split(' ');
 
             UpdateLightGlowersOnSettingChange(lightsOut);
             FlickLights = lightsOut;
@@ -147,7 +146,7 @@ namespace LightsOut.Boilerplate
         /// <param name="newVal">The new value the setting is being set to</param>
         private void UpdateLightGlowersOnSettingChange(bool newVal)
         {
-            DebugLogger.LogInfo($"Changing FlickLights from {FlickLights} to {newVal}", true);
+            DebugLogger.LogInfo($"Changing FlickLights from {FlickLights} to {newVal}", DebugMessageKeys.Settings);
             if (FlickLights == newVal) return;
 
             FlickLights = newVal;

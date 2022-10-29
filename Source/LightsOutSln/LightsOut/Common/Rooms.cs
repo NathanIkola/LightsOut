@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using System;
 using Verse;
+using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
@@ -40,17 +41,17 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(RoomIsEmpty): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(RoomIsEmpty): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(RoomIsEmpty): collection was unexpectedly updated {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn pawn && pawn.RaceProps.Humanlike && pawn != excludedPawn
+                if (thing is Pawn pawn && ((ModSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??
@@ -92,17 +93,17 @@ namespace LightsOut.Common
                     }
                     else
                     {
-                        DebugLogger.LogWarning($"(AllPawnsSleeping): InvalidOperationException: {e.Message}");
+                        DebugLogger.LogWarning($"(AllPawnsSleeping): InvalidOperationException: {e.Message}", DebugMessageKeys.Lights);
                         done = true;
                     }
                 }
             }
             if (attempts > 1)
-                DebugLogger.LogWarning($"(AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.");
+                DebugLogger.LogWarning($"(AllPawnsSleeping): collection was unexpectedly modified {attempts} time(s). If this number is big please report it.", DebugMessageKeys.Lights);
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn pawn && pawn.RaceProps.Humanlike && pawn != excludedPawn
+                if (thing is Pawn pawn && ((ModSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??

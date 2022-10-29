@@ -3,6 +3,9 @@ using RimWorld;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
 using CPower = LightsOut.Common.Resources;
 using System;
+using System.Reflection;
+using LightsOut.Patches.ModCompatibility;
+using LightsOut.Common;
 
 namespace LightsOut.Patches.Power
 {
@@ -23,9 +26,12 @@ namespace LightsOut.Patches.Power
         public static void Prefix(CompRechargeable __instance, CompPowerTrader ___compPowerCached)
         {
             if (___compPowerCached is null) return;
-            
-            float powerDraw = -___compPowerCached.Props.basePowerConsumption;
-            if(powerDraw > 0)
+
+            FieldInfo basePowerConsumption = ___compPowerCached.Props.GetType().GetField("basePowerConsumption", ICompatibilityPatchComponent.BindingFlags);
+            DebugLogger.AssertFalse(basePowerConsumption is null, "CompProperties_Power.basePowerConsumption was not found");
+            float powerDraw = -(float)basePowerConsumption.GetValue(___compPowerCached.Props);
+
+            if(Math.Abs(powerDraw) > 0)
             {
                 if (__instance.Charged) 
                     powerDraw *= ModSettings.StandbyResourceDrawRate;

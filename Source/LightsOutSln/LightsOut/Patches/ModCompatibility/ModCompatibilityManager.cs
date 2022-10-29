@@ -14,6 +14,9 @@ using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
 using LightsOut.Patches.ModCompatibility.QuestionableEthics;
 using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
+using LightsOut.Patches.ModCompatibility.DubsBadHygiene;
+using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
+using LightsOut.Patches.ModCompatibility.ColonyManager;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -36,6 +39,9 @@ namespace LightsOut.Patches.ModCompatibility
             new SelfLitHydroponicsCompatibilityPatch(),
             new QECompatibilityPatch(),
             new ErinsJapaneseFurnitureCompatibilityPatch(),
+            new DubsBadHygieneCompatibilityPatch(),
+            new ExtinguishRefuelablesCompatibilityPatch(),
+            new ColonyManagerCompatibilityPatch(),
         };
 
         /// <summary>
@@ -57,7 +63,7 @@ namespace LightsOut.Patches.ModCompatibility
         {
             if (string.IsNullOrWhiteSpace(patch.CompatibilityPatchName))
             {
-                DebugLogger.LogWarning($"encountered compatibility patch with empty name; skipping it.");
+                DebugLogger.LogWarning($"encountered compatibility patch with empty name; skipping it.", DebugMessageKeys.Mods);
                 return;
             }
 
@@ -68,7 +74,7 @@ namespace LightsOut.Patches.ModCompatibility
                     return;
             }
 
-            DebugLogger.LogInfo($"applying mod compatibility patch: {patch.CompatibilityPatchName}");
+            DebugLogger.LogInfo($"applying mod compatibility patch: {patch.CompatibilityPatchName}", DebugMessageKeys.Mods);
             patch.OnBeforePatchApplied();
             foreach (ICompatibilityPatchComponent component in patch.GetComponents())
             {
@@ -87,13 +93,13 @@ namespace LightsOut.Patches.ModCompatibility
         {
             if (string.IsNullOrWhiteSpace(comp.ComponentName))
             {
-                DebugLogger.LogWarning("encountered a compatibility component with an empty name; skipping it.");
+                DebugLogger.LogWarning("encountered a compatibility component with an empty name; skipping it.", DebugMessageKeys.Mods);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(comp.TypeNameToPatch))
             {
-                DebugLogger.LogWarning($"encountered a compatibility component ({comp.ComponentName}) with an empty type to patch; skipping it.");
+                DebugLogger.LogWarning($"encountered a compatibility component ({comp.ComponentName}) with an empty type to patch; skipping it.", DebugMessageKeys.Mods);
                 return;
             }
 
@@ -113,20 +119,20 @@ namespace LightsOut.Patches.ModCompatibility
                     continue;
 
                 if (!wasApplied)
-                    DebugLogger.LogInfo($"    component applied: {comp.ComponentName}");
+                    DebugLogger.LogInfo($"    component applied: {comp.ComponentName}", DebugMessageKeys.Mods);
                 wasApplied = true;
 
                 foreach (PatchInfo patch in comp.GetPatches(type))
                 {
                     if (patch.method is null && patch.methodName is null)
                     {
-                        DebugLogger.LogWarning($"    encountered a component with a null method; skipping it.");
+                        DebugLogger.LogWarning($"    encountered a component with a null method; skipping it.", DebugMessageKeys.Mods);
                         continue;
                     }
 
                     if (patch.patch is null)
                     {
-                        DebugLogger.LogWarning($"    encountered a component with a null patch; skipping it.");
+                        DebugLogger.LogWarning($"    encountered a component with a null patch; skipping it.", DebugMessageKeys.Mods);
                         continue;
                     }
 
@@ -140,7 +146,7 @@ namespace LightsOut.Patches.ModCompatibility
                             ModSettings.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
                             break;
                         default:
-                            DebugLogger.LogWarning($"    encountered an invalid patch type in component {comp.ComponentName}; skipping it.");
+                            DebugLogger.LogWarning($"    encountered an invalid patch type in component {comp.ComponentName}; skipping it.", DebugMessageKeys.Mods);
                             break;
                     }
                 }

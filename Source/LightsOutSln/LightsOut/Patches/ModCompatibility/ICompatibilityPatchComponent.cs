@@ -42,7 +42,7 @@ namespace LightsOut.Patches.ModCompatibility
 
         /// <summary>
         /// Whether or not this component should be applied to multiple types or just one.
-        /// This should be <see langword="true"/> unless your patch specifically intends 
+        /// This should be <see langword="false"/> unless your patch specifically intends 
         /// to handle different types
         /// </summary>
         public abstract bool TargetsMultipleTypes { get; }
