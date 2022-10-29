@@ -28,6 +28,8 @@ namespace LightsOut.Patches.Benches
                 PawnIsAtTable(billDriver, pawn);
             else if (__instance is JobDriver_Research researchDriver)
                 PawnIsAtResearchBench(researchDriver, pawn);
+            else if (__instance is JobDriver_OperateDeepDrill drillDriver)
+                PawnIsAtDeepDrill(drillDriver, pawn);
             else if (__instance.job?.GetTarget(TargetIndex.A).Thing is ThingWithComps tv && Tables.IsTelevision(tv))
                 PawnIsAtTelevision(__instance, tv, pawn);
         }
@@ -60,6 +62,20 @@ namespace LightsOut.Patches.Benches
             {
                 if(pawn.Position == bench.InteractionCell)
                     ActivateBench(researchDriver, bench);
+            }
+        }
+
+        /// <summary>
+        /// Check if a pawn is at an applicable deep drill
+        /// </summary>
+        /// <param name="drillDriver">The <see cref="JobDriver"/> that set the target</param>
+        /// <param name="pawn">The pawn arriving to the deep drill</param>
+        private static void PawnIsAtDeepDrill(JobDriver_OperateDeepDrill drillDriver, Pawn pawn)
+        {
+            if (drillDriver.job.targetA.Thing is Building building)
+            {
+                if (pawn.Position == building.InteractionCell)
+                    ActivateBench(drillDriver, building);
             }
         }
 

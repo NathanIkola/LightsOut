@@ -72,7 +72,7 @@ namespace LightsOut.Patches.Lights
 
                         if (Common.Lights.ShouldTurnOffAllLights(room, pawn))
                         {
-                            Common.Lights.DisableAllLights(room);
+                            Common.Lights.DisableAllLights(room, false);
                         }
 
                         // this call to pawn.GetRoom() is strictly required in case the

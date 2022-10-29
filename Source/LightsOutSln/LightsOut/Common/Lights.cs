@@ -86,7 +86,8 @@ namespace LightsOut.Common
         /// Goes through a room and disables all lights in it
         /// </summary>
         /// <param name="room">The <see cref="Room"/> to disable the lights in</param>
-        public static void DisableAllLights(Room room)
+        /// <param name="respectDelay">Whether to respect the delay or not</param>
+        public static void DisableAllLights(Room room, bool respectDelay = true)
         {
             DebugLogger.AssertFalse(room is null, "DisableAllLights called on a null room");
             if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
@@ -122,7 +123,7 @@ namespace LightsOut.Common
             foreach (Thing thing in things)
             {
                 if (thing is ThingWithComps building && CanBeLight(building) && Rooms.IsInRoom(building, room))
-                    DisableLight(building, ModSettings.DelayTicks);
+                    DisableLight(building, respectDelay ? ModSettings.DelayTicks : 0);
             }
         }
 

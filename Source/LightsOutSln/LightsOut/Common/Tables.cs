@@ -58,7 +58,7 @@ namespace LightsOut.Common
             if (HasBlacklistedTableComp(thing))
                 return false;
 
-            bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench));
+            bool isTable = (thing is Building_WorkTable || thing is Building_ResearchBench || thing.def.defName == "DeepDrill");
             if (isTable)
                 Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
 

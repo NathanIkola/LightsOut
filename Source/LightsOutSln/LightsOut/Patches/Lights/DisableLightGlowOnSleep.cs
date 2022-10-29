@@ -33,7 +33,7 @@ namespace LightsOut.Patches.Lights
 
                     if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, pawn)
                         && pawn.jobs.curDriver.asleep)
-                        Common.Lights.DisableAllLights(room);
+                        Common.Lights.DisableAllLights(room, false);
 
                     __result.AddFinishAction(() => 
                     {
@@ -66,7 +66,7 @@ namespace LightsOut.Patches.Lights
                         else if (asleep == false && shouldTurnOffLights)
                         {
                             // turn the lights off
-                            Common.Lights.DisableAllLights(room);
+                            Common.Lights.DisableAllLights(room, false);
                         }
                     }
                 };

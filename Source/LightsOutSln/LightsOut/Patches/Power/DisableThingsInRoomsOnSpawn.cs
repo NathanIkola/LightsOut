@@ -21,7 +21,7 @@ namespace LightsOut.Patches.Power
             if (room is null) return;
 
             if (Common.Lights.ShouldTurnOffAllLights(room, null))
-                Common.Lights.DisableAllLights(room);
+                Common.Lights.DisableAllLights(room, false);
             else
                 Common.Lights.EnableAllLights(room);
         }

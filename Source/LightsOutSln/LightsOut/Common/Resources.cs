@@ -54,7 +54,7 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(thing is null, "CanConsumeResources called on a null thing");
             if (thing is null) return null;
             int? ticksRemaining = GetTicksRemaining(thing);
-            bool? canConsumeResources = !(ticksRemaining is null) && ticksRemaining != 0;
+            bool canConsumeResources = ticksRemaining != 0;
 
             if (canConsumeResources == false || (IsRechargeable(thing) && IsCharged(thing)))
                 return false;
