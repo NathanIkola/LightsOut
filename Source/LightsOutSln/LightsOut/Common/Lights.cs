@@ -122,7 +122,7 @@ namespace LightsOut.Common
             foreach (Thing thing in things)
             {
                 if (thing is ThingWithComps building && CanBeLight(building) && Rooms.IsInRoom(building, room))
-                    DisableLight(building);
+                    DisableLight(building, ModSettings.DelayTicks);
             }
         }
 

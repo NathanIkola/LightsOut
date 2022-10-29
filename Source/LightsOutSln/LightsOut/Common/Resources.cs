@@ -108,7 +108,12 @@ namespace LightsOut.Common
             if (ticksRemaining is null) return null;
 
             if (ticksRemaining > 0)
-                SetTicksRemaining(thing, --ticksRemaining);
+            {
+                if (Lights.CanBeLight(thing))
+                    Lights.DisableLight(thing, --ticksRemaining);
+                else
+                    SetTicksRemaining(thing, --ticksRemaining);
+            }
 
             return ticksRemaining;
         }
@@ -119,8 +124,14 @@ namespace LightsOut.Common
         /// <remarks>Be careful to only call this once per tick</remarks>
         public static void DecrementAllTicksRemaining()
         {
-            foreach(ThingWithComps thing in BuildingStatus.Keys)
-                DecrementTicksRemaining(thing);
+            ThingWithComps[] things = new ThingWithComps[BuildingStatus.Keys.Count];
+            BuildingStatus.Keys.CopyTo(things, 0);
+
+            foreach (ThingWithComps thing in things)
+            {
+                if (GetTicksRemaining(thing) > 0)
+                    DecrementTicksRemaining(thing);
+            }
         }
 
         /// <summary>

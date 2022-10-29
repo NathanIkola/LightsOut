@@ -28,4 +28,7 @@
 
 	<LightsOut_Settings_AnimalPartyLabel>Allow animals to activate lights</LightsOut_Settings_AnimalPartyLabel>
 	<LightsOut_Settings_AnimalPartyTooltip>Allows animals to activate/deactivate lights as they move around rooms</LightsOut_Settings_AnimalPartyTooltip>
+
+	<LightsOut_Settings_DelaySecondsLabel>Seconds to wait before turning off lights</LightsOut_Settings_DelaySecondsLabel>
+	<LightsOut_Settings_DelaySecondsTooltip>The number of seconds between a pawn wanting to turn off a light and the light actually turning off. Useful to stop lights from flickering in high-traffic areas.</LightsOut_Settings_DelaySecondsTooltip>
 </LanguageData>

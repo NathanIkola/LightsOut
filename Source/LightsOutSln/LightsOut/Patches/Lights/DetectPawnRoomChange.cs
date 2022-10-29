@@ -18,11 +18,11 @@ namespace LightsOut.Patches.Lights
         /// </summary>
         /// <param name="__instance">The Pawn being tracked</param>
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
-        public static void Prefix(Pawn __instance)
+        public static void Prefix(Pawn __instance, ref Room __state)
         {
             if ((!ModSettings.AnimalParty && __instance.RaceProps.Animal) || !ModSettings.FlickLights) return;
 
-            RoomCache[__instance] = __instance.GetRoom();
+            __state = __instance.GetRoom();
         }
 
         /// <summary>
@@ -32,11 +32,11 @@ namespace LightsOut.Patches.Lights
         /// </summary>
         /// <param name="__instance">The Pawn being tracked</param>
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
-        public static void Postfix(Pawn __instance)
+        public static void Postfix(Pawn __instance, ref Room __state)
         {
             if ((!ModSettings.AnimalParty && __instance.RaceProps.Animal) || !ModSettings.FlickLights) return;
 
-            Room oldRoom = RoomCache[__instance];
+            Room oldRoom = __state;
 
             Room newRoom = __instance.GetRoom();
 
@@ -50,10 +50,5 @@ namespace LightsOut.Patches.Lights
                     Common.Lights.EnableAllLights(newRoom);
             }
         }
-
-        /// <summary>
-        /// The cache that holds the room in lieu of __state
-        /// </summary>
-        private static Dictionary<Pawn, Room> RoomCache { get; } = new Dictionary<Pawn, Room>();
     }
 }

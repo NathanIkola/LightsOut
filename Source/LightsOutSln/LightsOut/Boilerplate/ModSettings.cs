@@ -67,6 +67,16 @@ namespace LightsOut.Boilerplate
         public static string[] MessageFilters { get; set; } = { };
 
         /// <summary>
+        /// The number of ticks to delay turning a light off by
+        /// </summary>
+        public static float DelaySeconds { get; set; } = 0f;
+
+        /// <summary>
+        /// An easier way to get the number of ticks
+        /// </summary>
+        public static int DelayTicks => (int)(DelaySeconds * 60f);
+
+        /// <summary>
         /// The identifier this mod uses to identify itself in-game
         /// </summary>
         public override string ModIdentifier
@@ -107,6 +117,13 @@ namespace LightsOut.Boilerplate
                 "LightsOut_Settings_AnimalPartyTooltip".Translate(),
                 false);
 
+            float delaySeconds = Settings.GetHandle<float>(
+                "DelaySeconds",
+                "LightsOut_Settings_DelaySecondsLabel".Translate(),
+                "LightsOut_Settings_DelaySecondsTooltip".Translate(),
+                0,
+                Validators.FloatRangeValidator(0, float.MaxValue));
+
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
                 "LightsOut_Settings_LatentPowerDrawRateLabel".Translate(),
@@ -133,6 +150,7 @@ namespace LightsOut.Boilerplate
 
             NightLights = nightLights;
             AnimalParty = animalParty;
+            DelaySeconds = delaySeconds;
 
             MessageFilters = messageFilters.ToLower().Split(' ');
 
