@@ -204,40 +204,30 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(building is null, "CanBeLight called on a null building");
             if (building is null) return false;
-            if (MemoizedCanBeLight.ContainsKey(building))
-                return MemoizedCanBeLight[building];
+            if (Resources.MemoizedThings.ContainsKey(building))
+                return Resources.MemoizedThings[building] == Resources.ThingType.Light;
 
             if (HasDisallowedCompForLights(building))
-            {
-                MemoizedCanBeLight.Add(building, false);
                 return false;
-            }
 
             // double check that it actually has a glower
             if (Glowers.GetGlower(building) is null)
-            {
-                MemoizedCanBeLight.Add(building, false);
                 return false;
-            }
 
             // make sure it doesn't have a disallowed name
             string defName = building.def.defName.ToLower();
             foreach (string keyword in LightNamesMustNotInclude)
                 if (defName.Contains(keyword.ToLower()))
-                {
-                    MemoizedCanBeLight.Add(building, false);
                     return false;
-                }
 
             // make sure it has one of the light kewords in its def name
             foreach (string keyword in LightNamesMustInclude)
                 if (defName.Contains(keyword.ToLower()))
                 {
-                    MemoizedCanBeLight.Add(building, true);
+                    Resources.MemoizedThings.Add(building, Resources.ThingType.Light);
                     return true;
                 }
 
-            MemoizedCanBeLight.Add(building, false);
             return false;
         }
 
@@ -304,11 +294,6 @@ namespace LightsOut.Common
         /// List of things that a light name MUST NOT include to be considered
         /// </summary>
         private static List<string> LightNamesMustNotInclude { get; } = new List<string>();
-
-        /// <summary>
-        /// The cached results of CanBeLight to speed up subsequent calls
-        /// </summary>
-        private static Dictionary<ThingWithComps, bool> MemoizedCanBeLight { get; } = new Dictionary<ThingWithComps, bool>();
         
         /// <summary>
         /// A cached list of KeepOnComps to prevent repeated comp lookups

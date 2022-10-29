@@ -736,6 +736,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.IsRechargeable
   nameWithType: Resources.IsRechargeable
+- uid: LightsOut.Common.Resources.MemoizedThings
+  name: MemoizedThings
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_MemoizedThings
+  commentId: P:LightsOut.Common.Resources.MemoizedThings
+  fullName: LightsOut.Common.Resources.MemoizedThings
+  nameWithType: Resources.MemoizedThings
+- uid: LightsOut.Common.Resources.MemoizedThings*
+  name: MemoizedThings
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_MemoizedThings_
+  commentId: Overload:LightsOut.Common.Resources.MemoizedThings
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.MemoizedThings
+  nameWithType: Resources.MemoizedThings
 - uid: LightsOut.Common.Resources.MinDraw
   name: MinDraw
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_MinDraw
@@ -774,6 +787,30 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.SetTicksRemaining
   nameWithType: Resources.SetTicksRemaining
+- uid: LightsOut.Common.Resources.ThingType
+  name: Resources.ThingType
+  href: api/LightsOut.Common.Resources.ThingType.html
+  commentId: T:LightsOut.Common.Resources.ThingType
+  fullName: LightsOut.Common.Resources.ThingType
+  nameWithType: Resources.ThingType
+- uid: LightsOut.Common.Resources.ThingType.Light
+  name: Light
+  href: api/LightsOut.Common.Resources.ThingType.html#LightsOut_Common_Resources_ThingType_Light
+  commentId: F:LightsOut.Common.Resources.ThingType.Light
+  fullName: LightsOut.Common.Resources.ThingType.Light
+  nameWithType: Resources.ThingType.Light
+- uid: LightsOut.Common.Resources.ThingType.Table
+  name: Table
+  href: api/LightsOut.Common.Resources.ThingType.html#LightsOut_Common_Resources_ThingType_Table
+  commentId: F:LightsOut.Common.Resources.ThingType.Table
+  fullName: LightsOut.Common.Resources.ThingType.Table
+  nameWithType: Resources.ThingType.Table
+- uid: LightsOut.Common.Resources.ThingType.Unknown
+  name: Unknown
+  href: api/LightsOut.Common.Resources.ThingType.html#LightsOut_Common_Resources_ThingType_Unknown
+  commentId: F:LightsOut.Common.Resources.ThingType.Unknown
+  fullName: LightsOut.Common.Resources.ThingType.Unknown
+  nameWithType: Resources.ThingType.Unknown
 - uid: LightsOut.Common.Rooms
   name: Rooms
   href: api/LightsOut.Common.Rooms.html

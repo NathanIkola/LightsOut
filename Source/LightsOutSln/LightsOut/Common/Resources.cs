@@ -193,5 +193,17 @@ namespace LightsOut.Common
         /// A memoized list of the CompRechargeables to prevent repeated comp lookups
         /// </summary>
         private static Dictionary<ThingWithComps, CompRechargeable> CompRechargeables { get; } = new Dictionary<ThingWithComps, CompRechargeable>();
+
+        public enum ThingType
+        {
+            Unknown,
+            Table,
+            Light
+        }
+
+        /// <summary>
+        /// A single repository of the cached Thing Types
+        /// </summary>
+        public static Dictionary<ThingWithComps, ThingType> MemoizedThings { get; } = new Dictionary<ThingWithComps, ThingType>();
     }
 }

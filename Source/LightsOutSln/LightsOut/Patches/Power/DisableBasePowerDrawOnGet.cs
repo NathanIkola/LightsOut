@@ -27,7 +27,7 @@ namespace LightsOut.Patches.Power
 
             if (canConsumePower == true)
             {
-                if (Common.Tables.IsTable(__instance.parent))
+                if (Tables.IsTable(__instance.parent))
                     __result *= ModSettings.ActiveResourceDrawRate;
             }
             else

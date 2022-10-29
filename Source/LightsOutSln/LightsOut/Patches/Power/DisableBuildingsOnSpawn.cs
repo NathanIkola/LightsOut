@@ -34,6 +34,10 @@ namespace LightsOut.Patches.Power
                 // return so that we don't remove the KeepOnComp from this
                 return;
             }
+            else
+            {
+                Resources.MemoizedThings.Add(__instance, Resources.ThingType.Unknown);
+            }
 
             bool removed = false;
             uint attempts = 0;

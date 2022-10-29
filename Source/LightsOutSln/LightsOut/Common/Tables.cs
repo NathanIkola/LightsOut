@@ -49,23 +49,19 @@ namespace LightsOut.Common
         public static bool IsTable(ThingWithComps thing)
         {
             DebugLogger.AssertFalse(thing is null, "IsTable called on a null thing");
-            if (MemoizedIsTable.ContainsKey(thing))
-                return MemoizedIsTable[thing];
+            if (Resources.MemoizedThings.ContainsKey(thing))
+                return Resources.MemoizedThings[thing] == Resources.ThingType.Table;
 
             if (thing is null)
-            {
-                MemoizedIsTable.Add(thing, false);
                 return false;
-            }
 
             if (HasBlacklistedTableComp(thing))
-            {
-                MemoizedIsTable.Add(thing, false);
                 return false;
-            }
 
             bool isTable = ((thing is Building_WorkTable || thing is Building_ResearchBench));
-            MemoizedIsTable.Add(thing, isTable);
+            if (isTable)
+                Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
+
             return isTable;
         }
 
@@ -117,11 +113,5 @@ namespace LightsOut.Common
 
             return false;
         }
-
-        /// <summary>
-        /// Memoized list of results from the IsTable function since that doesn't change.
-        /// Used to speed up subsequent calls to IsTable
-        /// </summary>
-        private static Dictionary<ThingWithComps, bool> MemoizedIsTable { get; } = new Dictionary<ThingWithComps, bool>();
     }
 }
