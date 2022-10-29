@@ -39,6 +39,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate
   nameWithType: ModSettings.ActiveResourceDrawRate
+- uid: LightsOut.Boilerplate.ModSettings.AnimalParty
+  name: AnimalParty
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_AnimalParty
+  commentId: P:LightsOut.Boilerplate.ModSettings.AnimalParty
+  fullName: LightsOut.Boilerplate.ModSettings.AnimalParty
+  nameWithType: ModSettings.AnimalParty
+- uid: LightsOut.Boilerplate.ModSettings.AnimalParty*
+  name: AnimalParty
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_AnimalParty_
+  commentId: Overload:LightsOut.Boilerplate.ModSettings.AnimalParty
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.ModSettings.AnimalParty
+  nameWithType: ModSettings.AnimalParty
 - uid: LightsOut.Boilerplate.ModSettings.DefsLoaded
   name: DefsLoaded()
   href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_DefsLoaded
