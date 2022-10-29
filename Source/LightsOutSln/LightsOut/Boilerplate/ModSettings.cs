@@ -69,7 +69,7 @@ namespace LightsOut.Boilerplate
         /// <summary>
         /// The number of ticks to delay turning a light off by
         /// </summary>
-        public static float DelaySeconds { get; set; } = 0f;
+        public static float DelaySeconds { get; set; } = 1.5f;
 
         /// <summary>
         /// The number of ticks to wait between decrementing
@@ -127,7 +127,7 @@ namespace LightsOut.Boilerplate
                 "DelaySeconds",
                 "LightsOut_Settings_DelaySecondsLabel".Translate(),
                 "LightsOut_Settings_DelaySecondsTooltip".Translate(),
-                0,
+                1.5f,
                 Validators.FloatRangeValidator(0, float.MaxValue));
 
             uint standbyPower = Settings.GetHandle<uint>(
@@ -150,7 +150,7 @@ namespace LightsOut.Boilerplate
                 "LightsOut_Settings_DebugMessageFilterTooltip".Translate(),
                 DebugMessageKeys.Error + DebugMessageKeys.Mods
                 );
-
+            
             StandbyResourceDrawRate = standbyPower / 100f;
             ActiveResourceDrawRate = activePower / 100f;
 

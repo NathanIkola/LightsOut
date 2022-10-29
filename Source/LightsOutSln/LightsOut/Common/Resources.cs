@@ -56,10 +56,10 @@ namespace LightsOut.Common
             int? ticksRemaining = GetTicksRemaining(thing);
             bool? canConsumeResources = !(ticksRemaining is null) && ticksRemaining != 0;
 
-            if (canConsumeResources == true && IsRechargeable(thing) && IsCharged(thing))
+            if (canConsumeResources == false || (IsRechargeable(thing) && IsCharged(thing)))
                 return false;
 
-            return canConsumeResources;
+            return true;
         }
 
         /// <summary>

@@ -19,24 +19,37 @@ namespace LightsOut.Patches.Power
         /// </summary>
         /// <param name="__instance">The CompPowerTrader to adjust</param>
         /// <param name="__result">The resulting power draw of this <paramref name="__instance"/></param>
-        public static void Postfix(CompPowerTrader __instance, ref float __result)
+        /// <param name="__state">Whether or not the power trader can consume resources</param>
+        public static void Postfix(CompPowerTrader __instance, ref float __result, bool? __state)
         {
-            bool? canConsumePower = Resources.CanConsumeResources(__instance);
-            if (canConsumePower is null) 
+            if (__state is null) 
                 return;
 
-            if (canConsumePower == true)
+            if (__state == false)
+                __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
+            else if (Tables.IsTable(__instance.parent))
+                __result *= ModSettings.ActiveResourceDrawRate;
+        }
+
+        /// <summary>
+        /// Early quit for lights that don't need the rest of the power draw code,
+        /// with an early cached lookup of Resources.CanConsumeResources
+        /// </summary>
+        /// <param name="__instance">The CompPowerTrader to adjust</param>
+        /// <param name="__result">The resulting power draw of this <paramref name="__instance"/></param>
+        /// <param name="__state">Whether or not the power trader can consume resources</param>
+        /// <returns></returns>
+        public static bool Prefix(CompPowerTrader __instance, ref float __result, ref bool? __state)
+        {
+            __state = Resources.CanConsumeResources(__instance);
+            if (__state != false) { return true; }
+            if (Common.Lights.CanBeLight(__instance.parent))
             {
-                if (Tables.IsTable(__instance.parent))
-                    __result *= ModSettings.ActiveResourceDrawRate;
+                __result = Resources.MinDraw;
+                return false;
             }
-            else
-            {
-                if (Common.Lights.CanBeLight(__instance.parent))
-                    __result = Resources.MinDraw;
-                else
-                    __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
-            }
+
+            return true;
         }
     }
 }

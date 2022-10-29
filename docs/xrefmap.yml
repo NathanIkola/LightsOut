@@ -3180,15 +3180,15 @@ references:
   commentId: T:LightsOut.Patches.Power.DisableBasePowerDrawOnGet
   fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet
   nameWithType: DisableBasePowerDrawOnGet
-- uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader,System.Single@)
-  name: Postfix(CompPowerTrader, ref Single)
-  href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html#LightsOut_Patches_Power_DisableBasePowerDrawOnGet_Postfix_RimWorld_CompPowerTrader_System_Single__
-  commentId: M:LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader,System.Single@)
-  name.vb: Postfix(CompPowerTrader, ByRef Single)
-  fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader, ref System.Single)
-  fullName.vb: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader, ByRef System.Single)
-  nameWithType: DisableBasePowerDrawOnGet.Postfix(CompPowerTrader, ref Single)
-  nameWithType.vb: DisableBasePowerDrawOnGet.Postfix(CompPowerTrader, ByRef Single)
+- uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader,System.Single@,System.Nullable{System.Boolean})
+  name: Postfix(CompPowerTrader, ref Single, Nullable<Boolean>)
+  href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html#LightsOut_Patches_Power_DisableBasePowerDrawOnGet_Postfix_RimWorld_CompPowerTrader_System_Single__System_Nullable_System_Boolean__
+  commentId: M:LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader,System.Single@,System.Nullable{System.Boolean})
+  name.vb: Postfix(CompPowerTrader, ByRef Single, Nullable(Of Boolean))
+  fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader, ref System.Single, System.Nullable<System.Boolean>)
+  fullName.vb: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix(RimWorld.CompPowerTrader, ByRef System.Single, System.Nullable(Of System.Boolean))
+  nameWithType: DisableBasePowerDrawOnGet.Postfix(CompPowerTrader, ref Single, Nullable<Boolean>)
+  nameWithType.vb: DisableBasePowerDrawOnGet.Postfix(CompPowerTrader, ByRef Single, Nullable(Of Boolean))
 - uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix*
   name: Postfix
   href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html#LightsOut_Patches_Power_DisableBasePowerDrawOnGet_Postfix_
@@ -3196,6 +3196,22 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Postfix
   nameWithType: DisableBasePowerDrawOnGet.Postfix
+- uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix(RimWorld.CompPowerTrader,System.Single@,System.Nullable{System.Boolean}@)
+  name: Prefix(CompPowerTrader, ref Single, ref Nullable<Boolean>)
+  href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html#LightsOut_Patches_Power_DisableBasePowerDrawOnGet_Prefix_RimWorld_CompPowerTrader_System_Single__System_Nullable_System_Boolean___
+  commentId: M:LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix(RimWorld.CompPowerTrader,System.Single@,System.Nullable{System.Boolean}@)
+  name.vb: Prefix(CompPowerTrader, ByRef Single, ByRef Nullable(Of Boolean))
+  fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix(RimWorld.CompPowerTrader, ref System.Single, ref System.Nullable<System.Boolean>)
+  fullName.vb: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix(RimWorld.CompPowerTrader, ByRef System.Single, ByRef System.Nullable(Of System.Boolean))
+  nameWithType: DisableBasePowerDrawOnGet.Prefix(CompPowerTrader, ref Single, ref Nullable<Boolean>)
+  nameWithType.vb: DisableBasePowerDrawOnGet.Prefix(CompPowerTrader, ByRef Single, ByRef Nullable(Of Boolean))
+- uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix*
+  name: Prefix
+  href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html#LightsOut_Patches_Power_DisableBasePowerDrawOnGet_Prefix_
+  commentId: Overload:LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Power.DisableBasePowerDrawOnGet.Prefix
+  nameWithType: DisableBasePowerDrawOnGet.Prefix
 - uid: LightsOut.Patches.Power.DisableBuildingsOnSpawn
   name: DisableBuildingsOnSpawn
   href: api/LightsOut.Patches.Power.DisableBuildingsOnSpawn.html
