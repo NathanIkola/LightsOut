@@ -56,6 +56,11 @@ namespace LightsOut.Boilerplate
         public static bool NightLights { get; set; } = false;
 
         /// <summary>
+        /// If set to true, allows animals to turn on the lights
+        /// </summary>
+        public static bool AnimalParty { get; set; } = false;
+
+        /// <summary>
         /// A list of message filters to add.
         /// Allows messages based on their debug message key.
         /// </summary>
@@ -96,6 +101,12 @@ namespace LightsOut.Boilerplate
                 "LightsOut_Settings_NightLightsTooltip".Translate(),
                 false);
 
+            bool animalParty = Settings.GetHandle<bool>(
+                "AnimalParty",
+                "LightsOut_Settings_AnimalPartyLabel".Translate(),
+                "LightsOut_Settings_AnimalPartyTooltip".Translate(),
+                false);
+
             uint standbyPower = Settings.GetHandle<uint>(
                 "LatentPowerDrawRate",
                 "LightsOut_Settings_LatentPowerDrawRateLabel".Translate(),
@@ -121,6 +132,7 @@ namespace LightsOut.Boilerplate
             ActiveResourceDrawRate = activePower / 100f;
 
             NightLights = nightLights;
+            AnimalParty = animalParty;
 
             MessageFilters = messageFilters.ToLower().Split(' ');
 

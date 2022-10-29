@@ -20,8 +20,7 @@ namespace LightsOut.Patches.Lights
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
         public static void Prefix(Pawn __instance)
         {
-            // animals PLEASE don't turn on my lights
-            if (__instance.RaceProps.Animal || !ModSettings.FlickLights) return;
+            if ((!ModSettings.AnimalParty && __instance.RaceProps.Animal) || !ModSettings.FlickLights) return;
 
             RoomCache[__instance] = __instance.GetRoom();
         }
@@ -35,8 +34,7 @@ namespace LightsOut.Patches.Lights
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
         public static void Postfix(Pawn __instance)
         {
-            // animals PLEASE don't turn on my lights
-            if (__instance.RaceProps.Animal || !ModSettings.FlickLights) return;
+            if ((!ModSettings.AnimalParty && __instance.RaceProps.Animal) || !ModSettings.FlickLights) return;
 
             Room oldRoom = RoomCache[__instance];
 

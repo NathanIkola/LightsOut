@@ -6,7 +6,7 @@
 	<LightsOut_OnStandby>On Standby</LightsOut_OnStandby>
 	
 	<LightsOut_Settings_EverythingButLightsOutLabel>Turn off lights in empty rooms</LightsOut_Settings_EverythingButLightsOutLabel>
-	<LightsOut_Settings_EverythingButLightsOutTooltip>"If you turn this off, this mod becomes \"LightsOn\". On by default."</LightsOut_Settings_EverythingButLightsOutTooltip>
+	<LightsOut_Settings_EverythingButLightsOutTooltip>If you turn this off, this mod becomes \"LightsOn\". On by default.</LightsOut_Settings_EverythingButLightsOutTooltip>
 	
 	<LightsOut_Settings_NightLightsLabel>Keep the lights on when your pawns go to bed</LightsOut_Settings_NightLightsLabel>
 	<LightsOut_Settings_NightLightsTooltip>Enable this if your pawns are scared of the dark. Off by default.</LightsOut_Settings_NightLightsTooltip>
@@ -25,4 +25,7 @@
 	
 	<LightsOut_Gizmos_KeepOnLabel>Keep On</LightsOut_Gizmos_KeepOnLabel>
 	<LightsOut_Gizmos_KeepOnTooltip>Prevent pawns from turning this light off.</LightsOut_Gizmos_KeepOnTooltip>
+
+	<LightsOut_Settings_AnimalPartyLabel>Allow animals to activate lights</LightsOut_Settings_AnimalPartyLabel>
+	<LightsOut_Settings_AnimalPartyTooltip>Allows animals to activate/deactivate lights as they move around rooms</LightsOut_Settings_AnimalPartyTooltip>
 </LanguageData>
