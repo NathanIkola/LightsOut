@@ -182,6 +182,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate
   nameWithType: ModSettings.StandbyResourceDrawRate
+- uid: LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
+  name: TicksBetweenDecrement
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_TicksBetweenDecrement
+  commentId: F:LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
+  fullName: LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
+  nameWithType: ModSettings.TicksBetweenDecrement
 - uid: LightsOut.Common
   name: LightsOut.Common
   href: api/LightsOut.Common.html
