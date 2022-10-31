@@ -109,7 +109,7 @@ namespace LightsOut.Common
 
             if (ticksRemaining > 0)
             {
-                if (Lights.CanBeLight(thing))
+                if (ticksRemaining == 1 && Lights.CanBeLight(thing))
                     Lights.DisableLight(thing, --ticksRemaining);
                 else
                     SetTicksRemaining(thing, --ticksRemaining);

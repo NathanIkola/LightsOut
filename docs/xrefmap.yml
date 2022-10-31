@@ -539,12 +539,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.CanBeLight
   nameWithType: Lights.CanBeLight
-- uid: LightsOut.Common.Lights.DisableAllLights(Verse.Room)
-  name: DisableAllLights(Room)
-  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableAllLights_Verse_Room_
-  commentId: M:LightsOut.Common.Lights.DisableAllLights(Verse.Room)
-  fullName: LightsOut.Common.Lights.DisableAllLights(Verse.Room)
-  nameWithType: Lights.DisableAllLights(Room)
+- uid: LightsOut.Common.Lights.DisableAllLights(Verse.Room,System.Boolean)
+  name: DisableAllLights(Room, Boolean)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableAllLights_Verse_Room_System_Boolean_
+  commentId: M:LightsOut.Common.Lights.DisableAllLights(Verse.Room,System.Boolean)
+  fullName: LightsOut.Common.Lights.DisableAllLights(Verse.Room, System.Boolean)
+  nameWithType: Lights.DisableAllLights(Room, Boolean)
 - uid: LightsOut.Common.Lights.DisableAllLights*
   name: DisableAllLights
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_DisableAllLights_

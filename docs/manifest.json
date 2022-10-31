@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Lights.html",
-          "hash": "tUQcLI3nlNsgAUo0sMfyFui+0w2z+kTM8wWX943mVXg="
+          "hash": "m6PxssLbzzGblFzi9CRjKSkk2ayUpi6p7pK5eXn3ygI="
         }
       },
       "is_incremental": true,
@@ -957,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html",
-          "hash": "A66GE3zLco+vI3G3c4vXfvMcfLB7YrayNEDViUjZHQM="
+          "hash": "dtNuA9/ZiW+5TjZsqrDU3kWiXVieFElAkD0l9ZuM+sw="
         }
       },
       "is_incremental": true,
