@@ -21,15 +21,10 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(thing is null, "SetConsumesResources called on a null thing");
             if (thing is null) return null;
 
-            // convert bool? into its int? counterpart
-            int? ticks = null;
-            if (consumesResource == true) ticks = -1;
-            else if (consumesResource == false) ticks = 0;
+            bool? previous = BuildingStatus.TryGetValue(thing, null);
+            BuildingStatus[thing] = consumesResource;
 
-            ticks = SetTicksRemaining(thing, ticks);
-            if (ticks is null) return null;
-
-            return ticks != 0;
+            return previous;
         }
 
         /// <summary>
@@ -53,8 +48,8 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(thing is null, "CanConsumeResources called on a null thing");
             if (thing is null) return null;
-            int? ticksRemaining = GetTicksRemaining(thing);
-            bool canConsumeResources = ticksRemaining != 0;
+
+            bool? canConsumeResources = BuildingStatus.TryGetValue(thing, null);
 
             if (canConsumeResources == false || (IsRechargeable(thing) && IsCharged(thing)))
                 return false;
@@ -63,75 +58,23 @@ namespace LightsOut.Common
         }
 
         /// <summary>
-        /// Check how many ticks <paramref name="thing"/> has
-        /// until it can no longer consume resources
-        /// </summary>
-        /// <param name="thing">The thing to check</param>
-        /// <returns>The number of ticks until <paramref name="thing"/> can
-        /// no longer consume resources</returns>
-        public static int? GetTicksRemaining(ThingWithComps thing)
-        {
-            DebugLogger.AssertFalse(thing is null, "GetTicksRemaining called on a null thing");
-            if (thing is null) return null;
-            return BuildingStatus.TryGetValue(thing, null);
-        }
-
-        /// <summary>
         /// Sets the number of <paramref name="ticksRemaining"/> for the specified <paramref name="thing"/>
         /// </summary>
         /// <param name="thing">The thing to set the ticks for</param>
         /// <param name="ticksRemaining">The number of ticks to set it to</param>
         /// <returns>The previous value</returns>
-        public static int? SetTicksRemaining(ThingWithComps thing, int? ticksRemaining)
+        public static void SetTicksRemaining(ThingWithComps thing, int? ticksRemaining)
         {
             DebugLogger.AssertFalse(thing is null, "SetTicksRemaining called on a null thing");
-            if (thing is null) return null;
+            if (thing is null) return;
 
-            int? previous = GetTicksRemaining(thing);
-            if (ticksRemaining == previous) return previous;
-
-            BuildingStatus[thing] = ticksRemaining;
-            return previous;
-        }
-
-        /// <summary>
-        /// Decrement the number of ticks remaining for the specified <paramref name="thing"/>
-        /// </summary>
-        /// <param name="thing">The thing to check</param>
-        /// <returns>The new number of ticks remaining</returns>
-        public static int? DecrementTicksRemaining(ThingWithComps thing)
-        {
-            DebugLogger.AssertFalse(thing is null, "DecrementTicksRemaining called on a null thing");
-            if (thing is null) return null;
+            if (ticksRemaining == -1 || ticksRemaining > 0)
+                BuildingStatus[thing] = true;
+            else
+                BuildingStatus[thing] = false;
             
-            int? ticksRemaining = GetTicksRemaining(thing);
-            if (ticksRemaining is null) return null;
-
             if (ticksRemaining > 0)
-            {
-                if (ticksRemaining == 1 && Lights.CanBeLight(thing))
-                    Lights.DisableLight(thing, --ticksRemaining);
-                else
-                    SetTicksRemaining(thing, --ticksRemaining);
-            }
-
-            return ticksRemaining;
-        }
-
-        /// <summary>
-        /// Decrements all positive tick counts in the tick dictionary
-        /// </summary>
-        /// <remarks>Be careful to only call this once per tick</remarks>
-        public static void DecrementAllTicksRemaining()
-        {
-            ThingWithComps[] things = new ThingWithComps[BuildingStatus.Keys.Count];
-            BuildingStatus.Keys.CopyTo(things, 0);
-
-            foreach (ThingWithComps thing in things)
-            {
-                if (GetTicksRemaining(thing) > 0)
-                    DecrementTicksRemaining(thing);
-            }
+                PendingShutoff.Enqueue(new Pair<ThingWithComps, int>(thing, GenTicks.TicksGame + (ticksRemaining ?? 0)));
         }
 
         /// <summary>
@@ -176,6 +119,29 @@ namespace LightsOut.Common
         }
 
         /// <summary>
+        /// A helper method to remove the cached data about a thing
+        /// </summary>
+        /// <param name="thing">The thing to remove</param>
+        public static void RemoveCachedBuilding(ThingWithComps thing)
+        {
+            if (thing is null) return;
+            BuildingStatus.Remove(thing);
+            CompRechargeables.Remove(thing);
+            MemoizedThings.Remove(thing);
+        }
+
+        /// <summary>
+        /// Retrieves the next tick that we should disable a
+        /// building on
+        /// </summary>
+        /// <returns>The next tick to return a building on, or int.MaxValue if none</returns>
+        public static int NextTickToDisableBuilding()
+        {
+            if (PendingShutoff.Count == 0) return int.MaxValue;
+            return PendingShutoff.Peek().Second;
+        }
+
+        /// <summary>
         /// The minimum amount of a resource to draw. 
         /// This being set properly allows buildings to
         /// respond to loss of power correctly and prevents
@@ -187,7 +153,13 @@ namespace LightsOut.Common
         /// The structure that holds the info on whether or not
         /// a building is disabled
         /// </summary>
-        public static Dictionary<ThingWithComps, int?> BuildingStatus { get; } = new Dictionary<ThingWithComps, int?>();
+        public static Dictionary<ThingWithComps, bool?> BuildingStatus { get; } = new Dictionary<ThingWithComps, bool?>();
+
+        /// <summary>
+        /// A queue of the things waiting to be shut off so we don't
+        /// have to go through the whole BuildingStatus dictionary
+        /// </summary>
+        public static Queue<Pair<ThingWithComps, int>> PendingShutoff { get; } = new Queue<Pair<ThingWithComps, int>>();
 
         /// <summary>
         /// A memoized list of the CompRechargeables to prevent repeated comp lookups

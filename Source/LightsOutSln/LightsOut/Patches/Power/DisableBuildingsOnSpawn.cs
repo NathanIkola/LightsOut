@@ -16,7 +16,7 @@ namespace LightsOut.Patches.Power
         /// <summary>
         /// Checks if a ThingWithComps needs to be disabled when it spawns
         /// </summary>
-        /// <param name="__instance"></param>
+        /// <param name="__instance">This instance</param>
         public static void Postfix(ThingWithComps __instance)
         {
             if (Tables.IsTable(__instance) || Tables.IsTelevision(__instance))

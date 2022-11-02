@@ -39,7 +39,7 @@ namespace LightsOut.Common
         public static void DisableLight(ThingWithComps light, int? delay = 0)
         {
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
-            if (light is null || !ModSettings.FlickLights) return;
+            if (light is null || !ModSettings.FlickLights) return; 
 
             DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
@@ -282,6 +282,16 @@ namespace LightsOut.Common
         }
 
         /// <summary>
+        /// A helper method to remove the cached data about a light
+        /// </summary>
+        /// <param name="thing">The thing to remove</param>
+        public static void RemoveLight(ThingWithComps thing)
+        {
+            if (thing is null) return;
+            KeepOnComps.Remove(thing);
+        }
+
+        /// <summary>
         /// List of things that a light name MUST include to be considered
         /// </summary>
         private static List<string> LightNamesMustInclude { get; } = new List<string>()
@@ -294,7 +304,10 @@ namespace LightsOut.Common
         /// <summary>
         /// List of things that a light name MUST NOT include to be considered
         /// </summary>
-        private static List<string> LightNamesMustNotInclude { get; } = new List<string>();
+        private static List<string> LightNamesMustNotInclude { get; } = new List<string>()
+        {
+            "minified"
+        };
         
         /// <summary>
         /// A cached list of KeepOnComps to prevent repeated comp lookups

@@ -494,6 +494,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Glowers.GetGlower
   nameWithType: Glowers.GetGlower
+- uid: LightsOut.Common.Glowers.RemoveCachedGlower(Verse.ThingWithComps)
+  name: RemoveCachedGlower(ThingWithComps)
+  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_RemoveCachedGlower_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Glowers.RemoveCachedGlower(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Glowers.RemoveCachedGlower(Verse.ThingWithComps)
+  nameWithType: Glowers.RemoveCachedGlower(ThingWithComps)
+- uid: LightsOut.Common.Glowers.RemoveCachedGlower*
+  name: RemoveCachedGlower
+  href: api/LightsOut.Common.Glowers.html#LightsOut_Common_Glowers_RemoveCachedGlower_
+  commentId: Overload:LightsOut.Common.Glowers.RemoveCachedGlower
+  isSpec: "True"
+  fullName: LightsOut.Common.Glowers.RemoveCachedGlower
+  nameWithType: Glowers.RemoveCachedGlower
 - uid: LightsOut.Common.Lights
   name: Lights
   href: api/LightsOut.Common.Lights.html
@@ -620,6 +633,19 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Lights.KeepLightOn
   nameWithType: Lights.KeepLightOn
+- uid: LightsOut.Common.Lights.RemoveLight(Verse.ThingWithComps)
+  name: RemoveLight(ThingWithComps)
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_RemoveLight_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Lights.RemoveLight(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Lights.RemoveLight(Verse.ThingWithComps)
+  nameWithType: Lights.RemoveLight(ThingWithComps)
+- uid: LightsOut.Common.Lights.RemoveLight*
+  name: RemoveLight
+  href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_RemoveLight_
+  commentId: Overload:LightsOut.Common.Lights.RemoveLight
+  isSpec: "True"
+  fullName: LightsOut.Common.Lights.RemoveLight
+  nameWithType: Lights.RemoveLight
 - uid: LightsOut.Common.Lights.ShouldTurnOffAllLights(Verse.Room,Verse.Pawn)
   name: ShouldTurnOffAllLights(Room, Pawn)
   href: api/LightsOut.Common.Lights.html#LightsOut_Common_Lights_ShouldTurnOffAllLights_Verse_Room_Verse_Pawn_
@@ -671,45 +697,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Common.Resources.CanConsumeResources
   nameWithType: Resources.CanConsumeResources
-- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining
-  name: DecrementAllTicksRemaining()
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining
-  commentId: M:LightsOut.Common.Resources.DecrementAllTicksRemaining
-  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining()
-  nameWithType: Resources.DecrementAllTicksRemaining()
-- uid: LightsOut.Common.Resources.DecrementAllTicksRemaining*
-  name: DecrementAllTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementAllTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.DecrementAllTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.DecrementAllTicksRemaining
-  nameWithType: Resources.DecrementAllTicksRemaining
-- uid: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  name: DecrementTicksRemaining(ThingWithComps)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_Verse_ThingWithComps_
-  commentId: M:LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  fullName: LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)
-  nameWithType: Resources.DecrementTicksRemaining(ThingWithComps)
-- uid: LightsOut.Common.Resources.DecrementTicksRemaining*
-  name: DecrementTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_DecrementTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.DecrementTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.DecrementTicksRemaining
-  nameWithType: Resources.DecrementTicksRemaining
-- uid: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  name: GetTicksRemaining(ThingWithComps)
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_Verse_ThingWithComps_
-  commentId: M:LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  fullName: LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)
-  nameWithType: Resources.GetTicksRemaining(ThingWithComps)
-- uid: LightsOut.Common.Resources.GetTicksRemaining*
-  name: GetTicksRemaining
-  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_GetTicksRemaining_
-  commentId: Overload:LightsOut.Common.Resources.GetTicksRemaining
-  isSpec: "True"
-  fullName: LightsOut.Common.Resources.GetTicksRemaining
-  nameWithType: Resources.GetTicksRemaining
 - uid: LightsOut.Common.Resources.IsCharged(Verse.ThingWithComps)
   name: IsCharged(ThingWithComps)
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_IsCharged_Verse_ThingWithComps_
@@ -755,6 +742,32 @@ references:
   commentId: F:LightsOut.Common.Resources.MinDraw
   fullName: LightsOut.Common.Resources.MinDraw
   nameWithType: Resources.MinDraw
+- uid: LightsOut.Common.Resources.PendingShutoff
+  name: PendingShutoff
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_PendingShutoff
+  commentId: P:LightsOut.Common.Resources.PendingShutoff
+  fullName: LightsOut.Common.Resources.PendingShutoff
+  nameWithType: Resources.PendingShutoff
+- uid: LightsOut.Common.Resources.PendingShutoff*
+  name: PendingShutoff
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_PendingShutoff_
+  commentId: Overload:LightsOut.Common.Resources.PendingShutoff
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.PendingShutoff
+  nameWithType: Resources.PendingShutoff
+- uid: LightsOut.Common.Resources.RemoveCachedBuilding(Verse.ThingWithComps)
+  name: RemoveCachedBuilding(ThingWithComps)
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_RemoveCachedBuilding_Verse_ThingWithComps_
+  commentId: M:LightsOut.Common.Resources.RemoveCachedBuilding(Verse.ThingWithComps)
+  fullName: LightsOut.Common.Resources.RemoveCachedBuilding(Verse.ThingWithComps)
+  nameWithType: Resources.RemoveCachedBuilding(ThingWithComps)
+- uid: LightsOut.Common.Resources.RemoveCachedBuilding*
+  name: RemoveCachedBuilding
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_RemoveCachedBuilding_
+  commentId: Overload:LightsOut.Common.Resources.RemoveCachedBuilding
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.RemoveCachedBuilding
+  nameWithType: Resources.RemoveCachedBuilding
 - uid: LightsOut.Common.Resources.SetConsumesResources(Verse.ThingWithComps,System.Nullable{System.Boolean})
   name: SetConsumesResources(ThingWithComps, Nullable<Boolean>)
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_SetConsumesResources_Verse_ThingWithComps_System_Nullable_System_Boolean__
@@ -3155,6 +3168,25 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Power.AddStandbyInspectMessagePatch.Postfix
   nameWithType: AddStandbyInspectMessagePatch.Postfix
+- uid: LightsOut.Patches.Power.CleanupBuildingsOnDespawn
+  name: CleanupBuildingsOnDespawn
+  href: api/LightsOut.Patches.Power.CleanupBuildingsOnDespawn.html
+  commentId: T:LightsOut.Patches.Power.CleanupBuildingsOnDespawn
+  fullName: LightsOut.Patches.Power.CleanupBuildingsOnDespawn
+  nameWithType: CleanupBuildingsOnDespawn
+- uid: LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix(Verse.ThingWithComps)
+  name: Postfix(ThingWithComps)
+  href: api/LightsOut.Patches.Power.CleanupBuildingsOnDespawn.html#LightsOut_Patches_Power_CleanupBuildingsOnDespawn_Postfix_Verse_ThingWithComps_
+  commentId: M:LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix(Verse.ThingWithComps)
+  fullName: LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix(Verse.ThingWithComps)
+  nameWithType: CleanupBuildingsOnDespawn.Postfix(ThingWithComps)
+- uid: LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix*
+  name: Postfix
+  href: api/LightsOut.Patches.Power.CleanupBuildingsOnDespawn.html#LightsOut_Patches_Power_CleanupBuildingsOnDespawn_Postfix_
+  commentId: Overload:LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix
+  nameWithType: CleanupBuildingsOnDespawn.Postfix
 - uid: LightsOut.Patches.Power.DecrementTickCounts
   name: DecrementTickCounts
   href: api/LightsOut.Patches.Power.DecrementTickCounts.html

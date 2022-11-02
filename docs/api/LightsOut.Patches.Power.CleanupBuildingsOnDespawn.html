@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DecrementTickCounts
+    <title>Class CleanupBuildingsOnDespawn
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DecrementTickCounts
+    <meta name="title" content="Class CleanupBuildingsOnDespawn
    ">
     <meta name="generator" content="docfx 2.59.3.0">
     
@@ -68,19 +68,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Power.DecrementTickCounts">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Power.CleanupBuildingsOnDespawn">
   
   
-  <h1 id="LightsOut_Patches_Power_DecrementTickCounts" data-uid="LightsOut.Patches.Power.DecrementTickCounts" class="text-break">Class DecrementTickCounts
+  <h1 id="LightsOut_Patches_Power_CleanupBuildingsOnDespawn" data-uid="LightsOut.Patches.Power.CleanupBuildingsOnDespawn" class="text-break">Class CleanupBuildingsOnDespawn
   </h1>
-  <div class="markdown level0 summary"><p>Performs the checking to turn buildings off after
-their specified delay period has expired</p>
+  <div class="markdown level0 summary"><p>Cleans up buildings as they despawn</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">DecrementTickCounts</span></div>
+    <div class="level1"><span class="xref">CleanupBuildingsOnDespawn</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -108,31 +107,48 @@ their specified delay period has expired</p>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Power.html">LightsOut.Patches.Power</a></h6>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
-  <h5 id="LightsOut_Patches_Power_DecrementTickCounts_syntax">Syntax</h5>
+  <h5 id="LightsOut_Patches_Power_CleanupBuildingsOnDespawn_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(TickManager))]
-[HarmonyPatch(&quot;DoSingleTick&quot;)]
-public class DecrementTickCounts</code></pre>
+    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(Building))]
+[HarmonyPatch(&quot;DeSpawn&quot;)]
+public class CleanupBuildingsOnDespawn</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_DecrementTickCounts_Prefix.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.DecrementTickCounts.Prefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_CleanupBuildingsOnDespawn_Postfix_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/DecrementTickCounts.cs/#L20">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/CleanupBuildingsOnDespawn.cs/#L18">View Source</a>
   </span>
-  <a id="LightsOut_Patches_Power_DecrementTickCounts_Prefix_" data-uid="LightsOut.Patches.Power.DecrementTickCounts.Prefix*"></a>
-  <h4 id="LightsOut_Patches_Power_DecrementTickCounts_Prefix" data-uid="LightsOut.Patches.Power.DecrementTickCounts.Prefix">Prefix()</h4>
-  <div class="markdown level1 summary"><p>Hooks into the core game tick to decrement the ticks remaining
-for consumable resources</p>
+  <a id="LightsOut_Patches_Power_CleanupBuildingsOnDespawn_Postfix_" data-uid="LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix*"></a>
+  <h4 id="LightsOut_Patches_Power_CleanupBuildingsOnDespawn_Postfix_Verse_ThingWithComps_" data-uid="LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix(Verse.ThingWithComps)">Postfix(ThingWithComps)</h4>
+  <div class="markdown level1 summary"><p>Removes this building from all cached areas in the mod</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Prefix()</code></pre>
+    <pre><code class="lang-csharp hljs">public static void Postfix(ThingWithComps __instance)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Verse.ThingWithComps</span></td>
+        <td><span class="parametername">__instance</span></td>
+        <td><p>This instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -141,10 +157,10 @@ for consumable resources</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_DecrementTickCounts.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.DecrementTickCounts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_CleanupBuildingsOnDespawn.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.CleanupBuildingsOnDespawn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/DecrementTickCounts.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/CleanupBuildingsOnDespawn.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

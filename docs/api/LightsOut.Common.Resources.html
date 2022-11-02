@@ -119,7 +119,7 @@ public static class Resources</code></pre>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_MinDraw.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.MinDraw%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L184">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L139">View Source</a>
   </span>
   <h4 id="LightsOut_Common_Resources_MinDraw" data-uid="LightsOut.Common.Resources.MinDraw">MinDraw</h4>
   <div class="markdown level1 summary"><p>The minimum amount of a resource to draw. 
@@ -154,7 +154,7 @@ a bug with Pawns pathing to unpowered benches repeatedly</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_BuildingStatus.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.BuildingStatus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L190">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L145">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_BuildingStatus_" data-uid="LightsOut.Common.Resources.BuildingStatus*"></a>
   <h4 id="LightsOut_Common_Resources_BuildingStatus" data-uid="LightsOut.Common.Resources.BuildingStatus">BuildingStatus</h4>
@@ -164,7 +164,7 @@ a building is disabled</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Dictionary&lt;ThingWithComps, int?&gt; BuildingStatus { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static Dictionary&lt;ThingWithComps, bool?&gt; BuildingStatus { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,7 +176,7 @@ a building is disabled</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">Verse.ThingWithComps</span>, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">Verse.ThingWithComps</span>, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -186,7 +186,7 @@ a building is disabled</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_MemoizedThings.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.MemoizedThings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L207">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L168">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_MemoizedThings_" data-uid="LightsOut.Common.Resources.MemoizedThings*"></a>
   <h4 id="LightsOut_Common_Resources_MemoizedThings" data-uid="LightsOut.Common.Resources.MemoizedThings">MemoizedThings</h4>
@@ -212,6 +212,38 @@ a building is disabled</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_PendingShutoff.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.PendingShutoff%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L151">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Resources_PendingShutoff_" data-uid="LightsOut.Common.Resources.PendingShutoff*"></a>
+  <h4 id="LightsOut_Common_Resources_PendingShutoff" data-uid="LightsOut.Common.Resources.PendingShutoff">PendingShutoff</h4>
+  <div class="markdown level1 summary"><p>A queue of the things waiting to be shut off so we don&apos;t
+have to go through the whole BuildingStatus dictionary</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Queue&lt;Pair&lt;ThingWithComps, int&gt;&gt; PendingShutoff { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Queue</span>&lt;<span class="xref">Verse.Pair</span>&lt;<span class="xref">Verse.ThingWithComps</span>, <span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -219,7 +251,7 @@ a building is disabled</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_CanConsumeResources_Verse_ThingComp_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.CanConsumeResources(Verse.ThingComp)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L41">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L36">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_CanConsumeResources_" data-uid="LightsOut.Common.Resources.CanConsumeResources*"></a>
   <h4 id="LightsOut_Common_Resources_CanConsumeResources_Verse_ThingComp_" data-uid="LightsOut.Common.Resources.CanConsumeResources(Verse.ThingComp)">CanConsumeResources(ThingComp)</h4>
@@ -270,7 +302,7 @@ consume resources, or <span class="xref">null</span> if it hasn&apos;t been set<
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_CanConsumeResources_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.CanConsumeResources(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L52">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L47">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_CanConsumeResources_" data-uid="LightsOut.Common.Resources.CanConsumeResources*"></a>
   <h4 id="LightsOut_Common_Resources_CanConsumeResources_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.CanConsumeResources(Verse.ThingWithComps)">CanConsumeResources(ThingWithComps)</h4>
@@ -318,131 +350,10 @@ consume resources, or <span class="xref">null</span> if it hasn&apos;t been set<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_DecrementAllTicksRemaining.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.DecrementAllTicksRemaining%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L125">View Source</a>
-  </span>
-  <a id="LightsOut_Common_Resources_DecrementAllTicksRemaining_" data-uid="LightsOut.Common.Resources.DecrementAllTicksRemaining*"></a>
-  <h4 id="LightsOut_Common_Resources_DecrementAllTicksRemaining" data-uid="LightsOut.Common.Resources.DecrementAllTicksRemaining">DecrementAllTicksRemaining()</h4>
-  <div class="markdown level1 summary"><p>Decrements all positive tick counts in the tick dictionary</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void DecrementAllTicksRemaining()</code></pre>
-  </div>
-  <h5 id="LightsOut_Common_Resources_DecrementAllTicksRemaining_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Be careful to only call this once per tick</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_DecrementTicksRemaining_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L102">View Source</a>
-  </span>
-  <a id="LightsOut_Common_Resources_DecrementTicksRemaining_" data-uid="LightsOut.Common.Resources.DecrementTicksRemaining*"></a>
-  <h4 id="LightsOut_Common_Resources_DecrementTicksRemaining_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.DecrementTicksRemaining(Verse.ThingWithComps)">DecrementTicksRemaining(ThingWithComps)</h4>
-  <div class="markdown level1 summary"><p>Decrement the number of ticks remaining for the specified <code data-dev-comment-type="paramref" class="paramref">thing</code></p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int? DecrementTicksRemaining(ThingWithComps thing)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Verse.ThingWithComps</span></td>
-        <td><span class="parametername">thing</span></td>
-        <td><p>The thing to check</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>The new number of ticks remaining</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_GetTicksRemaining_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L72">View Source</a>
-  </span>
-  <a id="LightsOut_Common_Resources_GetTicksRemaining_" data-uid="LightsOut.Common.Resources.GetTicksRemaining*"></a>
-  <h4 id="LightsOut_Common_Resources_GetTicksRemaining_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.GetTicksRemaining(Verse.ThingWithComps)">GetTicksRemaining(ThingWithComps)</h4>
-  <div class="markdown level1 summary"><p>Check how many ticks <code data-dev-comment-type="paramref" class="paramref">thing</code> has
-until it can no longer consume resources</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int? GetTicksRemaining(ThingWithComps thing)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Verse.ThingWithComps</span></td>
-        <td><span class="parametername">thing</span></td>
-        <td><p>The thing to check</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>The number of ticks until <code data-dev-comment-type="paramref" class="paramref">thing</code> can
-no longer consume resources</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_IsCharged_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.IsCharged(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L142">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L85">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_IsCharged_" data-uid="LightsOut.Common.Resources.IsCharged*"></a>
   <h4 id="LightsOut_Common_Resources_IsCharged_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.IsCharged(Verse.ThingWithComps)">IsCharged(ThingWithComps)</h4>
@@ -492,7 +403,7 @@ no longer consume resources</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_IsRechargeable_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.IsRechargeable(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L166">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L109">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_IsRechargeable_" data-uid="LightsOut.Common.Resources.IsRechargeable*"></a>
   <h4 id="LightsOut_Common_Resources_IsRechargeable_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.IsRechargeable(Verse.ThingWithComps)">IsRechargeable(ThingWithComps)</h4>
@@ -535,6 +446,40 @@ rechargeable building</p>
         <td><span class="xref">System.Boolean</span></td>
         <td><p><span class="xref">true</span> if <code data-dev-comment-type="paramref" class="paramref">building</code> is
     rechargeable, <span class="xref">false</span> otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_RemoveCachedBuilding_Verse_ThingWithComps_.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.RemoveCachedBuilding(Verse.ThingWithComps)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L125">View Source</a>
+  </span>
+  <a id="LightsOut_Common_Resources_RemoveCachedBuilding_" data-uid="LightsOut.Common.Resources.RemoveCachedBuilding*"></a>
+  <h4 id="LightsOut_Common_Resources_RemoveCachedBuilding_Verse_ThingWithComps_" data-uid="LightsOut.Common.Resources.RemoveCachedBuilding(Verse.ThingWithComps)">RemoveCachedBuilding(ThingWithComps)</h4>
+  <div class="markdown level1 summary"><p>A helper method to remove the cached data about a thing</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveCachedBuilding(ThingWithComps thing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Verse.ThingWithComps</span></td>
+        <td><span class="parametername">thing</span></td>
+        <td><p>The thing to remove</p>
 </td>
       </tr>
     </tbody>
@@ -600,7 +545,7 @@ rechargeable building</p>
     <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_SetTicksRemaining_Verse_ThingWithComps_System_Nullable_System_Int32__.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps%2CSystem.Nullable%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L85">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L66">View Source</a>
   </span>
   <a id="LightsOut_Common_Resources_SetTicksRemaining_" data-uid="LightsOut.Common.Resources.SetTicksRemaining*"></a>
   <h4 id="LightsOut_Common_Resources_SetTicksRemaining_Verse_ThingWithComps_System_Nullable_System_Int32__" data-uid="LightsOut.Common.Resources.SetTicksRemaining(Verse.ThingWithComps,System.Nullable{System.Int32})">SetTicksRemaining(ThingWithComps, Nullable&lt;Int32&gt;)</h4>
@@ -609,7 +554,7 @@ rechargeable building</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int? SetTicksRemaining(ThingWithComps thing, int? ticksRemaining)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void SetTicksRemaining(ThingWithComps thing, int? ticksRemaining)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -631,22 +576,6 @@ rechargeable building</p>
         <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td><span class="parametername">ticksRemaining</span></td>
         <td><p>The number of ticks to set it to</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td><p>The previous value</p>
 </td>
       </tr>
     </tbody>

@@ -72,15 +72,15 @@ namespace LightsOut.Boilerplate
         public static float DelaySeconds { get; set; } = 1.5f;
 
         /// <summary>
-        /// The number of ticks to wait between decrementing
-        /// the number of ticks remaining
+        /// The number of ticks to wait between checking for
+        /// buildings with delays to turn off
         /// </summary>
-        public static int TicksBetweenDecrement = 15;
+        public static int TicksBetweenShutoffCheck = 30;
 
         /// <summary>
         /// An easier way to get the number of ticks
         /// </summary>
-        public static int DelayTicks => (int)(DelaySeconds * 60f / TicksBetweenDecrement);
+        public static int DelayTicks => (int)(DelaySeconds * 60f);
 
         /// <summary>
         /// The identifier this mod uses to identify itself in-game

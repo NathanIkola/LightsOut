@@ -111,7 +111,7 @@ the enabled/disabled status of the building it&apos;s attributed to</p>
   <h5 id="LightsOut_Patches_Power_DisableBasePowerDrawOnGet_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(CompPowerTrader))]
-[HarmonyPatch(&quot;EnergyOutputPerTick&quot;, MethodType.Getter)]
+[HarmonyPatch(&quot;PowerOutput&quot;, MethodType.Getter)]
 public class DisableBasePowerDrawOnGet</code></pre>
   </div>
   <h3 id="methods">Methods

@@ -121,7 +121,8 @@
     <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
-    <Compile Include="Patches\Power\DecrementTickCounts.cs" />
+    <Compile Include="Patches\Power\CleanupBuildingsOnDespawn.cs" />
+    <Compile Include="Patches\Power\PerformPendingShutoff.cs" />
     <Compile Include="Patches\Power\DisableBasePowerDrawOnGet.cs" />
     <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
     <Compile Include="Patches\Power\DisableThingsInRoomsOnSpawn.cs" />
@@ -156,7 +157,7 @@ echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />
