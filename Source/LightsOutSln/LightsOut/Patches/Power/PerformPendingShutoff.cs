@@ -2,6 +2,7 @@
 using Verse;
 using LightsOut.Common;
 using ModSettings = LightsOut.Boilerplate.ModSettings;
+using System.Collections.Generic;
 
 namespace LightsOut.Patches.Power
 {
@@ -19,6 +20,8 @@ namespace LightsOut.Patches.Power
         /// </summary>
         public static void Prefix()
         {
+            Dictionary<Room, bool?> rooms = new Dictionary<Room, bool?>();
+
             // don't need to check every single tick
             int curTick = GenTicks.TicksGame;
             if (curTick % ModSettings.TicksBetweenShutoffCheck == 0)
@@ -26,7 +29,17 @@ namespace LightsOut.Patches.Power
                 {
                     ThingWithComps thing = Resources.PendingShutoff.Dequeue().First;
                     if (Common.Lights.CanBeLight(thing))
-                        Common.Lights.DisableLight(thing);
+                    {
+                        Room room = Rooms.GetRoom(thing);
+                        bool? shouldShutoff = rooms.TryGetValue(room, null);
+                        if (shouldShutoff == null)
+                        {
+                            shouldShutoff = Common.Lights.ShouldTurnOffAllLights(room, null);
+                            rooms.Add(room, shouldShutoff);
+                        }
+                        if (shouldShutoff == true)
+                            Common.Lights.DisableLight(thing);
+                    }
                     else
                         Resources.SetTicksRemaining(thing, 0);
                 }
