@@ -182,12 +182,12 @@ references:
   isSpec: "True"
   fullName: LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate
   nameWithType: ModSettings.StandbyResourceDrawRate
-- uid: LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
-  name: TicksBetweenDecrement
-  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_TicksBetweenDecrement
-  commentId: F:LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
-  fullName: LightsOut.Boilerplate.ModSettings.TicksBetweenDecrement
-  nameWithType: ModSettings.TicksBetweenDecrement
+- uid: LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck
+  name: TicksBetweenShutoffCheck
+  href: api/LightsOut.Boilerplate.ModSettings.html#LightsOut_Boilerplate_ModSettings_TicksBetweenShutoffCheck
+  commentId: F:LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck
+  fullName: LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck
+  nameWithType: ModSettings.TicksBetweenShutoffCheck
 - uid: LightsOut.Common
   name: LightsOut.Common
   href: api/LightsOut.Common.html
@@ -742,6 +742,19 @@ references:
   commentId: F:LightsOut.Common.Resources.MinDraw
   fullName: LightsOut.Common.Resources.MinDraw
   nameWithType: Resources.MinDraw
+- uid: LightsOut.Common.Resources.NextTickToDisableBuilding
+  name: NextTickToDisableBuilding()
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_NextTickToDisableBuilding
+  commentId: M:LightsOut.Common.Resources.NextTickToDisableBuilding
+  fullName: LightsOut.Common.Resources.NextTickToDisableBuilding()
+  nameWithType: Resources.NextTickToDisableBuilding()
+- uid: LightsOut.Common.Resources.NextTickToDisableBuilding*
+  name: NextTickToDisableBuilding
+  href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_NextTickToDisableBuilding_
+  commentId: Overload:LightsOut.Common.Resources.NextTickToDisableBuilding
+  isSpec: "True"
+  fullName: LightsOut.Common.Resources.NextTickToDisableBuilding
+  nameWithType: Resources.NextTickToDisableBuilding
 - uid: LightsOut.Common.Resources.PendingShutoff
   name: PendingShutoff
   href: api/LightsOut.Common.Resources.html#LightsOut_Common_Resources_PendingShutoff
@@ -3187,25 +3200,6 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Power.CleanupBuildingsOnDespawn.Postfix
   nameWithType: CleanupBuildingsOnDespawn.Postfix
-- uid: LightsOut.Patches.Power.DecrementTickCounts
-  name: DecrementTickCounts
-  href: api/LightsOut.Patches.Power.DecrementTickCounts.html
-  commentId: T:LightsOut.Patches.Power.DecrementTickCounts
-  fullName: LightsOut.Patches.Power.DecrementTickCounts
-  nameWithType: DecrementTickCounts
-- uid: LightsOut.Patches.Power.DecrementTickCounts.Prefix
-  name: Prefix()
-  href: api/LightsOut.Patches.Power.DecrementTickCounts.html#LightsOut_Patches_Power_DecrementTickCounts_Prefix
-  commentId: M:LightsOut.Patches.Power.DecrementTickCounts.Prefix
-  fullName: LightsOut.Patches.Power.DecrementTickCounts.Prefix()
-  nameWithType: DecrementTickCounts.Prefix()
-- uid: LightsOut.Patches.Power.DecrementTickCounts.Prefix*
-  name: Prefix
-  href: api/LightsOut.Patches.Power.DecrementTickCounts.html#LightsOut_Patches_Power_DecrementTickCounts_Prefix_
-  commentId: Overload:LightsOut.Patches.Power.DecrementTickCounts.Prefix
-  isSpec: "True"
-  fullName: LightsOut.Patches.Power.DecrementTickCounts.Prefix
-  nameWithType: DecrementTickCounts.Prefix
 - uid: LightsOut.Patches.Power.DisableBasePowerDrawOnGet
   name: DisableBasePowerDrawOnGet
   href: api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.html
@@ -3282,6 +3276,25 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.Power.DisableThingsInRoomsOnSpawn.Postfix
   nameWithType: DisableThingsInRoomsOnSpawn.Postfix
+- uid: LightsOut.Patches.Power.PerformPendingShutoff
+  name: PerformPendingShutoff
+  href: api/LightsOut.Patches.Power.PerformPendingShutoff.html
+  commentId: T:LightsOut.Patches.Power.PerformPendingShutoff
+  fullName: LightsOut.Patches.Power.PerformPendingShutoff
+  nameWithType: PerformPendingShutoff
+- uid: LightsOut.Patches.Power.PerformPendingShutoff.Prefix
+  name: Prefix()
+  href: api/LightsOut.Patches.Power.PerformPendingShutoff.html#LightsOut_Patches_Power_PerformPendingShutoff_Prefix
+  commentId: M:LightsOut.Patches.Power.PerformPendingShutoff.Prefix
+  fullName: LightsOut.Patches.Power.PerformPendingShutoff.Prefix()
+  nameWithType: PerformPendingShutoff.Prefix()
+- uid: LightsOut.Patches.Power.PerformPendingShutoff.Prefix*
+  name: Prefix
+  href: api/LightsOut.Patches.Power.PerformPendingShutoff.html#LightsOut_Patches_Power_PerformPendingShutoff_Prefix_
+  commentId: Overload:LightsOut.Patches.Power.PerformPendingShutoff.Prefix
+  isSpec: "True"
+  fullName: LightsOut.Patches.Power.PerformPendingShutoff.Prefix
+  nameWithType: PerformPendingShutoff.Prefix
 - uid: LightsOut.Patches.Power.RechargeablePatch
   name: RechargeablePatch
   href: api/LightsOut.Patches.Power.RechargeablePatch.html

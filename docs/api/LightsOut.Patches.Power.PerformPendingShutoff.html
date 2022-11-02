@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum Resources.ThingType
+    <title>Class PerformPendingShutoff
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum Resources.ThingType
+    <meta name="title" content="Class PerformPendingShutoff
    ">
     <meta name="generator" content="docfx 2.59.3.0">
     
@@ -68,43 +68,71 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LightsOut.Common.Resources.ThingType">
+            <article class="content wrap" id="_content" data-uid="LightsOut.Patches.Power.PerformPendingShutoff">
   
   
-  <h1 id="LightsOut_Common_Resources_ThingType" data-uid="LightsOut.Common.Resources.ThingType" class="text-break">Enum Resources.ThingType
+  <h1 id="LightsOut_Patches_Power_PerformPendingShutoff" data-uid="LightsOut.Patches.Power.PerformPendingShutoff" class="text-break">Class PerformPendingShutoff
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Performs the checking to turn buildings off after
+their specified delay period has expired</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Common.html">LightsOut.Common</a></h6>
-  <h6><strong>Assembly</strong>: LightsOut.dll</h6>
-  <h5 id="LightsOut_Common_Resources_ThingType_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ThingType</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">PerformPendingShutoff</span></div>
   </div>
-  <h3 id="fields">Fields
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LightsOut.Patches.Power.html">LightsOut.Patches.Power</a></h6>
+  <h6><strong>Assembly</strong>: LightsOut.dll</h6>
+  <h5 id="LightsOut_Patches_Power_PerformPendingShutoff_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(TickManager))]
+[HarmonyPatch(&quot;DoSingleTick&quot;)]
+public class PerformPendingShutoff</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="LightsOut_Common_Resources_ThingType_Light">Light</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="LightsOut_Common_Resources_ThingType_Table">Table</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td id="LightsOut_Common_Resources_ThingType_Unknown">Unknown</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_PerformPendingShutoff_Prefix.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.PerformPendingShutoff.Prefix%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/PerformPendingShutoff.cs/#L20">View Source</a>
+  </span>
+  <a id="LightsOut_Patches_Power_PerformPendingShutoff_Prefix_" data-uid="LightsOut.Patches.Power.PerformPendingShutoff.Prefix*"></a>
+  <h4 id="LightsOut_Patches_Power_PerformPendingShutoff_Prefix" data-uid="LightsOut.Patches.Power.PerformPendingShutoff.Prefix">Prefix()</h4>
+  <div class="markdown level1 summary"><p>Hooks into the core game tick to decrement the ticks remaining
+for consumable resources</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Prefix()</code></pre>
+  </div>
 </article>
           </div>
           
@@ -113,10 +141,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_Resources_ThingType.md&amp;value=---%0Auid%3A%20LightsOut.Common.Resources.ThingType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_PerformPendingShutoff.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.PerformPendingShutoff%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/Resources.cs/#L169" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/PerformPendingShutoff.cs/#L12" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

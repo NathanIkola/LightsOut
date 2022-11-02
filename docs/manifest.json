@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
-          "hash": "pPeP6voe5j+4mD4TPH1NwU0TY02cIL7TJEjV/iRcWzY="
+          "hash": "6kDtmmazkfaNzZoaZfiicMCiaHatOZkWXjDsVegOux8="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Resources.ThingType.html",
-          "hash": "FonzCRGVZiiJhe2iG47c5blYL2/g0oPDTuWlubpqxmw="
+          "hash": "62qDZ8BHA3e7cK557ecSHNhXdCe8IYW9MCdwQ7uVjt0="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Resources.html",
-          "hash": "+Wg6wTYajr1HFlwL+RZMgwiH2jmzRETGNSAfNpHa9AE="
+          "hash": "UN7lW8lvIpdlno0Ul5fPoSjX1XtuCjnaHSmVcICEXbQ="
         }
       },
       "is_incremental": false,
@@ -953,18 +953,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "obj/api/LightsOut.Patches.Power.DecrementTickCounts.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LightsOut.Patches.Power.DecrementTickCounts.html",
-          "hash": "cCUBhF9D5CPm4fzDkhHpH6+wBzOByB3VquIxLiOZofo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "obj/api/LightsOut.Patches.Power.DisableBasePowerDrawOnGet.yml",
       "output": {
         ".html": {
@@ -1001,6 +989,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.Power.PerformPendingShutoff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.Power.PerformPendingShutoff.html",
+          "hash": "KOw8YykY91vPkJMdM1LDkkGpWKe3vV0vpAu7bLscEg4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/LightsOut.Patches.Power.RechargeablePatch.yml",
       "output": {
         ".html": {
@@ -1017,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.Power.html",
-          "hash": "GKeiHFegBnOF9G1zCuOsQ3pRB18ZUzsTe/86aCKWI+Y="
+          "hash": "bMzb2t6XOl6I0hHay+FWgf6K+50hLRN9OifB6+LjsF8="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "6ZakITaCyCu7yr90HRDts/pip1FVvo5IqFHBtABmLxs="
+          "hash": "1OCO0VHQmGex1uwg7H9X5/wUnwfdMNA935i4YPDHQUs="
         }
       },
       "is_incremental": false,
@@ -1103,7 +1103,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 84,
-          "skipped_file_count": 77
+          "skipped_file_count": 79
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
