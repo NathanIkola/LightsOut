@@ -205,7 +205,7 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(building is null, "CanBeLight called on a null building");
             if (building is null) return false;
-            if (building is MinifiedThing) return false;
+            //if (building is MinifiedThing) return false;
             if (Resources.MemoizedThings.ContainsKey(building))
                 return Resources.MemoizedThings[building] == Resources.ThingType.Light;
 
@@ -305,7 +305,10 @@ namespace LightsOut.Common
         /// <summary>
         /// List of things that a light name MUST NOT include to be considered
         /// </summary>
-        private static List<string> LightNamesMustNotInclude { get; } = new List<string>() { };
+        private static List<string> LightNamesMustNotInclude { get; } = new List<string>() 
+        { 
+            "sun"
+        };
         
         /// <summary>
         /// A cached list of KeepOnComps to prevent repeated comp lookups
