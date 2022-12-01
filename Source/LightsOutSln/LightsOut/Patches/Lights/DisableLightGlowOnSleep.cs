@@ -23,13 +23,14 @@ namespace LightsOut.Patches.Lights
         /// <param name="canSleep">Whether or not the Pawn is allowed to sleep</param>
         public static void Postfix(Toil __result, bool canSleep)
         {
+            if (__result is null) { return; }
             if (!ModSettings.NightLights && canSleep)
             {
                 __result.AddPreInitAction(() =>
                 {
                     Pawn pawn = __result.actor;
-                    if (pawn.RaceProps.Animal) return;
-                    Room room = pawn?.GetRoom();
+                    if (pawn?.RaceProps?.Animal ?? false) return;
+                    Room room = pawn.GetRoom();
 
                     if (!(room is null) && Common.Lights.ShouldTurnOffAllLights(room, pawn)
                         && pawn.jobs.curDriver.asleep)
@@ -46,6 +47,7 @@ namespace LightsOut.Patches.Lights
                 __result.tickAction = () =>
                 {
                     Pawn pawn = __result.actor;
+                    if (pawn is null) { return; }
                     // cache the sleeping status of the pawn
                     bool? asleep = pawn.jobs.curDriver?.asleep;
                     
@@ -54,6 +56,7 @@ namespace LightsOut.Patches.Lights
                     // check if their status has changed
                     if (pawn.RaceProps.Animal) return;
                     Room room = pawn.GetRoom();
+                    if (room is null) { return; }
                     bool shouldTurnOffLights = Common.Lights.ShouldTurnOffAllLights(room, pawn);
                     if(asleep != pawn.jobs.curDriver?.asleep)
                     {
