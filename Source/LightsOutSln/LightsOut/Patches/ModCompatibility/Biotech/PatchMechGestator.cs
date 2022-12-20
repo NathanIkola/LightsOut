@@ -19,28 +19,29 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchInfo
                 {
                     method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechGestator>(nameof(Pre_DontAdjustPower)),
+                    patch = GetMethod<PatchMechGestator>(nameof(ShouldAdjustPower)),
                     patchType = PatchType.Prefix
                 },
                 new PatchInfo
                 {
                     method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(Pre_AddStandbyInspect)),
+                    patch = GetMethod<PatchMechCharger>(nameof(IsOnStandby)),
                     patchType = PatchType.Prefix
                 },
             };
         }
 
         private static PropertyInfo GestatingMech;
+        
 
-        private static bool Pre_DontAdjustPower(CompPowerTrader __0)
+        private static bool ShouldAdjustPower(CompPowerTrader __0)
         {
-            return !IsGestator(__0?.parent) || GestatorInUse(__0.parent);
+            return !IsGestator(__0?.parent) || !GestatorInUse(__0.parent);
         }
         
-        private static bool Pre_AddStandbyInspect(ThingWithComps __0)
+        private static bool IsOnStandby(CompPower __0)
         {
-            return !IsGestator(__0) || GestatorInUse(__0);
+            return !IsGestator(__0?.parent) || !GestatorInUse(__0.parent);
         }
 
         private static bool IsGestator(ThingWithComps thing)
