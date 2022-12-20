@@ -23,7 +23,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchInfo
                 {
                     method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(Pre_DontAdjustPower)),
+                    patch = GetMethod<PatchMechCharger>(nameof(ShouldAdjustPower)),
                     patchType = PatchType.Prefix
                 },
                 new PatchInfo
@@ -44,18 +44,13 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         private static PropertyInfo IsAttachedToMech = null;
 
         /// <summary>
-        ///
+        /// returns true if comp is not a charger or if it is not in use
         /// </summary>
         /// <param name="__0"></param>
         /// <returns></returns>
-        private static bool Pre_DontAdjustPower(CompPowerTrader __0)
+        private static bool ShouldAdjustPower(CompPowerTrader __0)
         {
-            if (__0?.parent == null || !IsCharger(__0.parent))
-            {
-                return true;
-            }
-
-            return ChargerInUse(__0.parent);
+            return !IsCharger(__0?.parent) || !ChargerInUse(__0.parent);
         }
 
         private static bool IsCharger(ThingWithComps thing)
@@ -78,13 +73,14 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             __result = __result || IsCharger(__0);
         }
 
-        private static bool Pre_AddStandbyInspect(ThingWithComps __0)
+        /// <summary>
+        /// Returns false if given an in-use charger (skips standby adding the inspect label)
+        /// </summary>
+        /// <param name="__0"></param>
+        /// <returns></returns>
+        private static bool Pre_AddStandbyInspect(CompPower __0)
         {
-            if (!IsCharger(__0))
-            {
-                return true;
-            }
-            return ChargerInUse(__0);
+            return !IsCharger(__0?.parent) || !ChargerInUse(__0.parent);
         }
     }
 }
