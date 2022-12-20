@@ -22,6 +22,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchGeneAssembly(),
                 new PatchGrowthVat(),
                 new PatchBandNode(),
+                new PatchGeneExtractor(),
             };
 
             return components;
@@ -41,8 +42,8 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         {
             return new PatchInfo
             {
-                method = post,
-                patch = typeof(Tables).GetMethod(nameof(Tables.IsTable)),
+                method = typeof(Tables).GetMethod(nameof(Tables.IsTable)),
+                patch = post,
                 patchType = PatchType.Postfix
             };
         }
