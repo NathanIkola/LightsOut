@@ -20,6 +20,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchMechCharger(),
                 new PatchMechGestator(),
                 new PatchGeneAssembly(),
+                new PatchGrowthVat(),
             };
 
             return components;
