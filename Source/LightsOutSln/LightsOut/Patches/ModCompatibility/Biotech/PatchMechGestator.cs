@@ -19,7 +19,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchInfo
                 {
                     method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechGestator>(nameof(ShouldAdjustPower)),
+                    patch = GetMethod<PatchMechGestator>(nameof(IsOnStandby)),
                     patchType = PatchType.Prefix
                 },
                 new PatchInfo
@@ -31,14 +31,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             };
         }
 
-        private static PropertyInfo GestatingMech;
-        
-
-        private static bool ShouldAdjustPower(CompPowerTrader __0)
-        {
-            return !IsGestator(__0?.parent) || !GestatorInUse(__0.parent);
-        }
-        
         private static bool IsOnStandby(CompPower __0)
         {
             return !IsGestator(__0?.parent) || !GestatorInUse(__0.parent);
@@ -46,17 +38,13 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         private static bool IsGestator(ThingWithComps thing)
         {
-            return thing?.GetType().Name == "Building_MechGestator";
+            return thing is Building_MechGestator;
         }
         
         private static bool GestatorInUse(ThingWithComps thing)
         {
-            if (GestatingMech == null)
-            {
-                GestatingMech = thing.GetType().GetProperty("GestatingMech");
-            }
-
-            return (Pawn)GestatingMech.GetValue(thing) != null;
+            var state = ((Building_MechGestator)thing).ActiveBill?.State;
+            return state == FormingCycleState.Forming;
         }
     }
 }

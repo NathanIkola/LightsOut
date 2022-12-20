@@ -23,46 +23,37 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchInfo
                 {
                     method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(ShouldAdjustPower)),
+                    patch = GetMethod<PatchMechCharger>(nameof(IsOnStandby)),
                     patchType = PatchType.Prefix
                 },
+                new PatchInfo
+                {
+                    method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
+                    patch = GetMethod<PatchMechCharger>(nameof(IsOnStandby)),
+                    patchType = PatchType.Prefix
+                },
+                
                 new PatchInfo
                 {
                     method = GetMethod(typeof(Tables), nameof(Tables.IsTable)),
                     patch = GetMethod<PatchMechCharger>(nameof(Post_IsTable)),
                     patchType = PatchType.Postfix
                 },
-                new PatchInfo
-                {
-                    method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(Pre_AddStandbyInspect)),
-                    patchType = PatchType.Prefix
-                },
             };
         }
 
         private static PropertyInfo IsAttachedToMech = null;
 
-        /// <summary>
-        /// returns true if comp is not a charger or if it is not in use
-        /// </summary>
-        /// <param name="__0"></param>
-        /// <returns></returns>
-        private static bool ShouldAdjustPower(CompPowerTrader __0)
-        {
-            return !IsCharger(__0?.parent) || !ChargerInUse(__0.parent);
-        }
-
         private static bool IsCharger(ThingWithComps thing)
         {
-            return thing?.GetType().Name == "Building_MechCharger";
+            return thing is Building_MechCharger;
         }
 
         private static bool ChargerInUse(ThingWithComps thing)
         {
             if (IsAttachedToMech == null)
             {
-                IsAttachedToMech = thing.GetType().GetProperty("IsAttachedToMech", BindingFlags.NonPublic | BindingFlags.Instance);
+                IsAttachedToMech = typeof(Building_MechCharger).GetProperty("IsAttachedToMech", BindingFlags.NonPublic | BindingFlags.Instance);
             }
 
             return (bool)IsAttachedToMech.GetValue(thing);
@@ -78,7 +69,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         /// </summary>
         /// <param name="__0"></param>
         /// <returns></returns>
-        private static bool Pre_AddStandbyInspect(CompPower __0)
+        private static bool IsOnStandby(CompPower __0)
         {
             return !IsCharger(__0?.parent) || !ChargerInUse(__0.parent);
         }
