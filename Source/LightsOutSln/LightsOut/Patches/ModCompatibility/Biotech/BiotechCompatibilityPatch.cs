@@ -21,6 +21,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchMechGestator(),
                 new PatchGeneAssembly(),
                 new PatchGrowthVat(),
+                new PatchBandNode(),
             };
 
             return components;
@@ -34,6 +35,16 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public static void Post_OnOffDeactivate(ThingWithComps __instance)
         {
             Tables.DisableTable(__instance);
+        }
+        
+        public static PatchInfo IsTablePatch(MethodInfo post)
+        {
+            return new PatchInfo
+            {
+                method = post,
+                patch = typeof(Tables).GetMethod(nameof(Tables.IsTable)),
+                patchType = PatchType.Postfix
+            };
         }
 
         public static List<PatchInfo> CustomOnOffPatches(MethodInfo activate, MethodInfo deactivate)
