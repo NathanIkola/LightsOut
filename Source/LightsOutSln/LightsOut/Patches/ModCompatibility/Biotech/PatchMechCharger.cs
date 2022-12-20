@@ -18,8 +18,8 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            var patches =
-                BiotechCompatibilityPatch.CustomStandbyPatches(GetMethod<PatchMechCharger>(nameof(IsOnStandby)));
+            var patches = BiotechCompatibilityPatch.CustomOnOffPatches(GetMethod<Building_MechCharger>("StartCharging"),
+                GetMethod<Building_MechCharger>("StopCharging"));
             patches.Add(
                 new PatchInfo
                 {
@@ -28,7 +28,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                     patchType = PatchType.Postfix
                 }
             );
-            patches.AddRange(BiotechCompatibilityPatch.CustomOnOffPatches(GetMethod<Building_MechCharger>("StartCharging"),GetMethod<Building_MechCharger>("StopCharging")));
             return patches;
         }
 
@@ -39,30 +38,8 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             return thing is Building_MechCharger;
         }
 
-        private static bool ChargerInUse(ThingWithComps thing)
-        {
-            if (IsAttachedToMech == null)
-            {
-                IsAttachedToMech = typeof(Building_MechCharger).GetProperty("IsAttachedToMech",
-                    BindingFlags.NonPublic | BindingFlags.Instance);
-            }
-
-            return (bool)IsAttachedToMech.GetValue(thing);
-        }
-
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
-        {
+        private static void Post_IsTable(ThingWithComps __0, ref bool __result) {
             __result = __result || IsCharger(__0);
-        }
-
-        /// <summary>
-        /// Returns false if given an in-use charger (skips standby adding the inspect label)
-        /// </summary>
-        /// <param name="__0"></param>
-        /// <returns></returns>
-        private static bool IsOnStandby(CompPower __0)
-        {
-            return !IsCharger(__0?.parent) || !ChargerInUse(__0.parent);
         }
     }
 }
