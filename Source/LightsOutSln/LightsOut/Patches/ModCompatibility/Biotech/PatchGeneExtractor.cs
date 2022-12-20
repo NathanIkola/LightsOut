@@ -32,6 +32,13 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                     patch = GetMethod<PatchGeneExtractor>(nameof(AfterStop)),
                     patchType = PatchType.Postfix,
                 },
+                
+                new PatchInfo
+                {
+                    method = GetMethod<Building>(nameof(Building.SpawnSetup)),
+                    patch = GetMethod<PatchGeneExtractor>(nameof(AfterSpawn)),
+                    patchType = PatchType.Postfix,
+                },
                 BiotechCompatibilityPatch.IsTablePatch(GetMethod<PatchGeneExtractor>(nameof(Post_IsTable))),
             };
             return patches;
@@ -45,6 +52,14 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         private static void AfterStop(Building_GeneExtractor __instance)
         {
             Tables.DisableTable(__instance);
+        }
+        
+        private static void AfterSpawn(Building __instance)
+        {
+            if (__instance is Building_GeneExtractor inst && inst.SelectedPawn != null)
+            {
+                Tables.EnableTable(__instance);
+            }
         }
 
         private static void AfterSelectPawn(Building_GeneExtractor __instance)

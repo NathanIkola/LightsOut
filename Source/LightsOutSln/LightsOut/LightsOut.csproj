@@ -90,10 +90,13 @@
     <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\BiotechCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\Biotech\PatchBandNode.cs" />
+    <Compile Include="Patches\ModCompatibility\Biotech\PatchGeneExtractor.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchGrowthVat.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchMechGestator.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchMechCharger.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchGeneAssembly.cs" />
+    <Compile Include="Patches\ModCompatibility\Biotech\PatchSubscoreScanner.cs" />
     <Compile Include="Patches\ModCompatibility\ColonyManager\ColonyManagerCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ColonyManager\KeepAIManagerOn.cs" />
     <Compile Include="Patches\ModCompatibility\DubsBadHygiene\DubsBadHygieneCompatibilityPatch.cs" />
