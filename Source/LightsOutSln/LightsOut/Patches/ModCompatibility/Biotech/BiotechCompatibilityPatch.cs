@@ -19,17 +19,18 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             {
                 new PatchMechCharger(),
                 new PatchMechGestator(),
+                new PatchGeneAssembly(),
             };
 
             return components;
         }
 
-        private static void Pre_OnOffActivate(ThingWithComps __instance)
+        public static void Pre_OnOffActivate(ThingWithComps __instance)
         {
             Tables.EnableTable(__instance);
         }
         
-        private static void Post_OnOffDeactivate(ThingWithComps __instance)
+        public static void Post_OnOffDeactivate(ThingWithComps __instance)
         {
             Tables.DisableTable(__instance);
         }
@@ -48,7 +49,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 {
                     method = deactivate,
                     patch = typeof(BiotechCompatibilityPatch).GetMethod(nameof(Post_OnOffDeactivate)),
-                    patchType = PatchType.Prefix
+                    patchType = PatchType.Postfix,
                 }
             };
         }
