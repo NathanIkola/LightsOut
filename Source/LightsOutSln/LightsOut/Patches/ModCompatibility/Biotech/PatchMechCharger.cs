@@ -12,7 +12,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
     /// <summary>
     /// Disable power draw on mech recharger if not in use by mech
     /// </summary>
-    public class PatchMechRecharger : ICompatibilityPatchComponent<PatchMechRecharger>
+    public class PatchMechCharger : ICompatibilityPatchComponent<PatchMechCharger>
     {
         public override string ComponentName => "Patch for mech recharger power draw";
 
@@ -23,19 +23,19 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchInfo
                 {
                     method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechRecharger>(nameof(Pre_DontAdjustPower)),
+                    patch = GetMethod<PatchMechCharger>(nameof(Pre_DontAdjustPower)),
                     patchType = PatchType.Prefix
                 },
                 new PatchInfo
                 {
                     method = GetMethod(typeof(Tables), nameof(Tables.IsTable)),
-                    patch = GetMethod<PatchMechRecharger>(nameof(Post_IsTable)),
+                    patch = GetMethod<PatchMechCharger>(nameof(Post_IsTable)),
                     patchType = PatchType.Postfix
                 },
                 new PatchInfo
                 {
                     method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
-                    patch = GetMethod<PatchMechRecharger>(nameof(Pre_AddStandbyInspect)),
+                    patch = GetMethod<PatchMechCharger>(nameof(Pre_AddStandbyInspect)),
                     patchType = PatchType.Prefix
                 },
             };
@@ -54,6 +54,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             {
                 return true;
             }
+
             return ChargerInUse(__0.parent);
         }
 
