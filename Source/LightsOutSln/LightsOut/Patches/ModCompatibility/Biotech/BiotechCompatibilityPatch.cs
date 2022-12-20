@@ -13,7 +13,8 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         {
             List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
             {
-                new PatchMechCharger()
+                new PatchMechCharger(),
+                new PatchMechGestator(),
             };
 
             return components;
