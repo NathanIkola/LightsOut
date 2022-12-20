@@ -28,18 +28,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                     patchType = PatchType.Postfix
                 }
             );
-            patches.Add(new PatchInfo
-                {
-                    method = GetMethod<Building_MechCharger>("StopCharging"),
-                    patch = GetMethod<PatchMechCharger>(nameof(Post_StopCharging)),
-                    patchType = PatchType.Postfix,
-            });
-            patches.Add(new PatchInfo
-            {
-                method = GetMethod<Building_MechCharger>("StartCharging"),
-                patch = GetMethod<PatchMechCharger>(nameof(Pre_StartCharging)),
-                patchType = PatchType.Prefix,
-            });
+            patches.AddRange(BiotechCompatibilityPatch.CustomOnOffPatches(GetMethod<Building_MechCharger>("StartCharging"),GetMethod<Building_MechCharger>("StopCharging")));
             return patches;
         }
 
@@ -59,16 +48,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             }
 
             return (bool)IsAttachedToMech.GetValue(thing);
-        }
-
-        private static void Post_StopCharging(Building_MechCharger __instance)
-        {
-            Tables.DisableTable(__instance);
-        }
-
-        private static void Pre_StartCharging(Building_MechCharger __instance)
-        {
-            Tables.EnableTable(__instance);
         }
 
         private static void Post_IsTable(ThingWithComps __0, ref bool __result)

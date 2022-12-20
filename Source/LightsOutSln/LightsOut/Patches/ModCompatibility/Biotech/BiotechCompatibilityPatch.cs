@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.Power;
+using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
@@ -22,6 +24,35 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             return components;
         }
 
+        private static void Pre_OnOffActivate(ThingWithComps __instance)
+        {
+            Tables.EnableTable(__instance);
+        }
+        
+        private static void Post_OnOffDeactivate(ThingWithComps __instance)
+        {
+            Tables.DisableTable(__instance);
+        }
+
+        public static List<PatchInfo> CustomOnOffPatches(MethodInfo activate, MethodInfo deactivate)
+        {
+            return new List<PatchInfo>
+            {
+                new PatchInfo
+                {
+                    method = activate,
+                    patch = typeof(BiotechCompatibilityPatch).GetMethod(nameof(Pre_OnOffActivate)),
+                    patchType = PatchType.Prefix
+                },
+                new PatchInfo
+                {
+                    method = deactivate,
+                    patch = typeof(BiotechCompatibilityPatch).GetMethod(nameof(Post_OnOffDeactivate)),
+                    patchType = PatchType.Prefix
+                }
+            };
+        }
+        
         public static List<PatchInfo> CustomStandbyPatches(MethodInfo onStandby)
         {
             return new List<PatchInfo>
