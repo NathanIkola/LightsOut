@@ -18,28 +18,17 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            return new List<PatchInfo>
-            {
-                new PatchInfo
-                {
-                    method = GetMethod<DisableBasePowerDrawOnGet>(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(IsOnStandby)),
-                    patchType = PatchType.Prefix
-                },
-                new PatchInfo
-                {
-                    method = GetMethod<AddStandbyInspectMessagePatch>(nameof(AddStandbyInspectMessagePatch.Postfix)),
-                    patch = GetMethod<PatchMechCharger>(nameof(IsOnStandby)),
-                    patchType = PatchType.Prefix
-                },
-                
+            var patches =
+                BiotechCompatibilityPatch.CustomStandbyPatches(GetMethod<PatchMechCharger>(nameof(IsOnStandby)));
+            patches.Add(
                 new PatchInfo
                 {
                     method = GetMethod(typeof(Tables), nameof(Tables.IsTable)),
                     patch = GetMethod<PatchMechCharger>(nameof(Post_IsTable)),
                     patchType = PatchType.Postfix
-                },
-            };
+                }
+            );
+            return patches;
         }
 
         private static PropertyInfo IsAttachedToMech = null;
