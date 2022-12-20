@@ -14,7 +14,31 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for mech gestator power draw";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            return BiotechCompatibilityPatch.CustomStandbyPatches(GetMethod<PatchMechGestator>(nameof(IsOnStandby)));
+            var patches = BiotechCompatibilityPatch.CustomStandbyPatches(GetMethod<PatchMechGestator>(nameof(IsOnStandby)));
+            patches.Add(new PatchInfo
+            {
+                method = GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartGestation)),
+                patch = GetMethod<PatchMechGestator>(nameof(Pre_StartGestation)),
+                patchType = PatchType.Prefix,
+            });
+
+            patches.Add(new PatchInfo
+            {
+                method = GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted)),
+                patch = GetMethod<PatchMechGestator>(nameof(Post_GestationDone)),
+                patchType = PatchType.Postfix,
+            });
+            return patches;
+        }
+
+        private static void Pre_StartGestation(Building_MechGestator __instance)
+        {
+            Tables.EnableTable(__instance);
+        }
+        
+        private static void Post_GestationDone(Building_MechGestator __instance)
+        {
+            Tables.DisableTable(__instance);
         }
 
         private static bool IsOnStandby(CompPower __0)
