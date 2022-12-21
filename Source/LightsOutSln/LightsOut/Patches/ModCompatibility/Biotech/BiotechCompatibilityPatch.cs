@@ -24,6 +24,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchBandNode(),
                 new PatchGeneExtractor(),
                 new PatchSubscoreScanner(),
+                new PatchWasteAtomiser(),
             };
 
             return components;
