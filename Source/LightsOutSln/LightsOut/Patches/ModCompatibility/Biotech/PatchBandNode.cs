@@ -40,10 +40,5 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 Tables.EnableTable(__instance.parent);
             }
         }
-
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
-        {
-            __result = __result || (__0 is Building && __0.TryGetComp<CompBandNode>() != null);
-        }
     }
 }

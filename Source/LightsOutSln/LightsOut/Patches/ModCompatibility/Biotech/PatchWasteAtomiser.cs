@@ -23,11 +23,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             return patches;
         }
 
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
-        {
-            __result = __result || __0 is Building_WastepackAtomizer;
-        }
-
         private static void PostAtomizerTick(CompAtomizer __instance)
         {
             if (!(__instance.parent is Building_WastepackAtomizer inst))

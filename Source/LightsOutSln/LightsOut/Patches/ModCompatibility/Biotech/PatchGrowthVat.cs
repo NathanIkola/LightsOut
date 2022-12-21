@@ -11,6 +11,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for biotech growth vat support";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
+            BiotechCompatibilityPatch.RegisterEnterableTableLike<Building_GrowthVat>();
             var patches = new List<PatchInfo>();
             patches.Add(
 
@@ -38,14 +39,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 }
             );
             
-            patches.Add(
-                new PatchInfo
-                {
-                    method = GetMethod(typeof(Tables), "IsTable"),
-                    patch = GetMethod<PatchGrowthVat>(nameof(Post_IsTable)),
-                    patchType = PatchType.Postfix
-                }
-            );
             return patches;
         }
 

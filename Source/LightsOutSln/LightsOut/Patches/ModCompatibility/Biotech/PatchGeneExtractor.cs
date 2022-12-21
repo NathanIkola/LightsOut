@@ -11,15 +11,9 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patches for gene extractors compatibility";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
+            BiotechCompatibilityPatch.RegisterEnterableTableLike<Building_GeneExtractor>();
             var patches = new List<PatchInfo>
             {
-                new PatchInfo
-                {
-                    method = GetMethod<Building_GeneExtractor>("SelectPawn"),
-                    patch = GetMethod<PatchGeneExtractor>(nameof(AfterSelectPawn)),
-                    patchType = PatchType.Postfix,
-                },
-                
                 new PatchInfo
                 {
                     method = GetMethod<Building_GeneExtractor>("Finish"),
@@ -30,13 +24,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 {
                     method = GetMethod<Building_GeneExtractor>("Cancel"),
                     patch = GetMethod<PatchGeneExtractor>(nameof(AfterStop)),
-                    patchType = PatchType.Postfix,
-                },
-                
-                new PatchInfo
-                {
-                    method = GetMethod<Building>(nameof(Building.SpawnSetup)),
-                    patch = GetMethod<PatchGeneExtractor>(nameof(AfterSpawn)),
                     patchType = PatchType.Postfix,
                 },
                 BiotechCompatibilityPatch.IsTablePatch(GetMethod<PatchGeneExtractor>(nameof(Post_IsTable))),

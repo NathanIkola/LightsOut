@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
+using HarmonyLib;
 using LightsOut.Common;
 using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.Power;
+using RimWorld;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
@@ -12,7 +15,45 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         
         public override string CompatibilityPatchName => "Biotech";
         public override string TargetMod => "Biotech";
-        
+
+        private static List<Type> tableLikes = new List<Type>();
+
+        public static void RegisterEnterableTableLike<T>()
+        {
+            tableLikes.Add(typeof(T));
+        }
+
+        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
+        {
+            __result = __result || tableLikes.Any(t => __0.GetType().IsInstanceOfType(t));
+        }
+
+        private static void AfterSpawn(Building __instance)
+        {
+            if (__instance is Building_Enterable inst && tableLikes.Any(t => __instance.GetType().IsInstanceOfType(t)) && inst.SelectedPawn != null)
+            {
+                Tables.EnableTable(__instance);
+            }
+        }
+
+        private class TableLikePatch : ICompatibilityPatchComponent<TableLikePatch>
+        {
+            public override string ComponentName => "TableLikes";
+            public override IEnumerable<PatchInfo> GetPatches(Type type)
+            {
+                return new List<PatchInfo>
+                {
+                    IsTablePatch(GetMethod<BiotechCompatibilityPatch>(nameof(Post_IsTable))),
+                    new PatchInfo
+                    {
+                        method = GetMethod<Building>(nameof(Building.SpawnSetup)),
+                        patch = GetMethod<BiotechCompatibilityPatch>(nameof(AfterSpawn)),
+                        patchType = PatchType.Postfix,
+                    }
+                };
+            }
+        }
+
         public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
         {
             List<ICompatibilityPatchComponent> components = new List<ICompatibilityPatchComponent>()
@@ -25,6 +66,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 new PatchGeneExtractor(),
                 new PatchSubscoreScanner(),
                 new PatchWasteAtomiser(),
+                new TableLikePatch(),
             };
 
             return components;
