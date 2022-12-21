@@ -68,25 +68,5 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 }
             };
         }
-        
-        public static List<PatchInfo> CustomStandbyPatches(MethodInfo onStandby)
-        {
-            return new List<PatchInfo>
-            {
-                new PatchInfo
-                {
-                    method = typeof(DisableBasePowerDrawOnGet).GetMethod(nameof(DisableBasePowerDrawOnGet.Postfix)),
-                    patch = onStandby,
-                    patchType = PatchType.Prefix
-                },
-                new PatchInfo
-                {
-                    method = typeof(AddStandbyInspectMessagePatch).GetMethod(nameof(AddStandbyInspectMessagePatch.Postfix)),
-                    patch = onStandby,
-                    patchType = PatchType.Prefix
-                }
-            };
-        }
-        
     }
 }
