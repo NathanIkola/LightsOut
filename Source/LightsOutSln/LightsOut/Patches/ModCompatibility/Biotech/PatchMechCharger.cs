@@ -20,6 +20,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         {
             var patches = BiotechCompatibilityPatch.CustomOnOffPatches(GetMethod<Building_MechCharger>("StartCharging"),
                 GetMethod<Building_MechCharger>("StopCharging"));
+            
             patches.Add(
                 new PatchInfo
                 {
@@ -28,10 +29,31 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                     patchType = PatchType.Postfix
                 }
             );
+            patches.Add(
+                new PatchInfo
+                {
+                    method = GetMethod(typeof(Building), nameof(Building.SpawnSetup)),
+                    patch = GetMethod<PatchMechCharger>(nameof(AfterSpawn)),
+                    patchType = PatchType.Postfix
+                }
+            );
             return patches;
         }
 
         private static PropertyInfo IsAttachedToMech = null;
+
+        private static void AfterSpawn(Building __instance)
+        {
+            if (IsAttachedToMech == null)
+            {
+                IsAttachedToMech = AccessTools.Property(typeof(Building_MechCharger), "IsAttachedToMech");
+            }
+
+            if (__instance is Building_MechCharger ch && (bool)IsAttachedToMech.GetValue(ch))
+            {
+                Tables.EnableTable(__instance);
+            }
+        }
 
         private static bool IsCharger(ThingWithComps thing)
         {
