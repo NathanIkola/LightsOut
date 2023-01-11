@@ -11,11 +11,11 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
     public class PatchGeneAssembly : ICompatibilityPatchComponent<PatchGeneAssembly>
     {
         public override string ComponentName => "Patch for gene assembly related things";
-        private const string PROCESSOR_ID = "GeneProcessor";
+        private const string GeneProcessorDefName = "GeneProcessor";
 
         private static IEnumerable<Building> AttachedGeneProcessors(Building_GeneAssembler assembler)
         {
-            return assembler.ConnectedFacilities.Where(f => f.def.defName == PROCESSOR_ID).Select(t => (Building)t);
+            return assembler.ConnectedFacilities.Where(f => f.def.defName == GeneProcessorDefName).Select(t => (Building)t);
         }
         
         private static void OnStart(Building_GeneAssembler __instance)
@@ -39,7 +39,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
             Tables.RegisterTable(typeof(Building_GeneAssembler));
-            Tables.RegisterTable(PROCESSOR_ID);
+            Tables.RegisterTable(GeneProcessorDefName);
             var patches = new List<PatchInfo>
             {
                 new PatchInfo
