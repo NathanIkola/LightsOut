@@ -15,28 +15,36 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             {
                 new PatchInfo
                 {
-                    method = GetMethod<CompAtomizer>(nameof(CompAtomizer.CompTick)),
-                    patch = GetMethod<PatchWasteAtomiser>(nameof(PostAtomizerTick)),
+                    method = GetMethod<CompAtomizer>(nameof(CompAtomizer.Notify_MaterialsAdded)),
+                    patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
+                    patchType = PatchType.Postfix,
+                },
+                new PatchInfo
+                {
+                    method = GetMethod<CompAtomizer>("DoAtomize"),
+                    patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
                     patchType = PatchType.Postfix,
                 }
             };
             return patches;
         }
 
-        private static void PostAtomizerTick(CompAtomizer __instance)
+        private static void UpdateWorking(CompAtomizer __instance)
         {
-            if (!(__instance.parent is Building_WastepackAtomizer inst))
+            var atomizer = __instance;
+            if (!(atomizer.parent is Building_WastepackAtomizer wasteatomizer))
             {
                 return;
             }
 
-            if (__instance.Empty)
+            var working = !atomizer.Empty;
+            if (working)
             {
-                Tables.DisableTable(inst);
+                Tables.EnableTable(wasteatomizer);
             }
             else
             {
-                Tables.EnableTable(inst);
+                Tables.DisableTable(wasteatomizer);
             }
         }
     }
