@@ -35,14 +35,11 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 Tables.DisableTable(p);
             }
         }
-
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
-        {
-            __result = __result || __0 is Building_GeneAssembler || (__0 as Building)?.def.defName == PROCESSOR_ID;
-        }
         
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
+            Tables.RegisterTable(typeof(Building_GeneAssembler));
+            Tables.RegisterTable(PROCESSOR_ID);
             var patches = new List<PatchInfo>
             {
                 new PatchInfo
@@ -55,12 +52,6 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 {
                     method = GetMethod<Building_GeneAssembler>(nameof(Building_GeneAssembler.Finish)),
                     patch = GetMethod<PatchGeneAssembly>(nameof(OnFinish)),
-                    patchType = PatchType.Postfix,
-                },
-                new PatchInfo
-                {
-                    method = GetMethod(typeof(Tables), nameof(Tables.IsTable)),
-                    patch = GetMethod<PatchGeneAssembly>(nameof(Post_IsTable)),
                     patchType = PatchType.Postfix,
                 },
             };

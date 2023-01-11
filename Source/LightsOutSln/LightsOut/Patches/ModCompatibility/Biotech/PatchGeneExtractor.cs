@@ -11,7 +11,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patches for gene extractors compatibility";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            Tables.RegisterTable(typeof(Building_GeneExtractor));
+            Enterables.RegisterEnterable(typeof(Building_GeneExtractor));
             var patches = new List<PatchInfo>
             {
                 TablesHelper.OffPatch(GetMethod<Building_GeneExtractor>("Finish")),
