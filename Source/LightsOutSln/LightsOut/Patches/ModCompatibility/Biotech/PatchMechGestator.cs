@@ -17,13 +17,14 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for mech gestator power draw";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            Tables.RegisterTable(typeof(Building_MechGestator));
             var patches = new List<PatchInfo>
             {
                 TablesHelper.OnPatch(
                     GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartGestation))),
                 TablesHelper.OffPatch(
-                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted)))
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted))),
+                TablesHelper.OffPatch(
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.EjectContentsAndRemovePawns)))
             };
             patches.Add(new PatchInfo
             {
@@ -31,14 +32,29 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                 patch = GetMethod<PatchMechGestator>(nameof(AfterSpawn)),
                 patchType = PatchType.Postfix,
             });
+            
             return patches;
+        }
+
+
+        private static void UpdateWorking(Building_MechGestator gestator)
+        {
+            var consumes = Resources.CanConsumeResources(gestator) ?? true;
+            if (gestator.ActiveBill?.State == FormingCycleState.Forming && !consumes)
+            {
+                Tables.EnableTable(gestator);
+            }
+            else if (consumes)
+            {
+                Tables.DisableTable(gestator);
+            }
         }
 
         private static void AfterSpawn(Building __instance)
         {
-            if (__instance is Building_MechGestator inst && inst.ActiveBill?.State == FormingCycleState.Forming)
+            if (__instance is Building_MechGestator inst)
             {
-                Tables.EnableTable(__instance);
+                UpdateWorking(inst);
             }
         }
     }
