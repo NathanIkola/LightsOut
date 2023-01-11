@@ -6,7 +6,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchWasteAtomiser : ICompatibilityPatchComponent<PatchWasteAtomiser>
+    public class PatchWasteAtomiser : ICompatibilityPatchComponent<Building_WastepackAtomizer>
     {
         public override string ComponentName => "Patch waste atomiser";
         public override IEnumerable<PatchInfo> GetPatches(Type type)

@@ -6,7 +6,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchGeneExtractor : ICompatibilityPatchComponent<PatchGeneExtractor>
+    public class PatchGeneExtractor : ICompatibilityPatchComponent<Building_GeneExtractor>
     {
         public override string ComponentName => "Patches for gene extractors compatibility";
         public override IEnumerable<PatchInfo> GetPatches(Type type)

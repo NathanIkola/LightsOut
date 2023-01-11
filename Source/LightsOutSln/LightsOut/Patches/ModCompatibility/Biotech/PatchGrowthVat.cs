@@ -6,7 +6,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchGrowthVat : ICompatibilityPatchComponent<PatchGrowthVat>
+    public class PatchGrowthVat : ICompatibilityPatchComponent<Building_GrowthVat>
     {
         public override string ComponentName => "Patch for biotech growth vat support";
         public override IEnumerable<PatchInfo> GetPatches(Type type)

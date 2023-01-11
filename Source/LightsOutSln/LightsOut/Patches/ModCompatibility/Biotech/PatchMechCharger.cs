@@ -13,7 +13,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
     /// <summary>
     /// Disable power draw on mech recharger if not in use by mech
     /// </summary>
-    public class PatchMechCharger : ICompatibilityPatchComponent<PatchMechCharger>
+    public class PatchMechCharger : ICompatibilityPatchComponent<Building_MechCharger>
     {
         public override string ComponentName => "Patch for mech recharger power draw";
 

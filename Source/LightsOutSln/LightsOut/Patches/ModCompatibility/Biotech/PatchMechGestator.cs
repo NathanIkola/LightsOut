@@ -8,7 +8,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchMechGestator : ICompatibilityPatchComponent<PatchMechGestator>
+    public class PatchMechGestator : ICompatibilityPatchComponent<Building_MechGestator>
     {
         
         public override string ComponentName => "Patch for mech gestator power draw";

@@ -8,7 +8,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchGeneAssembly : ICompatibilityPatchComponent<PatchGeneAssembly>
+    public class PatchGeneAssembly : ICompatibilityPatchComponent<Building_GeneAssembler>
     {
         public override string ComponentName => "Patch for gene assembly related things";
         private const string GeneProcessorDefName = "GeneProcessor";

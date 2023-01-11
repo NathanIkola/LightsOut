@@ -6,7 +6,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchBandNode : ICompatibilityPatchComponent<PatchBandNode>
+    public class PatchBandNode : ICompatibilityPatchComponent<CompBandNode>
     {
         public override string ComponentName => "Patches for band node support";
         public override IEnumerable<PatchInfo> GetPatches(Type type)

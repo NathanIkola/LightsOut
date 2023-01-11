@@ -6,7 +6,7 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
-    public class PatchSubscoreScanner : ICompatibilityPatchComponent<PatchSubscoreScanner>
+    public class PatchSubscoreScanner : ICompatibilityPatchComponent<Building_SubcoreScanner>
     {
         public override string ComponentName => "Patch for subscore scanners";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
