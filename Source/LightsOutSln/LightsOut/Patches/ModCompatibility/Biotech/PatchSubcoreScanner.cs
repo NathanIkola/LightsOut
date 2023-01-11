@@ -8,7 +8,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 {
     public class PatchSubcoreScanner : ICompatibilityPatchComponent<Building_SubcoreScanner>
     {
-        public override string ComponentName => "Patch for subscore scanners";
+        public override string ComponentName => "Patch for subcore scanners";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
             Enterables.RegisterEnterable(typeof(Building_SubcoreScanner));
