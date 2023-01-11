@@ -14,34 +14,31 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for biotech growth vat support";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            Tables.RegisterTable(typeof(Building_GrowthVat));
+            Enterables.RegisterEnterable(typeof(Building_GrowthVat));
             var patches = new List<PatchInfo>();
             patches.Add(
                 TablesHelper.OffPatch(GetMethod<Building_GrowthVat>("OnStop"))
             );
-            patches.Add(
-                new PatchInfo
-                {
-                    method = GetMethod<Building_GrowthVat>("TryGrowEmbryo"),
-                    patch = GetMethod<PatchGrowthVat>(nameof(CheckTryEnable)),
-                    patchType = PatchType.Postfix
-                }
-            );
-            patches.Add(
-                new PatchInfo
-                {
-                    method = GetMethod<Building_GrowthVat>("TryAcceptPawn"),
-                    patch = GetMethod<PatchGrowthVat>(nameof(CheckTryEnable)),
-                    patchType = PatchType.Postfix
-                }
-            );
+            patches.Add(new PatchInfo
+            {
+                patch = GetMethod<PatchGrowthVat>(nameof(CheckTryEnable)),
+                method = GetMethod<Building_GrowthVat>("TryGrowEmbryo"),
+                patchType = PatchType.Postfix,
+            });
+            
+            patches.Add(new PatchInfo
+            {
+                patch = GetMethod<PatchGrowthVat>(nameof(CheckTryEnable)),
+                method = GetMethod<Building>(nameof(Building.SpawnSetup)),
+                patchType = PatchType.Postfix,
+            });
             
             return patches;
         }
 
-        private static void CheckTryEnable(Building_GrowthVat __instance)
+        private static void CheckTryEnable(Building __instance)
         {
-            if (!IsOnStandby(__instance))
+            if (__instance is Building_GrowthVat inst && !IsOnStandby(inst))
             {
                 Tables.EnableTable(__instance);
             }
