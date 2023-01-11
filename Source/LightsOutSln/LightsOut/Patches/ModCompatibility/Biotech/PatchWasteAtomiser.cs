@@ -6,6 +6,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Support for the wastepack atomizer: will not draw power when not atomizing waste
+    /// </summary>
     public class PatchWasteAtomiser : ICompatibilityPatchComponent<Building_WastepackAtomizer>
     {
         public override string ComponentName => "Patch waste atomiser";
@@ -41,6 +44,10 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             return patches;
         }
 
+        /// <summary>
+        /// Update the working state of the atomizer
+        /// </summary>
+        /// <param name="__instance"></param>
         private static void UpdateWorking(CompAtomizer __instance)
         {
             var atomizer = __instance;

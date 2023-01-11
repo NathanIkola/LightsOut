@@ -6,6 +6,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Support for the gene extractor building
+    /// </summary>
     public class PatchGeneExtractor : ICompatibilityPatchComponent<Building_GeneExtractor>
     {
         public override string ComponentName => "Patches for gene extractors compatibility";

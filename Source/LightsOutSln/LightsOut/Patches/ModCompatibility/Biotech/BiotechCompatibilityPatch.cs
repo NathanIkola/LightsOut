@@ -2,6 +2,9 @@
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Patches for biotech support
+    /// </summary>
     public class BiotechCompatibilityPatch : ICompatibilityPatch
     {
         

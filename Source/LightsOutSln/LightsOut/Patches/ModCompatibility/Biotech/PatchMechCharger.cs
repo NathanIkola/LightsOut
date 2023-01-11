@@ -40,6 +40,10 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         private static PropertyInfo IsAttachedToMech = null;
 
+        /// <summary>
+        /// Extra check on startup to reenable the charger on spawn if a mech is currently using it
+        /// </summary>
+        /// <param name="__instance"></param>
         private static void AfterSpawn(Building __instance)
         {
             if (!(__instance is Building_MechCharger ch))

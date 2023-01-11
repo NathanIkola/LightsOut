@@ -6,6 +6,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Support for the subcore scanners
+    /// </summary>
     public class PatchSubcoreScanner : ICompatibilityPatchComponent<Building_SubcoreScanner>
     {
         public override string ComponentName => "Patch for subcore scanners";

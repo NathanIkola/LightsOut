@@ -6,6 +6,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Support for band nodes: Nodes will be on standby when unbound
+    /// </summary>
     public class PatchBandNode : ICompatibilityPatchComponent<CompBandNode>
     {
         public override string ComponentName => "Patches for band node support";

@@ -8,6 +8,9 @@ using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.Biotech
 {
+    /// <summary>
+    /// Support for the mech gestator
+    /// </summary>
     public class PatchMechGestator : ICompatibilityPatchComponent<Building_MechGestator>
     {
         
