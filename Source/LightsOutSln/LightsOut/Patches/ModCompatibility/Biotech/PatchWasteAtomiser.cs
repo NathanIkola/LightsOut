@@ -24,6 +24,18 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
                     method = GetMethod<CompAtomizer>("DoAtomize"),
                     patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
                     patchType = PatchType.Postfix,
+                },
+                new PatchInfo
+                {
+                    method = GetMethod<CompAtomizer>("EjectContents"),
+                    patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
+                    patchType = PatchType.Postfix,
+                },
+                new PatchInfo
+                {
+                    method = GetMethod<CompAtomizer>("PostSpawnSetup"),
+                    patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
+                    patchType = PatchType.Postfix,
                 }
             };
             return patches;
