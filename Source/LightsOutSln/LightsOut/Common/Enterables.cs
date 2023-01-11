@@ -21,7 +21,7 @@ namespace LightsOut.Common
 
         public static void RegisterEnterable(Type t)
         {
-            DebugLogger.Assert(t.IsInstanceOfType(typeof(Building_Enterable)), "IsEnterable called with non-enterable");
+            DebugLogger.Assert(t.IsSubclassOf(typeof(Building_Enterable)), "IsEnterable called with non-enterable");
             enterables.Add(t);
         }
     }
