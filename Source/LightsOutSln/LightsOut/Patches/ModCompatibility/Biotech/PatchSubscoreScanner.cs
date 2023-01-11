@@ -11,15 +11,10 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for subscore scanners";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            BiotechCompatibilityPatch.RegisterEnterableTableLike<Building_SubcoreScanner>();
+            Tables.RegisterTable(typeof(Building_SubcoreScanner));
             var patches = new List<PatchInfo>
             {
-                new PatchInfo
-                {
-                    method = GetMethod<Building_SubcoreScanner>(nameof(Building_SubcoreScanner.EjectContents)),
-                    patch = GetMethod<BiotechCompatibilityPatch>(nameof(BiotechCompatibilityPatch.Post_OnOffDeactivate)),
-                    patchType = PatchType.Postfix,
-                },
+                TablesHelper.OffPatch(GetMethod<Building_SubcoreScanner>(nameof(Building_SubcoreScanner.EjectContents)))
             };
             return patches;
         }

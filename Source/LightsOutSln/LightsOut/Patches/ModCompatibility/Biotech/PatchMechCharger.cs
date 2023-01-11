@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using LightsOut.Common;
@@ -18,17 +19,14 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            var patches = BiotechCompatibilityPatch.CustomOnOffPatches(GetMethod<Building_MechCharger>("StartCharging"),
-                GetMethod<Building_MechCharger>("StopCharging"));
+            Tables.RegisterTable(typeof(Building_MechCharger));
+            var patches = new List<PatchInfo>
+            {
+                TablesHelper.OnPatch(GetMethod<Building_MechCharger>("StartCharging")),
+                TablesHelper.OffPatch(
+                    GetMethod<Building_MechCharger>("StopCharging"))
+            };
             
-            patches.Add(
-                new PatchInfo
-                {
-                    method = GetMethod(typeof(Tables), nameof(Tables.IsTable)),
-                    patch = GetMethod<PatchMechCharger>(nameof(Post_IsTable)),
-                    patchType = PatchType.Postfix
-                }
-            );
             patches.Add(
                 new PatchInfo
                 {
@@ -44,24 +42,19 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         private static void AfterSpawn(Building __instance)
         {
+            if (!(__instance is Building_MechCharger ch))
+            {
+                return;
+            }
             if (IsAttachedToMech == null)
             {
                 IsAttachedToMech = AccessTools.Property(typeof(Building_MechCharger), "IsAttachedToMech");
             }
 
-            if (__instance is Building_MechCharger ch && (bool)IsAttachedToMech.GetValue(ch))
+            if ((bool)IsAttachedToMech.GetValue(ch))
             {
                 Tables.EnableTable(__instance);
             }
-        }
-
-        private static bool IsCharger(ThingWithComps thing)
-        {
-            return thing is Building_MechCharger;
-        }
-
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result) {
-            __result = __result || IsCharger(__0);
         }
     }
 }

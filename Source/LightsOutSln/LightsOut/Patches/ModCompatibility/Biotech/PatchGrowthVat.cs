@@ -11,16 +11,10 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for biotech growth vat support";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            BiotechCompatibilityPatch.RegisterEnterableTableLike<Building_GrowthVat>();
+            Tables.RegisterTable(typeof(Building_GrowthVat));
             var patches = new List<PatchInfo>();
             patches.Add(
-
-                new PatchInfo
-                {
-                    method = GetMethod<Building_GrowthVat>("OnStop"),
-                    patch = GetMethod<BiotechCompatibilityPatch>(nameof(BiotechCompatibilityPatch.Post_OnOffDeactivate)),
-                    patchType = PatchType.Postfix,
-                }
+                TablesHelper.OffPatch(GetMethod<Building_GrowthVat>("OnStop"))
             );
             patches.Add(
                 new PatchInfo
@@ -42,22 +36,17 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             return patches;
         }
 
-        private static void Post_IsTable(ThingWithComps __0, ref bool __result)
-        {
-            __result = __result || __0 is Building_GrowthVat;
-        }
-
         private static void CheckTryEnable(Building_GrowthVat __instance)
         {
-            if (!IsOnStandby(__instance.PowerComp))
+            if (!IsOnStandby(__instance))
             {
                 Tables.EnableTable(__instance);
             }
         }
 
-        private static bool IsOnStandby(CompPower __0)
+        private static bool IsOnStandby(Building_GrowthVat vat)
         {
-            return !(__0?.parent is Building_GrowthVat vat) || (vat.selectedEmbryo == null && vat.SelectedPawn == null);
+            return vat.selectedEmbryo == null && vat.SelectedPawn == null;
         }
     }
 }

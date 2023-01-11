@@ -14,10 +14,14 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         public override string ComponentName => "Patch for mech gestator power draw";
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
-            BiotechCompatibilityPatch.RegisterEnterableTableLike<Building_MechGestator>();
-            var patches = BiotechCompatibilityPatch.CustomOnOffPatches(
-                GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartGestation)),
-                GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted)));
+            Tables.RegisterTable(typeof(Building_MechGestator));
+            var patches = new List<PatchInfo>
+            {
+                TablesHelper.OnPatch(
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartGestation))),
+                TablesHelper.OffPatch(
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted)))
+            };
             patches.Add(new PatchInfo
             {
                 method = GetMethod<Building>(nameof(Building.SpawnSetup)),
