@@ -3,6 +3,7 @@ using HarmonyLib;
 using LightsOut.Common;
 using LightsOut.ThingComps;
 using System;
+using RimWorld;
 
 namespace LightsOut.Patches.Power
 {
@@ -19,7 +20,7 @@ namespace LightsOut.Patches.Power
         /// <param name="__instance">This instance</param>
         public static void Postfix(ThingWithComps __instance)
         {
-            if (Tables.IsTable(__instance) || Tables.IsTelevision(__instance))
+            if ((Tables.IsTable(__instance) || (Enterables.IsEnterable(__instance) && !Enterables.Occupied(__instance)) || Tables.IsTelevision(__instance)))
             {
                 Tables.DisableTable(__instance);
             }

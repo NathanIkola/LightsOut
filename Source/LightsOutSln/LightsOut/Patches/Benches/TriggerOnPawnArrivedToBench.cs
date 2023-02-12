@@ -32,6 +32,24 @@ namespace LightsOut.Patches.Benches
                 PawnIsAtDeepDrill(drillDriver, pawn);
             else if (__instance.job?.GetTarget(TargetIndex.A).Thing is ThingWithComps tv && Tables.IsTelevision(tv))
                 PawnIsAtTelevision(__instance, tv, pawn);
+            else if (__instance is JobDriver_EnterBuilding enterDriver)
+                PawnIsAtEnterable(enterDriver, pawn);
+        }
+
+        private static void PawnIsAtEnterable(JobDriver_EnterBuilding driver, Pawn pawn)
+        {
+            var target = driver.job.GetTarget(TargetIndex.A).Thing as Building_Enterable;
+            if (pawn.Position == target.InteractionCell && Enterables.IsEnterable(target))
+            {
+                Tables.EnableTable(target);
+                driver.AddFinishAction(() =>
+                {
+                    if (!Enterables.Occupied(target))
+                    {
+                        Tables.DisableTable(target);
+                    }
+                });
+            }
         }
 
         /// <summary>
