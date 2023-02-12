@@ -901,6 +901,19 @@ references:
   commentId: T:LightsOut.Common.Tables
   fullName: LightsOut.Common.Tables
   nameWithType: Tables
+- uid: LightsOut.Common.Tables.AddIllegalBenchName(System.String)
+  name: AddIllegalBenchName(String)
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_AddIllegalBenchName_System_String_
+  commentId: M:LightsOut.Common.Tables.AddIllegalBenchName(System.String)
+  fullName: LightsOut.Common.Tables.AddIllegalBenchName(System.String)
+  nameWithType: Tables.AddIllegalBenchName(String)
+- uid: LightsOut.Common.Tables.AddIllegalBenchName*
+  name: AddIllegalBenchName
+  href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_AddIllegalBenchName_
+  commentId: Overload:LightsOut.Common.Tables.AddIllegalBenchName
+  isSpec: "True"
+  fullName: LightsOut.Common.Tables.AddIllegalBenchName
+  nameWithType: Tables.AddIllegalBenchName
 - uid: LightsOut.Common.Tables.DisableTable(Verse.ThingWithComps)
   name: DisableTable(ThingWithComps)
   href: api/LightsOut.Common.Tables.html#LightsOut_Common_Tables_DisableTable_Verse_ThingWithComps_

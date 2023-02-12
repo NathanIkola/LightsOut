@@ -165,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Tables.html",
-          "hash": "FxWVoZxnX37qF5giRX2VpH9Yvv3yxq0kjwucQUzKMac="
+          "hash": "9Ecefwg9p1nzGPMNjn85iuXbTVOOWQFkpyErS/xFYng="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -180,7 +180,7 @@
           "hash": "7YUDt0/Njp3Ojfz0pfxfbF/HwFaBP/WpGDtNwOCGYaE="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -216,7 +216,7 @@
           "hash": "+B3YoWr0tmePQOL/TCagM++sfoAVAeyyV87kOLvkoPc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -228,7 +228,7 @@
           "hash": "+W++jPIkIWuwYH99iqQaAlvjAoaKrXHCOtzH6zRFQL0="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1032,7 +1032,7 @@
           "hash": "uFHy+8NX7qt71i88FY1tEcTm5sGPFZ5Svnq+P8o5FII="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1044,7 +1044,7 @@
           "hash": "wYQZ4EnYnAGKFThDwr2wCfMnJNub0BIBSqMFir2z3/4="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1056,7 +1056,7 @@
           "hash": "oXkxHCkCy/+s3EPRWvPZx4ejoQLFFRrO3IZ9LK/zGNQ="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1103,7 +1103,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 84,
-          "skipped_file_count": 82
+          "skipped_file_count": 83
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

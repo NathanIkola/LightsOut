@@ -58,7 +58,7 @@ namespace LightsOut.Common
             if (HasBlacklistedTableComp(thing))
                 return false;
 
-            bool isTable = (thing is Building_WorkTable || thing is Building_ResearchBench || thing.def.defName == "DeepDrill");
+            bool isTable = (thing is Building_WorkTable || thing is Building_ResearchBench || thing.def.defName == "DeepDrill") && !HasIllegalTableDef(thing);
             if (isTable)
                 Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
 
@@ -113,5 +113,45 @@ namespace LightsOut.Common
 
             return false;
         }
+
+        /// <summary>
+        /// Check if a <paramref name="thing"/> has an illegal table def name
+        /// </summary>
+        /// <param name="thing">The Thing to check</param>
+        /// <returns><see langword="true"/> if the specified <paramref name="thing"/>'s def 
+        /// should be ignored, <see langword="false"/> otherwise</returns>
+        private static bool HasIllegalTableDef(ThingWithComps thing)
+        {
+            if (thing is null)
+                return false;
+
+            string defName = thing.def.defName.ToLower();
+            foreach(string illegalName in BenchNamesMustNotInclude)
+            {
+                if (defName.Contains(illegalName))
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Adds a new string that a bench's def name should NOT include
+        /// </summary>
+        /// <param name="nameMustNotInclude">The string that no bench's def name should include</param>
+        /// <remarks>Case insensitive. Bench def names CANNOT include any of these terms</remarks>
+        public static void AddIllegalBenchName(string nameMustNotInclude)
+        {
+            DebugLogger.AssertFalse(string.IsNullOrWhiteSpace(nameMustNotInclude), "AddIllegalBenchName called with a null argument");
+            BenchNamesMustNotInclude.Add(nameMustNotInclude.ToLower());
+        }
+
+        /// <summary>
+        /// A list of things that should disqualify something from being a bench
+        /// </summary>
+        private static List<string> BenchNamesMustNotInclude { get; } = new List<string>()
+        {
+            "mechgestator"
+        };
     }
 }
