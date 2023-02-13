@@ -15,6 +15,26 @@ namespace LightsOut.Common
         private static HashSet<Type> tableTypes = new HashSet<Type>
             { typeof(Building_WorkTable), typeof(Building_ResearchBench) };
 
+        /// <summary>
+        /// Determine that a table is of an allowable type
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns></returns>
+        private static bool IsLegalTableType(ThingWithComps thing)
+        {
+            Type tableType = thing.GetType();
+            if (tableTypes.Contains(tableType)) 
+                return true;
+
+            foreach (Type type in tableTypes)
+            {
+                if (!tableType.IsSubclassOf(type)) continue;
+                RegisterTable(tableType);
+                return true;
+            }
+            return false;
+        }
+
         private static HashSet<string> tableDefNames = new HashSet<string> { "DeepDrill"};
         /// <summary>
         /// Provides a way to disable a table
@@ -63,7 +83,7 @@ namespace LightsOut.Common
             if (HasBlacklistedTableComp(thing))
                 return false;
 
-            var isTable = (tableTypes.Contains(thing.GetType()) || tableDefNames.Contains(thing.def.defName)) && !HasIllegalTableDef(thing);
+            var isTable = (IsLegalTableType(thing) || tableDefNames.Contains(thing.def.defName)) && !HasIllegalTableDef(thing);
             if (isTable)
                 Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
 
