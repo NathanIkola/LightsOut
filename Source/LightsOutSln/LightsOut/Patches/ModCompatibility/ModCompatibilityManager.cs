@@ -11,6 +11,7 @@ using LightsOut.Patches.ModCompatibility.ModGlowers;
 using LightsOut.Patches.ModCompatibility.Ideology;
 using LightsOut.Patches.ModCompatibility.HelixienGas;
 using LightsOut.Common;
+using LightsOut.Patches.ModCompatibility.Biotech;
 using LightsOut.Patches.ModCompatibility.SelfLitHydroponics;
 using LightsOut.Patches.ModCompatibility.QuestionableEthics;
 using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
@@ -42,6 +43,7 @@ namespace LightsOut.Patches.ModCompatibility
             new DubsBadHygieneCompatibilityPatch(),
             new ExtinguishRefuelablesCompatibilityPatch(),
             new ColonyManagerCompatibilityPatch(),
+            new BiotechCompatibilityPatch(),
         };
 
         /// <summary>

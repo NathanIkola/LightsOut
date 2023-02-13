@@ -1,4 +1,5 @@
-﻿using LightsOut.Defs;
+﻿using System;
+using LightsOut.Defs;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
@@ -11,6 +12,10 @@ namespace LightsOut.Common
     [StaticConstructorOnStartup]
     public static class Tables
     {
+        private static HashSet<Type> tableTypes = new HashSet<Type>
+            { typeof(Building_WorkTable), typeof(Building_ResearchBench) };
+
+        private static HashSet<string> tableDefNames = new HashSet<string> { "DeepDrill"};
         /// <summary>
         /// Provides a way to disable a table
         /// </summary>
@@ -58,11 +63,29 @@ namespace LightsOut.Common
             if (HasBlacklistedTableComp(thing))
                 return false;
 
-            bool isTable = (thing is Building_WorkTable || thing is Building_ResearchBench || thing.def.defName == "DeepDrill") && !HasIllegalTableDef(thing);
+            var isTable = (tableTypes.Contains(thing.GetType()) || tableDefNames.Contains(thing.def.defName)) && !HasIllegalTableDef(thing);
             if (isTable)
                 Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
 
             return isTable;
+        }
+
+        /// <summary>
+        /// Register a new table by type
+        /// </summary>
+        /// <param name="table">Type to treat as table</param>
+        public static void RegisterTable(Type table)
+        {
+            tableTypes.Add(table);
+        }
+        
+        /// <summary>
+        /// Register a new table by def name
+        /// </summary>
+        /// <param name="defName">def name to treat as table</param>
+        public static void RegisterTable(string defName)
+        {
+            tableDefNames.Add(defName);
         }
 
         /// <summary>
