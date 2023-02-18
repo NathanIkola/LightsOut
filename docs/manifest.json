@@ -177,10 +177,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.Tables.html",
-          "hash": "Ku474HttR6WWzYglPlpuAXSUEt7sPbSOBxHzBYf/C/Y="
+          "hash": "C4zXbKNfTMGUJZfydY4eSRcKCxLpZm+87YJDjQj7HAw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -204,7 +204,7 @@
           "hash": "hq9HlyQt3yQqHToKrlAvRxpwiK0KP9bYbz6v0Lr2Ubc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1247,7 +1247,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 96,
-          "skipped_file_count": 96
+          "skipped_file_count": 95
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
