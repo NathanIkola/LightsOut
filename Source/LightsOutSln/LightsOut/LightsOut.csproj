@@ -115,6 +115,7 @@
     <Compile Include="Patches\ModCompatibility\Furnace\FurnaceIsNotAWorkTable.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\IdeologyCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\Ideology\PatchTick.cs" />
+    <Compile Include="Patches\ModCompatibility\MiningLight\MiningLightCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ModGlowers\ModGlowerCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ICompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\ICompatibilityPatchComponent.cs" />
@@ -168,7 +169,7 @@ echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
+      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />

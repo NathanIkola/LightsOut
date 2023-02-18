@@ -18,6 +18,7 @@ using LightsOut.Patches.ModCompatibility.ErinsJapaneseFurniture;
 using LightsOut.Patches.ModCompatibility.DubsBadHygiene;
 using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
 using LightsOut.Patches.ModCompatibility.ColonyManager;
+using LightsOut.Patches.ModCompatibility.MiningLight;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -44,6 +45,7 @@ namespace LightsOut.Patches.ModCompatibility
             new ExtinguishRefuelablesCompatibilityPatch(),
             new ColonyManagerCompatibilityPatch(),
             new BiotechCompatibilityPatch(),
+            new MiningLightCompatibilityPatch(),
         };
 
         /// <summary>
