@@ -33,7 +33,7 @@ namespace LightsOut.Patches.Benches
 
                 // otherwise the NotifyPatherArrived patch doesn't fire, so this will take care of it
                 Tables.EnableTable(tv);
-                __instance.AddFinishAction(() =>
+                __instance.AddFinishAction((JobCondition) =>
                 {
                     if (!Tables.IsAnyoneElseWatching(tv, __instance.GetActor()))
                         Tables.DisableTable(tv);

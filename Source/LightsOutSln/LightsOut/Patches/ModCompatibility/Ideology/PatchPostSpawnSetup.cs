@@ -19,7 +19,7 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
         {
             PatchInfo postfix = new PatchInfo
             {
-                method = GetMethod<CompLoudspeaker>(nameof(CompLoudspeaker.PostSpawnSetup)),
+                method = GetMethod<ThingComp>(nameof(ThingComp.PostSpawnSetup)),
                 patch = GetMethod<PatchPostSpawnSetup>(nameof(Postfix)),
                 patchType = PatchType.Postfix
             };
@@ -27,13 +27,16 @@ namespace LightsOut.Patches.ModCompatibility.Ideology
             return new List<PatchInfo>() { postfix };
         }
 
-        private static void Postfix(CompLoudspeaker __instance)
+        private static void Postfix(ThingComp __instance)
         {
-            __instance.parent.AllComps.Add(new LoudspeakerTurnOffComp(__instance.parent));
-            if (!__instance.Active)
-                Tables.DisableTable(__instance.parent);
-            else
-                Tables.EnableTable(__instance.parent);
+            if (__instance is CompLoudspeaker speaker)
+            {
+                speaker.parent.AllComps.Add(new LoudspeakerTurnOffComp(speaker.parent));
+                if (!speaker.Active)
+                    Tables.DisableTable(speaker.parent);
+                else
+                    Tables.EnableTable(speaker.parent);
+            }
         }
     }
 }

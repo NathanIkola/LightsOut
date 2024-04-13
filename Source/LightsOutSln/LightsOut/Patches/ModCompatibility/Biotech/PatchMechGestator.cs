@@ -20,11 +20,11 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             var patches = new List<PatchInfo>
             {
                 TablesHelper.OnPatch(
-                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartGestation))),
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_StartForming))),
                 TablesHelper.OffPatch(
-                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_AllGestationCyclesCompleted))),
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.Notify_FormingCompleted))),
                 TablesHelper.OffPatch(
-                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.EjectContentsAndRemovePawns)))
+                    GetMethod<Building_MechGestator>(nameof(Building_MechGestator.EjectContents)))
             };
             patches.Add(new PatchInfo
             {
@@ -40,7 +40,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
         private static void UpdateWorking(Building_MechGestator gestator)
         {
             var consumes = Resources.CanConsumeResources(gestator) ?? true;
-            if (gestator.ActiveBill?.State == FormingCycleState.Forming && !consumes)
+            if (gestator.ActiveBill?.State == FormingState.Forming && !consumes)
             {
                 Tables.EnableTable(gestator);
             }

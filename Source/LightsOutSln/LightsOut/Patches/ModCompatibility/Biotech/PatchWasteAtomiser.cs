@@ -18,7 +18,7 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
             {
                 new PatchInfo
                 {
-                    method = GetMethod<CompAtomizer>(nameof(CompAtomizer.Notify_MaterialsAdded)),
+                    method = GetMethod<CompAtomizer>(nameof(CompAtomizer.Notify_HauledTo)),
                     patch = GetMethod<PatchWasteAtomiser>(nameof(UpdateWorking)),
                     patchType = PatchType.Postfix,
                 },

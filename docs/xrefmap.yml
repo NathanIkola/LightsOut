@@ -2841,6 +2841,57 @@ references:
   isSpec: "True"
   fullName: LightsOut.Patches.ModCompatibility.Ideology.PatchTick.GetPatches
   nameWithType: PatchTick.GetPatches
+- uid: LightsOut.Patches.ModCompatibility.MiningLight
+  name: LightsOut.Patches.ModCompatibility.MiningLight
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.html
+  commentId: N:LightsOut.Patches.ModCompatibility.MiningLight
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight
+  nameWithType: LightsOut.Patches.ModCompatibility.MiningLight
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch
+  name: MiningLightCompatibilityPatch
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html
+  commentId: T:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch
+  nameWithType: MiningLightCompatibilityPatch
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_CompatibilityPatchName
+  commentId: P:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName
+  nameWithType: MiningLightCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName*
+  name: CompatibilityPatchName
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_CompatibilityPatchName_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.CompatibilityPatchName
+  nameWithType: MiningLightCompatibilityPatch.CompatibilityPatchName
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied
+  name: OnAfterPatchApplied()
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_OnAfterPatchApplied
+  commentId: M:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied()
+  nameWithType: MiningLightCompatibilityPatch.OnAfterPatchApplied()
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied*
+  name: OnAfterPatchApplied
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_OnAfterPatchApplied_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.OnAfterPatchApplied
+  nameWithType: MiningLightCompatibilityPatch.OnAfterPatchApplied
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_TargetMod
+  commentId: P:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod
+  nameWithType: MiningLightCompatibilityPatch.TargetMod
+- uid: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod*
+  name: TargetMod
+  href: api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html#LightsOut_Patches_ModCompatibility_MiningLight_MiningLightCompatibilityPatch_TargetMod_
+  commentId: Overload:LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod
+  isSpec: "True"
+  fullName: LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.TargetMod
+  nameWithType: MiningLightCompatibilityPatch.TargetMod
 - uid: LightsOut.Patches.ModCompatibility.ModCompatibilityManager
   name: ModCompatibilityManager
   href: api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html

@@ -42,7 +42,7 @@ namespace LightsOut.Patches.Benches
             if (pawn.Position == target.InteractionCell && Enterables.IsEnterable(target))
             {
                 Tables.EnableTable(target);
-                driver.AddFinishAction(() =>
+                driver.AddFinishAction((JobCondition) =>
                 {
                     if (!Enterables.Occupied(target))
                     {
@@ -111,7 +111,7 @@ namespace LightsOut.Patches.Benches
 
             Tables.EnableTable(tv);
 
-            driver.AddFinishAction(() =>
+            driver.AddFinishAction((JobCondition) =>
             {
                 if (!Tables.IsAnyoneElseWatching(tv, pawn))
                     Tables.DisableTable(tv);
@@ -129,7 +129,7 @@ namespace LightsOut.Patches.Benches
             Tables.EnableTable(table);
             //ModResources.SetConsumesPower(powerTrader, true);
             // set the bench to turn off after the job is complete
-            driver.AddFinishAction(() =>
+            driver.AddFinishAction((JobCondition) =>
             {
                 Tables.DisableTable(table);
             });

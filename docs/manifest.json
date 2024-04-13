@@ -180,7 +180,7 @@
           "hash": "tQUlI4n2W89rz0LdX7ehNqU9qnR6gNHwT1ch/OAQ9Vk="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -204,7 +204,7 @@
           "hash": "hq9HlyQt3yQqHToKrlAvRxpwiK0KP9bYbz6v0Lr2Ubc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Gizmos.KeepOnGizmo.html",
-          "hash": "+B3YoWr0tmePQOL/TCagM++sfoAVAeyyV87kOLvkoPc="
+          "hash": "hWmvY8yb1imMc8mI6VuxXEnC1517bt+udMS6owFmpXE="
         }
       },
       "is_incremental": true,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ICompatibilityPatch.html",
-          "hash": "Cte4Xn8Sp9ZkRMYZU6Soy+krsUUn7n7XkCPzSyG6ivo="
+          "hash": "Ew3K+nczXeyk7oK7D9y5vTxlefuPr+ElOXzOtlHux+U="
         }
       },
       "is_incremental": true,
@@ -821,11 +821,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.MiningLight.MiningLightCompatibilityPatch.html",
+          "hash": "9rKNlWrEm0qwTmrkRcim+ieyCan8ozB1RdbihCaUZVg="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.MiningLight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Patches.ModCompatibility.MiningLight.html",
+          "hash": "uX+PPp4HBpGf1ycA1LPDvccbvjPieyMglYiswoxSrT4="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.yml",
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Patches.ModCompatibility.ModCompatibilityManager.html",
-          "hash": "drr8MU+DzHmzgPYmXYc2bpt1jyjYllHE+MgzqP5pkrE="
+          "hash": "8JedWwwSnMkWy1kUXkXsd+K6uZh7W0kRubU6z7k74vA="
         }
       },
       "is_incremental": true,
@@ -1173,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.ThingComps.KeepOnComp.html",
-          "hash": "uFHy+8NX7qt71i88FY1tEcTm5sGPFZ5Svnq+P8o5FII="
+          "hash": "oqrn+aRf3RveqMbM+xetFiEdX5ZWTGvJNiM3Snrf+1Q="
         }
       },
       "is_incremental": true,
@@ -1185,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.ThingComps.LoudspeakerTurnOffComp.html",
-          "hash": "wYQZ4EnYnAGKFThDwr2wCfMnJNub0BIBSqMFir2z3/4="
+          "hash": "rLKf2VUV6N23jsTfeoZw++BzgKkhAo9PNO6AvYeMcCE="
         }
       },
       "is_incremental": true,
@@ -1209,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "pbfEto12PCrd0zXcfXgunVPFd7jikMMaOiArLXCvi+Y="
+          "hash": "PsUnBinDDClr9GQlSsrL58ttaSSi4/GrCDjGOg9aOY8="
         }
       },
       "is_incremental": false,
@@ -1246,8 +1270,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 96,
-          "skipped_file_count": 95
+          "total_file_count": 98,
+          "skipped_file_count": 98
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
