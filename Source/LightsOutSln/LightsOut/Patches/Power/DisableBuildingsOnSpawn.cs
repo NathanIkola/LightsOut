@@ -35,7 +35,8 @@ namespace LightsOut.Patches.Power
                 // return so that we don't remove the KeepOnComp from this
                 return;
             }
-            else
+            // some mods (SOS2) can force a Thing to despawn/respawn without triggering cleanup
+            else if (!Resources.MemoizedThings.ContainsKey(__instance))
             {
                 Resources.MemoizedThings.Add(__instance, Resources.ThingType.Unknown);
             }

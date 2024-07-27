@@ -19,6 +19,7 @@ using LightsOut.Patches.ModCompatibility.DubsBadHygiene;
 using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
 using LightsOut.Patches.ModCompatibility.ColonyManager;
 using LightsOut.Patches.ModCompatibility.MiningLight;
+using LightsOut.Patches.ModCompatibility.SOS2;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -46,6 +47,7 @@ namespace LightsOut.Patches.ModCompatibility
             new ColonyManagerCompatibilityPatch(),
             new BiotechCompatibilityPatch(),
             new MiningLightCompatibilityPatch(),
+            new SOS2CompatibilityPatch(),
         };
 
         /// <summary>

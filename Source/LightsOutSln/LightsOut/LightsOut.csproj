@@ -85,6 +85,7 @@
     <Compile Include="Gizmos\KeepOnGizmo.cs" />
     <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
     <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
+    <Compile Include="Patches\Lights\FixLightsOnRoomSetup.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\BiotechCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchBandNode.cs" />
     <Compile Include="Patches\ModCompatibility\Biotech\PatchGeneAssembly.cs" />
@@ -126,6 +127,8 @@
     <Compile Include="Patches\ModCompatibility\QuestionableEthics\PatchIsTable.cs" />
     <Compile Include="Patches\ModCompatibility\QuestionableEthics\QECompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\SelfLitHydroponics\SelfLitHydroponicsCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\SOS2\FixLightsAfterMovingShip.cs" />
+    <Compile Include="Patches\ModCompatibility\SOS2\SOS2CompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\PatchGetRoomForVEWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
     <Compile Include="Patches\ModCompatibility\HelixienGas\HelixienGasCompatibilityPatch.cs" />
@@ -169,7 +172,7 @@ echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
+      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.3\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.3\build\docfx.console.targets')" />
