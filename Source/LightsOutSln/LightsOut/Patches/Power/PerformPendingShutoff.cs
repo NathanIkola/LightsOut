@@ -31,6 +31,10 @@ namespace LightsOut.Patches.Power
                     if (Common.Lights.CanBeLight(thing))
                     {
                         Room room = Rooms.GetRoom(thing);
+                        // can't make a decision about this, leave it on
+                        if (room is null) 
+                            continue;
+
                         bool? shouldShutoff = rooms.TryGetValue(room, null);
                         if (shouldShutoff == null)
                         {
