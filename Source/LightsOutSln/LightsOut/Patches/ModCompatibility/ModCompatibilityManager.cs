@@ -20,6 +20,7 @@ using LightsOut.Patches.ModCompatibility.ExtinguishRefuelables;
 using LightsOut.Patches.ModCompatibility.ColonyManager;
 using LightsOut.Patches.ModCompatibility.MiningLight;
 using LightsOut.Patches.ModCompatibility.SOS2;
+using LightsOut.Patches.ModCompatibility.ReinforcedMechanoid2;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -48,6 +49,7 @@ namespace LightsOut.Patches.ModCompatibility
             new BiotechCompatibilityPatch(),
             new MiningLightCompatibilityPatch(),
             new SOS2CompatibilityPatch(),
+            new ReinforcedMechanoid2CompatibilityPatch(),
         };
 
         /// <summary>

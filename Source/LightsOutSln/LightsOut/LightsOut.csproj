@@ -135,6 +135,8 @@
     <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGasConsumption.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
     <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\ReinforcedMechanoid2\KeepGestaltEngineOn.cs" />
+    <Compile Include="Patches\ModCompatibility\ReinforcedMechanoid2\ReinforcedMechanoid2CompatibilityPatch.cs" />
     <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
     <Compile Include="Patches\Power\CleanupBuildingsOnDespawn.cs" />
     <Compile Include="Patches\Power\PerformPendingShutoff.cs" />
