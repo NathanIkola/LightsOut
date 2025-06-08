@@ -109,10 +109,36 @@ references:
   commentId: T:LightsOut.Boilerplate.LightsOutSettings
   fullName: LightsOut.Boilerplate.LightsOutSettings
   nameWithType: LightsOutSettings
+- uid: LightsOut.Boilerplate.LightsOutSettings.#ctor
+  name: LightsOutSettings()
+  href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings__ctor
+  commentId: M:LightsOut.Boilerplate.LightsOutSettings.#ctor
+  fullName: LightsOut.Boilerplate.LightsOutSettings.LightsOutSettings()
+  nameWithType: LightsOutSettings.LightsOutSettings()
+- uid: LightsOut.Boilerplate.LightsOutSettings.#ctor*
+  name: LightsOutSettings
+  href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings__ctor_
+  commentId: Overload:LightsOut.Boilerplate.LightsOutSettings.#ctor
+  isSpec: "True"
+  fullName: LightsOut.Boilerplate.LightsOutSettings.LightsOutSettings
+  nameWithType: LightsOutSettings.LightsOutSettings
+- uid: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawPercent
+  name: ActiveResourceDrawPercent
+  href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings_ActiveResourceDrawPercent
+  commentId: F:LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawPercent
+  fullName: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawPercent
+  nameWithType: LightsOutSettings.ActiveResourceDrawPercent
 - uid: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
   name: ActiveResourceDrawRate
   href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings_ActiveResourceDrawRate
-  commentId: F:LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
+  commentId: P:LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
+  fullName: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
+  nameWithType: LightsOutSettings.ActiveResourceDrawRate
+- uid: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate*
+  name: ActiveResourceDrawRate
+  href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings_ActiveResourceDrawRate_
+  commentId: Overload:LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
+  isSpec: "True"
   fullName: LightsOut.Boilerplate.LightsOutSettings.ActiveResourceDrawRate
   nameWithType: LightsOutSettings.ActiveResourceDrawRate
 - uid: LightsOut.Boilerplate.LightsOutSettings.AnimalParty
@@ -200,7 +226,14 @@ references:
 - uid: LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
   name: StandbyResourceDrawRate
   href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings_StandbyResourceDrawRate
-  commentId: F:LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
+  commentId: P:LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
+  fullName: LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
+  nameWithType: LightsOutSettings.StandbyResourceDrawRate
+- uid: LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate*
+  name: StandbyResourceDrawRate
+  href: api/LightsOut.Boilerplate.LightsOutSettings.html#LightsOut_Boilerplate_LightsOutSettings_StandbyResourceDrawRate_
+  commentId: Overload:LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
+  isSpec: "True"
   fullName: LightsOut.Boilerplate.LightsOutSettings.StandbyResourceDrawRate
   nameWithType: LightsOutSettings.StandbyResourceDrawRate
 - uid: LightsOut.Boilerplate.LightsOutSettings.TicksBetweenShutoffCheck
