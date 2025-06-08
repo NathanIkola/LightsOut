@@ -1,9 +1,9 @@
-﻿using LightsOut.ThingComps;
+﻿using LightsOut.Boilerplate;
+using LightsOut.ThingComps;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
@@ -39,7 +39,7 @@ namespace LightsOut.Common
         public static void DisableLight(ThingWithComps light, int? delay = 0)
         {
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
-            if (light is null || !ModSettings.FlickLights) return; 
+            if (light is null || !LightsOutSettings.FlickLights) return; 
 
             DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
@@ -90,7 +90,7 @@ namespace LightsOut.Common
         public static void DisableAllLights(Room room, bool respectDelay = true)
         {
             DebugLogger.AssertFalse(room is null, "DisableAllLights called on a null room");
-            if (room is null || room.OutdoorsForWork || !ModSettings.FlickLights
+            if (room is null || room.OutdoorsForWork || !LightsOutSettings.FlickLights
                 || !(room.Map?.regionAndRoomUpdater?.Enabled ?? false)) return;
 
             bool done = false;
@@ -123,7 +123,7 @@ namespace LightsOut.Common
             foreach (Thing thing in things)
             {
                 if (thing is ThingWithComps building && CanBeLight(building) && Rooms.IsInRoom(building, room))
-                    DisableLight(building, respectDelay ? ModSettings.DelayTicks : 0);
+                    DisableLight(building, respectDelay ? LightsOutSettings.DelayTicks : 0);
             }
         }
 
@@ -184,11 +184,11 @@ namespace LightsOut.Common
             // if pawns are allowed to turn off the lights at night
             // then only check if all pawns are asleep (which intrinsically
             // also checks for pawn presence)
-            if (!ModSettings.NightLights)
+            if (!LightsOutSettings.NightLights)
                 return Rooms.AllPawnsSleeping(room, excludedPawn);
 
             // otherwise, if we aren't allowed to turn off the lights in normal rooms then bail out
-            if (!ModSettings.FlickLights)
+            if (!LightsOutSettings.FlickLights)
                 return false;
 
             // otherwise only check for pawns in the room

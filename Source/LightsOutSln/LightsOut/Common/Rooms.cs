@@ -1,7 +1,7 @@
-﻿using RimWorld;
+﻿using LightsOut.Boilerplate;
+using RimWorld;
 using System;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
@@ -51,7 +51,7 @@ namespace LightsOut.Common
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn pawn && ((ModSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
+                if (thing is Pawn pawn && ((LightsOutSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??
@@ -103,7 +103,7 @@ namespace LightsOut.Common
 
             // now actually go through the collection
             foreach (Thing thing in things)
-                if (thing is Pawn pawn && ((ModSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
+                if (thing is Pawn pawn && ((LightsOutSettings.AnimalParty && pawn.RaceProps.Animal) || pawn.RaceProps.ToolUser) && pawn != excludedPawn
                     // what if two pawns were both leaving the room at the same time haha... unless?
                     && (pawn.pather.nextCell.GetEdifice(pawn.Map) as Building_Door) == null
                     // what if a pawn is entering while another pawn is leaving haha... unless??

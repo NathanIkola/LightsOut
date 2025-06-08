@@ -1,9 +1,9 @@
 ﻿using System;
 using HarmonyLib;
+using LightsOut.Boilerplate;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {
@@ -24,7 +24,7 @@ namespace LightsOut.Patches.Lights
         public static void Postfix(Toil __result, bool canSleep)
         {
             if (__result is null) { return; }
-            if (!ModSettings.NightLights && canSleep)
+            if (!LightsOutSettings.NightLights && canSleep)
             {
                 __result.AddPreInitAction(() =>
                 {

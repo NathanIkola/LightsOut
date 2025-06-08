@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using LightsOut.Gizmos;
 using LightsOut.Common;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
+using LightsOut.Boilerplate;
 
 namespace LightsOut.ThingComps
 {
@@ -79,7 +79,7 @@ namespace LightsOut.ThingComps
         {
             if (parent is ThingWithComps building && Lights.CanBeLight(building))
             {
-                if (ModSettings.FlickLights)
+                if (LightsOutSettings.FlickLights)
                     yield return Gizmo;
             }
             yield break;

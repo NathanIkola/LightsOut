@@ -1,11 +1,11 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 using CPower = LightsOut.Common.Resources;
 using System;
 using System.Reflection;
 using LightsOut.Patches.ModCompatibility;
 using LightsOut.Common;
+using LightsOut.Boilerplate;
 
 namespace LightsOut.Patches.Power
 {
@@ -34,9 +34,9 @@ namespace LightsOut.Patches.Power
             if(Math.Abs(powerDraw) > 0)
             {
                 if (__instance.Charged) 
-                    powerDraw *= ModSettings.StandbyResourceDrawRate;
+                    powerDraw *= LightsOutSettings.StandbyResourceDrawRate;
                 else 
-                    powerDraw *= ModSettings.ActiveResourceDrawRate;
+                    powerDraw *= LightsOutSettings.ActiveResourceDrawRate;
                 ___compPowerCached.powerOutputInt = Math.Min(powerDraw, CPower.MinDraw);
             }
         }

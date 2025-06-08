@@ -5,7 +5,7 @@ using LightsOut.Patches.ModCompatibility;
 using LightsOut.Common;
 using Verse;
 using Verse.AI;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
+using LightsOut.Boilerplate;
 
 namespace LightsOut.Patches.Lights
 {
@@ -54,7 +54,7 @@ namespace LightsOut.Patches.Lights
                         Tables.DisableTable(building); 
                 });
             }
-            else if(driver.asleep && !ModSettings.NightLights)
+            else if(driver.asleep && !LightsOutSettings.NightLights)
             {
                 // ask the pawn to nicely turn off the lights when they start sleeping
                 toil.AddPreTickAction(() =>

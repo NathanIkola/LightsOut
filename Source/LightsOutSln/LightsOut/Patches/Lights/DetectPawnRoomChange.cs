@@ -1,7 +1,7 @@
 ﻿using Verse;
 using HarmonyLib;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 using Verse.AI;
+using LightsOut.Boilerplate;
 
 namespace LightsOut.Patches.Lights
 {
@@ -20,7 +20,7 @@ namespace LightsOut.Patches.Lights
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
         public static void Prefix(Pawn ___pawn, ref Room __state)
         {
-            if ((!ModSettings.AnimalParty && ___pawn.RaceProps.Animal) || !ModSettings.FlickLights) return;
+            if ((!LightsOutSettings.AnimalParty && ___pawn.RaceProps.Animal) || !LightsOutSettings.FlickLights) return;
 
             __state = ___pawn.GetRoom();
         }
@@ -34,7 +34,7 @@ namespace LightsOut.Patches.Lights
         /// <param name="__state">The Room that <paramref name="__instance"/> was in at the beginning of the tick</param>
         public static void Postfix(Pawn ___pawn, ref Room __state)
         {
-            if ((!ModSettings.AnimalParty && ___pawn.RaceProps.Animal) || !ModSettings.FlickLights) return;
+            if ((!LightsOutSettings.AnimalParty && ___pawn.RaceProps.Animal) || !LightsOutSettings.FlickLights) return;
 
             Room oldRoom = __state;
             Room newRoom = ___pawn.GetRoom();

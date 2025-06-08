@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Verse;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
+using LightsOut.Boilerplate;
 using System.Reflection;
 using HarmonyLib;
 using LightsOut.Patches.ModCompatibility.Androids;
@@ -76,11 +76,10 @@ namespace LightsOut.Patches.ModCompatibility
             }
 
             // only load this patch if the target mod is present and accounted for
-            if (!string.IsNullOrEmpty(patch.TargetMod))
-            {
-                if (!LoadedModManager.RunningModsListForReading.Any(x => x.Name == patch.TargetMod))
-                    return;
-            }
+            if (string.IsNullOrEmpty(patch.TargetMod))
+                DebugLogger.LogWarning($"should {patch.CompatibilityPatchName} specify a target mod?", DebugMessageKeys.Mods);
+            else if (!LoadedModManager.RunningModsListForReading.Any(x => x.Name == patch.TargetMod))
+                return;
 
             DebugLogger.LogInfo($"applying mod compatibility patch: {patch.CompatibilityPatchName}", DebugMessageKeys.Mods);
             patch.OnBeforePatchApplied();
@@ -148,10 +147,10 @@ namespace LightsOut.Patches.ModCompatibility
                     switch (patch.patchType)
                     {
                         case PatchType.Prefix:
-                            ModSettings.Harmony.Patch(GetMethod(type, patch), new HarmonyMethod(patch.patch));
+                            LightsOutMod.HarmonyInstance.Patch(GetMethod(type, patch), new HarmonyMethod(patch.patch));
                             break;
                         case PatchType.Postfix:
-                            ModSettings.Harmony.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
+                            LightsOutMod.HarmonyInstance.Patch(GetMethod(type, patch), null, new HarmonyMethod(patch.patch));
                             break;
                         default:
                             DebugLogger.LogWarning($"    encountered an invalid patch type in component {comp.ComponentName}; skipping it.", DebugMessageKeys.Mods);

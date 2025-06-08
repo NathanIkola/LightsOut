@@ -13,7 +13,7 @@ namespace LightsOut.Common
         /// <summary>
         /// Alias for the message filters mod setting property
         /// </summary>
-        private static string[] MessageFilters => Boilerplate.ModSettings.MessageFilters;
+        private static string[] MessageFilters => Boilerplate.LightsOutSettings.MessageFilters;
 
         /// <summary>
         /// Checks whether the specific debug message should be logged

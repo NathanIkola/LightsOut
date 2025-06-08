@@ -1,8 +1,8 @@
-﻿using LightsOut.Common;
+﻿using LightsOut.Boilerplate;
+using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 using Verse;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
@@ -46,14 +46,14 @@ namespace LightsOut.Patches.ModCompatibility.HelixienGas
             if (canConsumeGas == true)
             {
                 if (Tables.IsTable(__instance.parent))
-                    __result *= ModSettings.ActiveResourceDrawRate;
+                    __result *= LightsOutSettings.ActiveResourceDrawRate;
             }
             else if (canConsumeGas == false)
             {
                 if (Common.Lights.CanBeLight(__instance.parent))
                     __result = Resources.MinDraw;
                 else
-                    __result = Math.Min(__result * ModSettings.StandbyResourceDrawRate, Resources.MinDraw);
+                    __result = Math.Min(__result * LightsOutSettings.StandbyResourceDrawRate, Resources.MinDraw);
             }
         }
     }

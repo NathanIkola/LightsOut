@@ -1,8 +1,8 @@
 ﻿using HarmonyLib;
 using Verse;
 using LightsOut.Common;
-using ModSettings = LightsOut.Boilerplate.ModSettings;
 using System.Collections.Generic;
+using LightsOut.Boilerplate;
 
 namespace LightsOut.Patches.Power
 {
@@ -24,7 +24,7 @@ namespace LightsOut.Patches.Power
 
             // don't need to check every single tick
             int curTick = GenTicks.TicksGame;
-            if (curTick % ModSettings.TicksBetweenShutoffCheck == 0)
+            if (curTick % LightsOutSettings.TicksBetweenShutoffCheck == 0)
                 while (Resources.NextTickToDisableBuilding() <= curTick)
                 {
                     ThingWithComps thing = Resources.PendingShutoff.Dequeue().First;
