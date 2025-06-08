@@ -12,7 +12,7 @@ namespace LightsOut.Boilerplate
     /// The class that initializes the mod and holds all
     /// mod-related settings
     /// </summary>
-    public class LightsOutSettings : ModSettings
+    public class LightsOutSettings : Verse.ModSettings
     {
         /// <summary>
         /// Initializes the settings object
@@ -27,76 +27,18 @@ namespace LightsOut.Boilerplate
         }
 
         /// <summary>
-        /// Control whether or not Pawns flick lights on and off
-        /// </summary>
-        public static bool FlickLights = true;
-
-        /// <summary>
-        /// The percentage form of the draw rate
-        /// </summary>
-        private static int StandbyResourceDrawPercent = 0;
-
-        /// <summary>
-        /// Latent power draw of things when they're flicked off
-        /// </summary>
-        public static float StandbyResourceDrawRate => StandbyResourceDrawPercent / 100f;
-
-        /// <summary>
-        /// The percentage form of the draw rate
-        /// </summary>
-        public static int ActiveResourceDrawPercent = 100;
-
-        /// <summary>
-        /// The resource draw rate of things when they're in-use
-        /// </summary>
-        public static float ActiveResourceDrawRate => ActiveResourceDrawPercent / 100f ;
-
-        /// <summary>
-        /// Control whether or not Pawns shut off the lights when
-        /// they go to bed
-        /// </summary>
-        public static bool NightLights = false;
-
-        /// <summary>
-        /// If set to true, allows animals to turn on the lights
-        /// </summary>
-        public static bool AnimalParty = false;
-
-        /// <summary>
-        /// A list of message filters to add.
-        /// Allows messages based on their debug message key.
-        /// </summary>
-        public static string[] MessageFilters = { DebugMessageKeys.Error + DebugMessageKeys.Mods };
-
-        /// <summary>
-        /// The number of ticks to delay turning a light off by
-        /// </summary>
-        public static float DelaySeconds = 1.5f;
-
-        /// <summary>
-        /// The number of ticks to wait between checking for
-        /// buildings with delays to turn off
-        /// </summary>
-        public static int TicksBetweenShutoffCheck = 30;
-
-        /// <summary>
-        /// An easier way to get the number of ticks
-        /// </summary>
-        public static int DelayTicks => (int)(DelaySeconds * 60f);
-
-        /// <summary>
         /// Draws the settings menu for users to interact with
         /// </summary>
         /// <param name="settingListing">The setting lister to use</param>
         public void DrawSettingsMenu(Listing_Standard settingListing)
         {
-            bool flickLights = FlickLights;
+            bool flickLights = ModSettings.FlickLights;
 
             // initialize the input buffers if they haven't been already
-            _standbyBuf = _standbyBuf ?? StandbyResourceDrawPercent.ToString();
-            _activeBuf = _activeBuf ?? ActiveResourceDrawPercent.ToString();
-            _delayBuf = _delayBuf ?? DelaySeconds.ToString();
-            _messageFilterBuf = _messageFilterBuf ?? MessageFilters.Join(null, " ");
+            _standbyBuf = _standbyBuf ?? ModSettings.StandbyResourceDrawPercent.ToString();
+            _activeBuf = _activeBuf ?? ModSettings.ActiveResourceDrawPercent.ToString();
+            _delayBuf = _delayBuf ?? ModSettings.DelaySeconds.ToString();
+            _messageFilterBuf = _messageFilterBuf ?? ModSettings.MessageFilters.Join(null, " ");
 
             settingListing.CheckboxLabeled(
                 "LightsOut_Settings_EverythingButLightsOutLabel".Translate(),
@@ -106,31 +48,31 @@ namespace LightsOut.Boilerplate
 
             settingListing.CheckboxLabeled(
                 "LightsOut_Settings_NightLightsLabel".Translate(),
-                ref NightLights,
+                ref ModSettings.NightLights,
                 "LightsOut_Settings_NightLightsTooltip".Translate()
                 );
 
             settingListing.CheckboxLabeled(
                 "LightsOut_Settings_AnimalPartyLabel".Translate(),
-                ref AnimalParty,
+                ref ModSettings.AnimalParty,
                 "LightsOut_Settings_AnimalPartyTooltip".Translate()
                 );
 
             settingListing.TextFieldNumericLabeled(
                 "LightsOut_Settings_DelaySecondsLabel".Translate(),
-                ref DelaySeconds, ref _delayBuf,
+                ref ModSettings.DelaySeconds, ref _delayBuf,
                 0, float.MaxValue
                 );
 
             settingListing.TextFieldNumericLabeled(
                 "LightsOut_Settings_LatentPowerDrawRateLabel".Translate(),
-                ref StandbyResourceDrawPercent, ref _standbyBuf,
+                ref ModSettings.StandbyResourceDrawPercent, ref _standbyBuf,
                 0, 100
                 );
 
             settingListing.TextFieldNumericLabeled(
                 "LightsOut_Settings_ActivePowerDrawRateLabel".Translate(),
-                ref ActiveResourceDrawPercent, ref _activeBuf,
+                ref ModSettings.ActiveResourceDrawPercent, ref _activeBuf,
                 0, int.MaxValue
                 );
 
@@ -140,9 +82,9 @@ namespace LightsOut.Boilerplate
                 1
                 );
 
-            MessageFilters = _messageFilterBuf.ToLower().Split(' ');
+            ModSettings.MessageFilters = _messageFilterBuf.ToLower().Split(' ');
             UpdateLightGlowersOnSettingChange(flickLights);
-            FlickLights = flickLights;
+            ModSettings.FlickLights = flickLights;
         }
 
         /// <summary>
@@ -159,21 +101,21 @@ namespace LightsOut.Boilerplate
         /// </summary>
         public void ExposeSettings()
         {
-            _messageFilterBuf = _messageFilterBuf ?? MessageFilters.Join(null, " ");
+            _messageFilterBuf = _messageFilterBuf ?? ModSettings.MessageFilters.Join(null, " ");
 
             // clamp the active power draw to at least 100
-            if (ActiveResourceDrawPercent < 100)
-                ActiveResourceDrawPercent = 100;
+            if (ModSettings.ActiveResourceDrawPercent < 100)
+                ModSettings.ActiveResourceDrawPercent = 100;
 
-            Scribe_Values.Look(ref FlickLights, "EverythingButLightsOut", FlickLights, true);
-            Scribe_Values.Look(ref NightLights, "NightLights", NightLights, true);
-            Scribe_Values.Look(ref AnimalParty, "AnimalParty", AnimalParty, true);
-            Scribe_Values.Look(ref DelaySeconds, "DelaySeconds", DelaySeconds, true);
-            Scribe_Values.Look(ref StandbyResourceDrawPercent, "LatentPowerDrawRate", StandbyResourceDrawPercent, true);
-            Scribe_Values.Look(ref ActiveResourceDrawPercent, "ActivePowerDrawRate", ActiveResourceDrawPercent, true);
+            Scribe_Values.Look(ref ModSettings.FlickLights, "EverythingButLightsOut", ModSettings.FlickLights, true);
+            Scribe_Values.Look(ref ModSettings.NightLights, "NightLights", ModSettings.NightLights, true);
+            Scribe_Values.Look(ref ModSettings.AnimalParty, "AnimalParty", ModSettings.AnimalParty, true);
+            Scribe_Values.Look(ref ModSettings.DelaySeconds, "DelaySeconds", ModSettings.DelaySeconds, true);
+            Scribe_Values.Look(ref ModSettings.StandbyResourceDrawPercent, "LatentPowerDrawRate", ModSettings.StandbyResourceDrawPercent, true);
+            Scribe_Values.Look(ref ModSettings.ActiveResourceDrawPercent, "ActivePowerDrawRate", ModSettings.ActiveResourceDrawPercent, true);
             Scribe_Values.Look(ref _messageFilterBuf, "DebugFilters", _messageFilterBuf, true);
 
-            MessageFilters = _messageFilterBuf.ToLower().Split(' ');
+            ModSettings.MessageFilters = _messageFilterBuf.ToLower().Split(' ');
 
             // reset the buffers so that they get rebuilt the next time the settings window renders
             // do this in case we needed to adjust an input value due to it falling out of range
@@ -209,10 +151,10 @@ namespace LightsOut.Boilerplate
         /// <param name="newVal">The new value the setting is being set to</param>
         private void UpdateLightGlowersOnSettingChange(bool newVal)
         {
-            if (FlickLights == newVal) return;
-            DebugLogger.LogInfo($"Changing FlickLights from {FlickLights} to {newVal}", DebugMessageKeys.Settings);
+            if (ModSettings.FlickLights == newVal) return;
+            DebugLogger.LogInfo($"Changing FlickLights from {ModSettings.FlickLights} to {newVal}", DebugMessageKeys.Settings);
 
-            FlickLights = newVal;
+            ModSettings.FlickLights = newVal;
 
             var affectedLights = new List<ThingComp>();
             foreach (var kv in Resources.BuildingStatus)
@@ -226,7 +168,7 @@ namespace LightsOut.Boilerplate
                     affectedLights.Add(light);
             }
 
-            if (!FlickLights)
+            if (!ModSettings.FlickLights)
             {
                 foreach (ThingComp glower in affectedLights)
                     Glowers.EnableGlower(glower);
@@ -276,19 +218,19 @@ namespace LightsOut.Boilerplate
                         {
                             string value = settingNode.Value;
                             if (settingNode.Name == "EverythingButLightsOut")
-                                TryParse(value, ref FlickLights);
+                                TryParse(value, ref ModSettings.FlickLights);
                             else if (settingNode.Name == "NightLights")
-                                TryParse(value, ref NightLights);
+                                TryParse(value, ref ModSettings.NightLights);
                             else if (settingNode.Name == "AnimalParty")
-                                TryParse(value, ref AnimalParty);
+                                TryParse(value, ref ModSettings.AnimalParty);
                             else if (settingNode.Name == "DelaySeconds")
-                                TryParse(value, ref DelaySeconds);
+                                TryParse(value, ref ModSettings.DelaySeconds);
                             else if (settingNode.Name == "LatentPowerDrawRate")
-                                TryParse(value, ref StandbyResourceDrawPercent);
+                                TryParse(value, ref ModSettings.StandbyResourceDrawPercent);
                             else if (settingNode.Name == "ActivePowerDrawRate")
-                                TryParse(value, ref ActiveResourceDrawPercent);
+                                TryParse(value, ref ModSettings.ActiveResourceDrawPercent);
                             else if (settingNode.Name == "DebugFilters")
-                                MessageFilters = value.ToLower().Split(' ');
+                                ModSettings.MessageFilters = value.ToLower().Split(' ');
                         }
                         // no need to loop further, we found our settings
                         break;

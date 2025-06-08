@@ -1,9 +1,9 @@
-﻿using LightsOut.Boilerplate;
-using LightsOut.Common;
+﻿using LightsOut.Common;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Verse;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.ModCompatibility.HelixienGas
 {

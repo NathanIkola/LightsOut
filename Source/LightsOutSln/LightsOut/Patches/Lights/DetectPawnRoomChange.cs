@@ -1,7 +1,7 @@
 ﻿using Verse;
 using HarmonyLib;
 using Verse.AI;
-using LightsOut.Boilerplate;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {

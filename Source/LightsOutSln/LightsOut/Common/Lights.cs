@@ -1,9 +1,9 @@
-﻿using LightsOut.Boilerplate;
-using LightsOut.ThingComps;
+﻿using LightsOut.ThingComps;
 using RimWorld;
 using System;
 using System.Collections.Generic;
 using Verse;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {

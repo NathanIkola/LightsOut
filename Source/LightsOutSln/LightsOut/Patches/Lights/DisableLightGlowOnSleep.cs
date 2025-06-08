@@ -1,9 +1,9 @@
 ﻿using System;
 using HarmonyLib;
-using LightsOut.Boilerplate;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {

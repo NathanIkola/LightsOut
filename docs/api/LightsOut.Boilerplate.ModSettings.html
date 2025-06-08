@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ModSettings
    ">
-    <meta name="generator" content="docfx 2.59.3.0">
+    <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -73,102 +73,16 @@
   
   <h1 id="LightsOut_Boilerplate_ModSettings" data-uid="LightsOut.Boilerplate.ModSettings" class="text-break">Class ModSettings
   </h1>
-  <div class="markdown level0 summary"><p>The class that initializes the mod and holds all
-mod-related settings</p>
+  <div class="markdown level0 summary"><p>A class that holds the static fields for the settings</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">HugsLib.ModBase</span></div>
-    <div class="level2"><span class="xref">ModSettings</span></div>
+    <div class="level1"><span class="xref">ModSettings</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">HugsLib.ModBase.HarmonyInstancePrefix</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.modContentPackInt</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.GetVersion()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.EarlyInitialize()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.EarlyInitalize()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.StaticInitialize()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.Initialize()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.Tick(System.Int32)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.Update()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.FixedUpdate()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.OnGUI()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.WorldLoaded()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.MapComponentsInitializing(Verse.Map)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.MapGenerated(Verse.Map)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.MapLoaded(Verse.Map)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.MapDiscarded(Verse.Map)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.SceneLoaded(UnityEngine.SceneManagement.Scene)</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.ApplicationQuit()</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.Logger</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.Settings</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.HarmonyAutoPatch</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.HarmonyInst</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.SettingsIdentifier</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.LogIdentifier</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.LogIdentifierSafe</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.ModContentPack</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.ModIsActive</span>
-    </div>
-    <div>
-      <span class="xref">HugsLib.ModBase.VersionInfo</span>
-    </div>
     <div>
       <span class="xref">System.Object.ToString()</span>
     </div>
@@ -195,35 +109,234 @@ mod-related settings</p>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
   <h5 id="LightsOut_Boilerplate_ModSettings_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ModSettings : ModBase</code></pre>
+    <pre><code class="lang-csharp hljs">public static class ModSettings</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings__ctor.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L21">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings__ctor_" data-uid="LightsOut.Boilerplate.ModSettings.#ctor*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings__ctor" data-uid="LightsOut.Boilerplate.ModSettings.#ctor">ModSettings()</h4>
-  <div class="markdown level1 summary"><p>Default constructor that sets the Harmony instance. 
-This should only be called by the game when it loads the mod.</p>
+  <h5 id="LightsOut_Boilerplate_ModSettings_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>I didn&apos;t want to do this, but other mods started to patch
+fields in the ModSettings class, so I wasn&apos;t able to rename it
+without causing compatibility issues. I left these here and moved
+the rest of the functionality into LightsOutSettings</p>
 </div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ModSettings()</code></pre>
-  </div>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_TicksBetweenShutoffCheck.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_ActiveResourceDrawPercent.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.ActiveResourceDrawPercent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L78">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L34">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_ActiveResourceDrawPercent" data-uid="LightsOut.Boilerplate.ModSettings.ActiveResourceDrawPercent">ActiveResourceDrawPercent</h4>
+  <div class="markdown level1 summary"><p>The percentage form of the draw rate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ActiveResourceDrawPercent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_AnimalParty.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.AnimalParty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L50">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_AnimalParty" data-uid="LightsOut.Boilerplate.ModSettings.AnimalParty">AnimalParty</h4>
+  <div class="markdown level1 summary"><p>If set to true, allows animals to turn on the lights</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AnimalParty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_DelaySeconds.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.DelaySeconds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L61">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_DelaySeconds" data-uid="LightsOut.Boilerplate.ModSettings.DelaySeconds">DelaySeconds</h4>
+  <div class="markdown level1 summary"><p>The number of ticks to delay turning a light off by</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float DelaySeconds</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_FlickLights.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.FlickLights%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L19">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_FlickLights" data-uid="LightsOut.Boilerplate.ModSettings.FlickLights">FlickLights</h4>
+  <div class="markdown level1 summary"><p>Control whether or not Pawns flick lights on and off</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FlickLights</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_MessageFilters.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.MessageFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L56">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_MessageFilters" data-uid="LightsOut.Boilerplate.ModSettings.MessageFilters">MessageFilters</h4>
+  <div class="markdown level1 summary"><p>A list of message filters to add.
+Allows messages based on their debug message key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] MessageFilters</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_NightLights.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.NightLights%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L45">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_NightLights" data-uid="LightsOut.Boilerplate.ModSettings.NightLights">NightLights</h4>
+  <div class="markdown level1 summary"><p>Control whether or not Pawns shut off the lights when
+they go to bed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool NightLights</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_StandbyResourceDrawPercent.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.StandbyResourceDrawPercent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L24">View Source</a>
+  </span>
+  <h4 id="LightsOut_Boilerplate_ModSettings_StandbyResourceDrawPercent" data-uid="LightsOut.Boilerplate.ModSettings.StandbyResourceDrawPercent">StandbyResourceDrawPercent</h4>
+  <div class="markdown level1 summary"><p>The percentage form of the draw rate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int StandbyResourceDrawPercent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_TicksBetweenShutoffCheck.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L67">View Source</a>
   </span>
   <h4 id="LightsOut_Boilerplate_ModSettings_TicksBetweenShutoffCheck" data-uid="LightsOut.Boilerplate.ModSettings.TicksBetweenShutoffCheck">TicksBetweenShutoffCheck</h4>
   <div class="markdown level1 summary"><p>The number of ticks to wait between checking for
@@ -253,10 +366,10 @@ buildings with delays to turn off</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_ActiveResourceDrawRate.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_ActiveResourceDrawRate.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L50">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L39">View Source</a>
   </span>
   <a id="LightsOut_Boilerplate_ModSettings_ActiveResourceDrawRate_" data-uid="LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate*"></a>
   <h4 id="LightsOut_Boilerplate_ModSettings_ActiveResourceDrawRate" data-uid="LightsOut.Boilerplate.ModSettings.ActiveResourceDrawRate">ActiveResourceDrawRate</h4>
@@ -265,7 +378,7 @@ buildings with delays to turn off</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ActiveResourceDrawRate { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static float ActiveResourceDrawRate { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -284,72 +397,10 @@ buildings with delays to turn off</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_AnimalParty.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.AnimalParty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_DelayTicks.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.DelayTicks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L61">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_AnimalParty_" data-uid="LightsOut.Boilerplate.ModSettings.AnimalParty*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_AnimalParty" data-uid="LightsOut.Boilerplate.ModSettings.AnimalParty">AnimalParty</h4>
-  <div class="markdown level1 summary"><p>If set to true, allows animals to turn on the lights</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool AnimalParty { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_DelaySeconds.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.DelaySeconds%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L72">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_DelaySeconds_" data-uid="LightsOut.Boilerplate.ModSettings.DelaySeconds*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_DelaySeconds" data-uid="LightsOut.Boilerplate.ModSettings.DelaySeconds">DelaySeconds</h4>
-  <div class="markdown level1 summary"><p>The number of ticks to delay turning a light off by</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float DelaySeconds { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_DelayTicks.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.DelayTicks%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L83">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L72">View Source</a>
   </span>
   <a id="LightsOut_Boilerplate_ModSettings_DelayTicks_" data-uid="LightsOut.Boilerplate.ModSettings.DelayTicks*"></a>
   <h4 id="LightsOut_Boilerplate_ModSettings_DelayTicks" data-uid="LightsOut.Boilerplate.ModSettings.DelayTicks">DelayTicks</h4>
@@ -377,169 +428,10 @@ buildings with delays to turn off</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_FlickLights.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.FlickLights%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L40">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_FlickLights_" data-uid="LightsOut.Boilerplate.ModSettings.FlickLights*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_FlickLights" data-uid="LightsOut.Boilerplate.ModSettings.FlickLights">FlickLights</h4>
-  <div class="markdown level1 summary"><p>Control whether or not Pawns flick lights on and off</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool FlickLights { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_Harmony.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.Harmony%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L29">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_Harmony_" data-uid="LightsOut.Boilerplate.ModSettings.Harmony*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_Harmony" data-uid="LightsOut.Boilerplate.ModSettings.Harmony">Harmony</h4>
-  <div class="markdown level1 summary"><p>The Harmony instance associated with this mod</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Harmony Harmony { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">HarmonyLib.Harmony</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_MessageFilters.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.MessageFilters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L67">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_MessageFilters_" data-uid="LightsOut.Boilerplate.ModSettings.MessageFilters*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_MessageFilters" data-uid="LightsOut.Boilerplate.ModSettings.MessageFilters">MessageFilters</h4>
-  <div class="markdown level1 summary"><p>A list of message filters to add.
-Allows messages based on their debug message key.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string[] MessageFilters { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_ModIdentifier.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.ModIdentifier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L88">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_ModIdentifier_" data-uid="LightsOut.Boilerplate.ModSettings.ModIdentifier*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_ModIdentifier" data-uid="LightsOut.Boilerplate.ModSettings.ModIdentifier">ModIdentifier</h4>
-  <div class="markdown level1 summary"><p>The identifier this mod uses to identify itself in-game</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string ModIdentifier { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">HugsLib.ModBase.ModIdentifier</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_NightLights.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.NightLights%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L56">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_NightLights_" data-uid="LightsOut.Boilerplate.ModSettings.NightLights*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_NightLights" data-uid="LightsOut.Boilerplate.ModSettings.NightLights">NightLights</h4>
-  <div class="markdown level1 summary"><p>Control whether or not Pawns shut off the lights when
-they go to bed</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool NightLights { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L45">View Source</a>
+    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L29">View Source</a>
   </span>
   <a id="LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate_" data-uid="LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate*"></a>
   <h4 id="LightsOut_Boilerplate_ModSettings_StandbyResourceDrawRate" data-uid="LightsOut.Boilerplate.ModSettings.StandbyResourceDrawRate">StandbyResourceDrawRate</h4>
@@ -548,7 +440,7 @@ they go to bed</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float StandbyResourceDrawRate { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static float StandbyResourceDrawRate { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -565,44 +457,6 @@ they go to bed</p>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_DefsLoaded.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.DefsLoaded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L96">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_DefsLoaded_" data-uid="LightsOut.Boilerplate.ModSettings.DefsLoaded*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_DefsLoaded" data-uid="LightsOut.Boilerplate.ModSettings.DefsLoaded">DefsLoaded()</h4>
-  <div class="markdown level1 summary"><p>The function called when the game finishes loading defs</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void DefsLoaded()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">HugsLib.ModBase.DefsLoaded()</span></div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings_SettingsChanged.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings.SettingsChanged%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L106">View Source</a>
-  </span>
-  <a id="LightsOut_Boilerplate_ModSettings_SettingsChanged_" data-uid="LightsOut.Boilerplate.ModSettings.SettingsChanged*"></a>
-  <h4 id="LightsOut_Boilerplate_ModSettings_SettingsChanged" data-uid="LightsOut.Boilerplate.ModSettings.SettingsChanged">SettingsChanged()</h4>
-  <div class="markdown level1 summary"><p>The function called when the game settings change for any reason</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void SettingsChanged()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">HugsLib.ModBase.SettingsChanged()</span></div>
 </article>
           </div>
           
@@ -611,10 +465,10 @@ they go to bed</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/new/master/apiSpec/new?filename=LightsOut_Boilerplate_ModSettings.md&amp;value=---%0Auid%3A%20LightsOut.Boilerplate.ModSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L15" class="contribution-link">View Source</a>
+                    <a href="https://github.com/NathanIkola/LightsOut/blob/master/Source/LightsOutSln/LightsOut/Boilerplate/ModSettings.cs/#L14" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

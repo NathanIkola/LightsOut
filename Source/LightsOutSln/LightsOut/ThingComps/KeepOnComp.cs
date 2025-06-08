@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using LightsOut.Gizmos;
 using LightsOut.Common;
 using Verse;
-using LightsOut.Boilerplate;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.ThingComps
 {

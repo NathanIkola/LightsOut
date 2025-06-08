@@ -71,6 +71,7 @@
     <Compile Include="Boilerplate\LateInitializeMod.cs" />
     <Compile Include="Boilerplate\LightsOutMod.cs" />
     <Compile Include="Boilerplate\LightsOutSettings.cs" />
+    <Compile Include="Boilerplate\ModSettings.cs" />
     <Compile Include="Common\DebugLogger.cs" />
     <Compile Include="Common\DebugMessageKeys.cs" />
     <Compile Include="Common\Enterables.cs" />
@@ -172,7 +173,7 @@ echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_StartDate="2000/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" />
+      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\docfx.console.2.59.4\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.4\build\docfx.console.targets')" />

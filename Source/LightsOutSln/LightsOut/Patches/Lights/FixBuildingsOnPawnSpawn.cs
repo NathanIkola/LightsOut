@@ -5,7 +5,7 @@ using LightsOut.Patches.ModCompatibility;
 using LightsOut.Common;
 using Verse;
 using Verse.AI;
-using LightsOut.Boilerplate;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Lights
 {

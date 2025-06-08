@@ -2,7 +2,7 @@
 using Verse;
 using LightsOut.Common;
 using System.Collections.Generic;
-using LightsOut.Boilerplate;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {

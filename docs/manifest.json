@@ -81,10 +81,22 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.LightsOutSettings.html",
-          "hash": "sMmcRofoyY64Nbo00BtlZQobbw4Chj4lxDikMTWaVXk="
+          "hash": "0S5tCp32V5MppJdCj1dmPx3JAaad8IFDNLjYYcp+Xp4="
         }
       },
       "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/LightsOut.Boilerplate.ModSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LightsOut.Boilerplate.ModSettings.html",
+          "hash": "5nZX0b7jtirhcXG2n2Zer48zyGY3BL/Z2uBX03t7Z3U="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Boilerplate.html",
-          "hash": "ac6JqJ5EnE4UT7KS06Y83rCVVS7QOIqg5dJAr1IVMI8="
+          "hash": "vMkqUGl03hnLt6Ak+20tfaqL1D7zUTg/B0kBxm3YCv4="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +117,10 @@
       "output": {
         ".html": {
           "relative_path": "api/LightsOut.Common.DebugLogger.html",
-          "hash": "7Djlus2uBtWjv/cxO6gFkiZv0LBwW/eKKwAB/wBUpJI="
+          "hash": "OXsLUC3lasqtsH2TAiUJjBJSazNCDYHxc6IA4kIg7zc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -228,7 +240,7 @@
           "hash": "1e1t+jzZF7+cVHauT267BXkAcFlG5WAKFHnJ5N6+xSw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1341,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "oUTwCaFcs38iOQxqb+99/5k9KOOiDNI83hQ2vVF83zY="
+          "hash": "wXwvKb8C6v+r3mhuFbcNHvgTGK7AeTIY2mPfSRI/l+g="
         }
       },
       "is_incremental": false,
@@ -1378,8 +1390,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 107,
-          "skipped_file_count": 107
+          "total_file_count": 108,
+          "skipped_file_count": 106
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

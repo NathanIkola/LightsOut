@@ -1,7 +1,7 @@
-﻿using LightsOut.Boilerplate;
-using RimWorld;
+﻿using RimWorld;
 using System;
 using Verse;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {

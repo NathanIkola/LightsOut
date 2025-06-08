@@ -2,7 +2,7 @@
 using HarmonyLib;
 using System;
 using LightsOut.Common;
-using LightsOut.Boilerplate;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Patches.Power
 {

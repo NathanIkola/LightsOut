@@ -1,4 +1,5 @@
 ﻿using Verse;
+using LightsOutSettings = LightsOut.Boilerplate.ModSettings;
 
 namespace LightsOut.Common
 {
@@ -13,7 +14,7 @@ namespace LightsOut.Common
         /// <summary>
         /// Alias for the message filters mod setting property
         /// </summary>
-        private static string[] MessageFilters => Boilerplate.LightsOutSettings.MessageFilters;
+        private static string[] MessageFilters => LightsOutSettings.MessageFilters;
 
         /// <summary>
         /// Checks whether the specific debug message should be logged
