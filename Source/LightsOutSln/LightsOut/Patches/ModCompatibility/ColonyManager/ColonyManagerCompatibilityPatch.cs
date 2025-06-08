@@ -8,6 +8,7 @@ namespace LightsOut.Patches.ModCompatibility.ColonyManager
     public class ColonyManagerCompatibilityPatch : ICompatibilityPatch
     {
         public override string CompatibilityPatchName => "Colony Manager";
+        public override string TargetMod => "Colony Manager";
 
         public override IEnumerable<ICompatibilityPatchComponent> GetComponents()
         {
