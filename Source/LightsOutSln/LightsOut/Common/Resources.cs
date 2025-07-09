@@ -91,7 +91,7 @@ namespace LightsOut.Common
                 rechargeable = CompRechargeables[thing];
             else
             {
-                rechargeable = thing.GetComp<CompRechargeable>();
+                rechargeable = thing.TryGetComp<CompRechargeable>();
                 CompRechargeables.Add(thing, rechargeable);
             }
 
@@ -113,7 +113,7 @@ namespace LightsOut.Common
             if (CompRechargeables.ContainsKey(building))
                 return CompRechargeables[building] != null;
 
-            CompRechargeable rechargeable = building.GetComp<CompRechargeable>();
+            CompRechargeable rechargeable = building.TryGetComp<CompRechargeable>();
             CompRechargeables.Add(building, rechargeable);
             return rechargeable != null;
         }

@@ -77,12 +77,17 @@ namespace LightsOut.ThingComps
         /// <returns>A list of Gizmos to display on the light</returns>
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (parent is ThingWithComps building && Lights.CanBeLight(building))
+            if (!Disabled && parent is ThingWithComps building && Lights.CanBeLight(building))
             {
                 if (LightsOutSettings.FlickLights)
                     yield return Gizmo;
             }
             yield break;
         }
+
+        /// <summary>
+        /// Whether or not this comp should be disabled and rendered useless (for buildings that don't need this functionality)
+        /// </summary>
+        public bool Disabled { get; set; } = false;
     }
 }

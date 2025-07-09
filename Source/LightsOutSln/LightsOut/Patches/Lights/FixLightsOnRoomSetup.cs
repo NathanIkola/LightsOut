@@ -7,7 +7,7 @@ namespace LightsOut.Patches.Lights
     public class FixLightsOnRoomSetup
     {
         /// <summary>
-        /// Runsaftera room is resized, automatically enabling/disabling lights as needed
+        /// Runs after a room is resized, automatically enabling/disabling lights as needed
         /// </summary>
         /// <param name="room">The <see cref="Room"/> that was updated</param>
         public static void Postfix(Room room)
@@ -15,7 +15,7 @@ namespace LightsOut.Patches.Lights
             if (room is null) return;
             if (Common.Lights.ShouldTurnOffAllLights(room, null))
                 Common.Lights.DisableAllLights(room);
-            else
+            else 
                 Common.Lights.EnableAllLights(room);
         }
     }
