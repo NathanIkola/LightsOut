@@ -206,8 +206,8 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(building is null, "CanBeLight called on a null building");
             if (building is null) return false;
             //if (building is MinifiedThing) return false;
-            if (Resources.MemoizedThings.ContainsKey(building))
-                return Resources.MemoizedThings[building] == Resources.ThingType.Light;
+            if (Resources.TryGetThingType(building, out Resources.ThingType type))
+                return type == Resources.ThingType.Light;
 
             if (HasDisallowedCompForLights(building))
                 return false;
@@ -226,7 +226,7 @@ namespace LightsOut.Common
             foreach (string keyword in LightNamesMustInclude)
                 if (defName.Contains(keyword.ToLower()))
                 {
-                    Resources.MemoizedThings.Add(building, Resources.ThingType.Light);
+                    Resources.SetThingType(building, Resources.ThingType.Light);
                     return true;
                 }
 

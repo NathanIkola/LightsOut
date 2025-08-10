@@ -3,7 +3,6 @@ using HarmonyLib;
 using LightsOut.Common;
 using LightsOut.ThingComps;
 using System;
-using RimWorld;
 
 namespace LightsOut.Patches.Power
 {
@@ -36,9 +35,9 @@ namespace LightsOut.Patches.Power
                 return;
             }
             // some mods (SOS2) can force a Thing to despawn/respawn without triggering cleanup
-            else if (!Resources.MemoizedThings.ContainsKey(__instance))
+            else if (!Resources.TryGetThingType(__instance, out Resources.ThingType _))
             {
-                Resources.MemoizedThings.Add(__instance, Resources.ThingType.Unknown);
+                Resources.SetThingType(__instance, Resources.ThingType.Unknown);
             }
 
             KeepOnComp keepOnComp = __instance.TryGetComp<KeepOnComp>();

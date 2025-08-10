@@ -127,7 +127,6 @@ namespace LightsOut.Common
             if (thing is null) return;
             BuildingStatus.Remove(thing);
             CompRechargeables.Remove(thing);
-            MemoizedThings.Remove(thing);
         }
 
         /// <summary>
@@ -174,8 +173,33 @@ namespace LightsOut.Common
         }
 
         /// <summary>
-        /// A single repository of the cached Thing Types
+        /// Attempts to get the cached thing type if available
         /// </summary>
-        public static Dictionary<ThingWithComps, ThingType> MemoizedThings { get; } = new Dictionary<ThingWithComps, ThingType>();
+        /// <param name="thing">The thing to check</param>
+        /// <param name="type">The type of the thing</param>
+        /// <returns>Whether or not the type was successfully looked up</returns>
+        public static bool TryGetThingType(ThingWithComps thing, out ThingType type)
+        {
+            if (MemoizedDefResults.TryGetValue(thing.def.defName, out type))
+                return true;
+            type = ThingType.Unknown;
+            return false;
+        }
+
+        /// <summary>
+        /// Sets the type of a <see cref="ThingWithComps"/> in the memoized results
+        /// </summary>
+        /// <param name="thing">The thing to check</param>
+        /// <param name="type">The type to cache</param>
+        public static void SetThingType(ThingWithComps thing, ThingType type)
+        {
+            if (thing is null || thing.def is null) return;
+            MemoizedDefResults[thing.def.defName] = type;
+        }
+
+        /// <summary>
+        /// A single repository of the result of checking if a Def is a table or light
+        /// </summary>
+        private static Dictionary<string, ThingType> MemoizedDefResults { get; } = new Dictionary<string, ThingType>();
     }
 }

@@ -74,8 +74,8 @@ namespace LightsOut.Common
         public static bool IsTable(ThingWithComps thing)
         {
             DebugLogger.AssertFalse(thing is null, "IsTable called on a null thing");
-            if (Resources.MemoizedThings.ContainsKey(thing))
-                return Resources.MemoizedThings[thing] == Resources.ThingType.Table;
+            if (Resources.TryGetThingType(thing, out Resources.ThingType type))
+                return type == Resources.ThingType.Table;
 
             if (thing is null)
                 return false;
@@ -85,7 +85,7 @@ namespace LightsOut.Common
 
             var isTable = IsLegalTableType(thing) || tableDefNames.Contains(thing.def.defName);
             if (isTable)
-                Resources.MemoizedThings.Add(thing, Resources.ThingType.Table);
+                Resources.SetThingType(thing, Resources.ThingType.Table);
 
             return isTable;
         }
