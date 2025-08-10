@@ -22,6 +22,9 @@ namespace LightsOut.Common
             DebugLogger.AssertFalse(light is null, "EnableLight called with a null light");
             if (light is null) return;
 
+            bool? isAlreadyEnabled = Resources.BuildingStatus.TryGetValue(light, null);
+            if (isAlreadyEnabled == true) return; // already enabled
+
             DebugLogger.LogInfo($"Enabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
             ThingComp glower = Glowers.GetGlower(light);
@@ -40,6 +43,9 @@ namespace LightsOut.Common
         {
             DebugLogger.AssertFalse(light is null, "DisableLight called with a null light");
             if (light is null || !LightsOutSettings.FlickLights) return; 
+
+            bool? isAlreadyEnabled = Resources.BuildingStatus.TryGetValue(light, null);
+            if (isAlreadyEnabled == false) return; // already disabled
 
             DebugLogger.LogInfo($"Disabling light with ID: {light.ThingID} on map: {light.Map.uniqueID}", DebugMessageKeys.Lights);
 
