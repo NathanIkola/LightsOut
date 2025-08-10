@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using LightsOut.Common;
-using LightsOut.Patches.Power;
 using RimWorld;
 using Verse;
 
@@ -18,7 +16,13 @@ namespace LightsOut.Patches.ModCompatibility.Biotech
 
         private static IEnumerable<Building> AttachedGeneProcessors(Building_GeneAssembler assembler)
         {
-            return assembler.ConnectedFacilities.Where(f => f.def.defName == GeneProcessorDefName).Select(t => (Building)t);
+            foreach (Thing facility in assembler.ConnectedFacilities)
+            {
+                if (facility.def.defName == GeneProcessorDefName)
+                {
+                    yield return (Building)facility;
+                }
+            }
         }
         
         private static void OnStart(Building_GeneAssembler __instance)

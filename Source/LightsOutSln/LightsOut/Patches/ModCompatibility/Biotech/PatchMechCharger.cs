@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using LightsOut.Common;
-using LightsOut.Patches.Power;
 using RimWorld;
 using Verse;
 

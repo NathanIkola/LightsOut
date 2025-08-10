@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using Verse;
 
@@ -71,13 +70,18 @@ namespace LightsOut.Common
             if (CachedGlowers.ContainsKey(thing))
                 return CachedGlowers[thing];
 
-            try
+            ThingComp glower = null;
+            for (int i = thing.AllComps.Count - 1; i >= 0; --i)
             {
-                ThingComp glower = thing.AllComps.Last(x => CompGlowers.Contains(x.GetType()));
-                CachedGlowers.Add(thing, glower);
-                return glower;
+                ThingComp comp = thing.AllComps[i];
+                if (CompGlowers.Contains(comp.GetType()))
+                {
+                    glower = comp;
+                    break;
+                }
             }
-            catch (Exception) { return null; }
+            CachedGlowers.Add(thing, glower);
+            return glower;
         }
 
         /// <summary>
