@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LightsOut_InitializingMod>Инициализация LightsOut</LightsOut_InitializingMod>
+
+  <LightsOut>LightsOut</LightsOut>
+  <LightsOut_OnStandby>В режиме ожидания</LightsOut_OnStandby>
+
+  <LightsOut_Settings_EverythingButLightsOutLabel>Выключать свет в пустых комнатах</LightsOut_Settings_EverythingButLightsOutLabel>
+  <LightsOut_Settings_EverythingButLightsOutTooltip>Если вы выключите это, мод станет \"LightsOn\". По умолчанию включен.</LightsOut_Settings_EverythingButLightsOutTooltip>
+
+  <LightsOut_Settings_NightLightsLabel>Держать свет включенным, когда ваши пешки ложатся спать</LightsOut_Settings_NightLightsLabel>
+  <LightsOut_Settings_NightLightsTooltip>Включите это, если ваши пешки боятся темноты. По умолчанию выключено.</LightsOut_Settings_NightLightsTooltip>
+
+  <LightsOut_Settings_LatentPowerDrawRateLabel>Потребление энергии в режиме ожидания (%)</LightsOut_Settings_LatentPowerDrawRateLabel>
+  <LightsOut_Settings_LatentPowerDrawRateTooltip>Процент от обычной мощности (или другого ресурса), потребляемой в режиме ожидания. По умолчанию 0% (0-100%).</LightsOut_Settings_LatentPowerDrawRateTooltip>
+
+  <LightsOut_Settings_ActivePowerDrawRateLabel>Потребление энергии при использовании (%)</LightsOut_Settings_ActivePowerDrawRateLabel>
+  <LightsOut_Settings_ActivePowerDrawRateTooltip>Процент от обычной мощности (или другого ресурса), который будет потребляться при использовании. По умолчанию 100% (100+%).</LightsOut_Settings_ActivePowerDrawRateTooltip>
+
+  <LightsOut_Settings_DebugMessagesLabel>Записывать дополнительную отладочную информацию в журнал</LightsOut_Settings_DebugMessagesLabel>
+  <LightsOut_Settings_DebugMessagesTooltip>Если включено, в журнал будут записываться дополнительные отладочные сообщения. Не включайте эту опцию, если вы не отлаживаете этот мод.</LightsOut_Settings_DebugMessagesTooltip>
+
+  <LightsOut_Settings_DebugMessageFilterLabel>Ключи отладочных сообщений</LightsOut_Settings_DebugMessageFilterLabel>
+  <LightsOut_Settings_DebugMessageFilterTooltip>Список ключей отладочных сообщений, которые должны регистрироваться в журнале, разделенные пробелами.</LightsOut_Settings_DebugMessageFilterTooltip>
+
+  <LightsOut_Gizmos_KeepOnLabel>Всегда включен</LightsOut_Gizmos_KeepOnLabel>
+  <LightsOut_Gizmos_KeepOnTooltip>Запрещает пешкам выключать свет.</LightsOut_Gizmos_KeepOnTooltip>
+
+  <LightsOut_Settings_AnimalPartyLabel>Разрешить животным включать свет</LightsOut_Settings_AnimalPartyLabel>
+  <LightsOut_Settings_AnimalPartyTooltip>Позволяет животным включать/выключать свет, когда они перемещаются по помещениям</LightsOut_Settings_AnimalPartyTooltip>
+
+  <LightsOut_Settings_DelaySecondsLabel>Время ожидания до выключения света</LightsOut_Settings_DelaySecondsLabel>
+  <LightsOut_Settings_DelaySecondsTooltip>Количество секунд между желанием пешки выключить свет и фактическим выключением света. Полезно для предотвращения мерцания света в зонах с интенсивным движением.</LightsOut_Settings_DelaySecondsTooltip>
+
+</LanguageData>
