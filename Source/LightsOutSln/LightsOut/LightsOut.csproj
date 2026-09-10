@@ -142,6 +142,8 @@
     <Compile Include="Patches\Power\DisableBasePowerDrawOnGet.cs" />
     <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
     <Compile Include="Patches\Power\DisableStandbyHeatPush.cs" />
+    <Compile Include="Patches\ModCompatibility\VanillaTemperatureExpanded\VanillaTemperatureExpandedCompatibilityPatch.cs" />
+    <Compile Include="Patches\ModCompatibility\VanillaTemperatureExpanded\PatchTemperatureSourceActiveState.cs" />
     <Compile Include="Patches\Power\RechargeablePatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThingComps\KeepOnComp.cs" />

@@ -21,6 +21,7 @@ using LightsOut.Patches.ModCompatibility.ColonyManager;
 using LightsOut.Patches.ModCompatibility.MiningLight;
 using LightsOut.Patches.ModCompatibility.SOS2;
 using LightsOut.Patches.ModCompatibility.ReinforcedMechanoid2;
+using LightsOut.Patches.ModCompatibility.VanillaTemperatureExpanded;
 
 namespace LightsOut.Patches.ModCompatibility
 {
@@ -50,6 +51,7 @@ namespace LightsOut.Patches.ModCompatibility
             new MiningLightCompatibilityPatch(),
             new SOS2CompatibilityPatch(),
             new ReinforcedMechanoid2CompatibilityPatch(),
+            new VanillaTemperatureExpandedCompatibilityPatch(),
         };
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using LightsOut.Common;
+using RimWorld;
 using Verse;
 
 namespace LightsOut.Patches.Power
@@ -12,13 +13,13 @@ namespace LightsOut.Patches.Power
     public class DisableStandbyHeatPush
     {
         /// <summary>
-        /// Disables powered heat pushers while their parent is on standby
+        /// Prevents continuous heat production while the parent is on standby
         /// </summary>
         /// <param name="__instance">The heat pusher being checked</param>
-        /// <param name="__result">Whether the heat pusher should emit heat</param>
+        /// <param name="__result">Whether the heat pusher would otherwise produce heat</param>
         public static void Postfix(CompHeatPusherPowered __instance, ref bool __result)
         {
-            if (__result && Resources.CanConsumeResources(__instance.parent) == false)
+            if (Resources.CanConsumeResources(__instance.parent) == false)
                 __result = false;
         }
     }
