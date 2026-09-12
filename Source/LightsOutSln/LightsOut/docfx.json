@@ -4,9 +4,9 @@
       "src": [
         {
           "files": [
-            "*.csproj"
+            "LightsOut.dll"
           ],
-          "cwd": ".",
+          "cwd": "../../../Assemblies",
           "exclude": [
             "**/obj/**",
             "**/bin/**",

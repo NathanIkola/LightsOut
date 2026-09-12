@@ -73,8 +73,7 @@
   
   <h1 id="LightsOut_Patches_Lights_DetectPawnRoomChange" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange" class="text-break">Class DetectPawnRoomChange
   </h1>
-  <div class="markdown level0 summary"><p>Detects if a Pawn has changed rooms during a tick</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -109,25 +108,27 @@
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
   <h5 id="LightsOut_Patches_Lights_DetectPawnRoomChange_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(Pawn_PathFollower))]
-[HarmonyPatch(&quot;TryEnterNextPathCell&quot;)]
-public class DetectPawnRoomChange</code></pre>
+    <pre><code class="lang-csharp hljs">public class DetectPawnRoomChange</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="LightsOut_Patches_Lights_DetectPawnRoomChange__ctor_" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.#ctor*"></a>
+  <h4 id="LightsOut_Patches_Lights_DetectPawnRoomChange__ctor" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.#ctor">DetectPawnRoomChange()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DetectPawnRoomChange()</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_Verse_Room__.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn%2CVerse.Room%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Lights/DetectPawnRoomChange.cs/#L35">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix*"></a>
   <h4 id="LightsOut_Patches_Lights_DetectPawnRoomChange_Postfix_Verse_Pawn_Verse_Room__" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.Postfix(Verse.Pawn,Verse.Room@)">Postfix(Pawn, ref Room)</h4>
-  <div class="markdown level1 summary"><p>Compares <code data-dev-comment-type="paramref" class="paramref">__state</code> with the Room that
-<code data-dev-comment-type="paramref" class="paramref">___pawn</code> is in at the end of a tick
-to see if it changed rooms</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -146,29 +147,20 @@ to see if it changed rooms</p>
       <tr>
         <td><span class="xref">Verse.Pawn</span></td>
         <td><span class="parametername">___pawn</span></td>
-        <td><p>The Pawn being tracked</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">Verse.Room</span></td>
         <td><span class="parametername">__state</span></td>
-        <td><p>The Room that <code data-dev-comment-type="paramref" class="paramref">__instance</code> was in at the beginning of the tick</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_Verse_Room__.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn%2CVerse.Room%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Lights/DetectPawnRoomChange.cs/#L21">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix*"></a>
   <h4 id="LightsOut_Patches_Lights_DetectPawnRoomChange_Prefix_Verse_Pawn_Verse_Room__" data-uid="LightsOut.Patches.Lights.DetectPawnRoomChange.Prefix(Verse.Pawn,Verse.Room@)">Prefix(Pawn, ref Room)</h4>
-  <div class="markdown level1 summary"><p>Grabs the room a Pawn is in at the beginning of a tick 
-and puts it into <code data-dev-comment-type="paramref" class="paramref">__state</code></p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -187,14 +179,12 @@ and puts it into <code data-dev-comment-type="paramref" class="paramref">__state
       <tr>
         <td><span class="xref">Verse.Pawn</span></td>
         <td><span class="parametername">___pawn</span></td>
-        <td><p>The Pawn being tracked</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">Verse.Room</span></td>
         <td><span class="parametername">__state</span></td>
-        <td><p>The Room that <code data-dev-comment-type="paramref" class="paramref">__instance</code> was in at the beginning of the tick</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -205,12 +195,6 @@ and puts it into <code data-dev-comment-type="paramref" class="paramref">__state
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Lights_DetectPawnRoomChange.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Lights.DetectPawnRoomChange%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Lights/DetectPawnRoomChange.cs/#L11" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

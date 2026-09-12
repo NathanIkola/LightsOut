@@ -73,11 +73,7 @@
   
   <h1 id="LightsOut_Common_DebugLogger" data-uid="LightsOut.Common.DebugLogger" class="text-break">Class DebugLogger
   </h1>
-  <div class="markdown level0 summary"><p>Handles all of the debug logging needs for my mod.
-Respects the mod settings option for printing extra debug messages.
-Adds a header to the beginning of all messages passed in so they
-are easy to identify in the log.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -116,19 +112,11 @@ are easy to identify in the log.</p>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.Assert(System.Boolean%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L149">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_Assert_" data-uid="LightsOut.Common.DebugLogger.Assert*"></a>
   <h4 id="LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_" data-uid="LightsOut.Common.DebugLogger.Assert(System.Boolean,System.String,System.Boolean)">Assert(Boolean, String, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Used to catch places where an expression is expected to be true,
-but is actually false. Useful for finding places where code is
-not behaving correctly. Does not log unless an error is found.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -147,41 +135,25 @@ not behaving correctly. Does not log unless an error is found.</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">expression</span></td>
-        <td><p>The expression that should be <span class="xref">true</span></p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">failMessage</span></td>
-        <td><p>The error message to print out if <code data-dev-comment-type="paramref" class="paramref">expression</code> is <span class="xref">false</span></p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onlyOnce</span></td>
-        <td><p>Log this assertion failure only one time</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>If <code data-dev-comment-type="paramref" class="paramref">onlyOnce</code> is set, this uses the hash of <code data-dev-comment-type="paramref" class="paramref">failMessage</code>
-to only log the message once. If you make <code data-dev-comment-type="paramref" class="paramref">failMessage</code> have dynamic
-content, it will appear once for every unique version of <code data-dev-comment-type="paramref" class="paramref">failMessage</code>
-that is passed in.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_AssertFalse_System_Boolean_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.AssertFalse(System.Boolean%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L166">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_AssertFalse_" data-uid="LightsOut.Common.DebugLogger.AssertFalse*"></a>
   <h4 id="LightsOut_Common_DebugLogger_AssertFalse_System_Boolean_System_String_System_Boolean_" data-uid="LightsOut.Common.DebugLogger.AssertFalse(System.Boolean,System.String,System.Boolean)">AssertFalse(Boolean, String, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Same as <a class="xref" href="LightsOut.Common.DebugLogger.html#LightsOut_Common_DebugLogger_Assert_System_Boolean_System_String_System_Boolean_">Assert(Boolean, String, Boolean)</a>, except it expects the
-expression passed in to be false instead of true.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -200,36 +172,25 @@ expression passed in to be false instead of true.</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">expression</span></td>
-        <td><p>The expression that should be <span class="xref">false</span></p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">failMessage</span></td>
-        <td><p>The error message to print out if <code data-dev-comment-type="paramref" class="paramref">expression</code> is <span class="xref">true</span></p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onlyOnce</span></td>
-        <td><p>Log this assertion failure only one time</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogError_System_String_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogError(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L99">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_LogError_" data-uid="LightsOut.Common.DebugLogger.LogError*"></a>
   <h4 id="LightsOut_Common_DebugLogger_LogError_System_String_System_String_" data-uid="LightsOut.Common.DebugLogger.LogError(System.String,System.String)">LogError(String, String)</h4>
-  <div class="markdown level1 summary"><p>Logs an error message to the console.
-Should be used to log when something has
-gone terribly, terribly wrong.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -248,29 +209,20 @@ gone terribly, terribly wrong.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>The message to print</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">keys</span></td>
-        <td><p>A list of keys that apply to this message</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogErrorOnce(System.String%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L112">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_LogErrorOnce_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce*"></a>
   <h4 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_Int32_System_String_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.Int32,System.String)">LogErrorOnce(String, Int32, String)</h4>
-  <div class="markdown level1 summary"><p>Logs an error a single time, no matter how
-many times it was encountered.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -289,35 +241,25 @@ many times it was encountered.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>The message to print</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">errorKey</span></td>
-        <td><p>The error&apos;s key (unique for each error)</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">debugKeys</span></td>
-        <td><p>A list of keys that apply to this message</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogErrorOnce(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L130">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_LogErrorOnce_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce*"></a>
   <h4 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_String_" data-uid="LightsOut.Common.DebugLogger.LogErrorOnce(System.String,System.String)">LogErrorOnce(String, String)</h4>
-  <div class="markdown level1 summary"><p>Logs an error a single time, no matter how
-many times it was encountered.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -341,30 +283,15 @@ many times it was encountered.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">keys</span></td>
-        <td><p>A list of keys that apply to this message</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="LightsOut_Common_DebugLogger_LogErrorOnce_System_String_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Uses the hash of <code data-dev-comment-type="paramref" class="paramref">message</code>
-to only log the message once. If you make <code data-dev-comment-type="paramref" class="paramref">message</code> have dynamic
-content, it will appear once for every unique version of <code data-dev-comment-type="paramref" class="paramref">message</code>
-that is passed in.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogInfo_System_String_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogInfo(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L73">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_LogInfo_" data-uid="LightsOut.Common.DebugLogger.LogInfo*"></a>
   <h4 id="LightsOut_Common_DebugLogger_LogInfo_System_String_System_String_" data-uid="LightsOut.Common.DebugLogger.LogInfo(System.String,System.String)">LogInfo(String, String)</h4>
-  <div class="markdown level1 summary"><p>Logs an informational message to the console.
-Should be used to log things that are good to
-know, but are not problematic</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -383,30 +310,20 @@ know, but are not problematic</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>The message to print</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">keys</span></td>
-        <td><p>A list of keys that apply to this message</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger_LogWarning_System_String_System_String_.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger.LogWarning(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L86">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Common_DebugLogger_LogWarning_" data-uid="LightsOut.Common.DebugLogger.LogWarning*"></a>
   <h4 id="LightsOut_Common_DebugLogger_LogWarning_System_String_System_String_" data-uid="LightsOut.Common.DebugLogger.LogWarning(System.String,System.String)">LogWarning(String, String)</h4>
-  <div class="markdown level1 summary"><p>Logs a warning message to the console.
-Should be used to log things that could be
-issues, but aren&apos;t causing any fatal problems</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -425,14 +342,12 @@ issues, but aren&apos;t causing any fatal problems</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">message</span></td>
-        <td><p>The message to print</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">keys</span></td>
-        <td><p>A list of keys that apply to this message</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -443,12 +358,6 @@ issues, but aren&apos;t causing any fatal problems</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Common_DebugLogger.md&amp;value=---%0Auid%3A%20LightsOut.Common.DebugLogger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Common/DebugLogger.cs/#L12" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

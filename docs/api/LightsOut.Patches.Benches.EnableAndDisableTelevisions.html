@@ -108,24 +108,27 @@
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
   <h5 id="LightsOut_Patches_Benches_EnableAndDisableTelevisions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(JobDriver_WatchBuilding))]
-[HarmonyPatch(&quot;TryMakePreToilReservations&quot;)]
-public class EnableAndDisableTelevisions</code></pre>
+    <pre><code class="lang-csharp hljs">public class EnableAndDisableTelevisions</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="LightsOut_Patches_Benches_EnableAndDisableTelevisions__ctor_" data-uid="LightsOut.Patches.Benches.EnableAndDisableTelevisions.#ctor*"></a>
+  <h4 id="LightsOut_Patches_Benches_EnableAndDisableTelevisions__ctor" data-uid="LightsOut.Patches.Benches.EnableAndDisableTelevisions.#ctor">EnableAndDisableTelevisions()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnableAndDisableTelevisions()</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/EnableAndDisableTelevisions.cs/#L19">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_" data-uid="LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix*"></a>
   <h4 id="LightsOut_Patches_Benches_EnableAndDisableTelevisions_Postfix_RimWorld_JobDriver_WatchBuilding_System_Boolean_" data-uid="LightsOut.Patches.Benches.EnableAndDisableTelevisions.Postfix(RimWorld.JobDriver_WatchBuilding,System.Boolean)">Postfix(JobDriver_WatchBuilding, Boolean)</h4>
-  <div class="markdown level1 summary"><p>If we successfully made pre-toil reservations, turn the TV on, and turn it off
-afterward if nobody else is watching</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -144,14 +147,12 @@ afterward if nobody else is watching</p>
       <tr>
         <td><span class="xref">RimWorld.JobDriver_WatchBuilding</span></td>
         <td><span class="parametername">__instance</span></td>
-        <td><p>The JobDriver_WatchBuilding being started</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">__result</span></td>
-        <td><p>Whether or not it should be starting</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -162,12 +163,6 @@ afterward if nobody else is watching</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Benches_EnableAndDisableTelevisions.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Benches.EnableAndDisableTelevisions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Benches/EnableAndDisableTelevisions.cs/#L9" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

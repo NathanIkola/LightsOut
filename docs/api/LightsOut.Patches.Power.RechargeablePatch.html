@@ -73,9 +73,7 @@
   
   <h1 id="LightsOut_Patches_Power_RechargeablePatch" data-uid="LightsOut.Patches.Power.RechargeablePatch" class="text-break">Class RechargeablePatch
   </h1>
-  <div class="markdown level0 summary"><p>Parches rechargeable objects to only draw power 
-when they are actively charging</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -110,24 +108,27 @@ when they are actively charging</p>
   <h6><strong>Assembly</strong>: LightsOut.dll</h6>
   <h5 id="LightsOut_Patches_Power_RechargeablePatch_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HarmonyPatch(typeof(CompRechargeable))]
-[HarmonyPatch(&quot;CompTick&quot;)]
-public class RechargeablePatch</code></pre>
+    <pre><code class="lang-csharp hljs">public class RechargeablePatch</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="LightsOut_Patches_Power_RechargeablePatch__ctor_" data-uid="LightsOut.Patches.Power.RechargeablePatch.#ctor*"></a>
+  <h4 id="LightsOut_Patches_Power_RechargeablePatch__ctor" data-uid="LightsOut.Patches.Power.RechargeablePatch.#ctor">RechargeablePatch()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RechargeablePatch()</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_RechargeablePatch_Prefix_RimWorld_CompRechargeable_RimWorld_CompPowerTrader_.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.RechargeablePatch.Prefix(RimWorld.CompRechargeable%2CRimWorld.CompPowerTrader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/RechargeablePatch.cs/#L26">View Source</a>
-  </span>
+  
+  
   <a id="LightsOut_Patches_Power_RechargeablePatch_Prefix_" data-uid="LightsOut.Patches.Power.RechargeablePatch.Prefix*"></a>
   <h4 id="LightsOut_Patches_Power_RechargeablePatch_Prefix_RimWorld_CompRechargeable_RimWorld_CompPowerTrader_" data-uid="LightsOut.Patches.Power.RechargeablePatch.Prefix(RimWorld.CompRechargeable,RimWorld.CompPowerTrader)">Prefix(CompRechargeable, CompPowerTrader)</h4>
-  <div class="markdown level1 summary"><p>Checks if a CompRechargeable is charged, and modifies its 
-power draw rate if not</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -146,14 +147,12 @@ power draw rate if not</p>
       <tr>
         <td><span class="xref">RimWorld.CompRechargeable</span></td>
         <td><span class="parametername">__instance</span></td>
-        <td><p>The CompRechargeable to check</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">RimWorld.CompPowerTrader</span></td>
         <td><span class="parametername">___compPowerCached</span></td>
-        <td><p>The cahced CompPower object for <code data-dev-comment-type="paramref" class="paramref">__instance</code></p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -164,12 +163,6 @@ power draw rate if not</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/new/dev/apiSpec/new?filename=LightsOut_Patches_Power_RechargeablePatch.md&amp;value=---%0Auid%3A%20LightsOut.Patches.Power.RechargeablePatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/NathanIkola/LightsOut/blob/dev/Source/LightsOutSln/LightsOut/Patches/Power/RechargeablePatch.cs/#L16" class="contribution-link">View Source</a>
-                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
