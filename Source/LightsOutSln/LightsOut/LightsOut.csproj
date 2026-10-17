@@ -94,9 +94,7 @@
 	</ItemGroup>
 
 	<!-- Deploy mod files after a successful build -->
-	<Target Name="DeployToRimWorld"
-			AfterTargets="Build"
-			Condition="'$(OS)' == 'Windows_NT'">
+	<Target Name="DeployToRimWorld" AfterTargets="Build" Condition="'$(OS)' == 'Windows_NT'">
 
 		<!-- Existing RimWorld content directories -->
 		<ItemGroup>
@@ -112,34 +110,19 @@
 		</ItemGroup>
 
 		<!-- Copy each content directory -->
-		<Exec
-		  Command='xcopy "$(ModRoot)\%(ModFolders.Identity)" "$(RimWorldModDir)\%(ModFolders.Identity)" /Y/E/H/C/I'
-		  Condition="Exists('$(ModRoot)\%(ModFolders.Identity)')" />
+		<Exec Command="xcopy &quot;$(ModRoot)\%(ModFolders.Identity)&quot; &quot;$(RimWorldModDir)\%(ModFolders.Identity)&quot; /Y/E/H/C/I" Condition="Exists('$(ModRoot)\%(ModFolders.Identity)')" />
 
 		<!-- Copy loadFolders.xml -->
-		<Copy
-		  SourceFiles="$(ModRoot)\loadFolders.xml"
-		  DestinationFiles="$(RimWorldModDir)\loadFolders.xml"
-		  Condition="Exists('$(ModRoot)\loadFolders.xml')"
-		  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(ModRoot)\loadFolders.xml" DestinationFiles="$(RimWorldModDir)\loadFolders.xml" Condition="Exists('$(ModRoot)\loadFolders.xml')" SkipUnchangedFiles="true" />
 
 		<!-- Deploy LightsOut.dll -->
-		<Copy
-		  SourceFiles="$(TargetPath)"
-		  DestinationFolder="$(RimWorldModDir)\Assemblies\"
-		  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(RimWorldModDir)\Assemblies\" SkipUnchangedFiles="true" />
 
 		<!-- Deploy Harmony if present in the build output -->
-		<Copy
-		  SourceFiles="$(TargetDir)0Harmony.dll"
-		  DestinationFolder="$(RimWorldModDir)\Assemblies\"
-		  Condition="Exists('$(TargetDir)0Harmony.dll')"
-		  SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(TargetDir)0Harmony.dll" DestinationFolder="$(RimWorldModDir)\Assemblies\" Condition="Exists('$(TargetDir)0Harmony.dll')" SkipUnchangedFiles="true" />
 
 		<!-- Preserve the existing DocFX site deployment -->
-		<Exec
-		  Command='xcopy "$(MSBuildProjectDirectory)\_site" "$(ModRoot)\docs" /Y/E/H/C/I'
-		  Condition="Exists('$(MSBuildProjectDirectory)\_site')" />
+		<Exec Command="xcopy &quot;$(MSBuildProjectDirectory)\_site&quot; &quot;$(ModRoot)\docs&quot; /Y/E/H/C/I" Condition="Exists('$(MSBuildProjectDirectory)\_site')" />
 
 	</Target>
 

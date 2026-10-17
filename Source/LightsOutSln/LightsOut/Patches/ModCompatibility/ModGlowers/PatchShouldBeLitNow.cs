@@ -43,7 +43,13 @@ namespace LightsOut.Patches.ModCompatibility.ModGlowers
 
         public override IEnumerable<PatchInfo> GetPatches(Type type)
         {
+            // don't patch anything from the base RimWorld assemblies
             if (type.Assembly == Assembly.GetAssembly(typeof(Pawn)))
+                return new List<PatchInfo>();
+
+            // you wouldn't think we'd need to check that a glower comp was a comp, but VEF
+            // made a TerrainComp_Glower that is a new type of comp and gets picked up here
+            if (!type.IsSubclassOf(typeof(ThingComp)))
                 return new List<PatchInfo>();
 
             PropertyInfo getter = GetShouldBeLitNowModded(type) ?? GetShouldBeLitNowVanilla(type);
