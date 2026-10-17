@@ -1,189 +1,146 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56E0947A-8AD5-4CA8-8B9F-33912862E414}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LightsOut</RootNamespace>
-    <AssemblyName>LightsOut</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <IncrementVersionOnBuild>1.yyyy.Mdd.Hmm</IncrementVersionOnBuild>
-    <Version>1.2022.1022.1432</Version>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>portable</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\..\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="0Harmony, Version=2.3.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.2.3.6\lib\net472\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Boilerplate\LateInitializeMod.cs" />
-    <Compile Include="Boilerplate\LightsOutMod.cs" />
-    <Compile Include="Boilerplate\LightsOutSettings.cs" />
-    <Compile Include="Boilerplate\ModSettings.cs" />
-    <Compile Include="Common\DebugLogger.cs" />
-    <Compile Include="Common\DebugMessageKeys.cs" />
-    <Compile Include="Common\Enterables.cs" />
-    <Compile Include="Common\Glowers.cs" />
-    <Compile Include="Common\Lights.cs" />
-    <Compile Include="Common\Rooms.cs" />
-    <Compile Include="Common\Tables.cs" />
-    <Compile Include="Common\TablesHelper.cs" />
-    <Compile Include="Defs\CustomThingDefs.cs" />
-    <Compile Include="Gizmos\KeepOnGizmo.cs" />
-    <Compile Include="Patches\Benches\EnableAndDisableTelevisions.cs" />
-    <Compile Include="Patches\Benches\TriggerOnPawnArrivedToBench.cs" />
-    <Compile Include="Patches\Lights\FixLightsOnRoomSetup.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\BiotechCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchBandNode.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchGeneAssembly.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchGeneExtractor.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchGrowthVat.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchMechCharger.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchMechGestator.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchSubcoreScanner.cs" />
-    <Compile Include="Patches\ModCompatibility\Biotech\PatchWasteAtomiser.cs" />
-    <Compile Include="Patches\ModCompatibility\ColonyManager\ColonyManagerCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ColonyManager\KeepAIManagerOn.cs" />
-    <Compile Include="Patches\ModCompatibility\DubsBadHygiene\DubsBadHygieneCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ErinsJapaneseFurniture\ErinsJapaneseFurnitureCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ExtinguishRefuelables\DisallowCustomOverlay.cs" />
-    <Compile Include="Patches\ModCompatibility\ExtinguishRefuelables\ExtinguishRefuelablesCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGetRoomForVPEGasWallLights.cs" />
-    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchInspectMessage.cs" />
-    <Compile Include="Patches\ModCompatibility\Ideology\PatchPostSpawnSetup.cs" />
-    <Compile Include="Patches\ModCompatibility\Ideology\PatchCount.cs" />
-    <Compile Include="Patches\Lights\DetectPawnRoomChange.cs" />
-    <Compile Include="Patches\Lights\DisableLightGlowOnSleep.cs" />
-    <Compile Include="Patches\Lights\DisableLightGlowPatch.cs" />
-    <Compile Include="Patches\Lights\FixBuildingsOnPawnSpawn.cs" />
-    <Compile Include="Patches\ModCompatibility\Androids\PatchInspectMessage.cs" />
-    <Compile Include="Patches\ModCompatibility\Androids\PatchIsTable.cs" />
-    <Compile Include="Patches\ModCompatibility\Androids\PatchDisablePowerDraw.cs" />
-    <Compile Include="Patches\ModCompatibility\Androids\AndroidsCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\Furnace\FurnaceIsNotAWorkTable.cs" />
-    <Compile Include="Patches\ModCompatibility\Ideology\IdeologyCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\Ideology\PatchTick.cs" />
-    <Compile Include="Patches\ModCompatibility\MiningLight\MiningLightCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ModGlowers\ModGlowerCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ICompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ICompatibilityPatchComponent.cs" />
-    <Compile Include="Patches\ModCompatibility\ModCompatibilityManager.cs" />
-    <Compile Include="Patches\ModCompatibility\ModGlowers\PatchShouldBeLitNow.cs" />
-    <Compile Include="Patches\ModCompatibility\QuestionableEthics\PatchDisablePowerDraw.cs" />
-    <Compile Include="Patches\ModCompatibility\QuestionableEthics\PatchInspectMessage.cs" />
-    <Compile Include="Patches\ModCompatibility\QuestionableEthics\PatchIsTable.cs" />
-    <Compile Include="Patches\ModCompatibility\QuestionableEthics\QECompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\SelfLitHydroponics\SelfLitHydroponicsCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\SOS2\FixLightsAfterMovingShip.cs" />
-    <Compile Include="Patches\ModCompatibility\SOS2\SOS2CompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\VEWallLights\PatchGetRoomForVEWallLights.cs" />
-    <Compile Include="Patches\ModCompatibility\VEWallLights\VEWallLightCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\HelixienGas\HelixienGasCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\HelixienGas\PatchGasConsumption.cs" />
-    <Compile Include="Patches\ModCompatibility\WallLights\PatchGetRoomForWallLights.cs" />
-    <Compile Include="Patches\ModCompatibility\WallLights\WallLightCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\ReinforcedMechanoid2\KeepGestaltEngineOn.cs" />
-    <Compile Include="Patches\ModCompatibility\ReinforcedMechanoid2\ReinforcedMechanoid2CompatibilityPatch.cs" />
-    <Compile Include="Patches\Power\AddStandbyInspectMessagePatch.cs" />
-    <Compile Include="Patches\Power\CleanupBuildingsOnDespawn.cs" />
-    <Compile Include="Patches\Power\PerformPendingShutoff.cs" />
-    <Compile Include="Patches\Power\DisableBasePowerDrawOnGet.cs" />
-    <Compile Include="Patches\Power\DisableBuildingsOnSpawn.cs" />
-    <Compile Include="Patches\ModCompatibility\VanillaTemperatureExpanded\VanillaTemperatureExpandedCompatibilityPatch.cs" />
-    <Compile Include="Patches\ModCompatibility\VanillaTemperatureExpanded\PatchTemperatureSourceActiveState.cs" />
-    <Compile Include="Patches\Power\RechargeablePatch.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThingComps\KeepOnComp.cs" />
-    <Compile Include="Common\Resources.cs" />
-    <Compile Include="ThingComps\LoudspeakerTurnOffComp.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="api\index.md" />
-    <None Include="articles\intro.md" />
-    <None Include="articles\toc.md" />
-    <None Include="docfx.json" />
-    <None Include="index.md" />
-    <None Include="packages.config" />
-    <None Include="toc.yml" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)..\..\..\About" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\About"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Defs" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Defs"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Languages" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Languages"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Patches" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Patches"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Sounds" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Sounds"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\Textures" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Textures"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\1.3" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\1.3"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\1.4" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\1.4"  /Y/E/H/C/I
-xcopy "$(ProjectDir)..\..\..\1.5" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\1.5"  /Y/E/H/C/I
-xcopy "$(ProjectDir)_site" "$(ProjectDir)..\..\..\docs"  /Y/E/H/C/I
-echo F|xcopy "$(ProjectDir)..\..\..\loadFolders.xml" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\loadFolders.xml" /Y/H/C/I
-echo F|xcopy "$(TargetDir)0Harmony.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\0Harmony.dll" /Y/H/C/I
-echo F|xcopy "$(TargetDir)LightsOut.dll" "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\LightsOut\Assemblies\LightsOut.dll" /Y/H/C/I</PostBuildEvent>
-  </PropertyGroup>
-  <ProjectExtensions>
-    <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="YearStamp.MonthStamp.DayStamp.TimeStamp" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2000/1/1" />
-    </VisualStudio>
-  </ProjectExtensions>
-  <Import Project="..\packages\docfx.console.2.59.4\build\docfx.console.targets" Condition="Exists('..\packages\docfx.console.2.59.4\build\docfx.console.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\docfx.console.2.59.4\build\docfx.console.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\docfx.console.2.59.4\build\docfx.console.targets'))" />
-  </Target>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- General project configuration -->
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<OutputType>Library</OutputType>
+
+		<RootNamespace>LightsOut</RootNamespace>
+		<AssemblyName>LightsOut</AssemblyName>
+
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<Deterministic>true</Deterministic>
+
+		<!-- Preserve the original assembly output directory -->
+		<OutputPath>..\..\..\Assemblies\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+		<!-- Avoid generating an unnecessary .deps.json file -->
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+
+		<!-- Generate assembly metadata using SDK-style MSBuild -->
+		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+		<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+	</PropertyGroup>
+
+	<!-- Automatic date/time assembly versioning -->
+	<PropertyGroup>
+		<BuildTimestamp>$([System.DateTime]::Now.ToString('yyyy.MM.dd.HHmm'))</BuildTimestamp>
+
+		<AssemblyVersion>$(BuildTimestamp)</AssemblyVersion>
+		<FileVersion>$(AssemblyVersion)</FileVersion>
+		<InformationalVersion>$(AssemblyVersion)</InformationalVersion>
+
+		<!-- Static NuGet-style project version -->
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+	<!-- Debug configuration -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<!-- Release configuration -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<Optimize>true</Optimize>
+		<DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+	<!-- RimWorld paths -->
+	<PropertyGroup>
+		<RimWorldDir Condition="'$(RimWorldDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\RimWorld</RimWorldDir>
+		<RimWorldModDir>$(RimWorldDir)\Mods\LightsOut</RimWorldModDir>
+
+		<ModRoot>$(MSBuildProjectDirectory)\..\..\..</ModRoot>
+	</PropertyGroup>
+
+	<!-- RimWorld references -->
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(RimWorldDir)\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
+		<Reference Include="UnityStubs">
+			<HintPath>$(RimWorldDir)\UnityStubs.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
+		<Reference Include="Waylith">
+			<HintPath>$(RimWorldDir)\Waylith.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<!-- NuGet dependencies -->
+	<ItemGroup>
+		<PackageReference Include="Lib.Harmony" Version="2.3.6" />
+	</ItemGroup>
+
+	<!-- Source files are included automatically by the SDK.
+       Exclude the legacy AssemblyInfo.cs to prevent duplicate
+       assembly attributes. -->
+	<ItemGroup>
+		<Compile Remove="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+
+	<!-- Deploy mod files after a successful build -->
+	<Target Name="DeployToRimWorld"
+			AfterTargets="Build"
+			Condition="'$(OS)' == 'Windows_NT'">
+
+		<!-- Existing RimWorld content directories -->
+		<ItemGroup>
+			<ModFolders Include="About" />
+			<ModFolders Include="Defs" />
+			<ModFolders Include="Languages" />
+			<ModFolders Include="Patches" />
+			<ModFolders Include="Sounds" />
+			<ModFolders Include="Textures" />
+			<ModFolders Include="1.3" />
+			<ModFolders Include="1.4" />
+			<ModFolders Include="1.5" />
+		</ItemGroup>
+
+		<!-- Copy each content directory -->
+		<Exec
+		  Command='xcopy "$(ModRoot)\%(ModFolders.Identity)" "$(RimWorldModDir)\%(ModFolders.Identity)" /Y/E/H/C/I'
+		  Condition="Exists('$(ModRoot)\%(ModFolders.Identity)')" />
+
+		<!-- Copy loadFolders.xml -->
+		<Copy
+		  SourceFiles="$(ModRoot)\loadFolders.xml"
+		  DestinationFiles="$(RimWorldModDir)\loadFolders.xml"
+		  Condition="Exists('$(ModRoot)\loadFolders.xml')"
+		  SkipUnchangedFiles="true" />
+
+		<!-- Deploy LightsOut.dll -->
+		<Copy
+		  SourceFiles="$(TargetPath)"
+		  DestinationFolder="$(RimWorldModDir)\Assemblies\"
+		  SkipUnchangedFiles="true" />
+
+		<!-- Deploy Harmony if present in the build output -->
+		<Copy
+		  SourceFiles="$(TargetDir)0Harmony.dll"
+		  DestinationFolder="$(RimWorldModDir)\Assemblies\"
+		  Condition="Exists('$(TargetDir)0Harmony.dll')"
+		  SkipUnchangedFiles="true" />
+
+		<!-- Preserve the existing DocFX site deployment -->
+		<Exec
+		  Command='xcopy "$(MSBuildProjectDirectory)\_site" "$(ModRoot)\docs" /Y/E/H/C/I'
+		  Condition="Exists('$(MSBuildProjectDirectory)\_site')" />
+
+	</Target>
+
 </Project>
